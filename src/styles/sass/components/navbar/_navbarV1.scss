@@ -1,0 +1,42 @@
+.navbar-light {
+    background-color: transparent;
+    padding: 1rem 0;
+
+  
+    .navbar-brand {
+      .logo {
+        max-height: 40px;
+      }
+    }
+  
+    .navbar-toggler {
+      border-color: #fff;
+  
+      &:hover,
+      &:focus {
+        background-color: #f23d3d;
+      }
+    }
+  
+    .navbar-collapse {
+      justify-content: flex-end;
+  
+      .navbar-nav {
+        .nav-link {
+          color: #fff;
+          font-size: 1.1rem;
+          margin: 0 1rem;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: #f23d3d; // Custom hover color
+          }
+  
+          &.active {
+            color: #f23d3d;
+          }
+        }
+      }
+    }
+  }
+  

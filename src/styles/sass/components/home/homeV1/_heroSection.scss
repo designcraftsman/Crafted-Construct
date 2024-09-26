@@ -1,0 +1,85 @@
+// Variables
+$white-color: #ffffff;
+$nav-button-size: 20px;
+
+// Mixin for flex-center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-carousel {
+  position: relative;
+  overflow: hidden;
+  .carousel-item-custom {
+    position: absolute;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: opacity 1s ease;
+    z-index: 5;
+
+    // Pseudo-element for the background
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(70%); // Apply brightness filter only to the background
+      z-index: 1; // Ensure it is below the text
+      background-image: inherit; // Inherit the background image
+    }
+
+    .carousel-caption {
+      z-index: 10; // Ensure text stays above the background layer
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-40%);
+      text-align: start;
+      color: $white-color;
+      max-width: 700px;
+
+
+
+    }
+  }
+}
+
+
+  // Fix for the carousel indicator buttons
+  .carousel-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;  // Ensure they appear on top of other elements
+
+    button {
+      width: $nav-button-size;
+      height: $nav-button-size;
+      border-radius: 50%;
+      border: 2px solid $white-color;
+      background: $white-color;
+      opacity: 0.3;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
