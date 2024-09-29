@@ -1,0 +1,33 @@
+.custom-testimonial-carousel {
+    position: relative;
+    min-height: 90vh;
+}
+.testimonials-carousel-nav{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+
+    button {
+      width: $nav-button-size;
+      height: $nav-button-size;
+      border-radius: 50%;
+      border: 2px solid $white-color;
+      background: $white-color;
+      opacity: 0.3;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  
+}

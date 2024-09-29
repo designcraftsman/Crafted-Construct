@@ -1,0 +1,34 @@
+.servicesCarousel {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__carousel {
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  // Control buttons (prev/next)
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+
+    &--prev {
+      left: 10px;
+    }
+
+    &--next {
+      right: 10px;
+    }
+
+  }
+}
