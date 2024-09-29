@@ -1,0 +1,22 @@
+.services-header{ 
+    position: relative;
+    &__image{
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(60%);
+    }
+    &__text{
+        position: absolute;
+        top: 50%;
+        left: 38%;
+    }
+}
+
+
+
+
+
+
+
+

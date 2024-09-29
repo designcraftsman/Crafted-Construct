@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="navbar-light px-3 m-0 p-0 fixed-top border-bottom border-1">
       
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href=".">
           <div className='d-flex align-items-center text-white fw-bolder fs-6'>
             <img src={Logo} alt="CraftedConstruct" className="logo" />
             <div className='d-flex flex-column ms-3'>
@@ -21,9 +21,9 @@ const NavigationBar = () => {
         
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto"> 
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href=".">Home</Nav.Link>
             <Nav.Link href="#services">Services</Nav.Link>
-            <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="portfolio-v1">Portfolio</Nav.Link>
             <Nav.Link href="#blog">Blog</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
