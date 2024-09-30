@@ -1,0 +1,36 @@
+.contact-section {
+    background-color: #f5f7f8;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .contact-heading {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  .submit-btn {
+    background-color: #002147;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    &:hover {
+      background-color: #001530;
+    }
+  }
+  
+  .contact-info {
+    color: #333;
+    i {
+      font-size: 1.5rem;
+      color: #e74c3c;
+      margin-right: 10px;
+    }
+  }
+  

@@ -22,11 +22,11 @@ const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto"> 
             <Nav.Link href=".">Home</Nav.Link>
-            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="services-v1">Services</Nav.Link>
             <Nav.Link href="portfolio-v1">Portfolio</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
+            <Nav.Link href="blog-v1">Blog</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="about-v1">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         

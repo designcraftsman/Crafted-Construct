@@ -1,0 +1,44 @@
+// components/BlogPostCard.scss
+.blog-post-card {
+    .post-image {
+      width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+  
+    .post-category {
+      font-size: 0.9rem;
+      background-color: $info;
+    }
+  
+    h5 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+  
+    .post-description {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  
+    .post-meta {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+  
+      .author-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+      .author-name {
+        font-weight: 500;
+      }
+  
+      .post-date {
+        opacity: 0.7;
+      }
+    }
+  }
+  

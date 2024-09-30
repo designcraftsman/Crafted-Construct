@@ -223,6 +223,77 @@
   opacity: 1;
 }
 
+.blog-post-card .post-image {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+.blog-post-card .post-category {
+  font-size: 0.9rem;
+  background-color: #001F3F;
+}
+.blog-post-card h5, .blog-post-card .h5 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.blog-post-card .post-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+.blog-post-card .post-meta {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+.blog-post-card .post-meta .author-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.blog-post-card .post-meta .author-name {
+  font-weight: 500;
+}
+.blog-post-card .post-meta .post-date {
+  opacity: 0.7;
+}
+
+.sidebar .category-section,
+.sidebar .recent-posts-section {
+  background-color: #596E79;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.sidebar .category-section h6, .sidebar .category-section .h6,
+.sidebar .recent-posts-section h6,
+.sidebar .recent-posts-section .h6 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.sidebar .category-bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.sidebar .recent-post {
+  display: flex;
+  align-items: center;
+}
+.sidebar .recent-post .recent-post-image {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+.sidebar .recent-post .recent-post-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.sidebar .recent-post .badge {
+  font-size: 0.75rem;
+}
+
 .services-header {
   position: relative;
 }
@@ -236,6 +307,46 @@
   position: absolute;
   top: 50%;
   left: 38%;
+}
+
+.background-image {
+  filter: brightness(80%);
+}
+
+.contact-section {
+  background-color: #f5f7f8;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.contact-heading {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.submit-btn {
+  background-color: #002147;
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+.submit-btn:hover {
+  background-color: #001530;
+}
+
+.contact-info {
+  color: #333;
+}
+.contact-info i {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  margin-right: 10px;
 }
 
 /*!

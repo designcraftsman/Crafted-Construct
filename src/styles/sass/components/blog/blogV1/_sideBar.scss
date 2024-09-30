@@ -1,0 +1,44 @@
+// components/Sidebar.scss
+.sidebar {
+    .category-section,
+    .recent-posts-section {
+      background-color: $secondary;
+      padding: 1rem;
+      border-radius: 8px;
+  
+      h6 {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+  
+    .category-bullet {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+  
+    .recent-post {
+      display: flex;
+      align-items: center;
+  
+      .recent-post-image {
+        width: 60px;
+        height: auto;
+        border-radius: 4px;
+      }
+  
+      .recent-post-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+  
+      .badge {
+        font-size: 0.75rem;
+      }
+    }
+  }
+  
