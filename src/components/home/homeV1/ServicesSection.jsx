@@ -77,20 +77,20 @@ function UncontrolledExample() {
 
       {/* Custom Previous Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--prev bg-primary p-3"
+        className="servicesCarousel__control servicesCarousel__control--prev  btn btn-dark hover-filled-slide-down"
         onClick={handlePrevClick}
         aria-label="Previous"
       >
-        <FaArrowLeft className="servicesCarousel__icon fs-1 text-white " />
+          <FaArrowLeft className=" fs-1 icon  text-white" />
       </button>
 
       {/* Custom Next Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--next bg-primary p-3"
+        className="servicesCarousel__control servicesCarousel__control--next btn btn-dark hover-filled-slide-down "
         onClick={handleNextClick}
         aria-label="Next"
       >
-        <FaArrowRight className="servicesCarousel__icon fs-1 text-white  "/>
+        <FaArrowRight className="fs-1 icon text-white  "/>
       </button>
     </div>
   );

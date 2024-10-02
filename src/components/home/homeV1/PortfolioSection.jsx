@@ -4,22 +4,52 @@ import portfolio2 from '../../../assets/images/V1/home/portfolioSection/2.jpg';
 import portfolio3 from '../../../assets/images/V1/home/portfolioSection/3.jpg';
 import portfolio4 from '../../../assets/images/V1/home/portfolioSection/4.jpg';
 
+const portfolioItems = [
+  {
+    img: portfolio1,
+    title: 'Modern Residential Home',
+    location: 'Lakeview Estates, California',
+    scope: 'Multi-unit residential construction',
+    description: 'CraftedConstruct developed a luxury apartment complex with 150 units, featuring resort-style amenities, including a pool, fitness center, and outdoor lounge areas. Each unit was designed with high-end materials, smart home integration, and energy-efficient appliances, catering to upscale clientele in the Miami area.',
+  },
+  {
+    img: portfolio2,
+    title: 'Modern Residential Home',
+    location: 'Lakeview Estates, California',
+    scope: 'Multi-unit residential construction',
+    description: 'CraftedConstruct developed a luxury apartment complex with 150 units, featuring resort-style amenities, including a pool, fitness center, and outdoor lounge areas. Each unit was designed with high-end materials, smart home integration, and energy-efficient appliances, catering to upscale clientele in the Miami area.',
+  },
+  {
+    img: portfolio3,
+    title: 'Modern Residential Home',
+    location: 'Lakeview Estates, California',
+    scope: 'Multi-unit residential construction',
+    description: 'CraftedConstruct developed a luxury apartment complex with 150 units, featuring resort-style amenities, including a pool, fitness center, and outdoor lounge areas. Each unit was designed with high-end materials, smart home integration, and energy-efficient appliances, catering to upscale clientele in the Miami area.',
+  },
+  {
+    img: portfolio4,
+    title: 'Modern Residential Home',
+    location: 'Lakeview Estates, California',
+    scope: 'Multi-unit residential construction',
+    description: 'CraftedConstruct developed a luxury apartment complex with 150 units, featuring resort-style amenities, including a pool, fitness center, and outdoor lounge areas. Each unit was designed with high-end materials, smart home integration, and energy-efficient appliances, catering to upscale clientele in the Miami area.',
+  },
+  
+];
+
 const PortfolioList = () => {
   return (
-        <div className="grid-layout">
-          <a href="project-v1" className="grid-item-1">
-            <img src={portfolio1} alt="Project 1" className="img-fluid project-image" />
-          </a>
-          <a href="project-v1" className="grid-item-2">
-            <img src={portfolio2} alt="Project 2" className="img-fluid project-image" />
-          </a>
-          <a href="project-v1" className="grid-item-3">
-            <img src={portfolio3} alt="Project 3" className="img-fluid project-image" />
-          </a>
-          <a href="project-v1" className="grid-item-4">
-            <img src={portfolio4} alt="Project 4" className="img-fluid project-image" />
-          </a>
-        </div>
+    <div className="grid-layout">
+      {portfolioItems.map((item, index) => (
+        <a href="project-v1" key={index} className={`grid-item-${index + 1}`}>
+          <figure className="snip1440 project-image">
+            <img src={item.img} className="w-100 h-100 object-fit-cover" alt="sample54" />
+            <figcaption>
+              <h1 className="m-auto display-6">{item.title}</h1>
+            </figcaption>
+          </figure>
+        </a>
+      ))}
+    </div>
   );
 };
 

@@ -1,18 +1,21 @@
 
-
-  @import 'base/variables';
-  @import 'components/navbar/navbarV1';
-  @import 'components/footer/footerV1';
-  @import 'components/home/homeV1/heroSection';
-  @import 'components/home/homeV1/aboutSection';
-  @import 'components/home/homeV1/servicesSection';
-  @import 'components/home/homeV1/portfolioSection';
-  @import 'components/home/homeV1/testimonialsSection';
-  @import 'components/blog/blogV1/postCard';
-  @import 'components/blog/blogV1/sideBar';
+  @import 'abstracts/fonts';
+  @import 'abstracts/variables';
+  @import 'base/typography';
+  @import 'components/buttons';
+  @import 'components/heroCarousel';
+  @import 'components/servicesCarousel';
+  @import 'components/testimonialsCarousel';
+  @import 'components/projectCard';
+  @import 'components/navbar';
+  @import 'components/footer';
+  @import 'layout/projectsGrid';
+  @import 'components/postCard';
+  @import 'layout/blogSideBar';
   @import 'pages/services';
   @import 'pages/about';
   @import 'pages/contact';
-  @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+  @import 'vendors/bootstrap';
+  
   
   

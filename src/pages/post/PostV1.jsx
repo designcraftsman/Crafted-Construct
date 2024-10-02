@@ -5,7 +5,7 @@ import Sidebar from '../../components/blog/blogV1/BlogSideBar';
 import post1 from '../../assets/images/V1/blog/1.jpg';
 import post2 from '../../assets/images/V1/blog/2.jpg';
 import { Container, Image } from 'react-bootstrap';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form,  Card } from 'react-bootstrap';
 import {  Row, Col, Badge } from 'react-bootstrap';
 import { FaUser, FaCalendarAlt } from 'react-icons/fa';
 import { FaFacebookF, FaInstagram,  FaTwitter } from "react-icons/fa"; 
@@ -107,7 +107,9 @@ const BlogSection = () => {
         <Form.Group className='col-12 mb-3'>
           <Form.Control as="textarea" rows={3} placeholder="Your Comment *" />
         </Form.Group>
-        <Button variant="info" className='col-2 m-0 ms-auto fw-bold ' type="submit">Post Comment</Button>
+       
+        <button className="btn col-1 ms-auto btn-info ">Post</button>
+        
       </Form>
         <hr />
       {comments.map((comment, index) => (

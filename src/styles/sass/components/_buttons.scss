@@ -1,0 +1,164 @@
+/* Custom button styles */
+button{
+  border:none;
+}
+
+.btn {
+  border-radius: 0; /* Change border radius */
+  padding: 10px 20px; /* Custom padding */
+  position: relative;
+  display: inline-block;
+  width: auto; 
+  height: auto;
+  background-color: transparent; /* Make background transparent for custom styles */
+  border: none;
+  cursor: pointer;
+  
+  span {         
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 1; /* Ensure text is above the pseudo-elements */
+  }
+  .icon{
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 1; /* Ensure text is above the pseudo-elements */
+  }
+}
+
+.btn-dark {
+  background-color: $primary; /* Custom background color */
+  border: none; /* Custom border color */
+  color: white; /* Custom text color */ 
+  padding: 10px 20px; /* Custom padding */
+  border-radius: 5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 1; /* Keep text above background */
+  position: relative;
+  transition: all 0.35s;
+  border: none;
+
+  span {
+    color: rgb(255, 255, 255);
+    transition: 0.2s 0.1s;
+    border: none;
+    &:hover {
+      color: $primary;
+      transition: 0.2s 0.1s;
+      border: none;
+    }
+  }
+  .icon{
+    color: rgb(255, 255, 255);
+    transition: 0.2s 0.1s;
+    border: none;
+    &:hover {
+      color: $primary;
+      transition: 0.2s 0.1s;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    border: none;
+    content: "";
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: $primary;
+    border-radius: 5px; /* Ensure it matches the button's border-radius */
+    transition: 0.3s ease-out;
+    z-index: 0; /* Keep it behind the text */
+    height: 0; /* Start hidden */
+  }
+
+  &:hover::before {
+    border: none;
+    height: 100%; /* Fill the button on hover */
+  }
+}
+
+/* Ensures the button has no unwanted hover effects on the sides */
+.btn.hover-filled-slide-down::before {
+  border: none;
+  height: 100%; /* Keep this for hover effect */
+}
+
+.btn.hover-filled-slide-down:hover::before {
+  border: none;
+  height: 0%; /* Reset on hover out */
+}
+
+
+
+  .btn-info{
+    background-color:#fff;
+    color: #1CD1E2;
+    border:2px solid $primary ;
+    border-radius: 5px ;
+    font-size: 17px;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 1;
+    transition: all 0.6s ease 0s;
+    overflow: hidden;
+    &:hover {
+      color: #fff !important;
+    }
+    &:before{
+      background: $primary;
+    content: "";
+    height: 1000px;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transition: all 0.2s linear 0s;
+    width: 0;
+    z-index: -1;
+    }
+    &:hover:before{
+      opacity: 1;
+      width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+  

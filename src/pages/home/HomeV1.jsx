@@ -19,7 +19,9 @@ function App() {
       <div className="container-fluid">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="fw-bolder fs-1 my-5">Our Latest Projects</h2>
-          <a href="#all-projects" className="btn btn-primary rounded-0 fw-bold fs-5">View All Projects</a>
+          <button  className="btn btn-dark  hover-filled-slide-down  ">
+            <span>View All Projects</span>
+            </button>
         </div>
         </div>
         <PortfolioList />

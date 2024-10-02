@@ -1,4 +1,358 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+}
+
+/* Custom button styles */
+button {
+  border: none;
+}
+
+.btn {
+  border-radius: 0; /* Change border radius */
+  padding: 10px 20px; /* Custom padding */
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: transparent; /* Make background transparent for custom styles */
+  border: none;
+  cursor: pointer;
+}
+.btn span {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 1; /* Ensure text is above the pseudo-elements */
+}
+.btn .icon {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 1; /* Ensure text is above the pseudo-elements */
+}
+
+.btn-dark {
+  background-color: #C0392B; /* Custom background color */
+  border: none; /* Custom border color */
+  color: white; /* Custom text color */
+  padding: 10px 20px; /* Custom padding */
+  border-radius: 5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 1; /* Keep text above background */
+  position: relative;
+  transition: all 0.35s;
+  border: none;
+}
+.btn-dark span {
+  color: rgb(255, 255, 255);
+  transition: 0.2s 0.1s;
+  border: none;
+}
+.btn-dark span:hover {
+  color: #C0392B;
+  transition: 0.2s 0.1s;
+  border: none;
+}
+.btn-dark .icon {
+  color: rgb(255, 255, 255);
+  transition: 0.2s 0.1s;
+  border: none;
+}
+.btn-dark .icon:hover {
+  color: #C0392B;
+  transition: 0.2s 0.1s;
+}
+.btn-dark::before {
+  position: absolute;
+  border: none;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #C0392B;
+  border-radius: 5px; /* Ensure it matches the button's border-radius */
+  transition: 0.3s ease-out;
+  z-index: 0; /* Keep it behind the text */
+  height: 0; /* Start hidden */
+}
+.btn-dark:hover::before {
+  border: none;
+  height: 100%; /* Fill the button on hover */
+}
+
+/* Ensures the button has no unwanted hover effects on the sides */
+.btn.hover-filled-slide-down::before {
+  border: none;
+  height: 100%; /* Keep this for hover effect */
+}
+
+.btn.hover-filled-slide-down:hover::before {
+  border: none;
+  height: 0%; /* Reset on hover out */
+}
+
+.btn-info {
+  background-color: #fff;
+  color: #1CD1E2;
+  border: 2px solid #C0392B;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 1;
+  transition: all 0.6s ease 0s;
+  overflow: hidden;
+}
+.btn-info:hover {
+  color: #fff !important;
+}
+.btn-info:before {
+  background: #C0392B;
+  content: "";
+  height: 1000px;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: all 0.2s linear 0s;
+  width: 0;
+  z-index: -1;
+}
+.btn-info:hover:before {
+  opacity: 1;
+  width: 100%;
+}
+
+.custom-hero-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.custom-hero-carousel .carousel-item-custom {
+  position: absolute;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: opacity 1s ease;
+  z-index: 5;
+}
+.custom-hero-carousel .carousel-item-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  z-index: 1;
+  background-image: inherit;
+}
+.custom-hero-carousel .carousel-item-custom .carousel-caption {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-40%);
+  text-align: start;
+  color: #ffffff;
+  max-width: 50%;
+}
+.custom-hero-carousel .carousel-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.custom-hero-carousel .carousel-nav button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.custom-hero-carousel .carousel-nav button.active {
+  opacity: 1;
+}
+.custom-hero-carousel .carousel-nav button:hover {
+  opacity: 1;
+}
+
+.servicesCarousel__wrapper {
+  position: relative;
+}
+.servicesCarousel__carousel {
+  height: 100%;
+}
+.servicesCarousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.servicesCarousel__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+.servicesCarousel__control--prev {
+  left: 10px;
+}
+.servicesCarousel__control--next {
+  right: 10px;
+}
+
+.custom-testimonial-carousel {
+  position: relative;
+  min-height: 90vh;
+}
+
+.testimonials-carousel-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.testimonials-carousel-nav button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.testimonials-carousel-nav button.active {
+  opacity: 1;
+}
+.testimonials-carousel-nav button:hover {
+  opacity: 1;
+}
+
+figure.snip1440 {
+  font-family: "Montserrat", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  background-color: #596E79;
+}
+
+figure.snip1440 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+figure.snip1440 figcaption {
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateX(10%);
+  transform: translateX(10%);
+}
+
+figure.snip1440 h3, figure.snip1440 .h3 {
+  letter-spacing: -1px;
+  margin: 0;
+  font-weight: 600;
+}
+
+figure.snip1440:after {
+  border: 2px solid #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  bottom: 50%;
+  left: 20px;
+  right: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+}
+
+figure.snip1440 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.snip1440:hover img,
+figure.snip1440.hover img {
+  opacity: 0.2;
+}
+
+figure.snip1440:hover figcaption,
+figure.snip1440.hover figcaption {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+figure.snip1440:hover:after,
+figure.snip1440.hover:after {
+  top: 20px;
+  bottom: 20px;
+  opacity: 0.9;
+}
+
 .navbar-light {
   background-color: transparent;
   padding: 1rem 0;
@@ -72,95 +426,6 @@
   color: #e0e0e0;
 }
 
-.custom-hero-carousel {
-  position: relative;
-  overflow: hidden;
-}
-.custom-hero-carousel .carousel-item-custom {
-  position: absolute;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  transition: opacity 1s ease;
-  z-index: 5;
-}
-.custom-hero-carousel .carousel-item-custom::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(70%);
-  z-index: 1;
-  background-image: inherit;
-}
-.custom-hero-carousel .carousel-item-custom .carousel-caption {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-40%);
-  text-align: start;
-  color: #ffffff;
-  max-width: 700px;
-}
-.custom-hero-carousel .carousel-nav {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-.custom-hero-carousel .carousel-nav button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  background: #ffffff;
-  opacity: 0.3;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.custom-hero-carousel .carousel-nav button.active {
-  opacity: 1;
-}
-.custom-hero-carousel .carousel-nav button:hover {
-  opacity: 1;
-}
-
-.servicesCarousel__wrapper {
-  position: relative;
-}
-.servicesCarousel__carousel {
-  height: 100%;
-}
-.servicesCarousel__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.servicesCarousel__control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1;
-}
-.servicesCarousel__control--prev {
-  left: 10px;
-}
-.servicesCarousel__control--next {
-  right: 10px;
-}
-
 .latest-projects .grid-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -187,40 +452,6 @@
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
-}
-.latest-projects .project-image:hover {
-  transform: scale(1.05);
-}
-
-.custom-testimonial-carousel {
-  position: relative;
-  min-height: 90vh;
-}
-
-.testimonials-carousel-nav {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-.testimonials-carousel-nav button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  background: #ffffff;
-  opacity: 0.3;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.testimonials-carousel-nav button.active {
-  opacity: 1;
-}
-.testimonials-carousel-nav button:hover {
-  opacity: 1;
 }
 
 .blog-post-card .post-image {
@@ -320,7 +551,7 @@
 }
 
 .contact-heading {
-  color: #e74c3c;
+  color: #C0392B;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -424,7 +655,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: "Roboto", sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -6035,7 +6266,7 @@ textarea.form-control-lg {
   z-index: var(--bs-tooltip-zindex);
   display: block;
   margin: var(--bs-tooltip-margin);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6145,7 +6376,7 @@ textarea.form-control-lg {
   z-index: var(--bs-popover-zindex);
   display: block;
   max-width: var(--bs-popover-max-width);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

@@ -64,9 +64,11 @@ const HeroSection = () => {
             style={{ backgroundImage: `url(${slide.image})` }} // Set background image dynamically
           >
             <div className="carousel-caption">
-              <h1 className="display-5 fw-bolder">{slide.title}</h1>
-              <p className="fs-3 fw-light">{slide.text}</p>
-              <button className="btn btn-lg btn-primary fw-bolder">{slide.buttonText}</button>
+              <h1 className="display-3 ">{slide.title}</h1>
+              <h2 className="fs-4 fw-light mb-3 ">{slide.text}</h2>
+              <button className="btn btn-dark  hover-filled-slide-down">
+                <span>{slide.buttonText}</span> 
+              </button>
             </div>
           </Carousel.Item>
         ))}
