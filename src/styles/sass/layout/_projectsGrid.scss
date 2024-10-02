@@ -1,29 +1,29 @@
 .latest-projects {
-    .grid-layout {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); // Two columns
-      grid-template-rows: 400px 250px ; // Adjust the height of each row here
-      grid-gap: 20px; // Space between items
-      // Define how many rows each item takes up
-      .grid-item-1 {
-        grid-row: span 1; // This image will take up the first row;
-        grid-column: 1;
-      }
-  
-      .grid-item-2 {
-        grid-row: span 2; // This image takes up 2 rows
-        grid-column: 2;
-      }
-  
-      .grid-item-3 {
-        grid-row: span 2; // This image takes up 1 row
-      }
-  
-      .grid-item-4 {
-        grid-row: span 1; // This image takes up 2 rows
-      }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Default: Two columns
+    grid-template-rows: 400px 250px; // Default row heights
+    grid-gap: 20px; // Space between items
+
+    // Define how many rows each item takes up
+    .grid-item-1 {
+      grid-row: span 1; // Takes up 1 row
+      grid-column: 1;
     }
-  
+
+    .grid-item-2 {
+      grid-row: span 2; // Takes up 2 rows
+      grid-column: 2;
+    }
+
+    .grid-item-3 {
+      grid-row: span 2; // Takes up 2 rows
+    }
+
+    .grid-item-4 {
+      grid-row: span 1; // Takes up 1 row
+    }
+
     .project-image {
       width: 100%;
       height: 100%;
@@ -31,5 +31,34 @@
       border-radius: 8px;
       transition: transform 0.3s ease-in-out;
     }
+
+    // Media query for tablet screens
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr; // Switch to one column layout
+      grid-template-rows: auto; // Let rows adjust automatically to content
+
+      .grid-item-1,
+      .grid-item-2,
+      .grid-item-3,
+      .grid-item-4 {
+        grid-row: span 1; // Each item takes 1 row
+        grid-column: 1; // All items take the full width of the column
+      }
+    }
+
+    // Media query for mobile screens
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr; // One column layout
+      grid-template-rows: auto; // Auto adjust the height of rows
+      grid-gap: 10px; // Reduce gap between grid items on smaller screens
+
+      .grid-item-1,
+      .grid-item-2,
+      .grid-item-3,
+      .grid-item-4 {
+        grid-row: span 1; // Each item takes 1 row
+        grid-column: 1; // Full width
+      }
+    }
   }
-  
+}

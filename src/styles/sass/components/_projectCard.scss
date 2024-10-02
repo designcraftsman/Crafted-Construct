@@ -16,23 +16,52 @@ figure.snip1440 * {
   transition: all 0.2s ease-out;
 }
 
+figure.snip1440 img {
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
 figure.snip1440 figcaption {
-  top: 20px;
-  left: 20px;
-  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
   position: absolute;
   opacity: 0;
   z-index: 1;
   -webkit-transform: translateX(10%);
   transform: translateX(10%);
 }
-figure.snip1440 h3 {
-  letter-spacing: -1px;
-  margin: 0;
-  font-weight: 600;
+
+figure.snip1440 h1 {
+  text-align: center;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding for tighter spacing */
 }
+
+figure.snip1440 p {
+  text-align: center;
+  margin: 5px 0 0 0; /* Small margin to keep them close */
+}
+
+figure.snip1440:hover figcaption,
+figure.snip1440.hover figcaption {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+
+
+
+
 figure.snip1440:after {
-  border: 2px solid #ffffff;
   position: absolute;
   content: "";
   display: block;
@@ -44,6 +73,7 @@ figure.snip1440:after {
   transition: all 0.4s ease-in-out;
   opacity: 0;
 }
+
 figure.snip1440 a {
   left: 0;
   right: 0;
@@ -52,18 +82,17 @@ figure.snip1440 a {
   position: absolute;
   z-index: 1;
 }
+
 figure.snip1440:hover img,
 figure.snip1440.hover img {
   opacity: 0.2;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); /* Zoom-in effect */
 }
-figure.snip1440:hover figcaption,
-figure.snip1440.hover figcaption {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-  opacity: 1;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
+
+
+
+
 figure.snip1440:hover:after,
 figure.snip1440.hover:after {
   top: 20px;

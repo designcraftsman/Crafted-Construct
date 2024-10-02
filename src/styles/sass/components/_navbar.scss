@@ -10,8 +10,7 @@
     }
   
     .navbar-toggler {
-      border-color: #fff;
-  
+      
       &:hover,
       &:focus {
         background-color: #f23d3d;
@@ -19,24 +18,163 @@
     }
   
     .navbar-collapse {
-      justify-content: flex-end;
-  
       .navbar-nav {
         .nav-link {
+          text-align: center;
           color: #fff;
           font-size: 1.1rem;
           margin: 0 1rem;
           transition: color 0.3s ease;
   
-          &:hover {
-            color: #f23d3d; // Custom hover color
-          }
-  
-          &.active {
-            color: #f23d3d;
-          }
         }
       }
     }
   }
+  
+
+  .navbar-nav {
+    &__link {
+      color: #FFF;
+      text-decoration: none;
+      margin: 0px 10px;
+      padding: 10px 10px;
+      position: relative; // Create stacking context
+      z-index: 2; // Ensures span text is on top
+      cursor: pointer;
+  
+      span {
+        position: relative; // Ensure text has its own stacking context
+        z-index: 2; // Text stays on top
+      }
+    }
+  }
+  
+  /* Pull up */
+  div.pullUp a {
+    position: relative; // Ensure stacking context for the link
+    z-index: 1; // Lower than the text to keep the hover effect behind
+  }
+  
+  div.pullUp a:before {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    content: '';
+    border-radius: 5px;
+    background: $primary;
+    z-index: 0; // Ensure it is behind the link and text
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  
+  div.pullUp a:hover:before {
+    height: 100%;
+    background-color: $primary;
+  }
+
+
+
+  .input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:#fff;
+  }
+  .input-search::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+  
+  .input-search-dark{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:$dark;
+  }
+  .input-search-dark::placeholder{
+    color:rgba(22, 22, 22, 0.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search-dark{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    color:$dark;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search-dark:focus ~ .input-search-dark{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(44, 43, 43, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search-dark:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(55, 54, 54, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
   

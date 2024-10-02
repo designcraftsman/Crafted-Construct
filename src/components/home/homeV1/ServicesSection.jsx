@@ -25,11 +25,11 @@ function UncontrolledExample() {
       {/* Carousel */}
       <Carousel ref={carouselRef} className="servicesCarousel__carousel" indicators={false} controls={false}>
         <Carousel.Item>
-          <div class="row">
-            <div className='col-lg-6 col-12 p-0 m-0'>
-              <img src={service1} className='img-fluid' alt="" />
+        <div class="row">
+            <div className='col-lg-6 col-md-6 col-12 p-0 m-0'>
+              <img src={service1} className='h-100 w-100 object-fit-cover' alt="" />
             </div>
-             <div className='col-lg-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
+             <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
                 <div className='my-auto '>
                   <h2 className="text-primary fw-semibold mb-3">Our Services</h2>
                   <h3 className='text-white fw-bold fs-2'>Residential Construction</h3>
@@ -43,10 +43,10 @@ function UncontrolledExample() {
 
         <Carousel.Item>
           <div class="row">
-            <div className='col-lg-6 col-12 p-0 m-0'>
-              <img src={service1} className='img-fluid' alt="" />
+            <div className='col-lg-6 col-md-6 col-12 p-0 m-0'>
+              <img src={service1} className='h-100 w-100 object-fit-cover' alt="" />
             </div>
-             <div className='col-lg-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
+             <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
                 <div className='my-auto '>
                   <h2 className="text-primary fw-semibold mb-3">Our Services</h2>
                   <h3 className='text-white fw-bold fs-2'>Residential Construction</h3>
@@ -58,11 +58,11 @@ function UncontrolledExample() {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div class="row">
-            <div className='col-lg-6 col-12 p-0 m-0'>
-              <img src={service1} className='img-fluid' alt="" />
+        <div class="row">
+            <div className='col-lg-6 col-md-6 col-12 p-0 m-0'>
+              <img src={service1} className='h-100 w-100 object-fit-cover' alt="" />
             </div>
-             <div className='col-lg-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
+             <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
                 <div className='my-auto '>
                   <h2 className="text-primary fw-semibold mb-3">Our Services</h2>
                   <h3 className='text-white fw-bold fs-2'>Residential Construction</h3>

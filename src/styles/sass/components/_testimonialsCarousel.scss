@@ -1,17 +1,10 @@
 .custom-testimonial-carousel {
     position: relative;
-    min-height: 90vh;
 }
 .testimonials-carousel-nav{
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
     z-index: 10;
-
     button {
+      margin: 5px;
       width: $nav-button-size;
       height: $nav-button-size;
       border-radius: 50%;

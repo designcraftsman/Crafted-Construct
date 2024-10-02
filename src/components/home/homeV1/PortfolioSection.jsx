@@ -44,7 +44,8 @@ const PortfolioList = () => {
           <figure className="snip1440 project-image">
             <img src={item.img} className="w-100 h-100 object-fit-cover" alt="sample54" />
             <figcaption>
-              <h1 className="m-auto display-6">{item.title}</h1>
+              <h1 className=" display-6 text-center">{item.title}</h1>
+              <p className=' text-center'>5 July, 2021</p>
             </figcaption>
           </figure>
         </a>

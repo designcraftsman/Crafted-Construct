@@ -15,15 +15,15 @@ function App() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <section className="latest-projects p-5">
-      <div className="container-fluid">
-        <div className="d-flex justify-content-between align-items-center mb-4">
+      <section className="latest-projects p-lg-5 p-2">
+   
+        <div className="d-flex justify-content-between flex-wrap align-items-center mb-4">
           <h2 className="fw-bolder fs-1 my-5">Our Latest Projects</h2>
           <button  className="btn btn-dark  hover-filled-slide-down  ">
             <span>View All Projects</span>
             </button>
         </div>
-        </div>
+        
         <PortfolioList />
       </section>
       <TestimonialsSection />
