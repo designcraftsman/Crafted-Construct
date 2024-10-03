@@ -7,18 +7,18 @@ figure.snip1440 {
   text-align: left;
   text-transform: uppercase;
   line-height: 1.4em;
-  background-color: $secondary;
+  background-color: $dark;
 }
 figure.snip1440 * {
   -webkit-box-sizing: padding-box;
   box-sizing: padding-box;
   -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 figure.snip1440 img {
   -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 figure.snip1440 figcaption {

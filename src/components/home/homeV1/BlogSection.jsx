@@ -61,18 +61,86 @@ const BlogCarousel = () => {
   const carouselRef = useRef(null);
 
   // State to keep track of the current active index
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Total number of slides (each slide displays 3 posts)
-  const totalSlides = Math.ceil(blogPosts.length / 3);
+  // Total number of slides (each slide displays 3 posts for large screens)
+  const totalSlidesLarge = Math.ceil(blogPosts.length / 3);
+
+  // Total number of slides (each slide displays 1 post for small screens)
+  const totalSlidesSmall = blogPosts.length;
 
   // Update the active index when the slide changes
   const handleSlide = (selectedIndex) => {
     setActiveIndex(selectedIndex);
   };
 
+  // Navigate to the previous slide
+  const goToPreviousSlide = () => {
+    if (activeIndex > 0) {
+      setActiveIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
+  // Navigate to the next slide
+  const goToNextSlide = () => {
+    if (activeIndex < totalSlidesLarge - 1 || activeIndex < totalSlidesSmall - 1) {
+      setActiveIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
   return (
-    <div className="blog-carousel p-5">
+    <div className="blog-carousel container-fluid p-lg-5 p-3">
+      <div className='d-flex align-items-center justify-content-between'>
+        <div>
+          <h2 className='fw-bold fs-5'>Our Blog</h2>
+          <h3 className="latest-news fw-bold text-primary fs-4">Latest News</h3>
+        </div>
+        <div className='large-screen-carousel'>
+          {/* Custom Previous Button */}
+          <button
+            className="btn btn-dark hover-filled-slide-down mx-5"
+            onClick={goToPreviousSlide}
+            aria-label="Previous"
+            disabled={activeIndex === 0}  // Disable if on the first slide
+          >
+            <FaArrowLeft className="icon fs-1 text-white" />
+          </button>
+
+          {/* Custom Next Button */}
+          <button
+            className="btn btn-dark hover-filled-slide-down"
+            onClick={goToNextSlide}
+            aria-label="Next"
+            disabled={activeIndex === totalSlidesLarge - 1}  // Disable if on the last slide
+          >
+            <FaArrowRight className="icon fs-1 text-white" />
+          </button>
+        </div>
+
+        <div className='small-screen-carousel'>
+          {/* Custom Previous Button */}
+          <button
+            className="btn btn-dark hover-filled-slide-down mx-2"
+            onClick={goToPreviousSlide}
+            aria-label="Previous"
+            disabled={activeIndex === 0}  // Disable if on the first slide
+          >
+            <FaArrowLeft className="icon fs-1 text-white" />
+          </button>
+
+          {/* Custom Next Button */}
+          <button
+            className="btn btn-dark hover-filled-slide-down"
+            onClick={goToNextSlide}
+            aria-label="Next"
+            disabled={activeIndex === totalSlidesSmall - 1}  // Disable if on the last slide
+          >
+            <FaArrowRight className="icon fs-1 text-white" />
+          </button>
+        </div>
+      </div>
+
+      {/* Large Screen Carousel */}
       <Carousel
         ref={carouselRef}
         indicators={false}
@@ -80,40 +148,11 @@ const BlogCarousel = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
+        className='large-screen-carousel'
       >
-        <div className='d-flex align-items-center justify-content-between'>
-          <div>
-            <h2 className='fw-bold fs-4'>Our Blog</h2>
-            <h3 className="latest-news fw-bold text-primary">Latest News</h3>
-          </div>
-          <div>
-            {/* Custom Previous Button */}
-            <button
-              className="btn btn-dark hover-filled-slide-down p-3 mx-5"
-              onClick={() => carouselRef.current.prev()}
-              aria-label="Previous"
-              disabled={activeIndex === 1}  // Disable if on the first slide
-            >
-              <FaArrowLeft className="servicesCarousel__icon icon fs-3 text-white" />
-            </button>
-
-            {/* Custom Next Button */}
-            <button
-              className="btn btn-dark hover-filled-slide-down p-3"
-              onClick={() => carouselRef.current.next()}
-              aria-label="Next"
-              disabled={activeIndex === totalSlides }  // Hide if on the last slide
-            >
-              <FaArrowRight className="servicesCarousel__icon icon fs-3 text-white" />
-            </button>
-          </div>
-        </div>
-
-        {/* Generate Carousel Items */}
-        {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+        {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
             <div className="d-flex justify-content-evenly my-5">
-              {/* Display three unique cards per carousel item */}
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
                 <Card className="col-3" key={idx}>
                   <Card.Img variant="top" src={post1} alt={post.title} />
@@ -131,6 +170,36 @@ const BlogCarousel = () => {
                 </Card>
               ))}
             </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
+      {/* Small Screen Carousel */}
+      <Carousel
+        ref={carouselRef}
+        indicators={false}
+        controls={false}
+        interval={null}
+        activeIndex={activeIndex}
+        onSelect={handleSlide}
+        className='small-screen-carousel'
+      >
+        {blogPosts.map((slide, index) => (
+          <Carousel.Item key={index}>
+            <Card className="col-12 my-3" key={index}>
+              <Card.Img variant="top" src={post1} alt={slide.title} />
+              <Card.Body>
+                <Card.Title className='fw-bold fs-4'>{slide.title}</Card.Title>
+                <Card.Text className="fw-normal fs-6">{slide.description}</Card.Text>
+                <div className="d-flex align-items-center">
+                  <img src={person1} alt="author" className="rounded-circle img-fluid col-1 m-0" />
+                  <div className="ms-2 my-2">
+                    <p className='fw-bold m-0'>{slide.author}</p>
+                    <p className='m-0'>{slide.date}</p>
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
           </Carousel.Item>
         ))}
       </Carousel>

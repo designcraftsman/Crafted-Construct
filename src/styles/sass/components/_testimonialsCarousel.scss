@@ -24,3 +24,15 @@
     }
   
 }
+
+.small-screen-carousel{
+  @media screen and (min-width: 991px) {
+    display: none;
+  }
+}
+
+.large-screen-carousel{
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}

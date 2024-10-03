@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 import Logo from '../../../assets/logos/blackLogo.svg';
 import { CiSearch } from "react-icons/ci";
+import { CgMenuLeftAlt } from "react-icons/cg";
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
@@ -10,10 +10,10 @@ const NavigationBar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      if (scrollPosition > 50) { // Adjust this value based on when you want the class to be applied
-        setNavbarClass('bg-white navbar-light shadow-sm');
+      if (scrollPosition > 50) {
+        setNavbarClass('bg-white navbar-light');
       } else {
-        setNavbarClass('navbar-light');
+        setNavbarClass(' navbar-light');
       }
     };
 
@@ -25,40 +25,57 @@ const NavigationBar = () => {
   }, []);
 
   return (
-    <Navbar expand="lg" className={`px-3 m-0 p-0  fixed-top border-bottom border-1 ${navbarClass}`}>
-      <Navbar.Brand href=".">
-        <div className='d-flex align-items-center text-dark fw-bolder fs-6'>
+    <nav className={`navbar navbar-expand-lg px-3 m-0 p-0 fixed-top ${navbarClass}`}>
+      {/* Logo - Outside of Collapsing Nav */}
+      <a className="navbar-brand  order-1" href=".">
+        <div className="d-flex align-items-center text-dark fw-bolder fs-6">
           <img src={Logo} alt="CraftedConstruct" className="logo" />
-          <div className='d-flex flex-column ms-3'>
+          <div className="flex-column ms-3 d-lg-flex d-sm-flex d-none">
             Crafted
-            <span className='text-primary p-0 m-0'>Construct</span>
+            <span className="text-primary p-0 m-0">Construct</span>
           </div>
         </div>
-      </Navbar.Brand>
+      </a>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      {/* Custom Toggle Button */}
+      <button className="navbar-toggler custom-toggle border-0  " type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <CgMenuLeftAlt className="text-dark fs-1" />
+      </button>
 
-      <Navbar.Collapse id="basic-navbar-nav"> 
-        <Nav className="mx-auto lightGreen pullUp navbar-nav">
-          <Nav.Link href="." className="navbar-nav__link text-dark"><span>Home</span></Nav.Link>
-          <Nav.Link href="services-v1" className="navbar-nav__link text-dark"><span>Services</span></Nav.Link>
-          <Nav.Link href="portfolio-v1" className="navbar-nav__link text-dark"><span>Portfolio</span></Nav.Link>
-          <Nav.Link href="blog-v1" className="navbar-nav__link text-dark"><span>Blog</span></Nav.Link>
-          <Nav.Link href="contact-v1" className="navbar-nav__link text-dark"><span>Contact</span></Nav.Link>
-          <Nav.Link href="about-v1" className="navbar-nav__link text-dark"><span>About</span></Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-
-      <div>
-        
-        <div class="search-box-dark">
-        <button class="btn-search-dark">
-          <CiSearch className='search-icon text-dark fs-2' />
-        </button>
-        <input type="text" class="input-search-dark" placeholder="Type to Search..."/>
+      {/* Collapsible Links */}
+      <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0  order-3 border-lg-none  rounded p-2" id="basic-navbar-nav">
+        <ul className="navbar-nav m-0 mx-auto bg-white border-lg-0 border-md border-sm ">
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="."><span>Home</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="services-v1"><span>Services</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="portfolio-v1"><span>Portfolio</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="blog-v1"><span>Blog</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="contact-v1"><span>Contact</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link navbar-nav__link text-dark" href="about-v1"><span>About</span></a>
+          </li>
+        </ul>
       </div>
+
+      {/* Search Icon - Outside of Collapsing Nav */}
+      <div className="d-flex align-items-center order-2">
+        <div className="search-box-dark">
+          <button className="btn-search-dark">
+            <CiSearch className="search-icon text-dark fs-2" />
+          </button>
+          <input type="text" className="input-search-dark" placeholder="Type to Search..." />
+        </div>
       </div>
-    </Navbar>
+    </nav>
   );
 };
 

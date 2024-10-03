@@ -11,7 +11,7 @@ const NavigationBar = () => {
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
-        setNavbarClass('bg-dark navbar-dark');
+        setNavbarClass('bg-dark navbar-light navbar-scrolled');
       } else {
         setNavbarClass('navbar-light');
       }
@@ -27,7 +27,7 @@ const NavigationBar = () => {
   return (
     <nav className={`navbar navbar-expand-lg px-3 m-0 p-0 fixed-top ${navbarClass}`}>
       {/* Logo - Outside of Collapsing Nav */}
-      <a className="navbar-brand  order-1" href=".">
+      <a className="navbar-brand order-1" href=".">
         <div className="d-flex align-items-center text-white fw-bolder fs-6">
           <img src={Logo} alt="CraftedConstruct" className="logo" />
           <div className="flex-column ms-3 d-lg-flex d-sm-flex d-none">
@@ -38,13 +38,13 @@ const NavigationBar = () => {
       </a>
 
       {/* Custom Toggle Button */}
-      <button className="navbar-toggler custom-toggle  " type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler custom-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
         <CgMenuLeftAlt className="text-white fs-1" />
       </button>
 
       {/* Collapsible Links */}
-      <div className="collapse navbar-collapse pullUp order-lg-2 order-3  rounded p-2" id="basic-navbar-nav">
-        <ul className="navbar-nav mx-auto lightGreen">
+      <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
+        <ul className="navbar-nav m-0 mx-auto">
           <li className="nav-item">
             <a className="nav-link navbar-nav__link" href="."><span>Home</span></a>
           </li>

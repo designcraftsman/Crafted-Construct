@@ -50,34 +50,34 @@ const WhyChooseUs = () => {
       </h3>
 
       <div className="row p-3 d-flex justify-content-between align-items-center">
-        <div className="col-lg-2 text-lg-start text-center my-5">
-          <span className="display-5 text-primary fw-bold align-items-center">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+          <span className="display-5 text-primary fw-lighter align-items-center">
             <MdOutlineHomeWork />
-            <span id="count1">0</span>+
+            <span id="count1" className="mx-3">0</span>+
           </span>
           <hr />
           <h2 className="fs-5 fw-light">Projects</h2>
         </div>
-        <div className="col-lg-2 text-lg-start text-center my-5">
-          <span className="display-5 text-primary fw-bold align-items-center">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+          <span className="display-5 text-primary fw-lighter align-items-center">
             <RiTeamFill />
-            <span id="count2">0</span>
+            <span id="count2" className="mx-3">0</span>
           </span>
           <hr />
           <h2 className="fs-5 fw-light">Team Members</h2>
         </div>
-        <div className="col-lg-2 text-lg-start text-center my-5">
-          <span className="display-5 text-primary fw-bold align-items-center">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+          <span className="display-5 text-primary fw-lighter align-items-center">
             <FaBuilding />
-            <span id="count3">0</span>+
+            <span id="count3" className="mx-3">0</span>+
           </span>
           <hr />
           <h2 className="fs-5 fw-light">Agencies</h2>
         </div>
-        <div className="col-lg-2 text-lg-start text-center my-5">
-          <span className="display-5 text-primary fw-bold align-items-center">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+          <span className="display-5  text-primary fw-lighter align-items-center">
             <FaBusinessTime />
-            <span id="count4">0</span>
+            <span id="count4" className="mx-3">0</span>
           </span>
           <hr />
           <h2 className="fs-5 fw-light">Years of Experience</h2>

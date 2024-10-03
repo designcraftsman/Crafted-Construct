@@ -32,17 +32,19 @@ $nav-button-size: 20px;
     .carousel-caption {
       z-index: 10;
       position: absolute;
-      top: 50%;
+      top: 50%; // Center vertically
       left: 10%;
-      transform: translateY(-40%);
+      transform: translateY(-50%); // Adjust to align to the center vertically
       text-align: start;
       color: $white-color;
       max-width: 50%;
+    
       @media (max-width: 1280px) {
-       top: 45%;
-       max-width: 90%;
+        left: 5%; // Adjust if needed for smaller screens
+        max-width: 90%;
       }
     }
+    
   }
 
   .carousel-nav {

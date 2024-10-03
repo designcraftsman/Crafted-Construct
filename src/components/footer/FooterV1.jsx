@@ -9,15 +9,15 @@ const Footer = () => {
     <footer className="footer-section py-5">
       <Container>
         <Row className="justify-content-between ">
-          <Col md={4} className="text-center text-md-start">
-            <div className='d-flex align-items-center text-white fw-bolder fs-6'>
+          <Col md={4} className="text-center text-md-start my-3">
+            <div className='d-flex align-items-center justify-content-md-start justify-content-center m-auto text-white fw-bolder fs-6'>
                 <img src={Logo} alt="CraftedConstruct" className="img-fluid" />
                 <div className='d-flex flex-column ms-3 fs-6'>
                 Crafted
                 <span className='text-primary p-0 m-0'>Construct</span>
                 </div>
             </div>
-            <div className="social-icons mt-5 m-auto">
+            <div className="social-icons mt-5 m-auto ">
               <FaFacebookF className="social-icon border p-1 fs-1 rounded" />
               <FaInstagram className="social-icon border p-1 fs-1 rounded" />
               <FaLinkedinIn className="social-icon border p-1 fs-1 rounded" />
@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col md={2} className="text-start mx-auto">
+          <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Company</h6>
             <ul className="list-unstyled mt-4">
               <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">Our Story</a></li>
@@ -33,7 +33,7 @@ const Footer = () => {
             </ul>
           </Col>
 
-          <Col md={2} className="text-start mx-auto">
+          <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Get Help</h6>
             <ul className="list-unstyled mt-4">
               <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">FAQ</a></li>
@@ -41,7 +41,7 @@ const Footer = () => {
               <li className="mb-3"><a href="#contact" className="footer-link  opacity-75">Privacy</a></li>
             </ul>
           </Col>
-          <Col md={2} className="text-start mx-auto">
+          <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Community</h6>
             <ul className="list-unstyled mt-4">
               <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">Blog</a></li>
