@@ -8,7 +8,8 @@ function App() {
     <div className="App">
       <NavigationBar />
       <div className='latest-projects p-5 my-5'>
-      <PortfolioList />
+        {/* Pass a prop to control the visibility of the Show More button */}
+        <PortfolioList showMoreButton={true} />
       </div>
       <Footer />
     </div>

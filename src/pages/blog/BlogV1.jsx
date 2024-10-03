@@ -63,14 +63,14 @@ const BlogSection = () => {
   return (
     <React.Fragment>
     <NavigationBar />
-    <div className="blog-section container my-5 py-5">
-      <div className="row">
-        <div className="col-md-8">
+    <div className="blog-section container-fluid my-5 py-5">
+      <div className="row ">
+        <div className="col-lg-8 col-md-8 col-12">
           {blogPosts.map((post, index) => (
             <BlogPostCard key={index} {...post} />
           ))}
         </div>
-        <div className="col-md-3 mx-auto">
+        <div className="col-lg-3 col-md-4 col-12 mx-auto">
           <Sidebar categories={categories} recentPosts={recentPosts} />
         </div>
       </div>

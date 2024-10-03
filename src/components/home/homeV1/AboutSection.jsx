@@ -43,13 +43,13 @@ const WhyChooseUs = () => {
   }, []); // Empty dependency array to run once on component mount
 
   return (
-    <div className="container text-start px-5 py-5 my-5 why-choose-us">
+    <div className="container text-start p-4 py-5 my-5 why-choose-us m-auto">
       <h2 className="display-4 fw-semibold mb-5">Why Choose Us?</h2>
       <h3 className=" display-6 text-muted col-lg-7 col-12 mb-5">
         At CraftedConstruct, we merge expertise with artistry to create exceptional spaces.
       </h3>
 
-      <div className="row p-3 d-flex justify-content-between align-items-center">
+      <div className="row  d-flex justify-content-between align-items-center">
         <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
           <span className="display-5 text-primary fw-lighter align-items-center">
             <MdOutlineHomeWork />

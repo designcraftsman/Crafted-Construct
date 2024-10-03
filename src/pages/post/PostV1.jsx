@@ -105,10 +105,10 @@ const BlogSection = () => {
           <Form.Control type="email" placeholder="Your Email *" />
         </Form.Group>
         <Form.Group className='col-12 mb-3'>
-          <Form.Control as="textarea" rows={3} placeholder="Your Comment *" />
+          <Form.Control as="textarea" rows={3} className='mb-3' placeholder="Your Comment *" />
+          <button className="btn btn-sm col-md-2 btn-info ">Post</button>
         </Form.Group>
        
-        <button className="btn col-1 ms-auto btn-info ">Post</button>
         
       </Form>
         <hr />
@@ -126,7 +126,7 @@ const BlogSection = () => {
     </div>
     </Container>
         </div>
-        <div className="col-md-3 mx-auto">
+        <div className="col-md-4 mx-auto">
           <Sidebar categories={categories} recentPosts={recentPosts} />
         </div>
       </div>

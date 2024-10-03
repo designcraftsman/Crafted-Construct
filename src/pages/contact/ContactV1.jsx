@@ -10,13 +10,13 @@ const ServicesSection = () => {
       <NavigationBar />
         <div className='container-fluid services-header p-0 m-0 position-relative'>
             <img src={header} className=' services-header__image' alt="" />
-            <h1 className='text-white fw-bold display-3 services-header__text'>Contact Us</h1>
+            <h1 className='text-white  display-3 services-header__text'>Contact Us</h1>
         </div>
         
-    <div className="container contact-section my-5 p-5">
-      <div className="row">
+    <div className="container contact-section my-5">
+      <div className="row gap-5">
         {/* Form Section */}
-        <div className="col-md-8">
+        <div className="col-lg-8">
           <h4 className="contact-heading text-decoration-underline">GET IN TOUCH</h4>
           <p>
             Our objective at Woodenx is to bring together our visitor's societies
@@ -65,27 +65,27 @@ const ServicesSection = () => {
         </div>
 
         {/* Contact Info Section */}
-        <div className="col-md-3 contact-info m-auto">
+        <div className="col-lg-3 contact-info m-auto">
           <ul className="list-unstyled fs-5">
             <li className="mb-3">
-                <div className='d-flex align-items-center '>
-              <FaMapMarkerAlt className='text-primary fs-1 m-2' /> 
+                <div className='d-flex align-items-center gap-3'>
+              <FaMapMarkerAlt className='text-muted fs-1 ' /> 
               <span className='fs-5'>9989 Hilldale Rd.
               Los Angeles, CA 90004
               </span>
               </div>
             </li>
             <li className="mb-3">
-            <div className='d-flex align-items-center '>
-              <FaPhoneAlt className='text-primary fs-1 m-2' /> 
+            <div className='d-flex align-items-center gap-3'>
+              <FaPhoneAlt className='text-muted fs-1 ' /> 
               <span className='fs-5'>9989 Hilldale Rd.
               Los Angeles, CA 90004
               </span>
               </div>
             </li>
             <li className="mb-3">
-            <div className='d-flex align-items-center '>
-              <FaClock className='text-primary fs-1 m-2' /> 
+            <div className='d-flex align-items-center gap-3'>
+              <FaClock className='text-muted fs-1 ' /> 
               <span className='fs-5'>Monday – Friday 6 am to 8 pm EST
               </span>
               </div>

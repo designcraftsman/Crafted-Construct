@@ -3,9 +3,10 @@ import React from 'react';
 
 const BlogPostCard = ({ image, title, category, description, author, date }) => {
   return (
-    <div className="blog-post-card d-flex mb-4">
-      <img src={image} alt={title} className="post-image me-3" />
-      <div className='my-auto'>
+    <a href="post-v1" className='text-decoration-none text-dark'>
+    <div className="blog-post-card row mb-4 m-auto my-4 gap-1 ">
+      <img src={image} alt={title} className=" col-lg-6 col-md-6 col-12   " />
+      <div className='my-auto col-lg-5 col-md-5 col-12  '>
         <h5>{title}</h5>
         <div className="post-category badge  mb-2">{category}</div>
         <p className="post-description">{description}</p>
@@ -18,6 +19,7 @@ const BlogPostCard = ({ image, title, category, description, author, date }) => 
         </div>
       </div>
     </div>
+    </a>
   );
 };
 

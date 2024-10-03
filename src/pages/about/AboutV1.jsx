@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <NavigationBar />
         <div className='container-fluid m-0 p-0'>
-          <div className='row m-0 vh-100'>
-            <div className='col-6 bg-secondary text-white '>
+          <div className='row m-0  mb-5'>
+            <div className='col-lg-6 col-12 bg-secondary text-white '>
                 <div className='mt-5 p-5'>
                   <h1 className='fs-2 fw-normal mb-3'>About </h1> 
                   <h2 className='display-1 fw-bolder'>Crafted</h2>
@@ -24,22 +24,22 @@ function App() {
                   </p>
                 </div>
             </div>
-            <div className='col-6 m-0 p-0'>
+            <div className='col-lg-6 col-12 m-0 p-0'>
               <img src={about1} className='object-fit-cover w-100 h-100 background-image' alt='about1' />
             </div>
           </div>
         </div>
-        <AboutSection />
+        <AboutSection className='my-5' />
         <div className='container-fluid m-0 p-0'>
           <div className='row m-0 '>
-          <div className='col-6 bg-secondary text-white d-flex align-items-center justify-content-center'>
+          <div className='col-lg-6 bg-secondary text-white d-flex align-items-center justify-content-center'>
                 
                     <p className='fw-normal fs-1 p-5'>
                         Ac feugiat sed lectus vest ibu lum mattis ull amcorper veli ti sed. Sol licitud in tempor id eu nisl nunc mi ipsum fau cibus vita niu mae.
                     </p>
                 
             </div>
-            <div className='col-6 m-0 p-0 h-100'>
+            <div className='col-lg-6  m-0 p-0 h-100'>
               <div className='row m-0 p-0 '>
                 <div className='col-6 m-0 p-0'>
                   <img src={about2} className='object-fit-cover w-100 h-100 background-image' alt='about1' />

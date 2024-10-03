@@ -16,23 +16,25 @@
     &__control {
       position: absolute;
       top: 50%;
+      transform: translateY(-50%); // This ensures vertical centering
       background: none;
       border: none;
       cursor: pointer;
       z-index: 1;
+    
       @media (max-width: 768px) {
         top: 37%;
+        transform: translateY(-37%); // Adjust to keep it centered at 37% for smaller screens
         max-width: 90%;
-       }
-  
+      }
+    
       &--prev {
         left: 10px;
       }
-  
+    
       &--next {
         right: 10px;
       }
-  
     }
   }
   

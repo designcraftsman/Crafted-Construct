@@ -1,32 +1,52 @@
 .latest-projects {
   .grid-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // Default: Two columns
-    grid-template-rows: 400px 250px; // Default row heights
+    grid-template-columns: repeat(3, 1fr); // Default: Three columns
+    grid-auto-rows: minmax(200px, auto); // Automatically adjust row heights with a minimum of 200px
     grid-gap: 20px; // Space between items
 
-    // Define how many rows each item takes up
-    .grid-item-1 {
+    // Define layout for the first 4 grid items
+    .grid-item-1,
+    .grid-item-4,
+    .grid-item-7,
+    .grid-item-8 {
       grid-row: span 1; // Takes up 1 row
-      grid-column: 1;
     }
 
-    .grid-item-2 {
-      grid-row: span 2; // Takes up 2 rows
-      grid-column: 2;
-    }
-
+    .grid-item-2,
     .grid-item-3 {
       grid-row: span 2; // Takes up 2 rows
     }
 
-    .grid-item-4 {
-      grid-row: span 1; // Takes up 1 row
+    .grid-item-5,
+    .grid-item-6 {
+      grid-row: span 1; // Each takes 1 row
+    }
+
+    // Define inverse layout for grid items 5, 6, 7, 8
+    .grid-item-5 {
+      grid-column: 1;
+      grid-row: span 1; // Matches layout of grid-item-4
+    }
+
+    .grid-item-6 {
+      grid-column: 2;
+      grid-row: span 2; // Matches layout of grid-item-3
+    }
+
+    .grid-item-7 {
+      grid-column: 3;
+      grid-row: span 2; // Matches layout of grid-item-2
+    }
+
+    .grid-item-8 {
+      grid-column: span 1;
+      grid-row: span 1; // Matches layout of grid-item-1
     }
 
     .project-image {
       width: 100%;
-      height: 100%;
+      height: 100%; // Ensure images fill the grid row on larger screens
       object-fit: cover;
       border-radius: 8px;
       transition: transform 0.3s ease-in-out;
@@ -35,29 +55,43 @@
     // Media query for tablet screens
     @media (max-width: 992px) {
       grid-template-columns: 1fr; // Switch to one column layout
-      grid-template-rows: auto; // Let rows adjust automatically to content
+      grid-auto-rows: auto; // Adjust row height automatically based on content
 
       .grid-item-1,
       .grid-item-2,
       .grid-item-3,
-      .grid-item-4 {
+      .grid-item-4,
+      .grid-item-5,
+      .grid-item-6,
+      .grid-item-7,
+      .grid-item-8 {
         grid-row: span 1; // Each item takes 1 row
-        grid-column: 1; // All items take the full width of the column
+        grid-column: 1; // Full width of column
       }
     }
 
     // Media query for mobile screens
     @media (max-width: 576px) {
       grid-template-columns: 1fr; // One column layout
-      grid-template-rows: auto; // Auto adjust the height of rows
-      grid-gap: 10px; // Reduce gap between grid items on smaller screens
+      grid-auto-rows: auto; // Adjust row height automatically
+      grid-gap: 10px; // Reduce gap
 
       .grid-item-1,
       .grid-item-2,
       .grid-item-3,
-      .grid-item-4 {
+      .grid-item-4,
+      .grid-item-5,
+      .grid-item-6,
+      .grid-item-7,
+      .grid-item-8 {
         grid-row: span 1; // Each item takes 1 row
-        grid-column: 1; // Full width
+        grid-column: 1; // Full width of column
+      }
+
+      // Fixed height for small screens
+      .project-image {
+        height: 400px; // Set a fixed height for images on small screens
+        object-fit: cover; // Ensure image scales properly
       }
     }
   }
