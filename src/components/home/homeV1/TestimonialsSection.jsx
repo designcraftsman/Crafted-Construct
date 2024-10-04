@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { FaRegMessage } from "react-icons/fa6";
+import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
 import person1 from '../../../assets/images/V1/home/testimonialsSection/1.jpg';
 
 const HeroSection = () => {
@@ -69,15 +70,15 @@ const HeroSection = () => {
   }, [isPaused, totalSlides]);
 
   return (
-    <div className='position-relative my-5'>
+    <div className='position-relative my-5 reveal'>
       <div
         className="custom-testimonial-carousel bg-secondary"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         <div className="text-center py-5">
-          <h2 className="fw-bolder text-primary fs-2 mb-3"><FaRegMessage /> Testimonials </h2>
-          <h3 className="fw-light display-5 fw-semibold text-white mb-3">What Our Clients Say</h3>
+          <h2 className="fw-bolder text-primary fs-2 mb-3 reveal"><FaRegMessage /> Testimonials </h2>
+          <h3 className="fw-light display-5 fw-semibold text-white mb-3 reveal">What Our Clients Say</h3>
         </div>
 
         <Carousel
@@ -91,18 +92,22 @@ const HeroSection = () => {
             <Carousel.Item key={i}>
               <div className='row py-3'>
                 {group.map((slide, j) => (
-                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded `}>
+                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card reveal `}>
                     <div className='row align-items-center'>
-                      <div className='col-2'>
-                        <img src={slide.image} className="img-fluid rounded-circle" alt="" />
+                      <div className='col-3'>
+                        <img src={slide.image} className="user-image" alt="" />
                       </div>
                       <div className="col-9">
                         <h3 className='fw-bold fs-5'>{slide.title}</h3>
-                        <span className='text-primary'>CEO of Alsa</span>
+                        <span className='text-muted'>CEO of Alsa</span>
                       </div>
                     </div>
                     <hr className='border-primary border-3' />
-                    <p className='fw-normal'>{slide.text}</p>
+                    <FaQuoteLeft className='text-primary  fs-4'/>
+                    <p className='fw-light my-3 text-center px-3'>{slide.text}</p>
+                    <div className='text-end mb-auto'>
+                      <FaQuoteRight className='text-primary text-end mb-auto fs-4'/>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -121,10 +126,10 @@ const HeroSection = () => {
           {slides.map((slide, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className={`col-10 h-100 bg-white m-auto p-3 rounded `}>
+                <div className={`col-10 h-100 bg-white m-auto p-3 testimonial-card rounded  `}>
                   <div className='row align-items-center'>
-                    <div className='col-2'>
-                      <img src={slide.image} className="img-fluid rounded-circle" alt="" />
+                    <div className='col-3'>
+                      <img src={slide.image} className="user-image" alt="" />
                     </div>
                     <div className="col-9">
                       <h3 className='fw-bold fs-5'>{slide.title}</h3>
@@ -132,14 +137,18 @@ const HeroSection = () => {
                     </div>
                   </div>
                   <hr className='border-primary border-3' />
-                  <p className='fw-normal'>{slide.text}</p>
+                  <FaQuoteLeft className='text-primary  fs-3'/>
+                  <p className='fw-normal my-3 text-center px-3'>{slide.text}</p>
+                  <div className='text-end mb-auto'>
+                      <FaQuoteRight className='text-primary text-end mb-auto fs-3'/>
+                    </div>
                 </div>
               </div>
             </Carousel.Item>
           ))}
         </Carousel>
 
-        <div className="testimonials-carousel-nav small-screen-carousel text-center py-5 ">
+        <div className="testimonials-carousel-nav small-screen-carousel text-center py-5  ">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -148,7 +157,7 @@ const HeroSection = () => {
             />
           ))}
         </div>
-        <div className="testimonials-carousel-nav large-screen-carousel text-center py-5">
+        <div className="testimonials-carousel-nav large-screen-carousel text-center py-5  reveal">
           {groupedSlides.map((_, i) => (
             <button
               key={i}

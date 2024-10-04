@@ -44,13 +44,13 @@ const WhyChooseUs = () => {
 
   return (
     <div className="container text-start p-4 py-5 my-5 why-choose-us m-auto">
-      <h2 className="display-4 fw-semibold mb-5">Why Choose Us?</h2>
-      <h3 className=" display-6 text-muted col-lg-7 col-12 mb-5">
+      <h2 className="display-4 fw-semibold mb-5 reveal">Why Choose Us?</h2>
+      <h3 className=" display-6 text-muted col-lg-7 col-12 mb-5 reveal">
         At CraftedConstruct, we merge expertise with artistry to create exceptional spaces.
       </h3>
 
       <div className="row  d-flex justify-content-between align-items-center">
-        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5 reveal">
           <span className="display-5 text-primary fw-lighter align-items-center">
             <MdOutlineHomeWork />
             <span id="count1" className="mx-3">0</span>+
@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
           <hr />
           <h2 className="fs-5 fw-light">Projects</h2>
         </div>
-        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5 reveal">
           <span className="display-5 text-primary fw-lighter align-items-center">
             <RiTeamFill />
             <span id="count2" className="mx-3">0</span>
@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
           <hr />
           <h2 className="fs-5 fw-light">Team Members</h2>
         </div>
-        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5 reveal">
           <span className="display-5 text-primary fw-lighter align-items-center">
             <FaBuilding />
             <span id="count3" className="mx-3">0</span>+
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
           <hr />
           <h2 className="fs-5 fw-light">Agencies</h2>
         </div>
-        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5">
+        <div className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5 reveal">
           <span className="display-5  text-primary fw-lighter align-items-center">
             <FaBusinessTime />
             <span id="count4" className="mx-3">0</span>

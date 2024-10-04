@@ -49,14 +49,14 @@ function UncontrolledExample() {
         {services.map((service, index) => (
           <Carousel.Item key={index}>
             <div className="row">
-              <div className='col-lg-6 col-md-6 col-12 p-0 m-0'>
-                <img src={service.img} className='h-100 w-100 object-fit-cover' alt="" />
+              <div className='col-lg-6 col-md-6 col-12 p-0 m-0 reveal'>
+                <img src={service.img} className='h-100 w-100 object-fit-cover ' alt="" />
               </div>
-              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5'>
+              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 reveal'>
                 <div className='my-auto'>
-                  <h2 className="text-primary fw-semibold mb-3">{service.title}</h2>
-                  <h3 className='text-white fw-bold fs-2'>{service.subtitle}</h3>
-                  <p className='fw-light fs-5 text-white w-75'>
+                  <h2 className="text-primary fw-semibold mb-3 reveal">{service.title}</h2>
+                  <h3 className='text-white fw-bold fs-2 reveal'>{service.subtitle}</h3>
+                  <p className='fw-light fs-5 text-white w-75 reveal'>
                     {service.description}
                   </p>
                 </div>
@@ -68,7 +68,7 @@ function UncontrolledExample() {
 
       {/* Custom Previous Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--prev btn btn-dark hover-filled-slide-down"
+        className="servicesCarousel__control servicesCarousel__control--prev btn btn-dark hover-filled-slide-down reveal"
         onClick={handlePrevClick}
         aria-label="Previous"
       >
@@ -77,7 +77,7 @@ function UncontrolledExample() {
 
       {/* Custom Next Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--next btn btn-dark hover-filled-slide-down"
+        className="servicesCarousel__control servicesCarousel__control--next btn btn-dark hover-filled-slide-down reveal"
         onClick={handleNextClick}
         aria-label="Next"
       >

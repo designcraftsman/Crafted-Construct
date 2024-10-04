@@ -15,15 +15,6 @@ const portfolioItems = [
   { img: portfolio3, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
   { img: portfolio1, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
   { img: portfolio4, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio2, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio3, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio4, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio3, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio2, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio4, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio3, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio1, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
-  { img: portfolio4, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },
 ];
 
 const PortfolioList = ({ showMoreButton }) => {

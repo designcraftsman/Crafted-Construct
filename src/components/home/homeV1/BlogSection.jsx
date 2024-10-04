@@ -90,7 +90,7 @@ const BlogCarousel = () => {
 
   return (
     <div className="blog-carousel container-fluid p-lg-5 p-3">
-      <div className='d-flex align-items-center justify-content-between'>
+      <div className='d-flex align-items-center justify-content-between reveal'>
         <div>
           <h2 className='fw-bold fs-5'>Our Blog</h2>
           <h3 className="latest-news fw-bold text-primary fs-4">Latest News</h3>
@@ -148,26 +148,34 @@ const BlogCarousel = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='large-screen-carousel'
+        className='large-screen-carousel reveal'
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
-            <div className="d-flex justify-content-evenly my-5">
+            <div className="d-flex justify-content-evenly my-5 ">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <Card className="col-3" key={idx}>
-                  <Card.Img variant="top" src={post1} alt={post.title} />
-                  <Card.Body>
-                    <Card.Title className='fw-bold fs-4'>{post.title}</Card.Title>
-                    <Card.Text className="fw-normal fs-6">{post.description}</Card.Text>
-                    <div className="d-flex align-items-center">
-                      <img src={person1} alt="author" className="rounded-circle img-fluid col-1 m-0" />
-                      <div className="ms-2 my-2">
-                        <p className='fw-bold m-0'>{post.author}</p>
-                        <p className='m-0'>{post.date}</p>
-                      </div>
+                <div class="card col-3">
+                <div class="card-header">
+                  <img src={post1} alt="rover" />
+                </div>
+                <div class="card-body">
+                  <span class="tag tag-teal">Technology</span>
+                  <h3 className='fw-bold my-3 fs-4'>
+                    Why is the Tesla Cybertruck designed the way it
+                    is?
+                  </h3>
+                  <p className='fs-6 fw-normal'>
+                    An exploration into the truck's polarising design...
+                  </p>
+                  <div class="d-flex align-items-center gap-3 ">
+                    <img src={person1} className='user-image' alt="user" />
+                    <div class="user-info">
+                      <h5 className='fw-semidbold fs-6'>July Dec</h5>
+                      <small className='text-muted fs-6'>2h ago</small>
                     </div>
-                  </Card.Body>
-                </Card>
+                  </div>
+                </div>
+              </div>
               ))}
             </div>
           </Carousel.Item>
@@ -182,7 +190,7 @@ const BlogCarousel = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='small-screen-carousel'
+        className='small-screen-carousel reveal'
       >
         {blogPosts.map((slide, index) => (
           <Carousel.Item key={index}>

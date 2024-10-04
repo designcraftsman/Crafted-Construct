@@ -16,10 +16,10 @@ function App() {
           <div className='row m-0  mb-5'>
             <div className='col-lg-6 col-12 bg-secondary text-white '>
                 <div className='mt-5 p-5'>
-                  <h1 className='fs-2 fw-normal mb-3'>About </h1> 
-                  <h2 className='display-1 fw-bolder'>Crafted</h2>
-                  <h2 className='display-1 text-primary fw-bolder mb-5'>Construct</h2>
-                  <p className='fw-light fs-1 '>
+                  <h1 className='fs-2 fw-normal mb-3 fade-1'>About </h1> 
+                  <h2 className='display-1 fw-bolder fade-2'>Crafted</h2>
+                  <h2 className='display-1 text-primary fw-bolder mb-5 fade-3'>Construct</h2>
+                  <p className='fw-light fs-1 fade-4'>
                   We reach beyond established trends and apply new creative solutions. Right place for achieving top results.
                   </p>
                 </div>
