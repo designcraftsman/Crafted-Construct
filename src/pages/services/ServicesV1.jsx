@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Parallax, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/parallax';
+import 'swiper/css/autoplay';
 import service1 from '../../assets/images/V1/services/1.jpg';
 import header from '../../assets/images/V1/services/header.jpg';
 import NavigationBar from '../../components/navbar/navbarV1/NavbarLight';
-import Footer from '../../components/footer/FooterV1';  
+import Footer from '../../components/footer/FooterV1';
 
 const ServicesSection = () => {
     const services = [
@@ -13,17 +19,17 @@ const ServicesSection = () => {
         },
         {
             title: "Commercial Building Construction",
-            description: "At CraftedConstruct, we specialize in building custom homes tailored to each client's vision. Whether it's a modern minimalist design or a traditional family home, our team ensures that you stay front-of-mind. We take you from initial design to the final phase with precision and care.",
+            description: "Our expertise extends beyond residential projects. CraftedConstruct has a proven track record in commercial construction, helping businesses build office spaces, retail outlets, and more. We prioritize client collaboration to deliver spaces that are functional, aesthetically pleasing, and sustainable.",
             image: service1,
         },
         {
-            title: "Custom Residential Construction",
-            description: "At CraftedConstruct, we specialize in building custom homes tailored to each client's vision. Whether it's a modern minimalist design or a traditional family home, our team ensures that you stay front-of-mind. We take you from initial design to the final phase with precision and care.",
+            title: "Renovation and Remodeling",
+            description: "From small upgrades to full home renovations, we handle all aspects of remodeling projects. Our team transforms outdated spaces into modern, functional environments while staying on budget and on schedule.",
             image: service1,
         },
         {
-            title: "Commercial Building Construction",
-            description: "At CraftedConstruct, we specialize in building custom homes tailored to each client's vision. Whether it's a modern minimalist design or a traditional family home, our team ensures that you stay front-of-mind. We take you from initial design to the final phase with precision and care.",
+            title: "Interior Design Consulting",
+            description: "CraftedConstruct also offers interior design services to complement our construction projects. We work closely with clients to select finishes, fixtures, and furniture that align with their taste and lifestyle.",
             image: service1,
         },
     ];
@@ -31,74 +37,49 @@ const ServicesSection = () => {
     return (
         <React.Fragment>
             <NavigationBar />
-            <div className="container-fluid services-header p-0 m-0 position-relative">
-                <img src={header} className="services-header__image" alt="Services Header" />
-                <h1 className="text-white fw-bold display-3 services-header__text">Our Services</h1>
-            </div>
-            <section className="services-section p-3 my-5">
-                <div className="projcard-container">
-                    <div className="projcard projcard-blue">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src={service1} alt="Cupping Therapy" />
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Construction</div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">
-                                A light metal structure is one designed to be both strong and lightweight, often using metals like aluminum or titanium. Aluminum, for instance, is commonly used in aerospace and automotive industries due to its excellent strength-to-weight ratio. Titanium is another example, known for its high strength and low density, making it ideal for high-performance applications. These materials enable the construction of durable and efficient structures.
-                                </div>
-                                <div >
-                                    <button className='btn btn-primary btn-lg'>Learn More</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="projcard projcard-red">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1080" alt="Energy Healing" />
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Energy Healing Sessions</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more fulfilling life."</div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Our energy healing sessions focus on balancing the body's energy centers to promote physical, emotional, and spiritual well-being. Through gentle touch and energy manipulation, our practitioners help restore harmony and vitality to your energy system, leaving you feeling refreshed and renewed.</div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="#">Contact</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="projcard projcard-green">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1039" alt="Guided Meditation" />
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Guided Meditation</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more fulfilling life."</div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Join us for guided meditation sessions that offer a peaceful retreat from the stresses of daily life. Our experienced meditation guides will lead you through calming visualizations and breathing exercises to promote relaxation, clarity, and inner peace.</div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="#">Contact</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="projcard projcard-customcolor" style={{ "--projcard-color": "#F5AF41" }}>
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=943" alt="Stress Relief Workshops" />
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Stress Relief Workshops</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more fulfilling life."</div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Our stress relief workshops provide practical tools and techniques for managing stress and enhancing resilience. From mindfulness practices to holistic healing modalities, our workshops empower you to take control of your well-being and find balance in your life.</div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="#">Contact</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div id="home-slider">
+            <div className="page-wrap">
+                <Swiper
+                    direction="vertical"
+                    loop={true}
+                    grabCursor={true}
+                    speed={1000}
+                    pagination={{ clickable: true }}
+                    parallax={true}
+                    autoplay={{ delay: 5000 }}
+                    modules={[Pagination, Parallax, Autoplay]}
+                    className="swiper-container"
+                >
+                    {services.map((service, index) => (
+                        <SwiperSlide key={index} className='swiper-wrapper'>
+                            <div className="swiper-slide swiper-slide-one vh-100">
+    <div className="container-fluid h-100">
+        <div className="row h-100">
+            {/* Left column - Title */}
+            <div className="col-6 d-flex justify-content-center align-items-center m-0 p-0 ">
+                <img src={service1} className="w-100 h-100 object-fit-cover" alt="" />
+                <div className="text-left  position-absolute">
+                    <h1 className="display-1 text-white">Construction</h1>
                 </div>
-            </section>
+            </div>
+
+            {/* Right column - Description */}
+            <div className="col-6 d-flex justify-content-center align-items-center bg-secondary">
+                <div className="text-right">
+                    <p className="paragraph">
+                        A light metal structure is one designed to be both strong and lightweight, often using metals like aluminum or titanium. Aluminum, for instance, is commonly used in aerospace and automotive industries due to its excellent strength-to-weight ratio. Titanium is another example, known for its high strength and low density, making it ideal for high-performance applications. These materials enable the construction of durable and efficient structures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+            </div>
             <Footer />
         </React.Fragment>
     );

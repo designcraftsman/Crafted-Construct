@@ -23,7 +23,7 @@ const ServicesSection = () => {
             and spirits with our own, communicating enthusiasm and liberality in
             the food we share.
           </p>
-          <form>
+          <form className='custom-form'>
             <div className="row">
               <div className="col-md-6 mb-3">
                 <input

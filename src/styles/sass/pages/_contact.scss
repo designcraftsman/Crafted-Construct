@@ -33,4 +33,28 @@
       margin-right: 10px;
     }
   }
+
+  .custom-form {
+    input,textarea {
+      border: none ;
+      border-radius: 0 ;
+      background-color: transparent;
+      border-bottom: 1px solid gray ;
+  
+      &::selection {
+        border: 0 ;
+        border-bottom: 1px solid $primary ; // replace $primary with a valid color or variable
+        background-color: transparent;
+      }
+  
+      &:focus {
+        border: 0 ;
+        background-color: transparent;
+        border-bottom: 1px solid $primary ; // replace $primary with a valid color or variable
+        box-shadow: none ;  // This will remove Bootstrap's focus shadow
+        outline: none ;      // This removes the default outline applied on focus
+      }
+    }
+  }
+  
   
