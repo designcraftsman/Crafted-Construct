@@ -1,22 +1,23 @@
 import React, { useState, useRef } from 'react';
 import post1 from '../../../assets/images/V1/home/blogSection/1.jpg';
-import person1 from '../../../assets/images/V1/home/testimonialsSection/1.jpg';
-import { Carousel, Card } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-
+import PostCard from '../../../components/blog/blogV1/PostCard';
 const BlogCarousel = () => {
   const blogPosts = [
     {
-      title: 'The Future of Sustainable Construction',
+      title: 'The Future of Sustainable Constructionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       description: 'Explore the latest innovations in sustainable building practices and materials...',
       author: 'John Doe',
       date: '2 days ago',
+      category: 'Technology',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
     {
       title: 'Innovations in Solar Energy',
       description: 'Learn how solar energy is shaping the future of power generation...',
       author: 'Jane Smith',
+      category: 'Technology',
       date: '1 week ago',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
@@ -25,6 +26,7 @@ const BlogCarousel = () => {
       description: 'Discover the role of AI in enhancing construction efficiency...',
       author: 'Mark Lee',
       date: '3 days ago',
+      category: 'Technology',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
     {
@@ -32,6 +34,7 @@ const BlogCarousel = () => {
       description: 'How green architecture is transforming urban landscapes...',
       author: 'Emily Clark',
       date: '5 days ago',
+      category: 'Technology',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
     {
@@ -39,6 +42,7 @@ const BlogCarousel = () => {
       description: 'How blockchain technology is improving transparency in construction...',
       author: 'Sam Wilson',
       date: '2 weeks ago',
+      category: 'Technology',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
     {
@@ -46,12 +50,14 @@ const BlogCarousel = () => {
       description: 'How blockchain technology is improving transparency in construction...',
       author: 'Sam Wilson',
       date: '2 weeks ago',
+      category: 'Technology',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
     {
       title: 'Blockchain in Construction',
       description: 'How blockchain technology is improving transparency in construction...',
       author: 'Sam Wilson',
+      category: 'Technology',
       date: '2 weeks ago',
       imageUrl: 'https://via.placeholder.com/600x400',
     },
@@ -152,30 +158,13 @@ const BlogCarousel = () => {
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
-            <div className="d-flex justify-content-evenly my-5 ">
+            <div className="row justify-content-evenly my-5  gap-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <div class="card col-3">
-                <div class="card-header">
-                  <img src={post1} alt="rover" />
+                <a href="post-v1" className='text-decoration-none text-dark col-3'>
+                  <div className="card ">
+                    <PostCard  title={post.title} description={post.description} category={post.category} author={post.author} date={post.date} image={post1} />
                 </div>
-                <div class="card-body">
-                  <span class="tag tag-teal">Technology</span>
-                  <h3 className='fw-bold my-3 fs-4'>
-                    Why is the Tesla Cybertruck designed the way it
-                    is?
-                  </h3>
-                  <p className='fs-6 fw-normal'>
-                    An exploration into the truck's polarising design...
-                  </p>
-                  <div class="d-flex align-items-center gap-3 ">
-                    <img src={person1} className='user-image' alt="user" />
-                    <div class="user-info">
-                      <h5 className='fw-semidbold fs-6'>July Dec</h5>
-                      <small className='text-muted fs-6'>2h ago</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+               </a>
               ))}
             </div>
           </Carousel.Item>
@@ -190,24 +179,15 @@ const BlogCarousel = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='small-screen-carousel reveal'
+        className='small-screen-carousel reveal my-3'
       >
         {blogPosts.map((slide, index) => (
           <Carousel.Item key={index}>
-            <Card className="col-12 my-3" key={index}>
-              <Card.Img variant="top" src={post1} alt={slide.title} />
-              <Card.Body>
-                <Card.Title className='fw-bold fs-4'>{slide.title}</Card.Title>
-                <Card.Text className="fw-normal fs-6">{slide.description}</Card.Text>
-                <div className="d-flex align-items-center">
-                  <img src={person1} alt="author" className="rounded-circle img-fluid col-1 m-0" />
-                  <div className="ms-2 my-2">
-                    <p className='fw-bold m-0'>{slide.author}</p>
-                    <p className='m-0'>{slide.date}</p>
-                  </div>
+            <a href="post-v1" className='text-decoration-none text-dark col-10'>
+                  <div className="card ">
+                    <PostCard  title={slide.title} description={slide.description} category={slide.category} author={slide.author} date={slide.date} image={post1} />
                 </div>
-              </Card.Body>
-            </Card>
+            </a>
           </Carousel.Item>
         ))}
       </Carousel>
