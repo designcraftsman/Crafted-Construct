@@ -6,12 +6,10 @@ import Footer from '../../components/footer/FooterV1';
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
       <div className='latest-projects p-5 my-5'>
         {/* Pass a prop to control the visibility of the Show More button */}
         <PortfolioList showMoreButton={true} />
       </div>
-      <Footer />
     </div>
   );
 }

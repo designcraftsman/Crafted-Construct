@@ -15,7 +15,8 @@ import NavigationBar from '../../components/navbar/navbarV1/NavbarLight';
 import { PiHandshakeThin } from "react-icons/pi";
 import Footer from '../../components/footer/FooterV1';
 
-const ServicesSection = () => {
+
+const Services = () => {
     const services = [
         {
             title: "Custom Residential Construction",
@@ -57,7 +58,6 @@ const ServicesSection = () => {
 
     return (
         <React.Fragment>
-            <NavigationBar />
             <div className='container-fluid services-header p-0 m-0 position-relative'>
                 <img src={header} className=' services-header__image' alt="" />
                 <h1 className='text-white  display-3 services-header__text'>Our Services</h1>
@@ -144,9 +144,6 @@ const ServicesSection = () => {
 
             <div className='container'>
                 <div className='row my-5'>
-                    <div className="col-lg-5 col-md-5 col-12  m-auto">
-                        <img src={service1} className='img-fluid' alt="" />
-                    </div>
                     <div className='col-lg-5 col-md-5 col-12 m-auto'>
                         <h2 className='fs-2 fw-semibold text-primary'>
                         Expert Construction Solutions Tailored to Your Needs             
@@ -154,6 +151,9 @@ const ServicesSection = () => {
                         <p className='fs-6 fw-lighter'>
                         At CraftConstruct, we take pride in delivering high-quality construction services, from concept to completion. Whether you're planning residential, commercial, or industrial projects, our experienced team is committed to providing customized solutions that meet your goals and exceed expectations. With a focus on precision, safety, and sustainability, we ensure every project is built to last. Trust us to bring your vision to life with expertise, dedication, and attention to detail.
                         </p>
+                    </div>
+                    <div className="col-lg-5 col-md-5 col-12  m-auto">
+                        <img src={service1} className='img-fluid' alt="" />
                     </div>
                 </div>
             </div>
@@ -164,9 +164,8 @@ const ServicesSection = () => {
                     <button className='btn btn-lg btn-dark'>Contact Us</button>
                 </div>
             </div>
-            <Footer />
         </React.Fragment>
     );
 };
 
-export default ServicesSection;
+export default Services;

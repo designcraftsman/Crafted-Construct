@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const Sidebar = ({ categories, recentPosts }) => {
   return (
@@ -6,10 +7,12 @@ const Sidebar = ({ categories, recentPosts }) => {
       <div className="category-section mb-4 text-white">
         <h6>Category</h6>
         <hr className='border-3'/>
-        <ul className="list-unstyled">
+        <ul className="list-unstyled sidebar__categories">
           {categories.map((cat, index) => (
-            <li key={index} className='fw-light mb-3'>
-              <span className="category-bullet "></span> {cat}
+            <li key={index} className='fw-light mb-3 '>
+              <a href="blog-v1" className='text-decoration-none sidebar__cateogires__link__hover  sidebar__categories__link'>
+                <FaAngleDoubleRight /> {cat}
+              </a>
             </li>
           ))}
         </ul>

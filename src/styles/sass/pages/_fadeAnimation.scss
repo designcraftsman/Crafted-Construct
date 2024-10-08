@@ -1,0 +1,21 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  
+  .App {
+    animation-duration: 2s; /* Set the duration for the animations */
+  }
+  
+
+  
+  .App.loaded {
+    animation-name: fadeIn; /* Apply fadeIn animation when loaded */
+  }
+  

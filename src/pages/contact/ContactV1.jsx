@@ -7,7 +7,6 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from 'react-icons/fa';
 const ServicesSection = () => {
     return (
     <React.Fragment>
-      <NavigationBar />
         <div className='container-fluid services-header p-0 m-0 position-relative'>
             <img src={header} className=' services-header__image' alt="" />
             <h1 className='text-white  display-3 services-header__text'>Contact Us</h1>
@@ -94,7 +93,6 @@ const ServicesSection = () => {
         </div>
       </div>
     </div>
-      <Footer />
       </React.Fragment>
     );
   };

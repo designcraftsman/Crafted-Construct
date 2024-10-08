@@ -2,11 +2,13 @@
   @import 'abstracts/fonts';
   @import 'abstracts/variables';
   @import 'base/typography';
+  @import 'components/loadingScreen';
   @import 'components/buttons';
   @import 'components/heroCarousel';
   @import 'components/servicesCarousel';
   @import 'components/testimonialsCarousel';
   @import 'components/projectCard';
+  @import 'components/aboutSection';
   @import 'components/navbar';
   @import 'components/footer';
   @import 'components/userImage';
@@ -14,6 +16,8 @@
   @import 'layout/projectsGrid';
   @import 'components/postCard';
   @import 'layout/blogSideBar';
+  @import 'pages/fadeAnimation';
+  @import 'pages/blog';
   @import 'pages/services';
   @import 'pages/about';
   @import 'pages/contact';

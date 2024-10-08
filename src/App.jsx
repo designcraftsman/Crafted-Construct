@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 // Import your components
 import HomeV1 from './pages/home/HomeV1';
@@ -10,8 +10,16 @@ import BlogV1 from './pages/blog/BlogV1';
 import PostV1 from './pages/post/PostV1';
 import AboutV1 from './pages/about/AboutV1';
 import ContactV1 from './pages/contact/ContactV1';
+import NavbarLight from './components/navbar/navbarV1/NavbarLight';
+import NavbarDark from './components/navbar/navbarV1/NavbarDark';
+import Footer from './components/footer/FooterV1';
+import LoadingScreen from './components/Loading-screen';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  
+
   window.addEventListener('scroll', reveal);
   function reveal(){
       var reveals = document.querySelectorAll('.reveal');
@@ -29,24 +37,55 @@ function App() {
         }
       }
   }
-  return (
-    <Router>
-      <div className="App">
+  // Show loading screen on location change
+  useEffect(() => {
+    setLoading(true);
+    
+    const timer = setTimeout(() => {
+      setLoading(false); // Hide loading screen after the simulated loading duration
+    }, 2000); // Simulate loading duration
 
-        <Routes>
-          <Route path="/" element={<HomeV1 />} /> {/* Default to HomeV1 */}
-          <Route path="/home-v1" element={<HomeV1 />} />
-          <Route path="/portfolio-v1" element={<PortfolioV1 />} />
-          <Route path="/services-v1" element={<ServicesV1 />} />
-          <Route path="/project-v1" element={<ProjectV1 />} />
-          <Route path="/blog-v1" element={<BlogV1 />} />
-          <Route path="/post-v1" element={<PostV1 />} />
-          <Route path="/about-v1" element={<AboutV1 />} />
-          <Route path="/contact-v1" element={<ContactV1 />} />
-        </Routes>
-      </div>
-    </Router>
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  // Conditionally render NavbarDark for specific paths
+  const renderNavbar = () => {
+    if (location.pathname === '/portfolio-v1' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1') {
+      return <NavbarDark />;
+    } else {
+      return <NavbarLight />;
+    }
+  };
+
+  return (
+    <div className={`App ${loading ? 'loading' : 'loaded'}`}>
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          {renderNavbar()}
+          <Routes>
+            <Route path="/" element={<HomeV1 />} />
+            <Route path="/home-v1" element={<HomeV1 />} />
+            <Route path="/portfolio-v1" element={<PortfolioV1 />} />
+            <Route path="/services-v1" element={<ServicesV1 />} />
+            <Route path="/project-v1" element={<ProjectV1 />} />
+            <Route path="/blog-v1" element={<BlogV1 />} />
+            <Route path="/post-v1" element={<PostV1 />} />
+            <Route path="/about-v1" element={<AboutV1 />} />
+            <Route path="/contact-v1" element={<ContactV1 />} />
+          </Routes>
+          <Footer />
+        </>
+      )}
+    </div>
   );
 }
 
-export default App;
+export default function RouterApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}

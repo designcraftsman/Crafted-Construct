@@ -11,7 +11,6 @@ import AboutSection from '../../components/home/homeV1/AboutSection';
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
         <div className='container-fluid m-0 p-0'>
           <div className='row m-0  mb-5'>
             <div className='col-lg-6 col-12 bg-secondary text-white '>
@@ -59,7 +58,6 @@ function App() {
             </div>
           </div>
         </div>
-      <Footer />
     </div>
   );
 }

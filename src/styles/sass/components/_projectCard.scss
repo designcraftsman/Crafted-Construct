@@ -60,7 +60,6 @@ figure.snip1440.hover figcaption {
 
 
 
-
 figure.snip1440:after {
   position: absolute;
   content: "";
@@ -69,10 +68,12 @@ figure.snip1440:after {
   bottom: 50%;
   left: 20px;
   right: 20px;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 1s ease-in-out; /* Slowed down to 1s */
+  transition: all 1s ease-in-out; /* Slowed down to 1s */
   opacity: 0;
 }
+
+
 
 figure.snip1440 a {
   left: 0;
@@ -92,10 +93,9 @@ figure.snip1440.hover img {
 
 
 
-
 figure.snip1440:hover:after,
 figure.snip1440.hover:after {
   top: 20px;
   bottom: 20px;
-  opacity: 0.9;
+  opacity: 1;
 }

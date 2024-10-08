@@ -1,0 +1,32 @@
+.sidebar {
+    &__categories {
+      &__link {
+        color: white;
+        position: relative;
+        transition: transform .1s ease-in-out, color .3s ease-in-out; // Added color transition
+  
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: $primary;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          bottom: -10px;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform .5s, background-color .3s ease-in-out; // Added background-color transition
+        }
+  
+        &:hover {
+          color: $primary; // Change to your desired hover color
+  
+          &::after {
+            transform: scaleX(1);
+            background-color: $primary; // Change the underline color
+          }
+        }
+      }
+    }
+  }
+  

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../../../assets/logos/blackLogo.svg';
 import { CiSearch } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
+import { Link } from 'react-router-dom'; // Import Link
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
@@ -13,7 +14,7 @@ const NavigationBar = () => {
       if (scrollPosition > 50) {
         setNavbarClass('bg-white navbar-light');
       } else {
-        setNavbarClass(' navbar-light');
+        setNavbarClass('navbar-light');
       }
     };
 
@@ -27,7 +28,7 @@ const NavigationBar = () => {
   return (
     <nav className={`navbar navbar-expand-lg px-3 m-0 p-0 fixed-top ${navbarClass}`}>
       {/* Logo - Outside of Collapsing Nav */}
-      <a className="navbar-brand  order-1" href=".">
+      <Link className="navbar-brand order-1" to="/"> {/* Change to Link */}
         <div className="d-flex align-items-center text-dark fw-bolder fs-6">
           <img src={Logo} alt="CraftedConstruct" className="logo" />
           <div className="flex-column ms-3 d-lg-flex d-sm-flex d-none">
@@ -35,33 +36,33 @@ const NavigationBar = () => {
             <span className="text-primary p-0 m-0">Construct</span>
           </div>
         </div>
-      </a>
+      </Link>
 
       {/* Custom Toggle Button */}
-      <button className="navbar-toggler custom-toggle border-0  " type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler custom-toggle border-0" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
         <CgMenuLeftAlt className="text-dark fs-1" />
       </button>
 
       {/* Collapsible Links */}
-      <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0  order-3 border-lg-none  rounded p-2" id="basic-navbar-nav">
-        <ul className="navbar-nav m-0 mx-auto bg-white border-lg-0 border-md border-sm ">
+      <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
+        <ul className="navbar-nav m-0 mx-auto bg-white border-lg-0 border-md border-sm">
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="."><span>Home</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/home-v1"><span>Home</span></Link> {/* Change to Link */}
           </li>
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="services-v1"><span>Services</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/services-v1"><span>Services</span></Link> {/* Change to Link */}
           </li>
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="portfolio-v1"><span>Portfolio</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/portfolio-v1"><span>Portfolio</span></Link> {/* Change to Link */}
           </li>
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="blog-v1"><span>Blog</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/blog-v1"><span>Blog</span></Link> {/* Change to Link */}
           </li>
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="contact-v1"><span>Contact</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/contact-v1"><span>Contact</span></Link> {/* Change to Link */}
           </li>
           <li className="nav-item">
-            <a className="nav-link navbar-nav__link text-dark" href="about-v1"><span>About</span></a>
+            <Link className="nav-link navbar-nav__link text-dark" to="/about-v1"><span>About</span></Link> {/* Change to Link */}
           </li>
         </ul>
       </div>

@@ -62,7 +62,6 @@ const BlogSection = () => {
 
   return (
     <React.Fragment>
-      <NavigationBar />
       <div className="blog-section container-fluid my-5 py-5">
         <div className="row gap-3">
           <div className="col-lg-8 col-md-8 col-12">
@@ -107,7 +106,6 @@ const BlogSection = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </React.Fragment>
   );
 };

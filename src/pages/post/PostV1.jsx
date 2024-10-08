@@ -39,7 +39,6 @@ const BlogSection = () => {
 
   return (
     <React.Fragment>
-    <NavigationBar />
     <div className="blog-section container my-5 py-5">
       <div className="row">
         <div className="col-md-8">
@@ -131,7 +130,6 @@ const BlogSection = () => {
         </div>
       </div>
     </div>
-    <Footer/>
     </React.Fragment>
   );
 };
