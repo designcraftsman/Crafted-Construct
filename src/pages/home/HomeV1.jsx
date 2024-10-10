@@ -1,14 +1,12 @@
-import React , {useEffect,useState} from 'react';
-import NavigationBar from '../../components/navbar/navbarV1/NavbarLight';
-import HeroSection from '../../components/home/homeV1/HeroSection';
-import AboutSection from '../../components/home/homeV1/AboutSection';
-import ServicesSection from '../../components/home/homeV1/ServicesSection';
-import PortfolioList from '../../components/home/homeV1/PortfolioSection';
-import TestimonialsSection from '../../components/home/homeV1/TestimonialsSection';
-import BlogSection from '../../components/home/homeV1/BlogSection';
+import React from 'react';
+import HeroSection from '../../components/hero/HeroSection1';
+import AboutSection from '../../components/about/AboutSection1';
+import ServicesSection from '../../components/services/ServicesSection1';
+import PortfolioList from '../../components/portfolio/PortfolioList1';
+import TestimonialsSection from '../../components/testimonials/TestimonialsSection1';
+import BlogSection from '../../components/blog/BlogSection1';
 
 function App() {
-
 
   return (
     <div className="App">
@@ -31,7 +29,6 @@ function App() {
       </section>
       <TestimonialsSection />
       <BlogSection />
-     
     </div>
   );
 }

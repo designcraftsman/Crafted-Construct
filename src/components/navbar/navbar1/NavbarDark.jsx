@@ -26,15 +26,11 @@ const NavigationBar = () => {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg px-3 m-0 p-0 fixed-top ${navbarClass}`}>
+    <nav className={`navbar navbar-expand-lg bg-white px-3 m-0 p-0 fixed-top ${navbarClass}`}>
       {/* Logo - Outside of Collapsing Nav */}
       <Link className="navbar-brand order-1" to="/"> {/* Change to Link */}
         <div className="d-flex align-items-center text-dark fw-bolder fs-6">
           <img src={Logo} alt="CraftedConstruct" className="logo" />
-          <div className="flex-column ms-3 d-lg-flex d-sm-flex d-none">
-            Crafted
-            <span className="text-primary p-0 m-0">Construct</span>
-          </div>
         </div>
       </Link>
 
@@ -44,8 +40,8 @@ const NavigationBar = () => {
       </button>
 
       {/* Collapsible Links */}
-      <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
-        <ul className="navbar-nav m-0 mx-auto bg-white border-lg-0 border-md border-sm">
+      <div className="collapse navbar-collapse pullUp  order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
+        <ul className="navbar-nav m-0 mx-auto  border-lg-0 border-md border-sm">
           <li className="nav-item">
             <Link className="nav-link navbar-nav__link text-dark" to="/home-v1"><span>Home</span></Link> {/* Change to Link */}
           </li>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import portfolio1 from '../../../assets/images/V1/home/portfolioSection/1.jpg';
-import portfolio2 from '../../../assets/images/V1/home/portfolioSection/2.jpg';
-import portfolio3 from '../../../assets/images/V1/home/portfolioSection/3.jpg';
-import portfolio4 from '../../../assets/images/V1/home/portfolioSection/4.jpg';
+import portfolio1 from '../../assets/images/V1/home/portfolioSection/1.jpg';
+import portfolio2 from '../../assets/images/V1/home/portfolioSection/2.jpg';
+import portfolio3 from '../../assets/images/V1/home/portfolioSection/3.jpg';
+import portfolio4 from '../../assets/images/V1/home/portfolioSection/4.jpg';
 
 const portfolioItems = [
   { img: portfolio1, title: 'Modern Residential Home', location: 'Lakeview Estates, California', scope: 'Multi-unit residential construction', description: 'CraftedConstruct developed a luxury apartment complex...' },

@@ -186,21 +186,17 @@
   }
   
   
-  .navbar-light-animation {
-    transition: all 0.5s ease-in-out; /* Smooth transition for all properties */
-  }
-  
-  .bg-dark {
-    background-color: $dark; /* Adjust as needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on scroll */
-  }
-  
   .navbar-light {
-    background-color: transparent; /* Keep it transparent when at the top */
-  }
+    background-color: transparent;
+    transition: background-color 500ms;
   
-  .navbar-scrolled {
-    background-color: #343a40; /* Background color when scrolled */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    &.navbar-scrolled {
+      background-color: white;
+      .navbar-nav__link {
+        color: black;
+      }
+    }
   }
+
+  
   

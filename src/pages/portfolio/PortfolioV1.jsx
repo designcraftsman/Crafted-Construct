@@ -1,7 +1,6 @@
 import React from 'react';
-import NavigationBar from '../../components/navbar/navbarV1/NavbarDark';
-import PortfolioList from '../../components/home/homeV1/PortfolioSection';
-import Footer from '../../components/footer/FooterV1';  
+import PortfolioList from '../../components/portfolio/PortfolioList1';
+ 
 
 function App() {
   return (

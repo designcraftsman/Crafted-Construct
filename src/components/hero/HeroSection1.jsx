@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 
-import image1 from '../../../assets/images/V1/home/heroSection/1.jpg';
-import image2 from '../../../assets/images/V1/home/heroSection/2.jpg';
-import image3 from '../../../assets/images/V1/home/heroSection/1.jpg';
+import image1 from '../../assets/images/V1/home/heroSection/1.jpg';
+import image2 from '../../assets/images/V1/home/heroSection/2.jpg';
+import image3 from '../../assets/images/V1/home/heroSection/1.jpg';
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);

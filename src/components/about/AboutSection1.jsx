@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 import { FaBuilding, FaBusinessTime } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { MdOutlineHomeWork } from "react-icons/md";
-import service3 from '../../../assets/images/V1/services/4.jpg';
-import service1 from '../../../assets/images/V1/services/1.jpg';
+import service3 from '../../assets/images/V1/services/4.jpg';
+import service1 from '../../assets/images/V1/services/1.jpg';
 
 const WhyChooseUs = () => {
   useEffect(() => {
     // Counter function with requestAnimationFrame
     function counter(id, start, end, duration) {
       let obj = document.getElementById(id);
+      if (!obj) return;  // Check if the element exists
+    
       let startTimestamp = null;
       const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
@@ -21,6 +23,7 @@ const WhyChooseUs = () => {
       };
       window.requestAnimationFrame(step);
     }
+    
 
     // Intersection Observer API to detect when the component is in view
     const observer = new IntersectionObserver((entries) => {
@@ -89,9 +92,11 @@ const WhyChooseUs = () => {
     
     
      <div className='row my-5 gap-3 py-5'>
-         <div className="col-lg-4 col-md-4 col-12 about-section  m-auto reveal">
-             <img src={service3} className='img-fluid about-section__image' alt="" />
-             <img src={service1} className="img-fluid" alt="" />
+         <div className="col-lg-6 col-md-6 col-12 about-section  m-auto reveal">
+            <div className="row">
+              <img src={service3} className='img-fluid col-6 ' alt="" />
+              <img src={service1} className="img-fluid col-6" alt="" />
+            </div>
          </div>
          <div className='col-lg-5 col-md-5 col-12 m-auto reveal'>
              <h2 className='fs-1 fw-semibold  text-dark'>
@@ -101,7 +106,7 @@ const WhyChooseUs = () => {
              At CraftConstruct, we take pride in delivering high-quality construction services, from concept to completion. Whether you're planning residential, commercial, or industrial projects, our experienced team is committed to providing customized solutions that meet your goals and exceed expectations. With a focus on precision, safety, and sustainability, we ensure every project is built to last. Trust us to bring your vision to life with expertise, dedication, and attention to detail.
              </p>
              <button className="btn  btn-dark  hover-filled-slide-down slide-up border-radius-0">
-              <span>Learn More</span>
+              <span>Check Our Work</span>
             </button>
          
      </div>

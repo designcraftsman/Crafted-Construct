@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import service1 from '../../../assets/images/V1/home/servicesSection/1.jpg';
+import service1 from '../../assets/images/V1/home/servicesSection/1.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 
 const services = [
@@ -25,7 +25,7 @@ const services = [
   // You can add more service objects here if needed
 ];
 
-function UncontrolledExample() {
+function ServicesSection() {
   const carouselRef = useRef(null); // Create a reference for the carousel
 
   // Handler for going to the previous slide
@@ -87,4 +87,4 @@ function UncontrolledExample() {
   );
 }
 
-export default UncontrolledExample;
+export default ServicesSection;

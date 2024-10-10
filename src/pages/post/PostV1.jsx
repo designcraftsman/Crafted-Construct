@@ -1,7 +1,5 @@
-import React,{useState} from 'react';
-import NavigationBar from '../../components/navbar/navbarV1/NavbarDark';
-import Footer from '../../components/footer/FooterV1';  
-import Sidebar from '../../components/blog/blogV1/BlogSideBar';
+import React,{useState} from 'react';  
+import Sidebar from '../../components/blog/SideBar';
 import post1 from '../../assets/images/V1/blog/1.jpg';
 import post2 from '../../assets/images/V1/blog/2.jpg';
 import { Container, Image } from 'react-bootstrap';

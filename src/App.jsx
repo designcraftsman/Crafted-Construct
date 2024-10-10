@@ -10,9 +10,12 @@ import BlogV1 from './pages/blog/BlogV1';
 import PostV1 from './pages/post/PostV1';
 import AboutV1 from './pages/about/AboutV1';
 import ContactV1 from './pages/contact/ContactV1';
-import NavbarLight from './components/navbar/navbarV1/NavbarLight';
-import NavbarDark from './components/navbar/navbarV1/NavbarDark';
-import Footer from './components/footer/FooterV1';
+import TermsConditions from './pages/Terms-Conditions';
+import PrivacyPolicy from './pages/Privacy-Policy';
+import FAQs from './pages/FAQs';
+import NavbarLight from './components/navbar/navbar1/NavbarLight';
+import NavbarDark from './components/navbar/navbar1/NavbarDark';
+import Footer from './components/footer/Footer1';
 import LoadingScreen from './components/Loading-screen';
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
         
         var windowheight = window.innerHeight;
         var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 80;
+        var revealpoint = 50;
 
         if(revealtop < windowheight - revealpoint){
           reveals[i].classList.add('active');
@@ -50,7 +53,7 @@ function App() {
 
   // Conditionally render NavbarDark for specific paths
   const renderNavbar = () => {
-    if (location.pathname === '/portfolio-v1' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1') {
+    if (location.pathname === '/portfolio-v1' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1' || location.pathname === '/terms-conditions' || location.pathname === '/privacy-policy' || location.pathname === '/faqs') {
       return <NavbarDark />;
     } else {
       return <NavbarLight />;
@@ -74,6 +77,9 @@ function App() {
             <Route path="/post-v1" element={<PostV1 />} />
             <Route path="/about-v1" element={<AboutV1 />} />
             <Route path="/contact-v1" element={<ContactV1 />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/faqs" element={<FAQs />} />
           </Routes>
           <Footer />
         </>

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import NavigationBar from '../../components/navbar/navbarV1/NavbarDark';
-import Footer from '../../components/footer/FooterV1';
-import Sidebar from '../../components/blog/blogV1/BlogSideBar';
-import PostCard from '../../components/blog/blogV1/PostCard';
+import Sidebar from '../../components/blog/SideBar';
+import PostCard from '../../components/blog/PostCard1';
 import post1 from '../../assets/images/V1/blog/1.jpg';
 import post2 from '../../assets/images/V1/blog/2.jpg';
 import user from '../../assets/images/V1/home/testimonialsSection/1.jpg';

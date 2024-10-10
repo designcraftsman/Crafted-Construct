@@ -28,24 +28,24 @@ const Footer = () => {
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Company</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">Our Story</a></li>
-              <li className="mb-3"><a href="#contact" className="footer-link opacity-75">Contact</a></li>
+              <li className="mb-3"><a href="about-v1" className="footer-link mb-5 opacity-75">About</a></li>
+              <li className="mb-3"><a href="contact-v1" className="footer-link opacity-75">Contact</a></li>
             </ul>
           </Col>
 
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Get Help</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">FAQ</a></li>
-              <li className="mb-3"><a href="#contact" className="footer-link opacity-75 ">Terms</a></li>
-              <li className="mb-3"><a href="#contact" className="footer-link  opacity-75">Privacy</a></li>
+              <li className="mb-3"><a href="faqs" className="footer-link mb-5 opacity-75">FAQ</a></li>
+              <li className="mb-3"><a href="terms-conditions" className="footer-link opacity-75 ">Terms</a></li>
+              <li className="mb-3"><a href="privacy-policy" className="footer-link  opacity-75">Privacy</a></li>
             </ul>
           </Col>
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Community</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><a href="#ourstory" className="footer-link mb-5 opacity-75">Blog</a></li>
-              <li className="mb-3"><a href="#contact" className="footer-link opacity-75 ">Team</a></li>
+              <li className="mb-3"><a href="blog-v1" className="footer-link mb-5 opacity-75">Blog</a></li>
+              <li className="mb-3"><a href="about-v1" className="footer-link opacity-75 ">Team</a></li>
             </ul>
           </Col>
         </Row>

@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
-import post1 from '../../../assets/images/V1/home/blogSection/1.jpg';
+import post1 from '../../assets/images/V1/home/blogSection/1.jpg';
 import { Carousel } from 'react-bootstrap';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import PostCard from '../../../components/blog/blogV1/PostCard';
-const BlogCarousel = () => {
+import PostCard from './PostCard1';
+
+const BlogSection1 = () => {
   const blogPosts = [
     {
       title: 'The Future of Sustainable Constructionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
@@ -195,4 +196,4 @@ const BlogCarousel = () => {
   );
 };
 
-export default BlogCarousel;
+export default BlogSection1;

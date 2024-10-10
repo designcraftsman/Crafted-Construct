@@ -754,22 +754,15 @@ div.pullUp a:hover:before {
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
-.navbar-light-animation {
-  transition: all 0.5s ease-in-out; /* Smooth transition for all properties */
-}
-
-.bg-dark {
-  background-color: black; /* Adjust as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on scroll */
-}
-
 .navbar-light {
-  background-color: transparent; /* Keep it transparent when at the top */
+  background-color: transparent;
+  transition: background-color 500ms;
 }
-
-.navbar-scrolled {
-  background-color: #343a40; /* Background color when scrolled */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+.navbar-light.navbar-scrolled {
+  background-color: white;
+}
+.navbar-light.navbar-scrolled .navbar-nav__link {
+  color: black;
 }
 
 .footer-section {
@@ -963,8 +956,7 @@ div.pullUp a:hover:before {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
-  height: 300px;
+  height: 260px;
 }
 
 .blog-post-card {
@@ -1256,6 +1248,37 @@ Home Slider
   border-bottom: 1px solid #C0392B;
   box-shadow: none;
   outline: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.services-header__text {
+  animation: fadeIn 2s ease-out;
+  animation-delay: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+.services-header__image {
+  animation: scaleIn 1s ease-out;
+  transform-origin: top;
+  animation-fill-mode: forwards;
 }
 
 /*!

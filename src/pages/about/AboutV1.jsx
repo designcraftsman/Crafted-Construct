@@ -1,12 +1,10 @@
 import React from 'react';
-import NavigationBar from '../../components/navbar/navbarV1/NavbarLight';
-import Footer from '../../components/footer/FooterV1';  
 import about1 from '../../assets/images/V1/about/1.jpg';
-import about2 from '../../assets/images/V1/about/2.jpg';
-import about3 from '../../assets/images/V1/about/3.jpg';
-import about4 from '../../assets/images/V1/about/4.jpg';
-import about5 from '../../assets/images/V1/about/5.jpg';
-import AboutSection from '../../components/home/homeV1/AboutSection';
+import TeamSection from '../../components/about/TeamSection';
+import ServicesAbout from '../../components/services/ServicesAbout';
+import AboutSection from '../../components/about/AboutSection1';
+import BlogSection from '../../components/blog/BlogSection1';
+import TestimonialsSection from '../../components/testimonials/TestimonialsSection1';
 
 function App() {
   return (
@@ -29,35 +27,10 @@ function App() {
           </div>
         </div>
         <AboutSection className='my-5' />
-        <div className='container-fluid m-0 p-0'>
-          <div className='row m-0 '>
-          <div className='col-lg-6 bg-secondary text-white d-flex align-items-center justify-content-center'>
-                
-                    <p className='fw-normal fs-1 p-5'>
-                        Ac feugiat sed lectus vest ibu lum mattis ull amcorper veli ti sed. Sol licitud in tempor id eu nisl nunc mi ipsum fau cibus vita niu mae.
-                    </p>
-                
-            </div>
-            <div className='col-lg-6  m-0 p-0 h-100'>
-              <div className='row m-0 p-0 '>
-                <div className='col-6 m-0 p-0'>
-                  <img src={about2} className='object-fit-cover w-100 h-100 background-image' alt='about1' />
-                </div>
-                <div className='col-6 m-0 p-0'>
-                  <img src={about3} className='object-fit-cover w-100 h-100 background-image' alt='about1' />
-                </div>
-              </div>
-              <div className='row m-0 p-0'>
-                <div className='col-6 m-0 p-0'>
-                  <img src={about4} className='object-fit-cover w-100 h-100 background-image' alt='about1' />
-                </div>
-                <div className='col-6 m-0 p-0'>
-                  <img src={about5} className='object-fit-cover w-100 h-100 background-image' alt='about1' />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TeamSection/>
+        <ServicesAbout />
+        <TestimonialsSection />
+        <BlogSection />
     </div>
   );
 }

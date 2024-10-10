@@ -9,7 +9,7 @@ const BlogPostCard = ({ image, title, category, description, author, date }) => 
           <img src={image} alt="rover" className="card-image" />
         </div>
         <div className="card-body">
-          <span className="bg-info p-1 text-white rounded fs-6">{category}</span>
+          <span className="bg-primary fw-semibold p-1 text-white rounded fs-6">{category}</span>
           <h3 className='fw-bold my-3 fs-5 card-title'>
             {title}
           </h3>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { FaRegMessage } from "react-icons/fa6";
 import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
-import person1 from '../../../assets/images/V1/home/testimonialsSection/1.jpg';
+import person1 from '../../assets/images/V1/home/testimonialsSection/1.jpg';
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
@@ -70,7 +70,7 @@ const HeroSection = () => {
   }, [isPaused, totalSlides]);
 
   return (
-    <div className='position-relative my-5 reveal'>
+    <div className='position-relative reveal'>
       <div
         className="custom-testimonial-carousel bg-secondary"
         onMouseEnter={() => setIsPaused(true)}

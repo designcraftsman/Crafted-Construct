@@ -31,10 +31,6 @@ const NavigationBar = () => {
       <Link className="navbar-brand order-1" to="/">
         <div className="d-flex align-items-center text-white fw-bolder fs-6">
           <img src={Logo} alt="CraftedConstruct" className="logo" />
-          <div className="flex-column ms-3 d-lg-flex d-sm-flex d-none">
-            Crafted
-            <span className="text-primary p-0 m-0">Construct</span>
-          </div>
         </div>
       </Link>
 

@@ -56,5 +56,47 @@
       }
     }
   }
+
+
+  // Keyframe animation
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Header text animation
+.services-header__text {
+  animation: fadeIn 2s ease-out;
+  animation-delay: 1s;
+  opacity: 0; // Start with hidden text
+  animation-fill-mode: forwards; // Ensure it stays visible after animation
+}
+
+
+
+// Keyframe animation for scaling the image
+@keyframes scaleIn {
+  0% {
+    transform: scaleY(0); // Start with the image scaled to 0 height
+    transform-origin: top; // Set the transform origin to the top
+  }
+  100% {
+    transform: scaleY(1); // End with the image at its full size
+    transform-origin: top;
+  }
+}
+
+// Apply animation to the image
+.services-header__image {
+  animation: scaleIn 1s ease-out;
+  transform-origin: top; // Ensures scaling happens from the top
+  animation-fill-mode: forwards; // Keeps the final state after animation
+}
+
+
   
   
