@@ -43,9 +43,9 @@ function ServicesSection() {
   };
 
   return (
-    <div className="servicesCarousel__wrapper">
+    <div className="services-section">
       {/* Carousel */}
-      <Carousel ref={carouselRef} className="servicesCarousel__carousel" indicators={false} controls={false}>
+      <Carousel ref={carouselRef} className="services-section__carousel" indicators={false} controls={false}>
         {services.map((service, index) => (
           <Carousel.Item key={index}>
             <div className="row">
@@ -68,7 +68,7 @@ function ServicesSection() {
 
       {/* Custom Previous Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--prev btn btn-dark hover-filled-slide-down reveal"
+        className="services-section__control services-section__control--prev btn btn-dark hover-filled-slide-down reveal"
         onClick={handlePrevClick}
         aria-label="Previous"
       >
@@ -77,7 +77,7 @@ function ServicesSection() {
 
       {/* Custom Next Button */}
       <button
-        className="servicesCarousel__control servicesCarousel__control--next btn btn-dark hover-filled-slide-down reveal"
+        className="services-section__control services-section__control--next btn btn-dark hover-filled-slide-down reveal"
         onClick={handleNextClick}
         aria-label="Next"
       >

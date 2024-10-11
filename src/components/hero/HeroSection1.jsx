@@ -46,7 +46,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="custom-hero-carousel"  // Scoped class for this carousel
+      className="hero-carousel"  // Scoped class for this carousel
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -60,10 +60,10 @@ const HeroSection = () => {
         {slides.map((slide, i) => (
           <Carousel.Item
             key={i}
-            className={`carousel-item-custom image${i + 1}`} // Add unique class for each image
+            className={`hero-carousel__item image${i + 1}`} // Add unique class for each image
             style={{ backgroundImage: `url(${slide.image})` }} // Set background image dynamically
           >
-            <div className="carousel-caption staggered-animations">
+            <div className="hero-carousel__item__caption staggered-animations">
               <h1 className="display-3 slide-up">{slide.title}</h1>
               <h2 className="fs-4 fw-light mb-3 slide-up">{slide.text}</h2>
               <button className="btn btn-dark hover-filled-slide-down slide-up">
@@ -73,7 +73,7 @@ const HeroSection = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-      <div className="carousel-nav">
+      <div className="hero-carousel__nav">
         {slides.map((_, i) => (
           <button
             key={i}

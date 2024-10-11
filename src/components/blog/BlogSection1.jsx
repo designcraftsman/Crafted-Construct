@@ -102,7 +102,7 @@ const BlogSection1 = () => {
           <h2 className='fw-bold fs-5'>Our Blog</h2>
           <h3 className="latest-news fw-bold text-primary fs-4">Latest News</h3>
         </div>
-        <div className='large-screen-carousel'>
+        <div className='blog-carousel__large-screen'>
           {/* Custom Previous Button */}
           <button
             className="btn btn-dark hover-filled-slide-down mx-5"
@@ -124,7 +124,7 @@ const BlogSection1 = () => {
           </button>
         </div>
 
-        <div className='small-screen-carousel'>
+        <div className='blog-carousel__small-screen'>
           {/* Custom Previous Button */}
           <button
             className="btn btn-dark hover-filled-slide-down mx-2"
@@ -155,7 +155,7 @@ const BlogSection1 = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='large-screen-carousel reveal'
+        className='blog-carousel__large-screen reveal'
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
@@ -180,7 +180,7 @@ const BlogSection1 = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='small-screen-carousel reveal my-3'
+        className='blog-carousel__small-screen reveal my-3'
       >
         {blogPosts.map((slide, index) => (
           <Carousel.Item key={index}>

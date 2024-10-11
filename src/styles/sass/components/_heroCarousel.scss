@@ -3,11 +3,11 @@ $white-color: #ffffff;
 $nav-button-size: 20px;
 
 // Hero Section Carousel Styles
-.custom-hero-carousel {
+.hero-carousel {
   position: relative;
   overflow: hidden;
 
-  .carousel-item-custom {
+  &__item{
     position: absolute;
     height: 100vh;
     background-size: cover;
@@ -29,7 +29,7 @@ $nav-button-size: 20px;
       background-image: inherit;
     }
 
-    .carousel-caption {
+    &__caption {
       z-index: 10;
       position: absolute;
       top: 50%; // Center vertically
@@ -47,7 +47,7 @@ $nav-button-size: 20px;
     
   }
 
-  .carousel-nav {
+  &__nav {
     position: absolute;
     bottom: 30px;
     left: 50%;

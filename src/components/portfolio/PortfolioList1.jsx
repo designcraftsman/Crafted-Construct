@@ -50,14 +50,14 @@ const PortfolioList = ({ showMoreButton }) => {
 
   return (
     <>
-      <div className="grid-layout">
+      <div className="grid-layout projects-grid">
         {portfolioItems.slice(0, visibleItems).map((item, index) => (
           <a href="project-v1" key={index} className={getGridClass(index)}>
-            <figure className="snip1440 project-image">
-              <img src={item.img} className="w-100 h-100 object-fit-cover" alt="sample54" />
-              <figcaption>
-                <h1 className="display-6 text-center">{item.title}</h1>
-                <p className="text-center">5 July, 2021</p>
+            <figure className=" project-image projects-grid__figure">
+              <img src={item.img} className="w-100 h-100 object-fit-cover projects-grid__figure__image" alt="image-grid" />
+              <figcaption className='projects-grid__figure__caption'>
+                <h1 className="display-6 text-center projects-grid__figure__caption__h1">{item.title}</h1>
+                <p className="text-center projects-grid__figure__caption__p">5 July, 2021</p>
               </figcaption>
             </figure>
           </a>

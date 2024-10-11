@@ -105,7 +105,7 @@ const ServicesCarousel =() =>{
                                                             className={`custom-icon ${index === activeIndex ? 'active' : ''}`}
                                                         >
                                                             {/* Use any icon here, like SVG or custom HTML */}
-                                                            <span className='testimonials-carousel-nav'>
+                                                            <span className='testimonials-carousel__nav'>
                                                                 <button 
                                                                 className={index === activeIndex ? 'active' : ''}
                                                                 onClick={() => goToSlide(index)}

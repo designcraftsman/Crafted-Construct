@@ -1,0 +1,12 @@
+.blog-carousel {
+    &__large-screen{
+        @media screen and (max-width: 991px) {
+            display: none;
+          }
+    }
+    &__small-screen{
+        @media screen and (min-width: 991px) {
+            display: none;
+        }
+    }
+}

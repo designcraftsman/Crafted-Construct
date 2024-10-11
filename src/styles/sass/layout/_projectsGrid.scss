@@ -1,5 +1,5 @@
-.latest-projects {
-  .grid-layout {
+
+  .projects-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr); // Default: Three columns
     grid-auto-rows: 300px; // Set a fixed height for each row
@@ -66,4 +66,4 @@
       }
     }
   }
-}
+

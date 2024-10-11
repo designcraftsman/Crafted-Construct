@@ -72,7 +72,7 @@ const HeroSection = () => {
   return (
     <div className='position-relative reveal'>
       <div
-        className="custom-testimonial-carousel bg-secondary"
+        className="testimonials-carousel bg-secondary"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -86,7 +86,7 @@ const HeroSection = () => {
           onSelect={handleSelect}
           indicators={false}
           controls={false}
-          className='large-screen-carousel'
+          className='testimonials-carousel__large-screen'
         >
           {groupedSlides.map((group, i) => (
             <Carousel.Item key={i}>
@@ -121,12 +121,12 @@ const HeroSection = () => {
           onSelect={handleSelect}
           indicators={false}
           controls={false}
-          className='small-screen-carousel'
+          className='testimonials-carousel__small-screen'
         >
           {slides.map((slide, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className={`col-10 h-100 bg-white m-auto p-3 testimonial-card rounded  `}>
+                <div className={`col-10 h-100 bg-white m-auto p-3 testimonials-carousel__card rounded  `}>
                   <div className='row align-items-center'>
                     <div className='col-3'>
                       <img src={slide.image} className="user-image" alt="" />
@@ -148,7 +148,7 @@ const HeroSection = () => {
           ))}
         </Carousel>
 
-        <div className="testimonials-carousel-nav small-screen-carousel text-center py-5  ">
+        <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5  ">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -157,7 +157,7 @@ const HeroSection = () => {
             />
           ))}
         </div>
-        <div className="testimonials-carousel-nav large-screen-carousel text-center py-5  reveal">
+        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5  reveal">
           {groupedSlides.map((_, i) => (
             <button
               key={i}

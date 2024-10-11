@@ -68,6 +68,7 @@ function App() {
         <>
           {renderNavbar()}
           <Routes>
+            <Route path=" " element={<HomeV1 />} />
             <Route path="/" element={<HomeV1 />} />
             <Route path="/home-v1" element={<HomeV1 />} />
             <Route path="/portfolio-v1" element={<PortfolioV1 />} />

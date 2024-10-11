@@ -1,44 +1,43 @@
-.custom-testimonial-carousel {
+.testimonials-carousel {
     min-height: 90vh;
     position: relative;
-}
-.testimonials-carousel-nav{
-    z-index: 10;
-    button {
-      margin: 5px;
-      width: $nav-button-size;
-      height: $nav-button-size;
-      border-radius: 50%;
-      border: 2px solid $white-color;
-      background: $white-color;
-      opacity: 0.3;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &.active {
-        opacity: 1;
-      }
-
-      &:hover {
-        opacity: 1;
+    &__card{
+      height: 500px;
+    }
+    &__large-screen{
+      @media screen and (max-width: 991px) {
+        display: none;
       }
     }
+    &__small-screen{
+      @media screen and (min-width: 991px) {
+        display: none;
+      }
+    }
+    &__nav{
+      z-index: 10;
+      button {
+        margin: 5px;
+        width: $nav-button-size;
+        height: $nav-button-size;
+        border-radius: 50%;
+        border: 2px solid $white-color;
+        background: $white-color;
+        opacity: 0.3;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
   
-}
-
-.small-screen-carousel{
-  @media screen and (min-width: 991px) {
-    display: none;
-  }
-}
-
-.large-screen-carousel{
-  @media screen and (max-width: 991px) {
-    display: none;
-  }
+        &.active {
+          opacity: 1;
+        }
+  
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
 }
 
 
-.testimonial-card{
-  min-height: 300px;
-}
+
+
