@@ -1,9 +1,6 @@
 .testimonials-carousel {
     min-height: 90vh;
     position: relative;
-    &__card{
-      height: 500px;
-    }
     &__large-screen{
       @media screen and (max-width: 991px) {
         display: none;
@@ -36,6 +33,10 @@
         }
       }
     }
+}
+
+.testimonial-card-v2{
+  height: 250px;
 }
 
 

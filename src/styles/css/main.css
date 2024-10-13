@@ -6,8 +6,12 @@ button {
   border: none;
 }
 
-body {
+body, p {
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #F2F4F4;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .diplsay-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
@@ -286,6 +290,126 @@ button {
   width: 100%;
 }
 
+.reveal-section {
+  overflow: hidden;
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-4 {
+  transition-delay: 0.4s;
+}
+
+.reveal-5 {
+  transition-delay: 0.5s;
+}
+
+.reveal-section.active .reveal-element {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.reveal-section.active .reveal-1 {
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+.reveal-section.active .reveal-2 {
+  animation: scaleIn 0.6s ease 0.2s both;
+}
+.reveal-section.active .reveal-3 {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+.reveal-section.active .reveal-4 {
+  animation: scaleIn 0.6s ease 0.4s both;
+}
+.reveal-section.active .reveal-5 {
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.hero-carousel-v2__item {
+  height: 93vh;
+}
+.hero-carousel-v2__item__content {
+  position: relative;
+  background-color: #D9D9D9;
+}
+.hero-carousel-v2__item__content__caption {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: start;
+  width: 80%;
+}
+.hero-carousel-v2__item__image {
+  height: 100%;
+}
+
+.card-image-v2 {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.link-fill-right {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+.link-fill-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #C0392B;
+  transition: width 0.3s ease-in-out;
+}
+.link-fill-right:hover {
+  color: #C0392B;
+}
+.link-fill-right:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
 .hero-carousel {
   position: relative;
   overflow: hidden;
@@ -435,9 +559,6 @@ button {
   min-height: 90vh;
   position: relative;
 }
-.testimonials-carousel__card {
-  height: 500px;
-}
 @media screen and (max-width: 991px) {
   .testimonials-carousel__large-screen {
     display: none;
@@ -467,6 +588,10 @@ button {
 }
 .testimonials-carousel__nav button:hover {
   opacity: 1;
+}
+
+.testimonial-card-v2 {
+  height: 250px;
 }
 
 .projects-grid__figure {
@@ -560,6 +685,11 @@ button {
   top: 20px;
   bottom: 20px;
   opacity: 1;
+}
+
+.portfolio-carousel-v2__image {
+  height: 400px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 991px) {
@@ -878,53 +1008,17 @@ div.pullUp a:hover:before {
   }
 }
 
-.blog-post-card .post-image {
-  width: 400px;
-  height: auto;
-  border-radius: 8px;
-}
-.blog-post-card .post-category {
-  font-size: 0.9rem;
-  background-color: #001F3F;
-}
-.blog-post-card h5, .blog-post-card .h5 {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-.blog-post-card .post-description {
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-.blog-post-card .post-meta {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-}
-.blog-post-card .post-meta .author-avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.blog-post-card .post-meta .author-name {
-  font-weight: 500;
-}
-.blog-post-card .post-meta .post-date {
-  opacity: 0.7;
-}
-
 .card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
-
 .card-header img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .card-title {
   display: -webkit-box;
   width: 100%;
@@ -934,7 +1028,6 @@ div.pullUp a:hover:before {
   text-overflow: ellipsis;
   white-space: normal;
 }
-
 .card-text {
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Limits to 2 lines */
@@ -943,7 +1036,6 @@ div.pullUp a:hover:before {
   text-overflow: ellipsis;
   white-space: normal;
 }
-
 .card-body {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,20 @@
+.hero-carousel-v2 {
+    &__item{
+        height: 93vh;
+        &__content{
+            position: relative;
+            background-color: #D9D9D9;
+            &__caption{
+                position: absolute;
+                top: 50%; // Center vertically
+                left: 10%;
+                transform: translateY(-50%); // Adjust to align to the center vertically
+                text-align: start;
+                width:80%;
+            }
+        }
+        &__image{
+            height:100%;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.link-fill-right {
+    position: relative;
+    text-decoration: none;
+    color: $dark; // Initial color
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary; // Underline color
+      transition: width 0.3s ease-in-out;
+    }
+    
+    &:hover {
+      color: $primary; // Change text color to $primary on hover
+    }
+  
+    &:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+  }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 
 // Import your components
 import HomeV1 from './pages/home/HomeV1';
+import HomeV2 from './pages/home/HomeV2';
 import PortfolioV1 from './pages/portfolio/PortfolioV1';
 import ServicesV1 from './pages/services/ServicesV1';
 import ProjectV1 from './pages/project/ProjectV1';
@@ -53,7 +54,7 @@ function App() {
 
   // Conditionally render NavbarDark for specific paths
   const renderNavbar = () => {
-    if (location.pathname === '/portfolio-v1' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1' || location.pathname === '/terms-conditions' || location.pathname === '/privacy-policy' || location.pathname === '/faqs') {
+    if (location.pathname === '/home-v2' || location.pathname === '/portfolio-v1' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1' || location.pathname === '/terms-conditions' || location.pathname === '/privacy-policy' || location.pathname === '/faqs') {
       return <NavbarDark />;
     } else {
       return <NavbarLight />;
@@ -68,9 +69,10 @@ function App() {
         <>
           {renderNavbar()}
           <Routes>
-            <Route path=" " element={<HomeV1 />} />
+            <Route path="" element={<HomeV1 />} />
             <Route path="/" element={<HomeV1 />} />
             <Route path="/home-v1" element={<HomeV1 />} />
+            <Route path="/home-v2" element={<HomeV2 />} />
             <Route path="/portfolio-v1" element={<PortfolioV1 />} />
             <Route path="/services-v1" element={<ServicesV1 />} />
             <Route path="/project-v1" element={<ProjectV1 />} />
