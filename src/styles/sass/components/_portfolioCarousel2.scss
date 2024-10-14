@@ -1,6 +1,77 @@
 .portfolio-carousel-v2 {
-    &__image{
-        height: 400px;
+    &__image {
+        height: 500px;
         object-fit: cover;
     }
- }
+}
+
+.projects-grid__figure {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    background-color: $dark;
+
+    &__image {
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    &__caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(10%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 1;
+
+        &__h1, &__p {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__p {
+            margin-top: 5px;
+        }
+    }
+
+    &:hover, &.hover {
+        .projects-grid__figure__image {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+
+        .projects-grid__figure__caption {
+            opacity: 1;
+            transform: translateX(0%);
+            transition-delay: 0.3s;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 20px;
+        right: 20px;
+        transition: all 1s ease-in-out;
+        opacity: 0;
+    }
+
+    &:hover:after, &.hover:after {
+        top: 20px;
+        bottom: 20px;
+        opacity: 1;
+    }
+}

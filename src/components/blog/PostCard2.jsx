@@ -6,8 +6,8 @@ const BlogPostCard2 = ({ image, title, category, description, author, date }) =>
     <React.Fragment>
       <div className="card blog-post-card">
         <div className="row g-0">
-          <div className="col-md-6">
-            <img src={image} alt="blog post" className=" card-image-v2" />
+          <div className="col-md-6 image-container">
+            <img src={image} alt="blog post" className="card-image-v2" />
           </div>
           <div className="col-md-6">
             <div className="card-body">

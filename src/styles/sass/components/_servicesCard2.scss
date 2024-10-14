@@ -1,0 +1,24 @@
+.service-card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card__icon {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .service-card__icon {
+        transform: scale(1.1);
+    }
+
+    .service-card__title {
+        transition: color 0.3s ease;
+    }
+
+    &:hover .service-card__title {
+        color: $primary; // Adjust this color to match your primary color
+    }
+}

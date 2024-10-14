@@ -1,20 +1,87 @@
 .hero-carousel-v2 {
     &__item{
         height: 93vh;
-        &__content{
-            position: relative;
+        position: relative;
+        &__content{  
             background-color: #D9D9D9;
             &__caption{
                 position: absolute;
                 top: 50%; // Center vertically
-                left: 10%;
+                left: 5%;
                 transform: translateY(-50%); // Adjust to align to the center vertically
                 text-align: start;
-                width:80%;
+                width:33%;
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
             }
         }
         &__image{
             height:100%;
         }
     }
+}
+
+.hero-carousel-v2 {
+    &__item{
+        height: 93vh;
+        position: relative;
+        &__content{  
+            background-color: #D9D9D9;
+            &__caption{
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                text-align: start;
+                width:33%;
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+        &__image{
+            height:100%;
+        }
+    }
+}
+
+// Animation styles
+.slide-up {
+  animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Staggered animation with delay for each element
+.staggered-animations {
+  h3 {
+    animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+    animation-delay: 0ms;
+  }
+
+  h4 {
+    animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+    animation-delay: 300ms;
+  }
+
+  button {
+    animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+    animation-delay: 600ms;
+  }
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

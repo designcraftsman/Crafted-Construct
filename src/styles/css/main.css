@@ -363,27 +363,131 @@ button {
 
 .hero-carousel-v2__item {
   height: 93vh;
+  position: relative;
 }
 .hero-carousel-v2__item__content {
-  position: relative;
   background-color: #D9D9D9;
 }
 .hero-carousel-v2__item__content__caption {
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 5%;
   transform: translateY(-50%);
   text-align: start;
-  width: 80%;
+  width: 33%;
+}
+@media (max-width: 768px) {
+  .hero-carousel-v2__item__content__caption {
+    width: 100%;
+  }
 }
 .hero-carousel-v2__item__image {
   height: 100%;
 }
 
+.hero-carousel-v2__item {
+  height: 93vh;
+  position: relative;
+}
+.hero-carousel-v2__item__content {
+  background-color: #D9D9D9;
+}
+.hero-carousel-v2__item__content__caption {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: start;
+  width: 33%;
+}
+@media (max-width: 768px) {
+  .hero-carousel-v2__item__content__caption {
+    width: 100%;
+  }
+}
+.hero-carousel-v2__item__image {
+  height: 100%;
+}
+
+.slide-up {
+  animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.staggered-animations h3, .staggered-animations .h3 {
+  animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+  animation-delay: 0ms;
+}
+.staggered-animations h4, .staggered-animations .h4 {
+  animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+  animation-delay: 300ms;
+}
+.staggered-animations button {
+  animation: slide-up 0.85s cubic-bezier(0.65, 0, 0.35, 1) both;
+  animation-delay: 600ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .card-image-v2 {
   width: 100%;
   height: 300px;
   object-fit: cover;
+}
+
+.blog-post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.blog-post-card .image-container {
+  overflow: hidden;
+}
+.blog-post-card .card-image-v2 {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.blog-post-card:hover .card-image-v2 {
+  transform: scale(1.05);
+}
+
+.service-card {
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.service-card .service-card__icon {
+  transition: transform 0.3s ease;
+}
+.service-card:hover .service-card__icon {
+  transform: scale(1.1);
+}
+.service-card .service-card__title {
+  transition: color 0.3s ease;
+}
+.service-card:hover .service-card__title {
+  color: #C0392B;
 }
 
 .link-fill-right {
@@ -688,8 +792,69 @@ button {
 }
 
 .portfolio-carousel-v2__image {
-  height: 400px;
+  height: 500px;
   object-fit: cover;
+}
+
+.projects-grid__figure {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  background-color: black;
+}
+.projects-grid__figure__image {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.projects-grid__figure__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateX(10%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+.projects-grid__figure__caption__h1, .projects-grid__figure__caption__p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.projects-grid__figure__caption__p {
+  margin-top: 5px;
+}
+.projects-grid__figure:hover .projects-grid__figure__image, .projects-grid__figure.hover .projects-grid__figure__image {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+.projects-grid__figure:hover .projects-grid__figure__caption, .projects-grid__figure.hover .projects-grid__figure__caption {
+  opacity: 1;
+  transform: translateX(0%);
+  transition-delay: 0.3s;
+}
+.projects-grid__figure:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 20px;
+  right: 20px;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+.projects-grid__figure:hover:after, .projects-grid__figure.hover:after {
+  top: 20px;
+  bottom: 20px;
+  opacity: 1;
 }
 
 @media screen and (max-width: 991px) {
@@ -1041,7 +1206,7 @@ div.pullUp a:hover:before {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 260px;
+  height: 280px;
 }
 
 .blog-post-card {
