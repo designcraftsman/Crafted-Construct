@@ -22,10 +22,10 @@ const PortfolioSection2 = () => {
                 <Carousel.Item key={i}>
                     <div className="row m-0">
                         {[...Array(4)].map((_, j) => (
-                            <div key={j} className="col-3 p-0 projects-grid__figure">
+                            <div key={j} className="col-3 p-0 projects-grid__figure ">
                                 <img 
                                     src={portfolioImages[(i + j) % portfolioImages.length]} 
-                                    className="w-100 portfolio-carousel-v2__image projects-grid__figure__image" 
+                                    className="w-100 portfolio-carousel-v2__image  projects-grid__figure__image " 
                                     alt={`Portfolio ${(i + j) % portfolioImages.length + 1}`} 
                                 />
                                 <figcaption className="projects-grid__figure__caption">

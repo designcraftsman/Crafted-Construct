@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import portfolio1 from '../../assets/images/V1/home/portfolioSection/1.jpg';
 import portfolio2 from '../../assets/images/V1/home/portfolioSection/2.jpg';
 import portfolio3 from '../../assets/images/V1/home/portfolioSection/3.jpg';
@@ -28,6 +28,7 @@ const portfolioItems = [
 
 const PortfolioList = ({ showMoreButton }) => {
   const [visibleItems, setVisibleItems] = useState(8);
+  const sectionRef = useRef(null);
 
   // Function to handle "Show More" button click
   const showMoreItems = () => {
@@ -48,12 +49,32 @@ const PortfolioList = ({ showMoreButton }) => {
     return classes[index % 8]; // Cycle through classes for every 8 items
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <>
+    <div className="portfolio-section reveal-section" ref={sectionRef}>
       <div className="grid-layout projects-grid">
         {portfolioItems.slice(0, visibleItems).map((item, index) => (
-          <a href="project-v1" key={index} className={getGridClass(index)}>
-            <figure className=" project-image projects-grid__figure">
+          <a href="project-v1" key={index} className={`${getGridClass(index)} reveal-element reveal-${(index % 5) + 1}`}>
+            <figure className="project-image projects-grid__figure">
               <img src={item.img} className="w-100 h-100 object-fit-cover projects-grid__figure__image" alt="image-grid" />
               <figcaption className='projects-grid__figure__caption'>
                 <h1 className="display-6 text-center projects-grid__figure__caption__h1">{item.title}</h1>
@@ -66,13 +87,13 @@ const PortfolioList = ({ showMoreButton }) => {
 
       {/* Conditionally render the Show More button if prop is true */}
       {showMoreButton && visibleItems < portfolioItems.length && (
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 reveal-element reveal-1">
           <button className="btn btn-primary" onClick={showMoreItems}>
             Show More
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

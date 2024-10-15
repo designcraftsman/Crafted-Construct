@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import service1 from '../../assets/images/V1/home/servicesSection/1.jpg';
 import Carousel from 'react-bootstrap/Carousel';
@@ -26,7 +26,8 @@ const services = [
 ];
 
 function ServicesSection() {
-  const carouselRef = useRef(null); // Create a reference for the carousel
+  const carouselRef = useRef(null);
+  const sectionRef = useRef(null);
 
   // Handler for going to the previous slide
   const handlePrevClick = () => {
@@ -42,21 +43,41 @@ function ServicesSection() {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="services-section">
+    <div className="services-section reveal-section" ref={sectionRef}>
       {/* Carousel */}
       <Carousel ref={carouselRef} className="services-section__carousel" indicators={false} controls={false}>
         {services.map((service, index) => (
           <Carousel.Item key={index}>
             <div className="row">
-              <div className='col-lg-6 col-md-6 col-12 p-0 m-0 reveal'>
-                <img src={service.img} className='h-100 w-100 object-fit-cover ' alt="" />
+              <div className='col-lg-6 col-md-6 col-12 p-0 m-0 reveal-element reveal-1'>
+                <img src={service.img} className='h-100 w-100 object-fit-cover' alt="" />
               </div>
-              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 reveal'>
+              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 reveal-element reveal-2'>
                 <div className='my-auto'>
-                  <h2 className="text-primary fw-semibold mb-3 reveal">{service.title}</h2>
-                  <h3 className='text-white fw-bold fs-2 reveal'>{service.subtitle}</h3>
-                  <p className='fw-light fs-5 text-white w-75 reveal'>
+                  <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-3">{service.title}</h2>
+                  <h3 className='text-white fw-bold fs-2 reveal-element reveal-4'>{service.subtitle}</h3>
+                  <p className='fw-light fs-5 text-white w-75 reveal-element reveal-5'>
                     {service.description}
                   </p>
                 </div>
@@ -68,7 +89,7 @@ function ServicesSection() {
 
       {/* Custom Previous Button */}
       <button
-        className="services-section__control services-section__control--prev btn btn-dark hover-filled-slide-down reveal"
+        className="services-section__control services-section__control--prev btn btn-dark hover-filled-slide-down reveal-element reveal-1"
         onClick={handlePrevClick}
         aria-label="Previous"
       >
@@ -77,7 +98,7 @@ function ServicesSection() {
 
       {/* Custom Next Button */}
       <button
-        className="services-section__control services-section__control--next btn btn-dark hover-filled-slide-down reveal"
+        className="services-section__control services-section__control--next btn btn-dark hover-filled-slide-down reveal-element reveal-1"
         onClick={handleNextClick}
         aria-label="Next"
       >

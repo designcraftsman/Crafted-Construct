@@ -470,6 +470,100 @@ button {
   transform: scale(1.05);
 }
 
+.projects-grid__figure {
+  font-family: "Montserrat", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  background-color: black;
+}
+.projects-grid__figure__image {
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  height: 350px;
+}
+.projects-grid__figure__image:hover .projects-grid__figure__image, .projects-grid__figure__image.hover .projects-grid__figure__image {
+  opacity: 0.2;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); /* Zoom-in effect */
+}
+.projects-grid__figure__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateX(10%);
+  transform: translateX(10%);
+}
+.projects-grid__figure__caption__h1 {
+  text-align: center;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding for tighter spacing */
+}
+.projects-grid__figure__caption__p {
+  text-align: center;
+  margin: 5px 0 0 0; /* Small margin to keep them close */
+}
+.projects-grid:hover .projects-grid__caption, .projects-grid .hover .projects-grid__caption {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.projects-grid:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  bottom: 50%;
+  left: 20px;
+  right: 20px;
+  -webkit-transition: all 1s ease-in-out; /* Slowed down to 1s */
+  transition: all 1s ease-in-out; /* Slowed down to 1s */
+  opacity: 0;
+}
+.projects-grid * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.projects-grid__figure:hover .projects-grid__figure__caption,
+.projects-grid__figure.hover .projects-grid__figure__caption {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.projects-grid__figure:hover .projects-grid__figure__image,
+.projects-grid__figure.hover .projects-grid__figure__image {
+  opacity: 0.2;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); /* Zoom-in effect */
+}
+
+.projects-grid__figure:hover:after,
+.projects-grid__figure.hover:after {
+  top: 20px;
+  bottom: 20px;
+  opacity: 1;
+}
+
 .service-card {
   transition: all 0.3s ease;
 }
@@ -871,6 +965,7 @@ button {
 .navbar-light {
   background-color: transparent;
   padding: 1rem 0;
+  transition: background-color 500ms;
 }
 .navbar-light .navbar-brand .logo {
   max-height: 35px;
@@ -884,6 +979,48 @@ button {
   font-size: 1.1rem;
   margin: 0 1rem;
   transition: color 0.3s ease;
+}
+.navbar-light.navbar-scrolled {
+  background-color: white;
+}
+.navbar-light.navbar-scrolled .navbar-nav__link {
+  color: black;
+}
+.navbar-light .dropdown-menu {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 0;
+}
+.navbar-light .dropdown-menu .dropdown-item {
+  color: #FFF;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.navbar-light .dropdown-menu .dropdown-item:hover, .navbar-light .dropdown-menu .dropdown-item:focus {
+  background-color: transparent;
+  color: #FFF;
+}
+.navbar-light .dropdown-menu .dropdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #C0392B;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.navbar-light .dropdown-menu .dropdown-item:hover::before {
+  transform: translateY(0);
+}
+.navbar-light .dropdown-menu .dropdown-item span {
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 992px) {
@@ -909,13 +1046,14 @@ button {
   z-index: 2;
 }
 
-/* Pull up */
-div.pullUp a {
+/* Pull up effect for all links including dropdown items */
+div.pullUp a,
+.dropdown-menu .dropdown-item {
   position: relative;
   z-index: 1;
 }
-
-div.pullUp a:before {
+div.pullUp a:before,
+.dropdown-menu .dropdown-item:before {
   position: absolute;
   width: 100%;
   height: 2px;
@@ -928,8 +1066,8 @@ div.pullUp a:before {
   opacity: 1;
   transition: all 0.3s;
 }
-
-div.pullUp a:hover:before {
+div.pullUp a:hover:before,
+.dropdown-menu .dropdown-item:hover:before {
   height: 100%;
   background-color: #C0392B;
 }
@@ -948,12 +1086,18 @@ div.pullUp a:hover:before {
   padding-right: 40px;
   color: #fff;
 }
-
 .input-search::placeholder {
   color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
+}
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
 .btn-search {
@@ -971,16 +1115,7 @@ div.pullUp a:hover:before {
   background-color: transparent;
   pointer-events: painted;
 }
-
 .btn-search:focus ~ .input-search {
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
-}
-
-.input-search:focus {
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
@@ -1002,12 +1137,18 @@ div.pullUp a:hover:before {
   padding-right: 40px;
   color: black;
 }
-
 .input-search-dark::placeholder {
   color: rgba(22, 22, 22, 0.5);
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
+}
+.input-search-dark:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(55, 54, 54, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
 .btn-search-dark {
@@ -1025,7 +1166,6 @@ div.pullUp a:hover:before {
   background-color: transparent;
   pointer-events: painted;
 }
-
 .btn-search-dark:focus ~ .input-search-dark {
   width: 300px;
   border-radius: 0px;
@@ -1034,23 +1174,18 @@ div.pullUp a:hover:before {
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
-.input-search-dark:focus {
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(55, 54, 54, 0.5);
-  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+.bg-white .dropdown-menu {
+  background-color: #FFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.navbar-light {
-  background-color: transparent;
-  transition: background-color 500ms;
-}
-.navbar-light.navbar-scrolled {
-  background-color: white;
-}
-.navbar-light.navbar-scrolled .navbar-nav__link {
+.bg-white .dropdown-menu .dropdown-item {
   color: black;
+}
+.bg-white .dropdown-menu .dropdown-item:hover, .bg-white .dropdown-menu .dropdown-item:focus {
+  color: white;
+}
+.bg-white .dropdown-menu .dropdown-item::before {
+  background-color: #C0392B;
 }
 
 .footer-section {

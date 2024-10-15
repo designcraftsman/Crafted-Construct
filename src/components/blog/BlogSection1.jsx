@@ -96,51 +96,51 @@ const BlogSection1 = () => {
   };
 
   return (
-    <div className="blog-carousel container-fluid p-lg-5 p-3">
-      <div className='d-flex align-items-center justify-content-between reveal'>
+    <div className="blog-carousel container-fluid p-lg-5 p-3 reveal-section">
+      <div className='d-flex align-items-center justify-content-between reveal-element reveal-1'>
         <div>
-          <h2 className='fw-bold fs-5'>Our Blog</h2>
-          <h3 className="latest-news fw-bold text-primary fs-4">Latest News</h3>
+          <h2 className='fw-bold fs-5 reveal-element reveal-2'>Our Blog</h2>
+          <h3 className="latest-news fw-bold text-primary fs-4 reveal-element reveal-3">Latest News</h3>
         </div>
-        <div className='blog-carousel__large-screen'>
+        <div className='blog-carousel__large-screen reveal-element reveal-4'>
           {/* Custom Previous Button */}
           <button
-            className="btn btn-dark hover-filled-slide-down mx-5"
+            className="btn btn-dark hover-filled-slide-down mx-5 reveal-element reveal-5"
             onClick={goToPreviousSlide}
             aria-label="Previous"
-            disabled={activeIndex === 0}  // Disable if on the first slide
+            disabled={activeIndex === 0}
           >
             <FaArrowLeft className="icon fs-1 text-white" />
           </button>
 
           {/* Custom Next Button */}
           <button
-            className="btn btn-dark hover-filled-slide-down"
+            className="btn btn-dark hover-filled-slide-down reveal-element reveal-6"
             onClick={goToNextSlide}
             aria-label="Next"
-            disabled={activeIndex === totalSlidesLarge - 1}  // Disable if on the last slide
+            disabled={activeIndex === totalSlidesLarge - 1}
           >
             <FaArrowRight className="icon fs-1 text-white" />
           </button>
         </div>
 
-        <div className='blog-carousel__small-screen'>
+        <div className='blog-carousel__small-screen reveal-element reveal-4'>
           {/* Custom Previous Button */}
           <button
-            className="btn btn-dark hover-filled-slide-down mx-2"
+            className="btn btn-dark hover-filled-slide-down mx-2 reveal-element reveal-5"
             onClick={goToPreviousSlide}
             aria-label="Previous"
-            disabled={activeIndex === 0}  // Disable if on the first slide
+            disabled={activeIndex === 0}
           >
             <FaArrowLeft className="icon fs-1 text-white" />
           </button>
 
           {/* Custom Next Button */}
           <button
-            className="btn btn-dark hover-filled-slide-down"
+            className="btn btn-dark hover-filled-slide-down reveal-element reveal-6"
             onClick={goToNextSlide}
             aria-label="Next"
-            disabled={activeIndex === totalSlidesSmall - 1}  // Disable if on the last slide
+            disabled={activeIndex === totalSlidesSmall - 1}
           >
             <FaArrowRight className="icon fs-1 text-white" />
           </button>
@@ -155,17 +155,17 @@ const BlogSection1 = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='blog-carousel__large-screen reveal'
+        className='blog-carousel__large-screen reveal-element reveal-7'
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
-            <div className="row justify-content-evenly my-5  gap-3">
+            <div className="row justify-content-evenly my-5 gap-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <a href="post-v1" className='text-decoration-none text-dark col-3'>
-                  <div className="card ">
-                    <PostCard  title={post.title} description={post.description} category={post.category} author={post.author} date={post.date} image={post1} />
-                </div>
-               </a>
+                <a href="post-v1" className='text-decoration-none text-dark col-3 reveal-element reveal-8'>
+                  <div className="card">
+                    <PostCard title={post.title} description={post.description} category={post.category} author={post.author} date={post.date} image={post1} />
+                  </div>
+                </a>
               ))}
             </div>
           </Carousel.Item>
@@ -180,14 +180,14 @@ const BlogSection1 = () => {
         interval={null}
         activeIndex={activeIndex}
         onSelect={handleSlide}
-        className='blog-carousel__small-screen reveal my-3'
+        className='blog-carousel__small-screen reveal-element reveal-7 my-3'
       >
         {blogPosts.map((slide, index) => (
           <Carousel.Item key={index}>
-            <a href="post-v1" className='text-decoration-none text-dark col-10'>
-                  <div className="card ">
-                    <PostCard  title={slide.title} description={slide.description} category={slide.category} author={slide.author} date={slide.date} image={post1} />
-                </div>
+            <a href="post-v1" className='text-decoration-none text-dark col-10 reveal-element reveal-8'>
+              <div className="card">
+                <PostCard title={slide.title} description={slide.description} category={slide.category} author={slide.author} date={slide.date} image={post1} />
+              </div>
             </a>
           </Carousel.Item>
         ))}

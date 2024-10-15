@@ -1,69 +1,114 @@
 .navbar-light {
-    background-color: transparent;
-    padding: 1rem 0;
+  background-color: transparent;
+  padding: 1rem 0;
+  transition: background-color 500ms;
 
-  
-    .navbar-brand {
-      .logo {
-        max-height: 35px;
-      }
+  .navbar-brand {
+    .logo {
+      max-height: 35px;
     }
-  
-    .navbar-toggler {
-      
-      &:hover,
-      &:focus {
-        background-color: #f23d3d;
-      }
+  }
+
+  .navbar-toggler {
+    &:hover,
+    &:focus {
+      background-color: #f23d3d;
     }
-  
-    .navbar-collapse {
-      .navbar-nav {
-        
-        .nav-link {
-          text-align: center;
-          color: #fff;
-          font-size: 1.1rem;
-          margin: 0 1rem;
-          transition: color 0.3s ease;
-  
-        }
+  }
+
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link {
+        text-align: center;
+        color: #fff;
+        font-size: 1.1rem;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
       }
     }
   }
-  
-  
-  .navbar-nav {
-    @media (max-width: 992px) {
-      background-color: $dark;
-      z-index: 5;
-      border-radius: 5px;
-      padding:  10px;
-      width: 100%;
-     }
-    &__link {
+
+  &.navbar-scrolled {
+    background-color: white;
+    .navbar-nav__link {
+      color: black;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $dark;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+
+    .dropdown-item {
       color: #FFF;
-      text-decoration: none;
-      margin: 0px 10px;
-      padding: 10px 10px;
-      position: relative; // Create stacking context
-      z-index: 2; // Ensures span text is on top
-      cursor: pointer;
-  
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &:hover, &:focus {
+        background-color: transparent;
+        color: #FFF;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $primary;
+        z-index: 1;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::before {
+        transform: translateY(0);
+      }
+
       span {
-        position: relative; // Ensure text has its own stacking context
-        z-index: 2; // Text stays on top
+        position: relative;
+        z-index: 2;
       }
     }
   }
-  
-  /* Pull up */
-  div.pullUp a {
-    position: relative; // Ensure stacking context for the link
-    z-index: 1; // Lower than the text to keep the hover effect behind
+}
+
+.navbar-nav {
+  @media (max-width: 992px) {
+    background-color: $dark;
+    z-index: 5;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
   }
-  
-  div.pullUp a:before {
+  &__link {
+    color: #FFF;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+/* Pull up effect for all links including dropdown items */
+div.pullUp a,
+.dropdown-menu .dropdown-item {
+  position: relative;
+  z-index: 1;
+
+  &:before {
     position: absolute;
     width: 100%;
     height: 2px;
@@ -72,131 +117,140 @@
     content: '';
     border-radius: 5px;
     background: $primary;
-    z-index: 0; // Ensure it is behind the link and text
+    z-index: 0;
     opacity: 1;
     transition: all 0.3s;
   }
-  
-  div.pullUp a:hover:before {
+
+  &:hover:before {
     height: 100%;
     background-color: $primary;
+    
   }
+}
 
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: transparent;
+  padding-right: 40px;
+  color: #fff;
 
-
-  .input-search{
-    height: 50px;
-    width: 50px;
-    border-style: none;
-    padding: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    outline: none;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    background-color: transparent;
-    padding-right: 40px;
-    color:#fff;
-  }
-  .input-search::placeholder{
-    color:rgba(255,255,255,.5);
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: 100;
-  }
-  .btn-search{
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    color:#ffffff ;
-    background-color:transparent;
-    pointer-events: painted;  
-  }
-  .btn-search:focus ~ .input-search{
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  }
-  .input-search:focus{
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  }
-
-  
-  .input-search-dark{
-    height: 50px;
-    width: 50px;
-    border-style: none;
-    padding: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    outline: none;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    background-color: transparent;
-    padding-right: 40px;
-    color:$dark;
-  }
-  .input-search-dark::placeholder{
-    color:rgba(22, 22, 22, 0.5);
+  &::placeholder {
+    color: rgba(255,255,255,.5);
     font-size: 18px;
     letter-spacing: 2px;
     font-weight: 100;
   }
-  .btn-search-dark{
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    color:$dark;
-    background-color:transparent;
-    pointer-events: painted;  
-  }
-  .btn-search-dark:focus ~ .input-search-dark{
+
+  &:focus {
     width: 300px;
     border-radius: 0px;
     background-color: transparent;
-    border-bottom:1px solid rgba(44, 43, 43, 0.5);
+    border-bottom: 1px solid rgba(255,255,255,.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
-  .input-search-dark:focus{
+}
+
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+
+  &:focus ~ .input-search {
     width: 300px;
     border-radius: 0px;
     background-color: transparent;
-    border-bottom:1px solid rgba(55, 54, 54, 0.5);
+    border-bottom: 1px solid rgba(255,255,255,.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
-  
-  
-  .navbar-light {
+}
+
+.input-search-dark {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: transparent;
+  padding-right: 40px;
+  color: $dark;
+
+  &::placeholder {
+    color: rgba(22, 22, 22, 0.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+
+  &:focus {
+    width: 300px;
+    border-radius: 0px;
     background-color: transparent;
-    transition: background-color 500ms;
-  
-    &.navbar-scrolled {
-      background-color: white;
-      .navbar-nav__link {
-        color: black;
+    border-bottom: 1px solid rgba(55, 54, 54, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+}
+
+.btn-search-dark {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  color: $dark;
+  background-color: transparent;
+  pointer-events: painted;
+
+  &:focus ~ .input-search-dark {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(44, 43, 43, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+}
+
+.bg-white {
+  .dropdown-menu {
+    background-color: #FFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .dropdown-item {
+      color: $dark;
+      &:hover, &:focus {
+        color: white;
+      }
+      
+      &::before {
+        background-color: $primary;
       }
     }
   }
-
-  
-  
+}

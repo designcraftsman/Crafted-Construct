@@ -84,7 +84,7 @@ const TestimonialsSection2 = () => {
   }, [isPaused, totalSlides]);
 
   return (
-    <div className='position-relative reveal'>
+    <div className='position-relative '>
       <div
         className="testimonials-carousel bg-secondary"
         onMouseEnter={() => setIsPaused(true)}
@@ -92,8 +92,8 @@ const TestimonialsSection2 = () => {
       >
         <div className=' container d-flex align-items-center justify-content-between py-5'>
           <div>
-            <h2 className="fw-bolder text-primary fs-2 mb-3 reveal"><FaRegMessage /> Testimonials </h2>
-            <h3 className="fw-light display-5 fw-semibold text-white mb-3 reveal">What Our Clients Say</h3>
+            <h2 className="fw-bolder text-primary fs-2 mb-3"><FaRegMessage /> Testimonials </h2>
+            <h3 className="fw-light display-5 fw-semibold text-white mb-3">What Our Clients Say</h3>
           </div>
           <div className='buttons'>
             <button onClick={handlePrev} className="btn btn-primary me-2">
@@ -118,7 +118,7 @@ const TestimonialsSection2 = () => {
               <div className='row py-3'>
                 {group.map((slide, j) => (
                   <div key={j} className='col-4 m-auto px-3'>
-                    <div className='bg-white p-4 rounded testimonial-card-v2 reveal  d-flex flex-column'>
+                    <div className='bg-white p-4 rounded testimonial-card-v2   d-flex flex-column'>
                       <div className='row flex-grow-1'>
                         <div className='col-md-4 text-center'>
                           <img src={slide.image} className="user-image mb-3" alt="" />
@@ -182,7 +182,7 @@ const TestimonialsSection2 = () => {
             />
           ))}
         </div>
-        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5 reveal">
+        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5 ">
           {groupedSlides.map((_, i) => (
             <button
               key={i}

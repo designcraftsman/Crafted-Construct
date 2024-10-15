@@ -70,15 +70,15 @@ const HeroSection = () => {
   }, [isPaused, totalSlides]);
 
   return (
-    <div className='position-relative reveal'>
+    <div className='position-relative reveal-section'>
       <div
-        className="testimonials-carousel bg-secondary"
+        className="testimonials-carousel bg-secondary reveal-element reveal-1"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         <div className="text-center py-5">
-          <h2 className="fw-bolder text-primary fs-2 mb-3 reveal"><FaRegMessage /> Testimonials </h2>
-          <h3 className="fw-light display-5 fw-semibold text-white mb-3 reveal">What Our Clients Say</h3>
+          <h2 className="fw-bolder text-primary fs-2 mb-3 reveal-element reveal-2"><FaRegMessage /> Testimonials </h2>
+          <h3 className="fw-light display-5 fw-semibold text-white mb-3 reveal-element reveal-3">What Our Clients Say</h3>
         </div>
 
         <Carousel
@@ -86,13 +86,13 @@ const HeroSection = () => {
           onSelect={handleSelect}
           indicators={false}
           controls={false}
-          className='testimonials-carousel__large-screen'
+          className='testimonials-carousel__large-screen reveal-element reveal-4'
         >
           {groupedSlides.map((group, i) => (
             <Carousel.Item key={i}>
               <div className='row py-3'>
                 {group.map((slide, j) => (
-                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card reveal `}>
+                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card reveal-element reveal-${j + 5}`}>
                     <div className='row align-items-center'>
                       <div className='col-3'>
                         <img src={slide.image} className="user-image" alt="" />
@@ -121,12 +121,12 @@ const HeroSection = () => {
           onSelect={handleSelect}
           indicators={false}
           controls={false}
-          className='testimonials-carousel__small-screen'
+          className='testimonials-carousel__small-screen reveal-element reveal-4'
         >
           {slides.map((slide, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className={`col-10 h-100 bg-white m-auto p-3 testimonials-carousel__card rounded  `}>
+                <div className={`col-10 h-100 bg-white m-auto p-3 testimonials-carousel__card rounded reveal-element reveal-5`}>
                   <div className='row align-items-center'>
                     <div className='col-3'>
                       <img src={slide.image} className="user-image" alt="" />
@@ -148,7 +148,7 @@ const HeroSection = () => {
           ))}
         </Carousel>
 
-        <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5  ">
+        <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5 reveal-element reveal-6">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -157,7 +157,7 @@ const HeroSection = () => {
             />
           ))}
         </div>
-        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5  reveal">
+        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5 reveal-element reveal-6">
           {groupedSlides.map((_, i) => (
             <button
               key={i}

@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioList from '../../components/portfolio/PortfolioList1';
+import PortfolioList from '../../components/portfolio/PortfolioGrid';
  
 
 function App() {
