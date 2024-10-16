@@ -89,20 +89,20 @@ function ServicesSection() {
 
       {/* Custom Previous Button */}
       <button
-        className="services-section__control services-section__control--prev btn btn-dark hover-filled-slide-down reveal-element reveal-1"
+        className="services-section__control services-section__control--prev reveal-element reveal-1"
         onClick={handlePrevClick}
         aria-label="Previous"
       >
-        <FaArrowLeft className="fs-1 icon text-white" />
+        <FaArrowLeft className="fs-1 icon" />
       </button>
 
       {/* Custom Next Button */}
       <button
-        className="services-section__control services-section__control--next btn btn-dark hover-filled-slide-down reveal-element reveal-1"
+        className="services-section__control services-section__control--next reveal-element reveal-1"
         onClick={handleNextClick}
         aria-label="Next"
       >
-        <FaArrowRight className="fs-1 icon text-white" />
+        <FaArrowRight className="fs-1 icon" />
       </button>
     </div>
   );

@@ -3,6 +3,7 @@ import Logo from '../../../assets/logos/whiteLogo.webp';
 import { CiSearch } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { IoIosArrowDown } from "react-icons/io";
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
@@ -43,30 +44,38 @@ const NavigationBar = () => {
       <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
         <ul className="navbar-nav m-0 mx-auto">
           <li className="nav-item dropdown">
-            <a className="nav-link navbar-nav__link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span>Home</span>
-            </a>
+            <Link className="nav-link navbar-nav__link dropdown-toggle" to="#" id="navbarDropdownMenuLink">
+              <span>Home <IoIosArrowDown className="ms-1"/></span>
+            </Link>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><Link className="dropdown-item" to="/home-v1"><span>Home V1</span></Link></li>
               <li><Link className="dropdown-item" to="/home-v2"><span>Home V2</span></Link></li>
             </ul>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link navbar-nav__link" to="/services-v1"><span>Services</span></Link>
+          <li className="nav-item dropdown">
+            <Link className="nav-link navbar-nav__link dropdown-toggle" to="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Services <IoIosArrowDown className="ms-1"/></span>
+            </Link>
+            <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><Link className="dropdown-item" to="/services-v1"><span>Services V1</span></Link></li>
+              <li><Link className="dropdown-item" to="/services-v2"><span>Services V2</span></Link></li>
+            </ul>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link navbar-nav__link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span>Portfolio</span>
-            </a>
+            <Link className="nav-link navbar-nav__link dropdown-toggle"  id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Portfolio <IoIosArrowDown className="ms-1"/></span>
+            </Link>
             <ul className="dropdown-menu" aria-labelledby="portfolioDropdown">
               <li><Link className="dropdown-item" to="/portfolio-v1"><span>Portfolio V1</span></Link></li>
               <li><Link className="dropdown-item" to="/portfolio-v2"><span>Portfolio V2</span></Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
-            <a href="#" className="nav-link navbar-nav__link dropdown-toggle " role='button' id='blogDropdown' data-bs-toggle='dropdown' aria-expanded='false'><span>Blog</span></a> 
+            <Link  className="nav-link navbar-nav__link dropdown-toggle " role='button' id='blogDropdown' data-bs-toggle='dropdown' aria-expanded='false'>
+              <span>Blog <IoIosArrowDown className="ms-1"/></span>
+            </Link> 
             <ul className="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><Link className="dropdown-item" to="/blog-v1"><span>Blog V1</span></Link></li>
+              <li><Link className="dropdown-item " to="/blog-v1"><span>Blog V1</span></Link></li>
               <li><Link className="dropdown-item" to="/blog-v2"><span>Blog V2</span></Link></li>
             </ul>
           </li>

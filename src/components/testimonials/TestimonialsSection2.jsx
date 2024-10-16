@@ -92,8 +92,8 @@ const TestimonialsSection2 = () => {
       >
         <div className=' container d-flex align-items-center justify-content-between py-5'>
           <div>
-            <h2 className="fw-bolder text-primary fs-2 mb-3"><FaRegMessage /> Testimonials </h2>
-            <h3 className="fw-light display-5 fw-semibold text-white mb-3">What Our Clients Say</h3>
+            <h2 className=" text-primary fw-semibold display-6 mb-3"><FaRegMessage /> Testimonials </h2>
+            <h3 className=" display-5  text-white mb-3">What Our Clients Say</h3>
           </div>
           <div className='buttons'>
             <button onClick={handlePrev} className="btn btn-primary me-2">

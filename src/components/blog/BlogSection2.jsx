@@ -7,6 +7,7 @@ const BlogSection2 = () => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
+        const currentRef = sectionRef.current; // Capture the current value
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -15,13 +16,13 @@ const BlogSection2 = () => {
             });
         }, { threshold: 0.1 });
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
@@ -51,7 +52,7 @@ const BlogSection2 = () => {
                 <div className="col-lg-4 p-5 my-auto">
                     <div className="my-auto">
                         <h2 className='display-6 reveal-element reveal-1'>Our Blog</h2>
-                        <h3 className='fw-bold text-primary display-5 reveal-element reveal-2'>Latest News</h3>
+                        <h3 className=' text-primary fw-semibold display-5 reveal-element reveal-2'>Latest News</h3>
                         <p className='mt-3 mb-4 reveal-element reveal-3'>Stay updated with the latest trends and insights in the construction industry.</p>
                         <a href="blog-v1" className='link-fill-right reveal-element reveal-4'>Check Blog</a>
                     </div>
@@ -59,7 +60,7 @@ const BlogSection2 = () => {
                 <div className='col-lg-8'>
                     <div className='row'>
                         {blogPosts.map((post, index) => (
-                            <div key={index} className='col-12 mb-4 reveal-element reveal-5'>
+                            <div key={index} className='col-10 mx-auto mb-4 reveal-element reveal-5'>
                                 <BlogPostCard2 {...post} />
                             </div>
                         ))}

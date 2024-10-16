@@ -7,6 +7,7 @@ import HomeV2 from './pages/home/HomeV2';
 import PortfolioV1 from './pages/portfolio/PortfolioV1';
 import PortfolioV2 from './pages/portfolio/PortfolioV2';
 import ServicesV1 from './pages/services/ServicesV1';
+import ServicesV2 from './pages/services/ServicesV2';
 import ProjectV1 from './pages/project/ProjectV1';
 import BlogV1 from './pages/blog/BlogV1';
 import BlogV2 from './pages/blog/BlogV2';
@@ -40,7 +41,7 @@ function App() {
 
   // Conditionally render NavbarDark for specific paths
   const renderNavbar = () => {
-    if (location.pathname === '/home-v2' || location.pathname === '/portfolio-v1' || location.pathname === '/portfolio-v2' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1'|| location.pathname === '/blog-v2' || location.pathname === '/terms-conditions' || location.pathname === '/privacy-policy' || location.pathname === '/faqs') {
+    if (location.pathname === '/home-v2' || location.pathname === '/services-v2' || location.pathname === '/portfolio-v1' || location.pathname === '/portfolio-v2' || location.pathname === '/project-v1' || location.pathname === '/post-v1' || location.pathname === '/blog-v1'|| location.pathname === '/blog-v2' || location.pathname === '/terms-conditions' || location.pathname === '/privacy-policy' || location.pathname === '/faqs') {
       return <NavbarDark />;
     } else {
       return <NavbarLight />;
@@ -82,6 +83,7 @@ function App() {
             <Route path="/portfolio-v1" element={<PortfolioV1 />} />
             <Route path="/portfolio-v2" element={<PortfolioV2 />} />
             <Route path="/services-v1" element={<ServicesV1 />} />
+            <Route path="/services-v2" element={<ServicesV2 />} />
             <Route path="/project-v1" element={<ProjectV1 />} />
             <Route path="/blog-v1" element={<BlogV1 />} />
             <Route path="/blog-v2" element={<BlogV2 />} />

@@ -3,6 +3,9 @@
   padding: 1rem 0;
   transition: background-color 500ms;
 
+  .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-brand {
     .logo {
       max-height: 35px;
@@ -36,10 +39,17 @@
   }
 
   .dropdown-menu {
-    background-color: $dark;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
     padding: 0;
+    min-width: 100%;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 100%;
+    z-index: 1;
 
     .dropdown-item {
       color: #FFF;
@@ -251,6 +261,28 @@ div.pullUp a,
       &::before {
         background-color: $primary;
       }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .nav-item.dropdown {
+    position: relative;
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
