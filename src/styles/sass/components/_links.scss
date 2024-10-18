@@ -1,8 +1,6 @@
 .link-fill-right {
     position: relative;
     text-decoration: none;
-    color: $dark; // Initial color
-    
     &::before {
       content: '';
       position: absolute;
@@ -14,9 +12,6 @@
       transition: width 0.3s ease-in-out;
     }
     
-    &:hover {
-      color: $primary; // Change text color to $primary on hover
-    }
   
     &:hover::before {
       width: 100%;

@@ -2,19 +2,23 @@
     &__item{
         height: 93vh;
         position: relative;
+        &__caption{
+          position: absolute;
+          top: 50%; // Center vertically
+          left: 5%;
+          transform: translateY(-50%); // Adjust to align to the center vertically
+          text-align: start;
+          color: $dark;
+          @media (max-width: 768px) {
+              color: white;
+          }
+      }
         &__content{  
             background-color: #D9D9D9;
-            &__caption{
-                position: absolute;
-                top: 50%; // Center vertically
-                left: 5%;
-                transform: translateY(-50%); // Adjust to align to the center vertically
-                text-align: start;
-                width:33%;
-                @media (max-width: 768px) {
-                    width: 100%;
-                }
+            @media (max-width: 768px) {
+                display: none;
             }
+            
         }
         &__image{
             height:100%;

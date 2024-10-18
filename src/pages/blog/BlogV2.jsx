@@ -30,8 +30,12 @@ const BlogSection = () => {
     // Add more recent posts here
   ];
 
+  // Get the current page from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageParam = urlParams.get('page');
+  const [currentPage] = useState(pageParam ? parseInt(pageParam) : 1);
+
   // Pagination logic
-  const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6  ; // Number of posts per page
 
   // Calculate indexes for pagination
@@ -42,21 +46,7 @@ const BlogSection = () => {
   // Calculate total number of pages
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  // Handle "Next" and "Previous" buttons
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+  
 
   return (
     <React.Fragment>
@@ -81,19 +71,23 @@ const BlogSection = () => {
               ))}
             </div>
 
-            {/* Pagination Controls */}
-            <nav aria-label="Page navigation example" className="mt-4">
+            {/* Updated Pagination Controls */}
+            <nav aria-label="Page navigation" className="mt-5">
               <ul className="pagination justify-content-center">
                 <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                  <button className="page-link" onClick={handlePreviousPage}>Previous</button>
+                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage - 1}`} aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
                 </li>
                 {[...Array(totalPages)].map((_, i) => (
                   <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-                    <button className="page-link" onClick={() => paginate(i + 1)}>{i + 1}</button>
+                    <a className="page-link fs-5 fw-semibold" href={`?page=${i + 1}`}>{i + 1}</a>
                   </li>
                 ))}
                 <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                  <button className="page-link" onClick={handleNextPage}>Next</button>
+                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage + 1}`} aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
                 </li>
               </ul>
             </nav>

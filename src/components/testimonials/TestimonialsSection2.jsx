@@ -86,21 +86,25 @@ const TestimonialsSection2 = () => {
   return (
     <div className='position-relative '>
       <div
-        className="testimonials-carousel bg-secondary"
+        className="testimonials-carousel bg-secondary py-5"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className=' container d-flex align-items-center justify-content-between py-5'>
+        <div className=' container d-flex align-items-center flex-wrap justify-content-between py-3'>
           <div>
             <h2 className=" text-primary fw-semibold display-6 mb-3"><FaRegMessage /> Testimonials </h2>
-            <h3 className=" display-5  text-white mb-3">What Our Clients Say</h3>
+            <h3 className=" display-5  text-white mb-3 fw-medium">What Our Clients Say</h3>
           </div>
           <div className='buttons'>
-            <button onClick={handlePrev} className="btn btn-primary me-2">
-              <FaChevronLeft />
+            <button onClick={handlePrev} className="testimonials-carousel__control testimonials-carousel__control--prev me-2">
+              <div className="arrow-wrapper">
+                <FaChevronLeft className="icon" />
+              </div>
             </button>
-            <button onClick={handleNext} className="btn btn-primary">
-              <FaChevronRight />
+            <button onClick={handleNext} className="testimonials-carousel__control testimonials-carousel__control--next">
+              <div className="arrow-wrapper">
+                <FaChevronRight className="icon" />
+              </div>
             </button>
           </div>
         </div>
@@ -118,8 +122,8 @@ const TestimonialsSection2 = () => {
               <div className='row py-3'>
                 {group.map((slide, j) => (
                   <div key={j} className='col-4 m-auto px-3'>
-                    <div className='bg-white p-4 rounded testimonial-card-v2   d-flex flex-column'>
-                      <div className='row flex-grow-1'>
+                    <div className='bg-white p-4 rounded testimonial-card    d-flex flex-column '>
+                      <div className='row flex-grow-1 align-items-center'>
                         <div className='col-md-4 text-center'>
                           <img src={slide.image} className="user-image mb-3" alt="" />
                           <h3 className='fw-bold fs-5'>{slide.title}</h3>
@@ -152,7 +156,7 @@ const TestimonialsSection2 = () => {
           {slides.map((slide, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className='col-10 bg-white m-auto p-4 testimonial-card-v2 rounded h-100'>
+                <div className='col-10 bg-white m-auto p-4 testimonial-card rounded '>
                   <div className='row h-100'>
                     <div className='col-md-4 text-center mb-3 mb-md-0'>
                       <img src={slide.image} className="user-image mb-3" alt="" />
@@ -173,24 +177,7 @@ const TestimonialsSection2 = () => {
           ))}
         </Carousel>
 
-        <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleSelect(i)}
-              className={index === i ? 'active' : ''}
-            />
-          ))}
-        </div>
-        <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5 ">
-          {groupedSlides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleSelect(i)}
-              className={index === i ? 'active' : ''}
-            />
-          ))}
-        </div>
+        
       </div>
     </div>
   );

@@ -18,11 +18,12 @@ const PortfolioSection2 = () => {
         { image: portfolio1, title: "Project 5", description: "Description for Project 5" },
         { image: portfolio2, title: "Project 6", description: "Description for Project 6" },
         { image: portfolio3, title: "Project 7", description: "Description for Project 7" },
+        { image: portfolio3, title: "Project 8", description: "Description for Project 8" }
     ];
 
     const groupedItems = [];
-    for (let i = 0; i < portfolioItems.length; i += 3) {
-        groupedItems.push(portfolioItems.slice(i, i + 3));
+    for (let i = 0; i < portfolioItems.length; i += 4) {
+        groupedItems.push(portfolioItems.slice(i, i + 4));
     }
 
     const totalSlides = groupedItems.length;
@@ -64,11 +65,18 @@ const PortfolioSection2 = () => {
     }, []);
 
     return (
-        <div className="container-fluid bg-secondary py-3 reveal-section" ref={sectionRef}
+        <div className="container-fluid bg-secondary px-5 py-4 reveal-section" ref={sectionRef}
              onMouseEnter={() => setIsPaused(true)}
              onMouseLeave={() => setIsPaused(false)}>
-            <h2 className="text-primary fw-semibold  display-6 text-center reveal-element reveal-1">Latest Projects</h2>
-            <h3 className="text-center  display-5 text-white reveal-element reveal-2">What We Built</h3>
+            <div className="d-flex justify-content-between flex-wrap align-items-end">
+            <div>
+                <h2 className="text-primary fw-semibold  display-6  reveal-element reveal-1">Latest Projects</h2>
+                <h3 className=" display-5 text-white reveal-element reveal-2 fw-medium">What We Built</h3>
+            </div>
+            <div>
+                <a href="portfolio-v2" className='link-fill-right  reveal-element reveal-4  text-primary fw-semibold   fs-5 '>Check All Projects</a>
+             </div>
+            </div>
             
             {/* Large screen carousel */}
             <Carousel 
@@ -80,9 +88,9 @@ const PortfolioSection2 = () => {
             >
                 {groupedItems.map((group, groupIndex) => (
                     <Carousel.Item key={groupIndex}>
-                        <div className="row m-auto gap-3 p-4">
+                        <div className="d-flex justify-content-between align-items-center ">
                             {group.map((item, itemIndex) => (
-                                <a href="project-v1" key={itemIndex} className="col-3 m-auto p-0 projects-grid__figure">
+                                <a href="project-v1" key={itemIndex} className="project-section-v2__figure  p-0   projects-grid__figure">
                                     <img 
                                         src={item.image} 
                                         className="w-100 portfolio-carousel-v2__image projects-grid__figure__image" 
@@ -109,7 +117,7 @@ const PortfolioSection2 = () => {
             >
                 {portfolioItems.map((item, i) => (
                     <Carousel.Item key={i}>
-                        <div className="row m-auto p-4">
+                        <div className="row m-auto ">
                             <div className="col-12 m-auto p-0 projects-grid__figure">
                                 <img 
                                     src={item.image} 
@@ -126,27 +134,7 @@ const PortfolioSection2 = () => {
                 ))}
             </Carousel>
 
-            {/* Navigation buttons for small screen */}
-            <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5 reveal-element reveal-6 d-md-none">
-                {portfolioItems.map((_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => handleSelect(i)}
-                        className={index === i ? 'active' : ''}
-                    />
-                ))}
-            </div>
-
-            {/* Navigation buttons for large screen */}
-            <div className="testimonials-carousel__nav testimonials-carousel__large-screen text-center py-5 reveal-element reveal-6 d-none d-md-block">
-                {groupedItems.map((_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => handleSelect(i)}
-                        className={index === i ? 'active' : ''}
-                    />
-                ))}
-            </div>
+            
         </div>   
     );
 }

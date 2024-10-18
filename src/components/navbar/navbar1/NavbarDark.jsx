@@ -13,7 +13,7 @@ const NavigationBar = () => {
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
-        setNavbarClass('bg-white navbar-light');
+        setNavbarClass(' navbar-light');
       } else {
         setNavbarClass('navbar-light');
       }
@@ -47,9 +47,9 @@ const NavigationBar = () => {
             <Link className="nav-link navbar-nav__link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Home <IoIosArrowDown className="ms-1"/></span>
             </Link>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><Link className="dropdown-item" to="/home-v1"><span>Home V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/home-v2"><span>Home V2</span></Link></li>
+            <ul className="dropdown-menu  navbar-dark__dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><Link className="dropdown-item text-center" to="/home-v1"><span>Home V1</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/home-v2"><span>Home V2</span></Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -57,8 +57,8 @@ const NavigationBar = () => {
               <span>Services <IoIosArrowDown className="ms-1"/></span>
             </Link>
             <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><Link className="dropdown-item" to="/services-v1"><span>Services V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/services-v2"><span>Services V2</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/services-v1"><span>Services V1</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/services-v2"><span>Services V2</span></Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -66,8 +66,8 @@ const NavigationBar = () => {
               <span>Portfolio <IoIosArrowDown className="ms-1" /></span>   
             </Link>
             <ul className="dropdown-menu" aria-labelledby="portfolioDropdown">
-              <li><Link className="dropdown-item" to="/portfolio-v1"><span>Portfolio V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/portfolio-v2"><span>Portfolio V2</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/portfolio-v1"><span>Portfolio V1</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/portfolio-v2"><span>Portfolio V2</span></Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -75,8 +75,8 @@ const NavigationBar = () => {
               <span>Blog <IoIosArrowDown className="ms-1" /></span>
             </Link> 
             <ul className="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><Link className="dropdown-item" to="/blog-v1"><span>Blog V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/blog-v2"><span>Blog V2</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/blog-v1"><span>Blog V1</span></Link></li>
+              <li><Link className="dropdown-item text-center" to="/blog-v2"><span>Blog V2</span></Link></li>
               </ul>
           </li>
           <li className="nav-item">

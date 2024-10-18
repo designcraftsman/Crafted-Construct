@@ -126,7 +126,7 @@ const HeroSection = () => {
           {slides.map((slide, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className={`col-10 h-100 bg-white m-auto p-3 testimonials-carousel__card rounded reveal-element reveal-5`}>
+                <div className={`col-10  bg-white m-auto p-3 testimonial-card testimonials-carousel__card rounded reveal-element reveal-5`}>
                   <div className='row align-items-center'>
                     <div className='col-3'>
                       <img src={slide.image} className="user-image" alt="" />

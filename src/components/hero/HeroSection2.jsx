@@ -23,14 +23,15 @@ const HeroSection2 = () => {
     const renderCarouselItem = (image, title, description) => (
         <Carousel.Item className="hero-carousel-v2__item">
             <div className="row h-100">
-                <div className="col-5 text-dark m-0 hero-carousel-v2__item__content">
-                    <div className={`hero-carousel-v2__item__content__caption ${animateContent ? 'staggered-animations' : ''}`}>
+                <div className={`hero-carousel-v2__item__caption col-lg-4 col-md-4 col-10  d-block   m-0 ${animateContent ? 'staggered-animations' : ''}`}>
                         <h3 className="fs-1 fw-light">{title}</h3>
                         <h4 className="fs-4 fw-light my-3">{description}</h4>
                         <button className="btn btn-primary">Explore More</button>
-                    </div>
                 </div>
-                <div className="col-7 p-0">
+                <div className="col-5  text-dark m-0 hero-carousel-v2__item__content">
+                    
+                </div>
+                <div className="col-lg-7 col-md-7 col-12 p-0">
                     <img
                         className="d-block w-100 h-100 object-fit-cover"
                         src={image}

@@ -7,6 +7,8 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
+  const [dropdownMenuClass, setDropdownMenuClass] = useState('dropdown-menu');
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +16,10 @@ const NavigationBar = () => {
 
       if (scrollPosition > 50) {
         setNavbarClass('bg-dark navbar-light navbar-scrolled');
+        setDropdownMenuClass('bg-dark');
       } else {
         setNavbarClass('navbar-light');
+        setDropdownMenuClass('dropdown-menu');
       }
     };
 
@@ -25,6 +29,11 @@ const NavigationBar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const toggleDropdown = (e, dropdownName) => {
+    e.preventDefault();
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
 
   return (
     <nav className={`navbar navbar-expand-lg px-3 m-0 p-0 fixed-top ${navbarClass}`}>
@@ -43,40 +52,60 @@ const NavigationBar = () => {
       {/* Collapsible Links */}
       <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
         <ul className="navbar-nav m-0 mx-auto">
-          <li className="nav-item dropdown">
-            <Link className="nav-link navbar-nav__link dropdown-toggle" to="#" id="navbarDropdownMenuLink">
+          <li className={`nav-item dropdown ${activeDropdown === 'home' ? 'show' : ''}`}>
+            <a 
+              href="#"
+              className="nav-link navbar-nav__link dropdown-toggle" 
+              role='button' 
+              onClick={(e) => toggleDropdown(e, 'home')}
+            >
               <span>Home <IoIosArrowDown className="ms-1"/></span>
-            </Link>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><Link className="dropdown-item" to="/home-v1"><span>Home V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/home-v2"><span>Home V2</span></Link></li>
+            </a>
+            <ul className={`dropdown-menu ${dropdownMenuClass} ${activeDropdown === 'home' ? 'show' : ''}`}>
+              <li><Link className="dropdown-item text-white text-center" to="/home-v1"><span>Home V1</span></Link></li>
+              <li><Link className="dropdown-item text-white text-center" to="/home-v2"><span>Home V2</span></Link></li>
             </ul>
           </li>
-          <li className="nav-item dropdown">
-            <Link className="nav-link navbar-nav__link dropdown-toggle" to="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className={`nav-item dropdown ${activeDropdown === 'services' ? 'show' : ''}`}>
+            <a 
+              href="#"
+              className="nav-link navbar-nav__link dropdown-toggle" 
+              role='button' 
+              onClick={(e) => toggleDropdown(e, 'services')}
+            >
               <span>Services <IoIosArrowDown className="ms-1"/></span>
-            </Link>
-            <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><Link className="dropdown-item" to="/services-v1"><span>Services V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/services-v2"><span>Services V2</span></Link></li>
+            </a>
+            <ul className={`dropdown-menu ${dropdownMenuClass} ${activeDropdown === 'services' ? 'show' : ''}`}>
+              <li><Link className="dropdown-item text-white text-center" to="/services-v1"><span>Services V1</span></Link></li>
+              <li><Link className="dropdown-item text-white text-center" to="/services-v2"><span>Services V2</span></Link></li>
             </ul>
           </li>
-          <li className="nav-item dropdown">
-            <Link className="nav-link navbar-nav__link dropdown-toggle"  id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className={`nav-item dropdown ${activeDropdown === 'portfolio' ? 'show' : ''}`}>
+            <a 
+              href="#"
+              className="nav-link navbar-nav__link dropdown-toggle" 
+              role='button' 
+              onClick={(e) => toggleDropdown(e, 'portfolio')}
+            >
               <span>Portfolio <IoIosArrowDown className="ms-1"/></span>
-            </Link>
-            <ul className="dropdown-menu" aria-labelledby="portfolioDropdown">
-              <li><Link className="dropdown-item" to="/portfolio-v1"><span>Portfolio V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/portfolio-v2"><span>Portfolio V2</span></Link></li>
+            </a>
+            <ul className={`dropdown-menu ${dropdownMenuClass} ${activeDropdown === 'portfolio' ? 'show' : ''}`}>
+              <li><Link className="dropdown-item text-white text-center" to="/portfolio-v1"><span>Portfolio V1</span></Link></li>
+              <li><Link className="dropdown-item text-white text-center" to="/portfolio-v2"><span>Portfolio V2</span></Link></li>
             </ul>
           </li>
-          <li className="nav-item dropdown">
-            <Link  className="nav-link navbar-nav__link dropdown-toggle " role='button' id='blogDropdown' data-bs-toggle='dropdown' aria-expanded='false'>
+          <li className={`nav-item dropdown ${activeDropdown === 'blog' ? 'show' : ''}`}>
+            <a 
+              href="#"
+              className="nav-link navbar-nav__link dropdown-toggle" 
+              role='button' 
+              onClick={(e) => toggleDropdown(e, 'blog')}
+            >
               <span>Blog <IoIosArrowDown className="ms-1"/></span>
-            </Link> 
-            <ul className="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><Link className="dropdown-item " to="/blog-v1"><span>Blog V1</span></Link></li>
-              <li><Link className="dropdown-item" to="/blog-v2"><span>Blog V2</span></Link></li>
+            </a>
+            <ul className={`dropdown-menu ${dropdownMenuClass} ${activeDropdown === 'blog' ? 'show' : ''}`}>
+              <li><Link className="dropdown-item text-white text-center" to="/blog-v1"><span>Blog V1</span></Link></li>
+              <li><Link className="dropdown-item text-white text-center" to="/blog-v2"><span>Blog V2</span></Link></li>
             </ul>
           </li>
           <li className="nav-item">

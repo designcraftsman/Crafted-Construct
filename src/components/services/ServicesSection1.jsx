@@ -93,7 +93,7 @@ function ServicesSection() {
         onClick={handlePrevClick}
         aria-label="Previous"
       >
-        <FaArrowLeft className="fs-1 icon" />
+        <FaArrowLeft className="fs-4 icon" />
       </button>
 
       {/* Custom Next Button */}
@@ -102,7 +102,7 @@ function ServicesSection() {
         onClick={handleNextClick}
         aria-label="Next"
       >
-        <FaArrowRight className="fs-1 icon" />
+        <FaArrowRight className="fs-4 icon" />
       </button>
     </div>
   );

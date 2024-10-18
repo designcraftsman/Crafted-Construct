@@ -365,20 +365,25 @@ button {
   height: 93vh;
   position: relative;
 }
-.hero-carousel-v2__item__content {
-  background-color: #D9D9D9;
-}
-.hero-carousel-v2__item__content__caption {
+.hero-carousel-v2__item__caption {
   position: absolute;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
   text-align: start;
-  width: 33%;
+  color: black;
 }
 @media (max-width: 768px) {
-  .hero-carousel-v2__item__content__caption {
-    width: 100%;
+  .hero-carousel-v2__item__caption {
+    color: white;
+  }
+}
+.hero-carousel-v2__item__content {
+  background-color: #D9D9D9;
+}
+@media (max-width: 768px) {
+  .hero-carousel-v2__item__content {
+    display: none;
   }
 }
 .hero-carousel-v2__item__image {
@@ -584,10 +589,13 @@ button {
   color: #C0392B;
 }
 
+.project-section-v2__figure {
+  width: 350px;
+}
+
 .link-fill-right {
   position: relative;
   text-decoration: none;
-  color: black;
 }
 .link-fill-right::before {
   content: "";
@@ -598,9 +606,6 @@ button {
   height: 2px;
   background-color: #C0392B;
   transition: width 0.3s ease-in-out;
-}
-.link-fill-right:hover {
-  color: #C0392B;
 }
 .link-fill-right:hover::before {
   width: 100%;
@@ -802,7 +807,6 @@ button {
 }
 
 .testimonials-carousel {
-  min-height: 90vh;
   position: relative;
 }
 @media screen and (max-width: 991px) {
@@ -835,9 +839,69 @@ button {
 .testimonials-carousel__nav button:hover {
   opacity: 1;
 }
+.testimonials-carousel__control {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px;
+  background-color: #C0392B;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.6s ease 0s;
+  overflow: hidden;
+  position: relative;
+}
+.testimonials-carousel__control .arrow-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials-carousel__control .icon {
+  position: relative;
+  z-index: 2;
+  color: white;
+  transition: 0.2s 0.1s;
+}
+.testimonials-carousel__control::before {
+  content: "";
+  background: black;
+  height: 155%;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  transition: all 0.4s ease-out;
+  z-index: 1;
+}
+.testimonials-carousel__control--prev::before {
+  right: 0;
+  transform: translateY(-50%);
+}
+.testimonials-carousel__control--next::before {
+  left: 0;
+  transform: translateY(-50%);
+}
+.testimonials-carousel__control:hover {
+  color: #C0392B;
+}
+.testimonials-carousel__control:hover .icon {
+  color: #C0392B;
+}
+.testimonials-carousel__control:hover::before {
+  width: 110%;
+}
 
-.testimonial-card-v2 {
-  height: 250px;
+.testimonial-card {
+  height: 340px;
+}
+@media (max-width: 991px) {
+  .testimonial-card {
+    height: 400px;
+  }
 }
 
 .projects-grid__figure {
@@ -1026,10 +1090,15 @@ button {
 }
 .navbar-light .navbar-collapse .navbar-nav .nav-link {
   text-align: center;
-  color: #fff;
+  color: white;
   font-size: 1.1rem;
   margin: 0 1rem;
   transition: color 0.3s ease;
+}
+@media (max-width: 991px) {
+  .navbar-light .navbar-collapse .navbar-nav .nav-link {
+    color: #fff;
+  }
 }
 .navbar-light.navbar-scrolled {
   background-color: white;
@@ -1050,35 +1119,46 @@ button {
   top: 100%;
   z-index: 1;
 }
+@media (max-width: 991px) {
+  .navbar-light .dropdown-menu {
+    background-color: black;
+  }
+}
 .navbar-light .dropdown-menu .dropdown-item {
-  color: #FFF;
+  color: #000;
   padding: 10px 20px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 .navbar-light .dropdown-menu .dropdown-item:hover, .navbar-light .dropdown-menu .dropdown-item:focus {
   background-color: transparent;
-  color: #FFF;
-}
-.navbar-light .dropdown-menu .dropdown-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #C0392B;
-  z-index: 1;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  color: #000;
 }
 .navbar-light .dropdown-menu .dropdown-item:hover::before {
-  transform: translateY(0);
+  transform: scaleX(1);
 }
 .navbar-light .dropdown-menu .dropdown-item span {
   position: relative;
   z-index: 2;
+}
+.navbar-light.bg-white .dropdown-menu {
+  background-color: #FFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 991px) {
+  .navbar-light.bg-white .dropdown-menu {
+    background-color: black;
+  }
+}
+.navbar-light.bg-white .dropdown-menu .dropdown-item {
+  color: #000;
+}
+.navbar-light.bg-white .dropdown-menu .dropdown-item:hover, .navbar-light.bg-white .dropdown-menu .dropdown-item:focus {
+  color: white;
+}
+.navbar-light.bg-white .dropdown-menu .dropdown-item::before {
+  background-color: #C0392B;
 }
 
 @media (max-width: 992px) {
@@ -1088,6 +1168,22 @@ button {
     border-radius: 5px;
     padding: 10px;
     width: 100%;
+  }
+  .navbar-nav .dropdown-menu {
+    background-color: black;
+    border: none;
+  }
+  .navbar-nav .dropdown-menu.show {
+    display: block;
+  }
+  .navbar-nav .dropdown-menu .dropdown-item {
+    color: #FFF;
+  }
+  .navbar-nav .dropdown-menu .dropdown-item:hover, .navbar-nav .dropdown-menu .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navbar-nav .nav-link, .navbar-nav .dropdown-item {
+    color: #FFF !important;
   }
 }
 .navbar-nav__link {
@@ -1263,6 +1359,26 @@ div.pullUp a:hover:before,
   .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+  }
+}
+/* Adjust the pull-up effect for dropdown items */
+.dropdown-menu .dropdown-item:before {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .nav-item.dropdown .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  .navbar-nav .nav-item.dropdown .dropdown-menu.show {
+    display: block;
   }
 }
 .footer-section {
@@ -1513,6 +1629,28 @@ div.pullUp a:hover:before,
 .sidebar__categories__link:hover::after {
   transform: scaleX(1);
   background-color: #C0392B;
+}
+
+.pagination .page-item {
+  margin: 0 2px;
+}
+.pagination .page-item .page-link {
+  border: none;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.pagination .page-item .page-link:hover {
+  background-color: #e0e0e0;
+}
+.pagination .page-item.active .page-link {
+  background-color: #C0392B;
+  color: white;
+}
+.pagination .page-item.disabled .page-link {
+  background-color: #f0f0f0;
+  color: #999;
 }
 
 .services-header {

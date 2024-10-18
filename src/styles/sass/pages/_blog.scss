@@ -30,3 +30,30 @@
     }
   }
   
+.pagination {
+  .page-item {
+    margin: 0 2px;
+
+    .page-link {
+      border: none;
+      background-color: #f0f0f0;
+      color: $dark;
+      padding: 10px 20px;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+
+    &.active .page-link {
+      background-color: $primary;
+      color: white;
+    }
+
+    &.disabled .page-link {
+      background-color: #f0f0f0;
+      color: #999;
+    }
+  }
+}

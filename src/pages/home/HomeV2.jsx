@@ -4,7 +4,7 @@ import ServicesSection from '../../components/services/ServicesSection2';
 import PortfolioSection2 from '../../components/portfolio/PorfolioSection2';
 import AboutSection2 from '../../components/about/AboutSection2';
 import TestimonialsSection2 from '../../components/testimonials/TestimonialsSection2';
-import BlogSection from '../../components/blog/BlogSection1';
+import BlogSection from '../../components/blog/BlogSection2';
 
 function App() {
 
