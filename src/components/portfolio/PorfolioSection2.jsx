@@ -4,6 +4,7 @@ import portfolio1 from '../../assets/images/V1/home/portfolioSection/1.jpg';
 import portfolio2 from '../../assets/images/V1/home/portfolioSection/2.jpg';
 import portfolio3 from '../../assets/images/V1/home/portfolioSection/3.jpg';
 import portfolio4 from '../../assets/images/V1/home/portfolioSection/4.jpg';
+import { Link } from 'react-router-dom';
 
 const PortfolioSection2 = () => {
     const [index, setIndex] = useState(0);
@@ -74,7 +75,7 @@ const PortfolioSection2 = () => {
                 <h3 className=" display-5 text-white reveal-element reveal-2 fw-medium">What We Built</h3>
             </div>
             <div>
-                <a href="portfolio-v2" className='link-fill-right  reveal-element reveal-4  text-primary fw-semibold   fs-5 '>Check All Projects</a>
+                <Link to="/portfolio-v2" className='link-fill-right  reveal-element reveal-4  text-primary fw-semibold   fs-5 '>Check All Projects</Link>
              </div>
             </div>
             
@@ -90,7 +91,7 @@ const PortfolioSection2 = () => {
                     <Carousel.Item key={groupIndex}>
                         <div className="d-flex justify-content-between align-items-center ">
                             {group.map((item, itemIndex) => (
-                                <a href="project-v1" key={itemIndex} className="project-section-v2__figure  p-0   projects-grid__figure">
+                                <Link to="/project-v1" key={itemIndex} className="project-section-v2__figure  p-0   projects-grid__figure">
                                     <img 
                                         src={item.image} 
                                         className="w-100 portfolio-carousel-v2__image projects-grid__figure__image" 
@@ -100,7 +101,7 @@ const PortfolioSection2 = () => {
                                         <h1 className="projects-grid__figure__caption__h1">{item.title}</h1>
                                         <p className="projects-grid__figure__caption__p">{item.description}</p>
                                     </figcaption>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </Carousel.Item>

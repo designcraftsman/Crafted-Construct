@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Sidebar from '../../components/blog/SideBar';
 import PostCard from '../../components/blog/PostCard2';
 import post1 from '../../assets/images/V1/blog/1.jpg';
@@ -50,24 +51,22 @@ const BlogSection = () => {
 
   return (
     <React.Fragment>
-      <div className="blog-section container     my-5 py-5">
+      <div className="blog-section container my-5 py-5">
         <div className="row gap-3">
           <div className="col-lg-8 col-12">
             <div className="d-flex flex-column gap-3">
               {currentPosts.map((post, index) => (
-                <a key={index} href="post-v1" className="text-decoration-none ">
-                 
-                    <PostCard
-                      title={post.title}
-                      description={post.description}
-                      category={post.category}
-                      authorName={post.author.name}
-                      authorAvatar={post.author.avatar}
-                      date={post.date}
-                      image={post.image}
-                    />
-                  
-                </a>
+                <Link key={index} to="/post-v1" className="text-decoration-none">
+                  <PostCard
+                    title={post.title}
+                    description={post.description}
+                    category={post.category}
+                    authorName={post.author.name}
+                    authorAvatar={post.author.avatar}
+                    date={post.date}
+                    image={post.image}
+                  />
+                </Link>
               ))}
             </div>
 
@@ -75,19 +74,19 @@ const BlogSection = () => {
             <nav aria-label="Page navigation" className="mt-5">
               <ul className="pagination justify-content-center">
                 <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage - 1}`} aria-label="Previous">
+                  <Link className="page-link fs-5 fw-semibold" to={`?page=${currentPage - 1}`} aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </Link>
                 </li>
                 {[...Array(totalPages)].map((_, i) => (
                   <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-                    <a className="page-link fs-5 fw-semibold" href={`?page=${i + 1}`}>{i + 1}</a>
+                    <Link className="page-link fs-5 fw-semibold" to={`?page=${i + 1}`}>{i + 1}</Link>
                   </li>
                 ))}
                 <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage + 1}`} aria-label="Next">
+                  <Link className="page-link fs-5 fw-semibold" to={`?page=${currentPage + 1}`} aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

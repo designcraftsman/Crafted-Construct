@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import post1 from '../../assets/images/V1/home/blogSection/1.jpg';
 import { Carousel } from 'react-bootstrap';
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import PostCard from './PostCard1';
+import { Link } from 'react-router-dom';
 
 const BlogSection1 = () => {
   const blogPosts = [
@@ -73,27 +73,12 @@ const BlogSection1 = () => {
   // Total number of slides (each slide displays 3 posts for large screens)
   const totalSlidesLarge = Math.ceil(blogPosts.length / 3);
 
-  // Total number of slides (each slide displays 1 post for small screens)
-  const totalSlidesSmall = blogPosts.length;
 
   // Update the active index when the slide changes
   const handleSlide = (selectedIndex) => {
     setActiveIndex(selectedIndex);
   };
 
-  // Navigate to the previous slide
-  const goToPreviousSlide = () => {
-    if (activeIndex > 0) {
-      setActiveIndex((prevIndex) => prevIndex - 1);
-    }
-  };
-
-  // Navigate to the next slide
-  const goToNextSlide = () => {
-    if (activeIndex < totalSlidesLarge - 1 || activeIndex < totalSlidesSmall - 1) {
-      setActiveIndex((prevIndex) => prevIndex + 1);
-    }
-  };
 
   return (
     <div className="blog-carousel container-fluid p-lg-5 p-3">
@@ -116,11 +101,11 @@ const BlogSection1 = () => {
           <Carousel.Item key={slideIndex}>
             <div className="row justify-content-evenly my-5 gap-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <a href="post-v1" className='text-decoration-none text-dark col-3'>
+                <Link to="/post-v1" className='text-decoration-none text-dark col-3'>
                   <div className="card">
                     <PostCard title={post.title} description={post.description} category={post.category} author={post.author} date={post.date} image={post1} />
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </Carousel.Item>
@@ -139,11 +124,11 @@ const BlogSection1 = () => {
       >
         {blogPosts.map((slide, index) => (
           <Carousel.Item key={index}>
-            <a href="post-v1" className='text-decoration-none text-dark col-10'>
+            <Link to="/post-v1" className='text-decoration-none text-dark col-10'>
               <div className="card">
                 <PostCard title={slide.title} description={slide.description} category={slide.category} author={slide.author} date={slide.date} image={post1} />
               </div>
-            </a>
+            </Link>
           </Carousel.Item>
         ))}
       </Carousel>
