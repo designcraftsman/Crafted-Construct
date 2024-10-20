@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaBuilding, FaBusinessTime } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { MdOutlineHomeWork } from "react-icons/md";
@@ -121,9 +122,9 @@ const WhyChooseUs = () => {
             <p className='fs-6 fw-light'>
               At CraftConstruct, we take pride in delivering high-quality construction services, from concept to completion. Whether you're planning residential, commercial, or industrial projects, our experienced team is committed to providing customized solutions that meet your goals and exceed expectations. With a focus on precision, safety, and sustainability, we ensure every project is built to last. Trust us to bring your vision to life with expertise, dedication, and attention to detail.
             </p>
-            <button className="btn btn-dark hover-filled-slide-down slide-up border-radius-0">
+            <Link to="/portfolio-v1" className="btn btn-dark hover-filled-slide-down slide-up border-radius-0">
               <span>Check Our Work</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

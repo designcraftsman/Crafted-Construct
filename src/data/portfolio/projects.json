@@ -1,0 +1,9 @@
+{
+  "portfolioItems": [
+    { "image": "images/V1/home/portfolioSection/1.jpg", "title": "Modern Residential Home", "location": "Lakeview Estates, California", "scope": "Multi-unit residential construction", "description": "CraftedConstruct developed a luxury apartment complex..." },
+    { "image": "images/V1/home/portfolioSection/2.jpg", "title": "Modern Residential Home", "location": "Lakeview Estates, California", "scope": "Multi-unit residential construction", "description": "CraftedConstruct developed a luxury apartment complex..." },
+    { "image": "images/V1/home/portfolioSection/3.jpg", "title": "Modern Residential Home", "location": "Lakeview Estates, California", "scope": "Multi-unit residential construction", "description": "CraftedConstruct developed a luxury apartment complex..." },
+    { "image": "images/V1/home/portfolioSection/4.jpg", "title": "Modern Residential Home", "location": "Lakeview Estates, California", "scope": "Multi-unit residential construction", "description": "CraftedConstruct developed a luxury apartment complex..." }
+  ]
+}
+

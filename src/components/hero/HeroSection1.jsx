@@ -1,52 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
+import heroData from '../../data/hero/heroSection1.json';
 
-import image1 from '../../assets/images/V1/home/heroSection/1.jpg';
-import image2 from '../../assets/images/V1/home/heroSection/2.jpg';
-import image3 from '../../assets/images/V1/home/heroSection/1.jpg';
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [slides, setSlides] = useState([]);
 
+  // Load images and set up slides
+  useEffect(() => {
+    const loadSlides = async () => {
+      const loadedSlides = await Promise.all(
+        heroData.slides.map(async (slide) => ({
+          ...slide,
+          image: await importImage(slide.image)
+        }))
+      );
+      setSlides(loadedSlides);
+    };
+    loadSlides();
+  }, []);
+
+  // Handle slide selection
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
 
+  // Auto-rotate carousel
   useEffect(() => {
-    if (!isPaused) {
+    if (!isPaused && slides.length > 0) {
       const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
-      }, 3000);
+        setIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+      }, 5000); // Change slide every 5 seconds
 
       return () => clearInterval(interval);
     }
-  }, [isPaused]);
+  }, [isPaused, slides.length]);
 
-  const slides = [
-    {
-      image: image1,
-      title: "Crafting Structures with Precision and Artistry",
-      text: "Building modern, sustainable, and innovative spaces that stand the test of time. From concept to creation, we bring your vision to life.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: image2,
-      title: "Innovative Designs for Modern Living",
-      text: "Experience the perfect blend of functionality and aesthetics with our bespoke designs.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: image3,
-      title: "Transforming Ideas into Reality",
-      text: "From sketches to final construction, we ensure a seamless journey from start to finish.",
-      buttonText: "Explore Our Projects"
-    }
-  ];
+  // Render component only when slides are loaded
+  if (slides.length === 0) return null;
 
   return (
     <div
-      className="hero-carousel"  // Scoped class for this carousel
+      className="hero-carousel"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -60,8 +61,8 @@ const HeroSection = () => {
         {slides.map((slide, i) => (
           <Carousel.Item
             key={i}
-            className={`hero-carousel__item image${i + 1}`} // Add unique class for each image
-            style={{ backgroundImage: `url(${slide.image})` }} // Set background image dynamically
+            className={`hero-carousel__item image${i + 1}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="hero-carousel__item__caption staggered-animations">
               <h1 className="display-3 slide-up">{slide.title}</h1>
@@ -73,6 +74,7 @@ const HeroSection = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+      {/* Custom navigation dots */}
       <div className="hero-carousel__nav">
         {slides.map((_, i) => (
           <button

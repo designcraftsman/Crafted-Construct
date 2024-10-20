@@ -1,5 +1,15 @@
 import React, { useEffect, useRef } from "react";
+import servicesData from '../../data/services/services.json';
 import { MdOutlineBuild, MdArchitecture, MdEngineering, MdHomeRepairService, MdLandscape, MdSecurity } from "react-icons/md";
+
+const iconMap = {
+    MdOutlineBuild,
+    MdArchitecture,
+    MdEngineering,
+    MdHomeRepairService,
+    MdLandscape,
+    MdSecurity
+};
 
 const ServicesSection2 = () => {
     const sectionRef = useRef(null);
@@ -26,38 +36,10 @@ const ServicesSection2 = () => {
         };
     }, []);
 
-    const services = [
-        {
-            icon: MdOutlineBuild,
-            title: "Construction",
-            description: "Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality."
-        },
-        {
-            icon: MdArchitecture,
-            title: "Architecture",
-            description: "Crafting innovative and functional designs that reflect your vision. Our architects blend aesthetics with practicality to create stunning structures."
-        },
-        {
-            icon: MdEngineering,
-            title: "Engineering",
-            description: "Providing expert engineering solutions for complex projects. We ensure structural integrity and efficiency in every build."
-        },
-        {
-            icon: MdHomeRepairService,
-            title: "Renovation",
-            description: "Transforming existing spaces into modern, functional areas. We breathe new life into old structures with our renovation expertise."
-        },
-        {
-            icon: MdLandscape,
-            title: "Landscaping",
-            description: "Creating beautiful outdoor spaces that complement your property. From gardens to hardscaping, we enhance your exterior environment."
-        },
-        {
-            icon: MdSecurity,
-            title: "Security Systems",
-            description: "Implementing cutting-edge security solutions to protect your property. We integrate advanced technology for your peace of mind."
-        }
-    ];
+    const services = servicesData.servicesSection2.map(service => ({
+        ...service,
+        icon: iconMap[service.icon]
+    }));
 
     return(
         <div className="container my-5 reveal-section" ref={sectionRef}>

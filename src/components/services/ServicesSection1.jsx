@@ -1,33 +1,32 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import service1 from '../../assets/images/V1/home/servicesSection/1.jpg';
+import servicesData from '../../data/services/services.json';
 import Carousel from 'react-bootstrap/Carousel';
 
-const services = [
-  {
-    img: service1,
-    title: 'Our Services',
-    subtitle: 'Residential Construction',
-    description: 'Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality.',
-  },
-  {
-    img: service1,
-    title: 'Our Services',
-    subtitle: 'Residential Construction',
-    description: 'Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality.',
-  },
-  {
-    img: service1,
-    title: 'Our Services',
-    subtitle: 'Residential Construction',
-    description: 'Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality.',
-  },
-  // You can add more service objects here if needed
-];
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
+
+const services = servicesData.servicesSection1;
 
 function ServicesSection() {
   const carouselRef = useRef(null);
   const sectionRef = useRef(null);
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const loadServices = async () => {
+      const loadedServices = await Promise.all(
+        servicesData.servicesSection1.map(async (service) => ({
+          ...service,
+          img: await importImage(service.img)
+        }))
+      );
+      setServices(loadedServices);
+    };
+    loadServices();
+  }, []);
 
   // Handler for going to the previous slide
   const handlePrevClick = () => {

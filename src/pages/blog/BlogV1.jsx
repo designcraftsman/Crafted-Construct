@@ -1,34 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Sidebar from '../../components/blog/SideBar';
 import PostCard from '../../components/blog/PostCard1';
-import post1 from '../../assets/images/V1/blog/1.jpg';
-import post2 from '../../assets/images/V1/blog/2.jpg';
-import user from '../../assets/images/V1/home/testimonialsSection/1.jpg';
+import blogData from '../../data/blog/posts.json';
+
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
 
 const BlogSection = () => {
-  const blogPosts = [
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [recentPosts, setRecentPosts] = useState([]);
+  const { categories } = blogData;
 
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    { image: post1, title: 'The Future of Sustainable Construction', category: 'Remodeling', description: 'Explore the latest innovations in sustainable building practices...', author: { name: 'John Doe', avatar: user }, date: '2 days ago' },
-    // Add more blog posts here
-  ];
+  useEffect(() => {
+    const loadBlogPosts = async () => {
+      const loadedPosts = await Promise.all(
+        blogData.blogPosts.map(async (post) => ({
+          ...post,
+          image: await importImage(post.image),
+          author: {
+            name: post.author,
+            avatar: await importImage('images/V1/home/testimonialsSection/1.jpg') // Default avatar
+          }
+        }))
+      );
+      setBlogPosts(loadedPosts);
+    };
 
-  const categories = ['Design', 'Improvement', 'Makeovers', 'Remodeling'];
-  const recentPosts = [
-    { image: post2, title: 'The Future of Sustainable Construction', category: 'Remodeling', date: '2 days ago' },
-    // Add more recent posts here
-  ];
+    const loadRecentPosts = async () => {
+      const loadedRecentPosts = await Promise.all(
+        blogData.recentPosts.map(async (post) => ({
+          ...post,
+          image: await importImage(post.image)
+        }))
+      );
+      setRecentPosts(loadedRecentPosts);
+    };
+
+    loadBlogPosts();
+    loadRecentPosts();
+  }, []);
 
   // Get the current page from the URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -36,7 +49,7 @@ const BlogSection = () => {
   const [currentPage] = useState(pageParam ? parseInt(pageParam) : 1);
 
   // Pagination logic
-  const postsPerPage = 6  ; // Number of posts per page
+  const postsPerPage = 6; // Number of posts per page
 
   // Calculate indexes for pagination
   const indexOfLastPost = currentPage * postsPerPage;
@@ -53,7 +66,7 @@ const BlogSection = () => {
           <div className="col-lg-8 col-md-8 col-12">
             <div className="row gap-3 mx-auto">
               {currentPosts.map((post, index) => (
-                <a key={index} href="post-v1" className="text-decoration-none text-dark col-lg-5 col-md-10 col-10 m-auto">
+                <Link key={index} to="/post-v1" className="text-decoration-none text-dark col-lg-5 col-md-10 col-10 m-auto">
                   <div className="card">
                     <PostCard
                       title={post.title}
@@ -65,27 +78,27 @@ const BlogSection = () => {
                       image={post.image}
                     />
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
 
-            {/* Updated Pagination Controls */}
+            {/* Pagination Controls */}
             <nav aria-label="Page navigation" className="mt-5">
               <ul className="pagination justify-content-center">
                 <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage - 1}`} aria-label="Previous">
+                  <Link className="page-link fs-5 fw-semibold" to={`?page=${currentPage - 1}`} aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </Link>
                 </li>
                 {[...Array(totalPages)].map((_, i) => (
                   <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-                    <a className="page-link fs-5 fw-semibold" href={`?page=${i + 1}`}>{i + 1}</a>
+                    <Link className="page-link fs-5 fw-semibold" to={`?page=${i + 1}`}>{i + 1}</Link>
                   </li>
                 ))}
                 <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                  <a className="page-link fs-5 fw-semibold" href={`?page=${currentPage + 1}`} aria-label="Next">
+                  <Link className="page-link fs-5 fw-semibold" to={`?page=${currentPage + 1}`} aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

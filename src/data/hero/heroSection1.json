@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "image": "images/V1/home/heroSection/1.jpg",
+      "title": "Crafting Structures with Precision and Artistry",
+      "text": "Building modern, sustainable, and innovative spaces that stand the test of time. From concept to creation, we bring your vision to life.",
+      "buttonText": "Explore Our Projects"
+    },
+    {
+      "image": "images/V1/home/heroSection/2.jpg",
+      "title": "Innovative Designs for Modern Living",
+      "text": "Experience the perfect blend of functionality and aesthetics with our bespoke designs.",
+      "buttonText": "Explore Our Projects"
+    },
+    {
+      "image": "images/V1/home/heroSection/1.jpg",
+      "title": "Transforming Ideas into Reality",
+      "text": "From sketches to final construction, we ensure a seamless journey from start to finish.",
+      "buttonText": "Explore Our Projects"
+    }
+  ]
+}

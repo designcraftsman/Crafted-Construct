@@ -1709,7 +1709,7 @@ General Styles
 ==================================== */
 .page-wrap {
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   display: flex;
   align-items: center;
 }
@@ -1730,7 +1730,7 @@ Home Slider
 }
 @media screen and (max-width: 767px) {
   .swiper-container__slide__image-container {
-    height: 50%;
+    height: 40%;
   }
 }
 .swiper-container__slide__content-container__content {

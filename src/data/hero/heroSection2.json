@@ -1,0 +1,20 @@
+{
+  "slides": [
+    {
+      "image": "images/V1/home/heroSection/1.jpg",
+      "title": "Crafting Structures with Precision and Artistry",
+      "description": "Building modern, sustainable, and innovative spaces that stand the test of time. From concept to creation, we bring your vision to life."
+    },
+    {
+      "image": "images/V1/home/heroSection/2.jpg",
+      "title": "Crafting Structures",
+      "description": "Building modern, sustainable."
+    },
+    {
+      "image": "images/V1/home/heroSection/1.jpg",
+      "title": "Crafting Structures with Precision and Artistry",
+      "description": "Building modern, sustainable, and innovative spaces that stand the test of time. From concept to creation, we bring your vision to life."
+    }
+  ],
+  "buttonText": "Explore More"
+}

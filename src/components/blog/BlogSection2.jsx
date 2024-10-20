@@ -1,13 +1,30 @@
-import React, { useEffect, useRef } from 'react';
-import blog1 from '../../assets/images/V1/blog/1.jpg';
-import blog2 from '../../assets/images/V1/blog/2.jpg';
+import React, { useEffect, useRef, useState } from 'react';
 import BlogPostCard2 from './PostCard2';
+import blogData from '../../data/blog/posts.json';
+
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
 
 const BlogSection2 = () => {
     const sectionRef = useRef(null);
+    const [blogPosts, setBlogPosts] = useState([]);
 
     useEffect(() => {
-        const currentRef = sectionRef.current; // Capture the current value
+        const loadBlogPosts = async () => {
+            const loadedPosts = await Promise.all(
+                blogData.blogPosts.slice(0, 2).map(async (post) => ({
+                    ...post,
+                    image: await importImage(post.image)
+                }))
+            );
+            setBlogPosts(loadedPosts);
+        };
+
+        loadBlogPosts();
+
+        const currentRef = sectionRef.current;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -26,25 +43,6 @@ const BlogSection2 = () => {
             }
         };
     }, []);
-
-    const blogPosts = [
-        {
-            image: blog1,
-            title: "The Future of Sustainable Construction",
-            category: "Sustainability",
-            description: "Explore innovative techniques and materials shaping the future of eco-friendly building practices.",
-            author: "Jane Doe",
-            date: "April 15, 2023"
-        },
-        {
-            image: blog2,
-            title: "Emerging Technologies in Construction Management",
-            category: "Technology",
-            description: "Discover how AI, IoT, and automation are revolutionizing project management in the construction industry.",
-            author: "John Smith",
-            date: "April 22, 2023"
-        }
-    ];
 
     return (
         <div className='container-fluid my-5 py-3 reveal-section' ref={sectionRef}>

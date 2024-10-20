@@ -2,6 +2,9 @@ import React from 'react';
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 const Sidebar = ({ categories, recentPosts }) => {
+  // Limit recent posts to a maximum of 5
+  const limitedRecentPosts = recentPosts.slice(0, 5);
+
   return (
     <aside className="sidebar">
       <div className="category-section mb-4 text-white">
@@ -18,7 +21,7 @@ const Sidebar = ({ categories, recentPosts }) => {
         </ul>
         <h6>Recent Posts</h6>
         <hr className='border-3'/>
-        {recentPosts.map((post, index) => (
+        {limitedRecentPosts.map((post, index) => (
           <div className="recent-post mb-4 d-flex align-items-center" key={index}>
             <img src={post.image} alt={post.title} className="recent-post-image me-2" />
             <div>
@@ -29,8 +32,6 @@ const Sidebar = ({ categories, recentPosts }) => {
           </div>
         ))}
       </div>
-
-      
     </aside>
   );
 };

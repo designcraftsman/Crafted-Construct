@@ -1,0 +1,42 @@
+{
+  "blogPosts": [
+    {
+      "image": "images/V1/blog/1.jpg",
+      "title": "The Future of Sustainable Construction",
+      "category": "Sustainability",
+      "description": "Explore innovative techniques and materials shaping the future of eco-friendly building practices.",
+      "author": "Jane Doe",
+      "date": "April 15, 2023"
+    },
+    {
+      "image": "images/V1/blog/2.jpg",
+      "title": "Emerging Technologies in Construction Management",
+      "category": "Technology",
+      "description": "Discover how AI, IoT, and automation are revolutionizing project management in the construction industry.",
+      "author": "John Smith",
+      "date": "April 22, 2023"
+    }
+  ],
+  "categories": [
+    "Construction",
+    "Architecture",
+    "Design",
+    "Sustainability",
+    "Technology"
+  ],
+  "recentPosts": [
+    {
+      "image": "images/V1/blog/1.jpg",
+      "title": "The Future of Sustainable Construction",
+      "category": "Sustainability",
+      "date": "April 15, 2023"
+    },
+    {
+      "image": "images/V1/blog/2.jpg",
+      "title": "Emerging Technologies in Construction Management",
+      "category": "Technology",
+      "date": "April 22, 2023"
+    }
+  ]
+}
+
