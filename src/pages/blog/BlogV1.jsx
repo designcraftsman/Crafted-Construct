@@ -66,7 +66,7 @@ const BlogSection = () => {
           <div className="col-lg-8 col-md-8 col-12">
             <div className="row gap-3 mx-auto">
               {currentPosts.map((post, index) => (
-                <Link key={index} to="/post-v1" className="text-decoration-none text-dark col-lg-5 col-md-10 col-10 m-auto">
+                <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none text-dark col-lg-5 col-md-10 col-10 m-auto">
                   <div className="card">
                     <PostCard
                       title={post.title}

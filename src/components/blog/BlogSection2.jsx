@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import BlogPostCard2 from './PostCard2';
 import blogData from '../../data/blog/posts.json';
+import { Link } from 'react-router-dom';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -58,9 +59,9 @@ const BlogSection2 = () => {
                 <div className='col-lg-8'>
                     <div className='row'>
                         {blogPosts.map((post, index) => (
-                            <div key={index} className='col-10 mx-auto mb-4 reveal-element reveal-5'>
+                            <Link to={`/post-v1/${post.id}`} key={index} className=' text-decoration-none col-10 mx-auto mb-4 reveal-element reveal-5'>
                                 <BlogPostCard2 {...post} />
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -55,7 +55,7 @@ const BlogSection1 = () => {
           <Carousel.Item key={slideIndex}>
             <div className="row justify-content-evenly my-5 gap-3 reveal-element reveal-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <Link key={idx} to="/post-v1" className='text-decoration-none text-dark col-3'>
+                <Link key={idx} to={`/post-v1/${post.id}`} className='text-decoration-none text-dark col-3'>
                   <div className="card">
                     <PostCard
                       title={post.title}
@@ -85,7 +85,7 @@ const BlogSection1 = () => {
       >
         {blogPosts.map((post, index) => (
           <Carousel.Item key={index}>
-            <Link to="/post-v1" className='text-decoration-none text-dark col-10'>
+            <Link to={`/post-v1/${post.id}`} className='text-decoration-none text-dark col-10'>
               <div className="card reveal-element reveal-4">
                 <PostCard
                   title={post.title}
@@ -95,6 +95,7 @@ const BlogSection1 = () => {
                   date={post.date}
                   image={post.image}
                 />
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
               </div>
             </Link>
           </Carousel.Item>

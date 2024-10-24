@@ -62,7 +62,7 @@ const BlogSection = () => {
           <div className="col-lg-8 col-12">
             <div className="d-flex flex-column gap-3">
               {currentPosts.map((post, index) => (
-                <Link key={index} to="/post-v1" className="text-decoration-none">
+                <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none">
                   <PostCard
                     title={post.title}
                     description={post.description}

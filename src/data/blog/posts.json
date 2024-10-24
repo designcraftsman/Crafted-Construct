@@ -1,20 +1,24 @@
 {
   "blogPosts": [
     {
+      "id": "1",
       "image": "images/V1/blog/1.jpg",
       "title": "The Future of Sustainable Construction",
       "category": "Sustainability",
       "description": "Explore innovative techniques and materials shaping the future of eco-friendly building practices.",
       "author": "Jane Doe",
-      "date": "April 15, 2023"
+      "date": "April 15, 2023",
+      "content": "<p>As climate change becomes an increasingly urgent global issue, the construction industry is turning towards sustainable practices...</p><h3>Eco-Friendly Materials</h3><p>Eco-friendly materials such as bamboo, recycled steel, and reclaimed wood are gaining popularity...</p>"
     },
     {
+      "id": "2",
       "image": "images/V1/blog/2.jpg",
       "title": "Emerging Technologies in Construction Management",
       "category": "Technology",
       "description": "Discover how AI, IoT, and automation are revolutionizing project management in the construction industry.",
       "author": "John Smith",
-      "date": "April 22, 2023"
+      "date": "April 22, 2023",
+      "content": "<p>Discover how AI, IoT, and automation are revolutionizing project management in the construction industry...</p>"
     }
   ],
   "categories": [
@@ -39,4 +43,3 @@
     }
   ]
 }
-

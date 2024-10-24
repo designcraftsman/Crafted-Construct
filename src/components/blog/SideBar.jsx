@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleRight } from "react-icons/fa";
+import postsData from '../../data/blog/posts.json'; // Import the JSON data
 
-const Sidebar = ({ categories, recentPosts }) => {
-  // Limit recent posts to a maximum of 5
-  const limitedRecentPosts = recentPosts.slice(0, 5);
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
+
+const Sidebar = ({ categories }) => {
+  const [loadedRecentPosts, setLoadedRecentPosts] = useState([]);
+
+  useEffect(() => {
+    const loadRecentPostsImages = async () => {
+      const postsWithImages = await Promise.all(
+        postsData.recentPosts.slice(0, 5).map(async (post) => ({
+          ...post,
+          image: await importImage(post.image)
+        }))
+      );
+      setLoadedRecentPosts(postsWithImages);
+    };
+
+    loadRecentPostsImages();
+  }, []);
 
   return (
     <aside className="sidebar">
@@ -21,7 +40,7 @@ const Sidebar = ({ categories, recentPosts }) => {
         </ul>
         <h6>Recent Posts</h6>
         <hr className='border-3'/>
-        {limitedRecentPosts.map((post, index) => (
+        {loadedRecentPosts.map((post, index) => (
           <div className="recent-post mb-4 d-flex align-items-center" key={index}>
             <img src={post.image} alt={post.title} className="recent-post-image me-2" />
             <div>
