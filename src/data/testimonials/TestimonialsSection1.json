@@ -1,0 +1,35 @@
+{
+  "testimonials": [
+    {
+      "image": "images/V1/home/testimonialsSection/1.jpg",
+      "title": "Stephen Jones",
+      "position": "CEO of Alsa",
+      "text": "CraftedConstruct exceeded our expectations with their professionalism and quality of work. They transformed our vision into reality, building a home that we are proud of."
+    },
+    {
+      "image": "images/V1/home/testimonialsSection/1.jpg",
+      "title": "Emily Clark",
+      "position": "Homeowner",
+      "text": "CraftedConstruct's attention to detail and commitment to quality is unparalleled. They made our dream home a reality."
+    },
+    {
+      "image": "images/V1/home/testimonialsSection/1.jpg",
+      "title": "Michael Brown",
+      "position": "Real Estate Developer",
+      "text": "Working with CraftedConstruct has been a pleasure. Their expertise and professionalism shine through in every project."
+    },
+    {
+      "image": "images/V1/home/testimonialsSection/1.jpg",
+      "title": "Michael Brown",
+      "position": "Real Estate Developer",
+      "text": "Working with CraftedConstruct has been a pleasure. Their expertise and professionalism shine through in every project."
+    },
+    {
+      "image": "images/V1/home/testimonialsSection/1.jpg",
+      "title": "Michael Brown",
+      "position": "Real Estate Developer",
+      "text": "Working with CraftedConstruct has been a pleasure. Their expertise and professionalism shine through in every project."
+    }
+  ]
+}
+

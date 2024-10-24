@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from 'react-icons/fa'; 
+import contactInfoData from '../../data/contact/contact-info.json';
 
 const ContactForm1 = () =>{
 
@@ -58,29 +59,16 @@ const ContactForm1 = () =>{
         {/* Contact Info Section */}
         <div className="col-lg-3 contact-info m-auto">
           <ul className="list-unstyled fs-5">
-            <li className="mb-3">
+            {contactInfoData.contactInfo.map((info, index) => (
+              <li key={index} className="mb-3">
                 <div className='d-flex align-items-center gap-3'>
-              <FaMapMarkerAlt className='text-muted fs-1 ' /> 
-              <span className='fs-5'>9989 Hilldale Rd.
-              Los Angeles, CA 90004
-              </span>
-              </div>
-            </li>
-            <li className="mb-3">
-            <div className='d-flex align-items-center gap-3'>
-              <FaPhoneAlt className='text-muted fs-1 ' /> 
-              <span className='fs-5'>9989 Hilldale Rd.
-              Los Angeles, CA 90004
-              </span>
-              </div>
-            </li>
-            <li className="mb-3">
-            <div className='d-flex align-items-center gap-3'>
-              <FaClock className='text-muted fs-1 ' /> 
-              <span className='fs-5'>Monday – Friday 6 am to 8 pm EST
-              </span>
-              </div>
-            </li>
+                  {info.icon === 'FaMapMarkerAlt' && <FaMapMarkerAlt className='text-muted fs-1' />}
+                  {info.icon === 'FaPhoneAlt' && <FaPhoneAlt className='text-muted fs-1' />}
+                  {info.icon === 'FaClock' && <FaClock className='text-muted fs-1' />}
+                  <span className='fs-5'>{info.text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

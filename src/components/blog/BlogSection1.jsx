@@ -35,10 +35,10 @@ const BlogSection1 = () => {
   };
 
   return (
-    <div className="blog-carousel container-fluid p-lg-5 p-3">
+    <div className="blog-carousel container-fluid p-lg-5 p-3 reveal-section">
       <div className=''>
-        <h2 className='fw-semibold display-6'>Our Blog</h2>
-        <h3 className="latest-news fw-medium text-primary display-5">Latest News</h3>
+        <h2 className='fw-semibold display-6 reveal-element reveal-1'>Our Blog</h2>
+        <h3 className="latest-news fw-medium text-primary display-5 reveal-element reveal-2">Latest News</h3>
       </div>
 
       {/* Large Screen Carousel */}
@@ -53,7 +53,7 @@ const BlogSection1 = () => {
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
-            <div className="row justify-content-evenly my-5 gap-3">
+            <div className="row justify-content-evenly my-5 gap-3 reveal-element reveal-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
                 <Link key={idx} to="/post-v1" className='text-decoration-none text-dark col-3'>
                   <div className="card">
@@ -86,7 +86,7 @@ const BlogSection1 = () => {
         {blogPosts.map((post, index) => (
           <Carousel.Item key={index}>
             <Link to="/post-v1" className='text-decoration-none text-dark col-10'>
-              <div className="card">
+              <div className="card reveal-element reveal-4">
                 <PostCard
                   title={post.title}
                   description={post.description}

@@ -70,13 +70,13 @@ function ServicesSection() {
           <Carousel.Item key={index}>
             <div className="row">
               <div className='col-lg-6 col-md-6 col-12 p-0 m-0 reveal-element reveal-1'>
-                <img src={service.img} className='h-100 w-100 object-fit-cover' alt="" />
+                <img src={service.img} className='services-section__carousel__image' alt="" />
               </div>
-              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 reveal-element reveal-2'>
+              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 '>
                 <div className='my-auto'>
-                  <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-3">{service.title}</h2>
-                  <h3 className='text-white fw-bold fs-2 reveal-element reveal-4'>{service.subtitle}</h3>
-                  <p className='fw-light fs-5 text-white w-75 reveal-element reveal-5'>
+                  <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-2">{service.title}</h2>
+                  <h3 className='text-white fw-bold fs-2 reveal-element reveal-3'>{service.subtitle}</h3>
+                  <p className='fw-light fs-5 text-white w-75 reveal-element reveal-4'>
                     {service.description}
                   </p>
                 </div>

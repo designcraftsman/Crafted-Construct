@@ -1,0 +1,17 @@
+{
+  "contactInfo": [
+    {
+      "icon": "FaMapMarkerAlt",
+      "text": "9989 Hilldale Rd. Los Angeles, CA 90004"
+    },
+    {
+      "icon": "FaPhoneAlt",
+      "text": "(555) 123-4567"
+    },
+    {
+      "icon": "FaClock",
+      "text": "Monday – Friday 6 am to 8 pm EST"
+    }
+  ]
+}
+

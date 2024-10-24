@@ -730,6 +730,16 @@ button {
 .services-section__carousel {
   height: 100%;
 }
+.services-section__carousel__image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .services-section__carousel__image {
+    height: 250px;
+  }
+}
 .services-section__image {
   width: 100%;
   height: 100%;
@@ -1651,6 +1661,12 @@ div.pullUp a:hover:before,
 .pagination .page-item.disabled .page-link {
   background-color: #f0f0f0;
   color: #999;
+}
+
+.single-service-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 .services-header {
@@ -4778,7 +4794,7 @@ textarea.form-control-lg {
   --bs-btn-line-height: 1.5;
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
-  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-width: 0px;
   --bs-btn-border-color: transparent;
   --bs-btn-border-radius: var(--bs-border-radius);
   --bs-btn-hover-border-color: transparent;
@@ -5550,7 +5566,7 @@ textarea.form-control-lg {
 }
 .btn-group > :not(.btn-check:first-child) + .btn,
 .btn-group > .btn-group:not(:first-child) {
-  margin-left: calc(var(--bs-border-width) * -1);
+  margin-left: calc(0px * -1);
 }
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn.dropdown-toggle-split:first-child,
@@ -5597,7 +5613,7 @@ textarea.form-control-lg {
 }
 .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
-  margin-top: calc(var(--bs-border-width) * -1);
+  margin-top: calc(0px * -1);
 }
 .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn {

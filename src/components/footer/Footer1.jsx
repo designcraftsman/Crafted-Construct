@@ -28,24 +28,24 @@ const Footer = () => {
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Company</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><Link to="/about-v1" className="text-white mb-5 link-fill-right text-decoration-none opacity-75">About</Link></li>
-              <li className="mb-3"><Link to="/contact-v1" className="footer-link opacity-75">Contact</Link></li>
+              <li className="mb-3"><Link to="/about-v1" className="text-white mb-5 link-fill-right text-decoration-none">About</Link></li>
+              <li className="mb-3"><Link to="/contact-v1" className="text-white mb-5 link-fill-right text-decoration-none">Contact</Link></li>
             </ul>
           </Col>
 
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Get Help</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><Link to="/faqs" className="footer-link mb-5 opacity-75">FAQ</Link></li>
-              <li className="mb-3"><Link to="/terms-conditions" className="footer-link opacity-75 ">Terms</Link></li>
-              <li className="mb-3"><Link to="/privacy-policy" className="footer-link  opacity-75">Privacy</Link></li>
+              <li className="mb-3"><Link to="/faqs" className="text-white mb-5 link-fill-right text-decoration-none">FAQ</Link></li>
+              <li className="mb-3"><Link to="/terms-conditions" className="text-white mb-5 link-fill-right text-decoration-none">Terms</Link></li>
+              <li className="mb-3"><Link to="/privacy-policy" className="text-white mb-5 link-fill-right text-decoration-none">Privacy</Link></li>
             </ul>
           </Col>
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Community</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><Link to="/blog-v1" className="footer-link mb-5 opacity-75">Blog</Link></li>
-              <li className="mb-3"><Link to="/about-v1" className="footer-link opacity-75 ">Team</Link></li>
+              <li className="mb-3"><Link to="/blog-v1" className="text-white mb-5 link-fill-right text-decoration-none">Blog</Link></li>
+              <li className="mb-3"><Link to="/about-v1" className="text-white mb-5 link-fill-right text-decoration-none">Team</Link></li>
             </ul>
           </Col>
         </Row>

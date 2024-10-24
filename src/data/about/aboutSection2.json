@@ -1,0 +1,27 @@
+{
+  "title": "Let's Get Started We Are Now Constructing A Dream",
+  "subtitle": "Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality.",
+  "counters": [
+    {
+      "icon": "MdOutlineHomeWork",
+      "count": 15,
+      "label": "Projects"
+    },
+    {
+      "icon": "FaBuilding",
+      "count": 15,
+      "label": "Buildings"
+    },
+    {
+      "icon": "RiTeamFill",
+      "count": 200,
+      "label": "Team Members"
+    },
+    {
+      "icon": "FaBusinessTime",
+      "count": 40,
+      "label": "Years Experience"
+    }
+  ]
+}
+

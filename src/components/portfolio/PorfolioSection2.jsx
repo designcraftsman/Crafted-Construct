@@ -75,7 +75,7 @@ const PortfolioSection2 = () => {
                 <h3 className=" display-5 text-white reveal-element reveal-2 fw-medium">What We Built</h3>
             </div>
             <div>
-                <Link to="/portfolio-v2" className='link-fill-right  reveal-element reveal-4  text-primary fw-semibold   fs-5 '>Check All Projects</Link>
+                <Link to="/portfolio-v2" className='link-fill-right  reveal-element reveal-4 text-white fw-bold   fs-4 '>Check All Projects</Link>
              </div>
             </div>
             
@@ -134,7 +134,6 @@ const PortfolioSection2 = () => {
                     </Carousel.Item>
                 ))}
             </Carousel>
-
             
         </div>   
     );

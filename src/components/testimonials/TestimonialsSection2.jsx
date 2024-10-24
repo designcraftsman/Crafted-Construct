@@ -2,11 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { FaRegMessage } from "react-icons/fa6";
 import { FaQuoteRight, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import person1 from '../../assets/images/V1/home/testimonialsSection/1.jpg';
+import testimonialsData from '../../data/testimonials/TestimonialsSection2.json';
+
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
 
 const TestimonialsSection2 = () => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const loadTestimonials = async () => {
+      const loadedTestimonials = await Promise.all(
+        testimonialsData.testimonials.map(async (testimonial) => ({
+          ...testimonial,
+          image: await importImage(testimonial.image)
+        }))
+      );
+      setTestimonials(loadedTestimonials);
+    };
+
+    loadTestimonials();
+  }, []);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
@@ -20,55 +40,10 @@ const TestimonialsSection2 = () => {
     setIndex((prevIndex) => (prevIndex === totalSlides - 1 ? 0 : prevIndex + 1));
   };
 
-  const slides = [
-    {
-      image: person1,
-      title: "Stephen jons 1",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work. They transformed our vision into reality, building a home that we are proud of.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 2",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 3",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 4",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 5",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 6",
-      company: "CEO of Alsa",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    }
-  ];
-
   // Create grouped slides for larger screens
   const groupedSlides = [];
-  for (let i = 0; i < slides.length; i += 2) {
-    groupedSlides.push(slides.slice(i, i + 2));
+  for (let i = 0; i < testimonials.length; i += 2) {
+    groupedSlides.push(testimonials.slice(i, i + 2));
   }
 
   const totalSlides = groupedSlides.length;
@@ -120,18 +95,18 @@ const TestimonialsSection2 = () => {
           {groupedSlides.map((group, i) => (
             <Carousel.Item key={i}>
               <div className='row py-3'>
-                {group.map((slide, j) => (
-                  <div key={j} className='col-4 m-auto px-3'>
+                {group.map((testimonial, j) => (
+                  <div key={j} className='col-5 m-auto px-3'>
                     <div className='bg-white p-4 rounded testimonial-card    d-flex flex-column '>
                       <div className='row flex-grow-1 align-items-center'>
                         <div className='col-md-4 text-center'>
-                          <img src={slide.image} className="user-image mb-3" alt="" />
-                          <h3 className='fw-bold fs-5'>{slide.title}</h3>
-                          <span className='text-primary'>{slide.company}</span>
+                          <img src={testimonial.image} className="user-image mb-3" alt="" />
+                          <h3 className='fw-bold fs-4'>{testimonial.title}</h3>
+                          <span className='text-primary'>{testimonial.company}</span>
                         </div>
                         <div className='col-md-8 d-flex flex-column'>
                           <FaQuoteLeft className='text-primary fs-4 mb-2'/>
-                          <p className='fw-light mb-3 flex-grow-1'>{slide.text}</p>
+                          <p className='fw-light fs-5 mb-3 flex-grow-1'>{testimonial.text}</p>
                           <div className='text-end mt-auto'>
                             <FaQuoteRight className='text-primary fs-4'/>
                           </div>
@@ -153,19 +128,19 @@ const TestimonialsSection2 = () => {
           controls={false}
           className='testimonials-carousel__small-screen'
         >
-          {slides.map((slide, i) => (
+          {testimonials.map((testimonial, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
                 <div className='col-10 bg-white m-auto p-4 testimonial-card rounded '>
                   <div className='row h-100'>
                     <div className='col-md-4 text-center mb-3 mb-md-0'>
-                      <img src={slide.image} className="user-image mb-3" alt="" />
-                      <h3 className='fw-bold fs-5'>{slide.title}</h3>
-                      <span className='text-primary'>{slide.company}</span>
+                      <img src={testimonial.image} className="user-image mb-3" alt="" />
+                      <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
+                      <span className='text-primary'>{testimonial.company}</span>
                     </div>
                     <div className='col-md-8 d-flex flex-column'>
                       <FaQuoteLeft className='text-primary fs-4 mb-2'/>
-                      <p className='fw-normal mb-3 flex-grow-1'>{slide.text}</p>
+                      <p className='fw-normal mb-3 flex-grow-1'>{testimonial.text}</p>
                       <div className='text-end mt-auto'>
                         <FaQuoteRight className='text-primary fs-4'/>
                       </div>
@@ -176,8 +151,6 @@ const TestimonialsSection2 = () => {
             </Carousel.Item>
           ))}
         </Carousel>
-
-        
       </div>
     </div>
   );

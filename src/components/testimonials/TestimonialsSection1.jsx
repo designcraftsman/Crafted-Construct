@@ -1,63 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { FaRegMessage } from "react-icons/fa6";
-import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
-import person1 from '../../assets/images/V1/home/testimonialsSection/1.jpg';
+import { FaRegMessage, FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
+import testimonialsData from '../../data/testimonials/TestimonialsSection1.json';
 
-const HeroSection = () => {
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
+
+const TestimonialsSection1 = () => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const loadTestimonials = async () => {
+      const loadedTestimonials = await Promise.all(
+        testimonialsData.testimonials.map(async (testimonial) => ({
+          ...testimonial,
+          image: await importImage(testimonial.image)
+        }))
+      );
+      setTestimonials(loadedTestimonials);
+    };
+
+    loadTestimonials();
+  }, []);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
 
-  const slides = [
-    {
-      image: person1,
-      title: "Stephen jons 1",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work. They transformed our vision into reality, building a home that we are proud of.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 2",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 3",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 4",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 5",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    },
-    {
-      image: person1,
-      title: "Stephen jons 6",
-      text: "CraftedConstruct exceeded our expectations with their professionalism and quality of work.",
-      buttonText: "Explore Our Projects"
-    }
-  ];
-
   // Create grouped slides for larger screens
   const groupedSlides = [];
-  for (let i = 0; i < slides.length; i += 3) {
-    groupedSlides.push(slides.slice(i, i + 3));
+  for (let i = 0; i < testimonials.length; i += 3) {
+    groupedSlides.push(testimonials.slice(i, i + 3));
   }
 
-  const totalSlides = groupedSlides.length; // Correctly calculate the total slides
+  const totalSlides = groupedSlides.length;
 
   useEffect(() => {
     if (!isPaused) {
@@ -90,21 +70,21 @@ const HeroSection = () => {
         >
           {groupedSlides.map((group, i) => (
             <Carousel.Item key={i}>
-              <div className='row py-3'>
-                {group.map((slide, j) => (
-                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card reveal-element reveal-${j + 5}`}>
+              <div className='row py-3 reveal-element reveal-5'>
+                {group.map((testimonial, j) => (
+                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card `}>
                     <div className='row align-items-center'>
                       <div className='col-3'>
-                        <img src={slide.image} className="user-image" alt="" />
+                        <img src={testimonial.image} className="user-image" alt="" />
                       </div>
                       <div className="col-9">
-                        <h3 className='fw-bold fs-5'>{slide.title}</h3>
-                        <span className='text-muted'>CEO of Alsa</span>
+                        <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
+                        <span className='text-muted'>{testimonial.position}</span>
                       </div>
                     </div>
                     <hr className='border-primary border-3' />
-                    <FaQuoteLeft className='text-primary  fs-4'/>
-                    <p className='fw-light my-3 text-center px-3'>{slide.text}</p>
+                    <FaQuoteLeft className='text-primary fs-4'/>
+                    <p className='fw-light my-3 text-center px-3'>{testimonial.text}</p>
                     <div className='text-end mb-auto'>
                       <FaQuoteRight className='text-primary text-end mb-auto fs-4'/>
                     </div>
@@ -123,25 +103,25 @@ const HeroSection = () => {
           controls={false}
           className='testimonials-carousel__small-screen reveal-element reveal-4'
         >
-          {slides.map((slide, i) => (
+          {testimonials.map((testimonial, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className={`col-10  bg-white m-auto p-3 testimonial-card testimonials-carousel__card rounded reveal-element reveal-5`}>
+                <div className={`col-10 bg-white m-auto p-3 testimonial-card testimonials-carousel__card rounded reveal-element reveal-5`}>
                   <div className='row align-items-center'>
                     <div className='col-3'>
-                      <img src={slide.image} className="user-image" alt="" />
+                      <img src={testimonial.image} className="user-image" alt="" />
                     </div>
                     <div className="col-9">
-                      <h3 className='fw-bold fs-5'>{slide.title}</h3>
-                      <span className='text-primary'>CEO of Alsa</span>
+                      <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
+                      <span className='text-primary'>{testimonial.position}</span>
                     </div>
                   </div>
                   <hr className='border-primary border-3' />
-                  <FaQuoteLeft className='text-primary  fs-3'/>
-                  <p className='fw-normal my-3 text-center px-3'>{slide.text}</p>
+                  <FaQuoteLeft className='text-primary fs-3'/>
+                  <p className='fw-normal my-3 text-center px-3'>{testimonial.text}</p>
                   <div className='text-end mb-auto'>
-                      <FaQuoteRight className='text-primary text-end mb-auto fs-3'/>
-                    </div>
+                    <FaQuoteRight className='text-primary text-end mb-auto fs-3'/>
+                  </div>
                 </div>
               </div>
             </Carousel.Item>
@@ -149,7 +129,7 @@ const HeroSection = () => {
         </Carousel>
 
         <div className="testimonials-carousel__nav testimonials-carousel__small-screen text-center py-5 reveal-element reveal-6">
-          {slides.map((_, i) => (
+          {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => handleSelect(i)}
@@ -171,4 +151,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default TestimonialsSection1;

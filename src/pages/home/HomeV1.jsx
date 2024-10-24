@@ -5,7 +5,7 @@ import AboutSection from '../../components/about/AboutSection1';
 import ServicesSection from '../../components/services/ServicesSection1';
 import PortfolioGrid from '../../components/portfolio/PortfolioGrid';
 import TestimonialsSection from '../../components/testimonials/TestimonialsSection1';
-import BlogSection from '../../components/blog/BlogSection2';
+import BlogSection from '../../components/blog/BlogSection1';
 
 function App() {
 

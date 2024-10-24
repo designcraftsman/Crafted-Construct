@@ -77,7 +77,7 @@ const ServicesCarousel = () => {
                                                 <div className="col-lg-10 col-md-10 col-12 d-flex justify-content-center align-items-center bg-secondary">
                                                     <div className="text-white swiper-container__slide__content-container__content p-3">
                                                         <p className='fs-6'>{service.description}</p>
-                                                        <Link to="/services-v1" className='link-fill-right text-white fw-semibold fs-5'>Learn More</Link>
+                                                        <Link to={`/service-details/${service.title.toLowerCase().replace(/\s+/g, '-')}`} className='link-fill-right text-white fw-semibold fs-5'>Learn More</Link>
                                                     </div>
                                                 </div>
                                             </div>

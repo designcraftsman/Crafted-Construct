@@ -1,0 +1,36 @@
+{
+  "title": "Why Choose Us?",
+  "subtitle": "At CraftedConstruct, we merge expertise with artistry to create exceptional spaces.",
+  "counters": [
+    {
+      "icon": "MdOutlineHomeWork",
+      "count": 15,
+      "label": "Projects"
+    },
+    {
+      "icon": "RiTeamFill",
+      "count": 200,
+      "label": "Team Members"
+    },
+    {
+      "icon": "FaBuilding",
+      "count": 15,
+      "label": "Agencies"
+    },
+    {
+      "icon": "FaBusinessTime",
+      "count": 40,
+      "label": "Years of Experience"
+    }
+  ],
+  "expertSection": {
+    "title": "Expert Construction Solutions Tailored to Your Needs",
+    "description": "At CraftConstruct, we take pride in delivering high-quality construction services, from concept to completion. Whether you're planning residential, commercial, or industrial projects, our experienced team is committed to providing customized solutions that meet your goals and exceed expectations. With a focus on precision, safety, and sustainability, we ensure every project is built to last. Trust us to bring your vision to life with expertise, dedication, and attention to detail.",
+    "buttonText": "Check Our Work",
+    "buttonLink": "/portfolio-v1",
+    "images": [
+      "images/V1/services/4.jpg",
+      "images/V1/services/1.jpg"
+    ]
+  }
+}
