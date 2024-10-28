@@ -8,8 +8,6 @@ const importImage = (imagePath) => {
   return import(`../../assets/${imagePath}`).then(module => module.default);
 };
 
-const services = servicesData.servicesSection1;
-
 function ServicesSection() {
   const carouselRef = useRef(null);
   const sectionRef = useRef(null);
@@ -18,9 +16,9 @@ function ServicesSection() {
   useEffect(() => {
     const loadServices = async () => {
       const loadedServices = await Promise.all(
-        servicesData.servicesSection1.map(async (service) => ({
+        servicesData.services.slice(0, 3).map(async (service) => ({
           ...service,
-          img: await importImage(service.img)
+          img: await importImage(service.image)
         }))
       );
       setServices(loadedServices);
@@ -72,11 +70,11 @@ function ServicesSection() {
               <div className='col-lg-6 col-md-6 col-12 p-0 m-0 reveal-element reveal-1'>
                 <img src={service.img} className='services-section__carousel__image' alt="" />
               </div>
-              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-5 '>
-                <div className='my-auto'>
+              <div className='col-lg-6 col-md-6 col-12 bg-secondary p-0 d-flex flex-column align-content-center p-4 '>
+                <div className='my-auto '>
                   <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-2">{service.title}</h2>
-                  <h3 className='text-white fw-bold fs-2 reveal-element reveal-3'>{service.subtitle}</h3>
-                  <p className='fw-light fs-5 text-white w-75 reveal-element reveal-4'>
+                  <h3 className='text-white fw-bold fs-3 reveal-element reveal-3'>{service.subtitle}</h3>
+                  <p className='fw-light fs-6 text-white  reveal-element reveal-4 services-section__carousel__p'>
                     {service.description}
                   </p>
                 </div>

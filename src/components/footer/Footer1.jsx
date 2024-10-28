@@ -1,27 +1,50 @@
-import React from "react";
-import Logo from "../../assets/logos/whiteLogo.webp"; 
+import React, { useState, useEffect } from "react";
+import logoData from "../../data/logo.json";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa"; 
 import { Link } from 'react-router-dom';
 
+// Import images dynamically
+const importImage = (imagePath) => {
+  return import(`../../assets/${imagePath}`).then(module => module.default);
+};
+
 const Footer = () => {
+  const [logo, setLogo] = useState(null);
+
+  useEffect(() => {
+    const loadLogo = async () => {
+      const logoImage = await importImage(logoData.logoLight);
+      setLogo(logoImage);
+    };
+    loadLogo();
+  }, []);
+
   return (
     <footer className="footer-section py-5">
       <Container>
         <Row className="justify-content-between ">
           <Col md={4} className="text-center text-md-start my-3">
             <div className='d-flex align-items-center justify-content-md-start justify-content-center m-auto text-white fw-bolder fs-6'>
-                <img src={Logo} alt="CraftedConstruct" className="img-fluid" />
+                {logo && <img src={logo} alt="CraftedConstruct" className="logo" />}
                 <div className='d-flex flex-column ms-3 fs-6'>
                 Crafted
                 <span className='text-primary p-0 m-0'>Construct</span>
                 </div>
             </div>
-            <div className="social-icons mt-5 m-auto ">
-              <FaFacebookF className="social-icon border p-1 fs-1 rounded" />
-              <FaInstagram className="social-icon border p-1 fs-1 rounded" />
-              <FaLinkedinIn className="social-icon border p-1 fs-1 rounded" />
-              <FaTwitter className="social-icon border p-1 fs-1 rounded" />
+            <div className="social-icons mt-5 m-auto">
+              <Link to="//www.facebook.com" target="_blank" rel="noopener noreferrer" className="me-2">
+                <FaFacebookF className="social-icon border p-1 fs-1 rounded" />
+              </Link>
+              <Link to="//www.instagram.com" target="_blank" rel="noopener noreferrer" className="me-2">
+                <FaInstagram className="social-icon border p-1 fs-1 rounded" />
+              </Link>
+              <Link to="//www.linkedin.com" target="_blank" rel="noopener noreferrer" className="me-2">
+                <FaLinkedinIn className="social-icon border p-1 fs-1 rounded" />
+              </Link>
+              <Link to="//www.twitter.com" target="_blank" rel="noopener noreferrer" className="me-2">
+                <FaTwitter className="social-icon border p-1 fs-1 rounded" />
+              </Link>
             </div>
           </Col>
 

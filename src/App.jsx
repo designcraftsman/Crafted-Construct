@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import useLoading from './components/Use-loading'; // Import the custom loading hook
+import LoadingScreen from './components/Loading-screen'; // Import the existing LoadingScreen component
 
 // Import your components
 import HomeV1 from './pages/home/HomeV1';
@@ -21,24 +23,11 @@ import FAQs from './pages/FAQs';
 import NavbarLight from './components/navbar/navbar1/NavbarLight';
 import NavbarDark from './components/navbar/navbar1/NavbarDark';
 import Footer from './components/footer/Footer1';
-import LoadingScreen from './components/Loading-screen';
+import RevealAnimation from './components/RevealAnimation';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  
-
-  
-  // Show loading screen on location change
-  useEffect(() => {
-    setLoading(true);
-    
-    const timer = setTimeout(() => {
-      setLoading(false); // Hide loading screen after the simulated loading duration
-    }, 2000); // Simulate loading duration
-
-    return () => clearTimeout(timer);
-  }, [location]);
+  const loading = useLoading(); // Use the custom loading hook
+  const location = useLocation();  
 
   // Conditionally render NavbarDark for specific paths
   const renderNavbar = () => {
@@ -63,30 +52,12 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-section, .reveal-element').forEach(el => {
-      observer.observe(el);
-    });
-
-    return () => {
-      document.querySelectorAll('.reveal-section, .reveal-element').forEach(el => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
+  RevealAnimation();
 
   return (
     <div className={`App ${loading ? 'loading' : 'loaded'}`}>
       {loading ? (
-        <LoadingScreen />
+        <LoadingScreen /> // Show the loading screen when loading is true
       ) : (
         <>
           {renderNavbar()}

@@ -77,9 +77,9 @@ const TestimonialsSection1 = () => {
                       <div className='col-3'>
                         <img src={testimonial.image} className="user-image" alt="" />
                       </div>
-                      <div className="col-9">
-                        <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
-                        <span className='text-muted'>{testimonial.position}</span>
+                      <div className="col-9 d-flex flex-column">
+                        <h3 className='fw-bold fs-5 my-auto'>{testimonial.title}</h3>
+                        <span className='text-muted my-auto'>{testimonial.position}</span>
                       </div>
                     </div>
                     <hr className='border-primary border-3' />
@@ -111,7 +111,7 @@ const TestimonialsSection1 = () => {
                     <div className='col-3'>
                       <img src={testimonial.image} className="user-image" alt="" />
                     </div>
-                    <div className="col-9">
+                    <div className="col-9 my-auto">
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
                       <span className='text-primary'>{testimonial.position}</span>
                     </div>

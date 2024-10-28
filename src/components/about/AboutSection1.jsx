@@ -114,13 +114,13 @@ const WhyChooseUs = () => {
     
         <div className='row my-5 gap-3 py-5 reveal-section'>
           <div className="col-lg-6 col-md-6 col-12 about-section m-auto reveal-element reveal-1">
-            <div className="row">
+            <div className="row gap-3 m">
               {expertImages.map((image, index) => (
-                <img key={index} src={image} className='img-fluid col-6' alt={`Expert section image ${index + 1}`} />
+                <img key={index} src={image} className='img-fluid col-lg-5   col-11 m-auto' alt={`Expert section image ${index + 1}`} />
               ))}
             </div>
           </div>
-          <div className='col-lg-5 col-md-5 col-12 m-auto reveal-element reveal-2'>
+          <div className='col-lg-5 col-md-5 col-11 m-auto reveal-element reveal-2'>
             <h2 className='fs-1 fw-semibold text-dark'>
               {data.expertSection.title}
             </h2>

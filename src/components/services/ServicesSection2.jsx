@@ -1,15 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import servicesData from '../../data/services/services.json';
-import { MdHome, MdBusiness, MdBuildCircle, MdDesignServices, MdEco } from "react-icons/md";
-
-const iconMap = {
-    "Custom Residential Construction": MdHome,
-    "Commercial Building Construction": MdBusiness,
-    "Renovation and Remodeling": MdBuildCircle,
-    "Interior Design Consulting": MdDesignServices,
-    "Sustainable Building Practices": MdEco
-};
+import * as MdIcons from "react-icons/md";
 
 const ServicesSection2 = () => {
     const sectionRef = useRef(null);
@@ -36,9 +28,9 @@ const ServicesSection2 = () => {
         };
     }, []);
 
-    const services = servicesData.servicesCarousel.map(service => ({
+    const services = servicesData.services.map(service => ({
         ...service,
-        icon: iconMap[service.title],
+        icon: MdIcons[service.icon],
         slug: service.title.toLowerCase().replace(/\s+/g, '-')
     }));
 
@@ -56,7 +48,7 @@ const ServicesSection2 = () => {
                                     {service.title}
                                 </h4>
                                 <p className="fs-6 text-secondary">
-                                    {service.description}
+                                    {service.shortDescription}
                                 </p>
                             </div>
                         </Link>

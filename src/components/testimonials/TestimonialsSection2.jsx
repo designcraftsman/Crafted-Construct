@@ -99,12 +99,12 @@ const TestimonialsSection2 = () => {
                   <div key={j} className='col-5 m-auto px-3'>
                     <div className='bg-white p-4 rounded testimonial-card    d-flex flex-column '>
                       <div className='row flex-grow-1 align-items-center'>
-                        <div className='col-md-4 text-center'>
+                        <div className='col-md-4 text-center '>
                           <img src={testimonial.image} className="user-image mb-3" alt="" />
                           <h3 className='fw-bold fs-4'>{testimonial.title}</h3>
                           <span className='text-primary'>{testimonial.company}</span>
                         </div>
-                        <div className='col-md-8 d-flex flex-column'>
+                        <div className='col-md-8 '>
                           <FaQuoteLeft className='text-primary fs-4 mb-2'/>
                           <p className='fw-light fs-5 mb-3 flex-grow-1'>{testimonial.text}</p>
                           <div className='text-end mt-auto'>

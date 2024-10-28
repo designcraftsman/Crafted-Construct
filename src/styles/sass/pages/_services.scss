@@ -86,10 +86,10 @@ Home Slider
     &__content-container{
       &__content{
         position: absolute;
-        top:30%;
+        top:50%;
         right: 10%;
-        @media screen and (max-width: 768px) {
-          top: 0%;
+        @media screen and (max-width: 767px) {
+          top: 5%;
           max-width: 90%;
           right: 10%;
          }

@@ -15,7 +15,7 @@ const ServiceDetails = () => {
 
     useEffect(() => {
         const loadServiceInfo = async () => {
-            const service = servicesData.servicesCarousel.find(s => s.title.toLowerCase().replace(/\s+/g, '-') === serviceId);
+            const service = servicesData.services.find(s => s.title.toLowerCase().replace(/\s+/g, '-') === serviceId);
             if (service) {
                 const image = await importImage(service.image);
                 setServiceInfo({
@@ -35,7 +35,7 @@ const ServiceDetails = () => {
             <div className='container mt-5'>
                 <div className='row'>
                     <div className='col-12'>
-                        <h2 className='display-6 mb-4'>Nothing requires the architect's care more than the due proportions of buildings.</h2>
+                        <h2 className='display-6 mb-4'>{serviceInfo.subtitle}</h2>
                         <p className='mb-5'>{serviceInfo.description}</p>
                     </div>
                 </div>
@@ -46,7 +46,15 @@ const ServiceDetails = () => {
                 </div>
                 <div className='row'>
                     <div className='col-12'>
-                        <p className='mb-5'>{serviceInfo.description}</p>
+                        <h3 className='h4 mb-3'>Service Overview</h3>
+                        <p className='mb-4'>{serviceInfo.shortDescription}</p>
+                        <h3 className='h4 mb-3'>Why Choose Us for {serviceInfo.title}</h3>
+                        <ul className='list-unstyled'>
+                            <li className='mb-2'>✓ Expert team with years of experience</li>
+                            <li className='mb-2'>✓ Customized solutions to meet your specific needs</li>
+                            <li className='mb-2'>✓ Commitment to quality and customer satisfaction</li>
+                            <li className='mb-2'>✓ Use of latest technologies and best practices</li>
+                        </ul>
                     </div>
                 </div>
             </div>

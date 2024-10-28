@@ -20,7 +20,7 @@ const ServicesCarousel = () => {
     useEffect(() => {
         const loadServices = async () => {
             const loadedServices = await Promise.all(
-                servicesData.servicesCarousel.map(async (service) => ({
+                servicesData.services.map(async (service) => ({
                     ...service,
                     image: await importImage(service.image)
                 }))

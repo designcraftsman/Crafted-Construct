@@ -95,7 +95,7 @@ const BlogSection1 = () => {
                   date={post.date}
                   image={post.image}
                 />
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                
               </div>
             </Link>
           </Carousel.Item>

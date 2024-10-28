@@ -1,8 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-const useRevealAnimation = () => {
-  const sectionRef = useRef(null);
-
+const RevealAnimation = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -12,18 +10,16 @@ const useRevealAnimation = () => {
       });
     }, { threshold: 0.1 });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    document.querySelectorAll('.reveal-section, .reveal-element').forEach(el => {
+      observer.observe(el);
+    });
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      document.querySelectorAll('.reveal-section, .reveal-element').forEach(el => {
+        observer.unobserve(el);
+      });
     };
   }, []);
-
-  return sectionRef;
 };
 
-export default useRevealAnimation;
+export default RevealAnimation;

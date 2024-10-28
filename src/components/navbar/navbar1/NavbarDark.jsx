@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../../../assets/logos/blackLogo.svg';
 import { CiSearch } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
+import logoData from '../../../data/logo.json'; // Import logo data
+
+// Import logo dynamically
+const importLogo = async (logoPath) => {
+  const module = await import(`../../../assets/${logoPath}`);
+  return module.default;
+};
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
+  const [logo, setLogo] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +33,21 @@ const NavigationBar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const loadLogo = async () => {
+      const logoPath = await importLogo(logoData.logoDark);
+      setLogo(logoPath);
+    };
+
+    loadLogo();
+  }, []);
+
   return (
     <nav className={`navbar navbar-expand-lg bg-white px-3 m-0 p-0 fixed-top ${navbarClass}`}>
       {/* Logo - Outside of Collapsing Nav */}
       <Link className="navbar-brand order-1" to="/">
         <div className="d-flex align-items-center text-dark fw-bolder fs-6">
-          <img src={Logo} alt="CraftedConstruct" className="logo" />
+          <img src={logo} alt="CraftedConstruct" className="logo" />
         </div>
       </Link>
 

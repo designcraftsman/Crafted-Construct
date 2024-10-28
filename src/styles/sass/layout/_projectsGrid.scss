@@ -40,7 +40,7 @@
     // Media query for tablet screens
     @media (max-width: 992px) {
       grid-template-columns: 1fr; // Switch to one column layout
-      grid-auto-rows: 150px; // Adjust the row height for smaller screens
+      grid-auto-rows: 300px; // Adjust the row height for smaller screens
 
       .grid-item-1,
       .grid-item-2,
@@ -58,10 +58,10 @@
     // Media query for mobile screens
     @media (max-width: 576px) {
       grid-template-columns: 1fr; // One column layout
-      grid-auto-rows: 120px; // Adjust the row height for mobile
+      grid-auto-rows: 180px; // Adjust the row height for mobile
 
       .project-image {
-        height: 120px; // Ensure fixed height for images on small screens
+        height: 180px; // Ensure fixed height for images on small screens
         object-fit: cover; // Ensure image scales properly without leaving spaces
       }
     }
