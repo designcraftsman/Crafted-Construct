@@ -62,11 +62,11 @@ const BlogSection = () => {
   return (
     <React.Fragment>
       <div className="blog-section container-fluid my-5 py-5">
-        <div className="row gap-3">
+        <div className="row ">
           <div className="col-lg-8 col-md-8 col-12">
             <div className="row gap-3 mx-auto">
               {currentPosts.map((post, index) => (
-                <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none text-dark col-lg-5 col-md-10 col-10 m-auto">
+                <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none text-dark col-lg-5 col-md-12 col-12 m-auto">
                   <div className="card">
                     <PostCard
                       title={post.title}
@@ -106,7 +106,7 @@ const BlogSection = () => {
             )}
           </div>
 
-          <div className="col-lg-3 col-md-3 col-12 mx-auto">
+          <div className="col-lg-3 col-md-4 col-12 mx-auto my-3">
             <Sidebar categories={categories} recentPosts={recentPosts} />
           </div>
         </div>

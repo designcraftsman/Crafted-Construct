@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import BlogPostCard2 from './PostCard2';
 import blogData from '../../data/blog/posts.json';
 import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap'; // Import React-Bootstrap components
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -46,27 +47,29 @@ const BlogSection2 = () => {
     }, []);
 
     return (
-        <div className='container-fluid my-5 py-3 reveal-section' ref={sectionRef}>
-            <div className='row'>
-                <div className="col-lg-4 p-5 my-auto">
+        <Container fluid className='my-5 py-3 reveal-section' ref={sectionRef}>
+            <Row>
+                <Col lg={4} className="p-5 my-auto">
                     <div className="my-auto">
                         <h2 className='display-6 reveal-element reveal-1'>Our Blog</h2>
-                        <h3 className=' text-primary fw-semibold display-5 reveal-element reveal-2'>Latest News</h3>
+                        <h3 className='text-primary fw-semibold display-5 reveal-element reveal-2'>Latest News</h3>
                         <p className='mt-3 mb-4 reveal-element reveal-3'>Stay updated with the latest trends and insights in the construction industry.</p>
-                        <a href="blog-v1" className='link-fill-right reveal-element reveal-4'>Check Blog</a>
+                        <Link to="blog-v1" className='link-fill-right reveal-element reveal-4'>Check Blog</Link>
                     </div>
-                </div>
-                <div className='col-lg-8'>
-                    <div className='row'>
+                </Col>
+                <Col lg={8}>
+                    <Row>
                         {blogPosts.map((post, index) => (
-                            <Link to={`/post-v1/${post.id}`} key={index} className=' text-decoration-none col-10 mx-auto mb-4 reveal-element reveal-5'>
-                                <BlogPostCard2 {...post} />
-                            </Link>
+                            <Col key={index} className='col-10 mx-auto mb-4 reveal-element reveal-5'>
+                                <Link to={`/post-v1/${post.id}`} className='text-decoration-none'>
+                                    <BlogPostCard2 {...post} />
+                                </Link>
+                            </Col>
                         ))}
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

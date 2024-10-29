@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container, Row, Col } from 'react-bootstrap';
 import PostCard from './PostCard1';
 import { Link } from 'react-router-dom';
 import blogData from '../../data/blog/posts.json';
@@ -35,11 +35,13 @@ const BlogSection1 = () => {
   };
 
   return (
-    <div className="blog-carousel container-fluid p-lg-5 p-3 reveal-section">
-      <div className=''>
-        <h2 className='fw-semibold display-6 reveal-element reveal-1'>Our Blog</h2>
-        <h3 className="latest-news fw-medium text-primary display-5 reveal-element reveal-2">Latest News</h3>
-      </div>
+    <Container fluid className="blog-carousel p-lg-5 p-3 reveal-section">
+      <Row>
+        <Col>
+          <h2 className='fw-semibold display-6 reveal-element reveal-1'>Our Blog</h2>
+          <h3 className="latest-news fw-medium text-primary display-5 reveal-element reveal-2">Latest News</h3>
+        </Col>
+      </Row>
 
       {/* Large Screen Carousel */}
       <Carousel
@@ -53,22 +55,24 @@ const BlogSection1 = () => {
       >
         {Array.from({ length: totalSlidesLarge }).map((_, slideIndex) => (
           <Carousel.Item key={slideIndex}>
-            <div className="row justify-content-evenly my-5 gap-3 reveal-element reveal-3">
+            <Row className="justify-content-evenly my-5 gap-3 reveal-element reveal-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
-                <Link key={idx} to={`/post-v1/${post.id}`} className='text-decoration-none text-dark col-3'>
-                  <div className="card">
-                    <PostCard
-                      title={post.title}
-                      description={post.description}
-                      category={post.category}
-                      author={post.author}
-                      date={post.date}
-                      image={post.image}
-                    />
-                  </div>
-                </Link>
+                <Col key={idx} className='col-3'>
+                  <Link to={`/post-v1/${post.id}`} className='text-decoration-none text-dark'>
+                    <div className="card">
+                      <PostCard
+                        title={post.title}
+                        description={post.description}
+                        category={post.category}
+                        author={post.author}
+                        date={post.date}
+                        image={post.image}
+                      />
+                    </div>
+                  </Link>
+                </Col>
               ))}
-            </div>
+            </Row>
           </Carousel.Item>
         ))}
       </Carousel>
@@ -95,13 +99,12 @@ const BlogSection1 = () => {
                   date={post.date}
                   image={post.image}
                 />
-                
               </div>
             </Link>
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </Container>
   );
 };
 

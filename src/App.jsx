@@ -20,8 +20,8 @@ import ContactV1 from './pages/contact/ContactV1';
 import TermsConditions from './pages/Terms-Conditions';
 import PrivacyPolicy from './pages/Privacy-Policy';
 import FAQs from './pages/FAQs';
-import NavbarLight from './components/navbar/navbar1/NavbarLight';
-import NavbarDark from './components/navbar/navbar1/NavbarDark';
+import NavbarLight from './components/navbar/NavbarLight';
+import NavbarDark from './components/navbar/NavbarDark';
 import Footer from './components/footer/Footer1';
 import RevealAnimation from './components/RevealAnimation';
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import heroData from '../../data/hero/heroSection1.json';
 
-// Import images dynamically
+// Import images dynamically and optimize for SEO
 const importImage = (imagePath) => {
   return import(`../../assets/${imagePath}`).then(module => module.default);
 };
@@ -12,13 +12,14 @@ const HeroSection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [slides, setSlides] = useState([]);
 
-  // Load images and set up slides
+  // Load images and set up slides with SEO optimization
   useEffect(() => {
     const loadSlides = async () => {
       const loadedSlides = await Promise.all(
         heroData.slides.map(async (slide) => ({
           ...slide,
-          image: await importImage(slide.image)
+          image: await importImage(slide.image),
+          altText: slide.altText, // Assuming altText is available in heroData for SEO
         }))
       );
       setSlides(loadedSlides);
@@ -64,6 +65,7 @@ const HeroSection = () => {
             className={`hero-carousel__item image${i + 1}`}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
+            <img src={slide.image} alt={slide.altText} className="d-none" /> {/* For SEO purposes */}
             <div className="hero-carousel__item__caption staggered-animations">
               <h1 className="display-3 slide-up">{slide.title}</h1>
               <h2 className="fs-4 fw-light mb-3 slide-up">{slide.text}</h2>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaBuilding, FaBusinessTime } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { MdOutlineHomeWork } from "react-icons/md";
+import { Container, Row, Col } from 'react-bootstrap'; // Import React-Bootstrap components
 import aboutData from '../../data/about/aboutSection2.json';
 
 const iconMap = {
@@ -54,55 +55,44 @@ const AboutSection2 = () => {
             observer.observe(sectionRef.current);
         }
 
-        // Add reveal animation classes
-        const revealElements = sectionRef.current.querySelectorAll('.reveal-element');
-        revealElements.forEach((el, index) => {
-            el.classList.add(`reveal-${index + 1}`);
-        });
-
-        const currentRef = sectionRef.current;
         // Cleanup function
         return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
             }
         };
     }, [data.counters]);
 
     return (
-        <div className="container my-5 py-5 reveal-section" ref={sectionRef}>
-            <div className="row">
-                <div className="col-lg-6 col-md-12 m-auto mb-4 reveal-element">
-                    <h3 className="fs-1 fw-medium">
-                        {data.title}
-                    </h3>
-                    <h4 className="fs-3 fw-normal">
-                        {data.subtitle}
-                    </h4>
-                </div>
-                <div className="col-lg-6 col-md-12 m-auto">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-10 col-md-8 col-sm-10">
-                            <div className="row row-cols-2 g-4">
+        <Container className="my-5 py-5 reveal-section" ref={sectionRef}>
+            <Row>
+                <Col lg={6} md={12} className="m-auto mb-4 reveal-element">
+                    <h3 className="fs-1 fw-medium">{data.title}</h3>
+                    <h4 className="fs-3 fw-normal">{data.subtitle}</h4>
+                </Col>
+                <Col lg={6} md={12} className="m-auto">
+                    <Row className="justify-content-center">
+                        <Col lg={10} md={8} sm={10}>
+                            <Row className="row-cols-2 g-4">
                                 {data.counters.map((counter, index) => {
                                     const Icon = iconMap[counter.icon];
                                     return (
-                                        <div key={index} className="col text-center reveal-element">
+                                        <Col key={index} className="text-center reveal-element">
                                             <div className="text-primary fw-lighter d-flex align-items-center justify-content-center">
                                                 <Icon className="fs-1" />
                                                 <span id={`count${index + 1}`} className="mx-2 fs-1">0</span>+
                                             </div>
                                             <hr className="my-2" />
                                             <h2 className="fs-5 fw-light mt-2">{counter.label}</h2>
-                                        </div>
+                                        </Col>
                                     );
                                 })}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

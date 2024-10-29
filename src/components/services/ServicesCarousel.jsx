@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/parallax';
 import 'swiper/css/autoplay';
 import servicesData from '../../data/services/services.json';
+import { Container, Row, Col } from 'react-bootstrap'; // Import Bootstrap components
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -22,7 +23,7 @@ const ServicesCarousel = () => {
             const loadedServices = await Promise.all(
                 servicesData.services.map(async (service) => ({
                     ...service,
-                    image: await importImage(service.image)
+                    image: await importImage(service.image1)
                 }))
             );
             setServices(loadedServices);
@@ -41,7 +42,7 @@ const ServicesCarousel = () => {
     if (services.length === 0) return null;
 
     return (
-        <div id="home-slider">
+        <Container fluid id="home-slider" className='p-0'>
             <div className="page-wrap">
                 <Swiper
                     ref={swiperRef}
@@ -63,27 +64,27 @@ const ServicesCarousel = () => {
                     {services.map((service, index) => (
                         <SwiperSlide key={index}>
                             <div className="swiper-slide">
-                                <div className="container-fluid h-100">
-                                    <div className="row h-100 swiper-container__slide">
-                                        <div className="col-lg-6 col-md-6 col-12 swiper-container__slide__image-container position-relative d-flex justify-content-center align-items-center m-0 p-0">
+                                <Container fluid className="h-100">
+                                    <Row className="h-100 swiper-container__slide">
+                                        <Col lg={6} md={6} className="swiper-container__slide__image-container position-relative d-flex justify-content-center align-items-center m-0 p-0">
                                             <img src={service.image} className="w-100 h-100 object-fit-cover swiper-container__slide__image-container__image background-image" alt="" />
                                             <div className="services__title">
                                                 <h1 className="display-3 text-white">{service.title}</h1>
                                             </div>
-                                        </div>
-                                        <div className='col-lg-6 col-md-6 col-12 swiper-container__slide__content-container position-relative h-100'>
-                                            <div className='row h-100'>
-                                                <div className='col-lg-2 col-md-2 opacity-75 d-lg-block d-md-block d-none col-0 bg-primary'></div>
-                                                <div className="col-lg-10 col-md-10 col-12 d-flex justify-content-center align-items-center bg-secondary">
+                                        </Col>
+                                        <Col lg={6} md={6} className='swiper-container__slide__content-container position-relative h-100'>
+                                            <Row className='h-100'>
+                                                <Col lg={2} md={2} className="opacity-75 d-lg-block d-md-block d-none col-0 bg-primary"></Col>
+                                                <Col lg={10} md={10} className="d-flex justify-content-center align-items-center bg-secondary">
                                                     <div className="text-white swiper-container__slide__content-container__content p-3">
                                                         <p className='fs-6'>{service.description}</p>
                                                         <Link to={`/service-details/${service.title.toLowerCase().replace(/\s+/g, '-')}`} className='link-fill-right text-white fw-semibold fs-5'>Learn More</Link>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </Container>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -105,7 +106,7 @@ const ServicesCarousel = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </Container>
     );
 }
 

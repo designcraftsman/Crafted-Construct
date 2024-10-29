@@ -106,7 +106,7 @@ const TestimonialsSection2 = () => {
                         </div>
                         <div className='col-md-8 '>
                           <FaQuoteLeft className='text-primary fs-4 mb-2'/>
-                          <p className='fw-light fs-5 mb-3 flex-grow-1'>{testimonial.text}</p>
+                          <p className='fw-light fs-5 mb-3 flex-grow-1 text-center'>{testimonial.text}</p>
                           <div className='text-end mt-auto'>
                             <FaQuoteRight className='text-primary fs-4'/>
                           </div>
@@ -131,17 +131,17 @@ const TestimonialsSection2 = () => {
           {testimonials.map((testimonial, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className='col-10 bg-white m-auto p-4 testimonial-card rounded '>
+                <div className='col-11 bg-white m-auto p-4 testimonial-card rounded '>
                   <div className='row h-100'>
-                    <div className='col-md-4 text-center mb-3 mb-md-0'>
+                    <div className='col-md-4 text-center my-auto '>
                       <img src={testimonial.image} className="user-image mb-3" alt="" />
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
                       <span className='text-primary'>{testimonial.company}</span>
                     </div>
-                    <div className='col-md-8 d-flex flex-column'>
+                    <div className='col-md-8 d-flex flex-column justify-content-between'>
                       <FaQuoteLeft className='text-primary fs-4 mb-2'/>
-                      <p className='fw-normal mb-3 flex-grow-1'>{testimonial.text}</p>
-                      <div className='text-end mt-auto'>
+                      <p className='fw-normal text-center '>{testimonial.text}</p>
+                      <div className='text-end '>
                         <FaQuoteRight className='text-primary fs-4'/>
                       </div>
                     </div>

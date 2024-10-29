@@ -3,7 +3,10 @@
     {
       "title": "Custom Residential Construction",
       "description": "At CraftedConstruct, we specialize in building custom homes tailored to each client's vision. Whether it's a modern minimalist design or a traditional family home, our team ensures that you stay front-of-mind. We take you from initial design to the final phase with precision and care.",
-      "image": "images/V1/services/1.jpg",
+      "image1": "images/V1/services/1.jpg",
+      "image2": "images/V1/services/2.jpg",
+      "image3": "images/V1/services/3.jpg",
+      "image4": "images/V1/services/4.jpg",
       "icon": "MdHome",
       "subtitle": "Residential Construction",
       "shortDescription": "Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality."
@@ -11,15 +14,21 @@
     {
       "title": "Commercial Building Construction",
       "description": "Our expertise extends beyond residential projects. CraftedConstruct has a proven track record in commercial construction, helping businesses build office spaces, retail outlets, and more.",
-      "image": "images/V1/services/2.jpg",
+      "image1": "images/V1/services/2.jpg",
+      "image2": "images/V1/services/1.jpg",
+      "image3": "images/V1/services/3.jpg",
+      "image4": "images/V1/services/4.jpg",
       "icon": "MdBusiness",
       "subtitle": "Commercial Construction",
-      "shortDescription": "Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces."
+      "shortDescription": "Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces.Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces.Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces.Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces.Creating functional and impressive commercial spaces that meet your business needs. We handle everything from office buildings to retail spaces."
     },
     {
       "title": "Renovation and Remodeling",
       "description": "From small upgrades to full home renovations, we handle all aspects of remodeling projects. Our team transforms outdated spaces into modern, functional environments while staying on budget and on schedule.",
-      "image": "images/V1/services/3.jpg",
+      "image1": "images/V1/services/3.jpg",
+      "image2": "images/V1/services/1.jpg",
+      "image3": "images/V1/services/2.jpg",
+      "image4": "images/V1/services/4.jpg",
       "icon": "MdBuildCircle",
       "subtitle": "Renovation and Remodeling",
       "shortDescription": "Transforming existing structures into modern, efficient spaces. We breathe new life into old buildings while preserving their character."
@@ -27,7 +36,10 @@
     {
       "title": "Interior Design Consulting",
       "description": "CraftedConstruct also offers interior design services to complement our construction projects. We work closely with clients to select finishes, fixtures, and furniture that align with their taste and lifestyle.",
-      "image": "images/V1/services/4.jpg",
+      "image1": "images/V1/services/4.jpg",
+      "image2": "images/V1/services/3.jpg",
+      "image3": "images/V1/services/2.jpg",
+      "image4": "images/V1/services/1.jpg",
       "icon": "MdDesignServices",
       "subtitle": "Interior Design",
       "shortDescription": "Crafting innovative and functional designs that reflect your vision. Our designers blend aesthetics with practicality to create stunning interiors."
@@ -35,7 +47,10 @@
     {
       "title": "Sustainable Building Practices",
       "description": "We are committed to eco-friendly construction methods. Our team incorporates sustainable materials and energy-efficient systems to create environmentally responsible buildings that reduce long-term costs and environmental impact.",
-      "image": "images/V1/services/5.jpg",
+      "image1": "images/V1/services/5.jpg",
+      "image2": "images/V1/services/1.jpg",
+      "image3": "images/V1/services/1.jpg",
+      "image4": "images/V1/services/1.jpg",
       "icon": "MdEco",
       "subtitle": "Sustainable Construction",
       "shortDescription": "Creating environmentally responsible buildings that reduce long-term costs and environmental impact through sustainable materials and energy-efficient systems."
@@ -43,34 +58,13 @@
     {
       "title": "Architecture",
       "description": "Crafting innovative and functional designs that reflect your vision. Our architects blend aesthetics with practicality to create stunning structures.",
-      "image": "images/V1/home/servicesSection/1.jpg",
+      "image1": "images/V1/home/servicesSection/1.jpg",
+      "image2": "images/V1/services/1.jpg",
+      "image3": "images/V1/services/1.jpg",
+      "image4": "images/V1/services/1.jpg",
       "icon": "MdArchitecture",
       "subtitle": "Architectural Design",
       "shortDescription": "Designing innovative and functional structures that reflect your vision and meet your needs."
-    },
-    {
-      "title": "Engineering",
-      "description": "Providing expert engineering solutions for complex projects. We ensure structural integrity and efficiency in every build.",
-      "image": "images/V1/home/servicesSection/1.jpg",
-      "icon": "MdEngineering",
-      "subtitle": "Engineering Solutions",
-      "shortDescription": "Ensuring structural integrity and efficiency in every build through expert engineering solutions."
-    },
-    {
-      "title": "Landscaping",
-      "description": "Creating beautiful outdoor spaces that complement your property. From gardens to hardscaping, we enhance your exterior environment.",
-      "image": "images/V1/home/servicesSection/1.jpg",
-      "icon": "MdLandscape",
-      "subtitle": "Landscape Design",
-      "shortDescription": "Enhancing your exterior environment with beautiful gardens and hardscaping solutions."
-    },
-    {
-      "title": "Security Systems",
-      "description": "Implementing cutting-edge security solutions to protect your property. We integrate advanced technology for your peace of mind.",
-      "image": "images/V1/home/servicesSection/1.jpg",
-      "icon": "MdSecurity",
-      "subtitle": "Security Solutions",
-      "shortDescription": "Protecting your property with cutting-edge security solutions and advanced technology integration."
     }
   ]
 }

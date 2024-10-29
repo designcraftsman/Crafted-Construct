@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBuilding, FaBusinessTime } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { MdOutlineHomeWork } from "react-icons/md";
+import { Container, Row, Col } from 'react-bootstrap'; // Import React-Bootstrap components
 import aboutData from '../../data/about/aboutSection1.json';
 
 const iconMap = {
@@ -87,53 +88,55 @@ const WhyChooseUs = () => {
   }, [data.counters]);
 
   return (
-    <React.Fragment>
-      <div className="container text-start p-4 py-5 my-5 why-choose-us m-auto">
-        <div className="reveal-section">
+    <Container className="text-start p-4 py-5 my-5 why-choose-us m-auto">
+      <Row className="reveal-section">
+        <Col>
           <h2 className="display-4 fw-semibold mb-5 reveal-element reveal-1">{data.title}</h2>
           <h3 className="display-6 text-muted col-lg-7 col-12 mb-5 reveal-element reveal-2">
             {data.subtitle}
           </h3>
-        </div>
+        </Col>
+      </Row>
 
-        <div className="row d-flex justify-content-between align-items-center py-5 reveal-section">
-          {data.counters.map((counter, index) => {
-            const Icon = iconMap[counter.icon];
-            return (
-              <div key={index} className="col-lg-2 col-md-5 col-12 text-lg-start text-center my-5 reveal-element reveal-1">
-                <span className="display-5 text-primary fw-lighter align-items-center">
-                  <Icon />
-                  <span id={`count${index + 1}`} className="mx-2">0</span>+
-                </span>
-                <hr />
-                <h2 className="fs-5 fw-light">{counter.label}</h2>
-              </div>
-            );
-          })}
-        </div>
+      <Row className="d-flex justify-content-between align-items-center py-5 reveal-section">
+        {data.counters.map((counter, index) => {
+          const Icon = iconMap[counter.icon];
+          return (
+            <Col key={index} lg={2} md={5} className="text-lg-start text-center my-5 reveal-element reveal-1">
+              <span className="display-5 text-primary fw-lighter align-items-center">
+                <Icon />
+                <span id={`count${index + 1}`} className="mx-2">0</span>+
+              </span>
+              <hr />
+              <h2 className="fs-5 fw-light">{counter.label}</h2>
+            </Col>
+          );
+        })}
+      </Row>
     
-        <div className='row my-5 gap-3 py-5 reveal-section'>
-          <div className="col-lg-6 col-md-6 col-12 about-section m-auto reveal-element reveal-1">
-            <div className="row gap-3 m">
-              {expertImages.map((image, index) => (
-                <img key={index} src={image} className='img-fluid col-lg-5   col-11 m-auto' alt={`Expert section image ${index + 1}`} />
-              ))}
-            </div>
-          </div>
-          <div className='col-lg-5 col-md-5 col-11 m-auto reveal-element reveal-2'>
-            <h2 className='fs-1 fw-semibold text-dark'>
-              {data.expertSection.title}
-            </h2>
-            <p className='fs-6 fw-light'>
-              {data.expertSection.description}
-            </p>
-            <Link to={data.expertSection.buttonLink} className="btn btn-dark hover-filled-slide-down slide-up border-radius-0">
-              <span>{data.expertSection.buttonText}</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
+      <Row className='my-5 gap-3 py-5 reveal-section'>
+        <Col lg={6} md={6} className="about-section m-auto reveal-element reveal-1">
+          <Row className="gap-3">
+            {expertImages.map((image, index) => (
+              <Col key={index} className='col-lg-5 col-11 m-auto'>
+                <img src={image} className='img-fluid' alt={`Expert section image ${index + 1}`} />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col lg={5} md={5} className='col-11 m-auto reveal-element reveal-2'>
+          <h2 className='fs-1 fw-semibold text-dark'>
+            {data.expertSection.title}
+          </h2>
+          <p className='fs-6 fw-light'>
+            {data.expertSection.description}
+          </p>
+          <Link to={data.expertSection.buttonLink} className="btn btn-dark hover-filled-slide-down slide-up border-radius-0">
+            <span>{data.expertSection.buttonText}</span>
+          </Link>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

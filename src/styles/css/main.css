@@ -1681,7 +1681,7 @@ div.pullUp a:hover:before,
 }
 .services-header__text {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%; /* Set left to 50% */
   transform: translateX(-50%); /* Center horizontally */
   text-align: center;
