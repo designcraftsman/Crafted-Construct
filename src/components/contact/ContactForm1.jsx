@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from 'react-icons/fa'; 
+import { CiLocationOn  , CiPhone , CiClock1} from "react-icons/ci";
+
 import contactInfoData from '../../data/contact/contact-info.json';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'; // Import React-Bootstrap components
 
@@ -57,12 +58,15 @@ const ContactForm1 = () => {
                 <Col lg={3} className="contact-info m-auto">
                     <ul className="list-unstyled fs-5">
                         {contactInfoData.contactInfo.map((info, index) => (
-                            <li key={index} className="mb-3">
-                                <div className='d-flex align-items-center gap-3'>
-                                    {info.icon === 'FaMapMarkerAlt' && <FaMapMarkerAlt className='text-muted fs-1' />}
-                                    {info.icon === 'FaPhoneAlt' && <FaPhoneAlt className='text-muted fs-1' />}
-                                    {info.icon === 'FaClock' && <FaClock className='text-muted fs-1' />}
-                                    <span className='fs-5'>{info.text}</span>
+                            <li key={index} className="mb-5">
+                                <div className='d-flex flex-column align-items-start gap-1'>
+                                    <p className=' fw-bold my-1'>
+                                        {info.icon === 'CiLocationOn' && <CiLocationOn className=' fs-1' />}
+                                        {info.icon === 'CiPhone' && <CiPhone className=' fs-1' />}
+                                        {info.icon === 'CiClock1' && <CiClock1 className='fs-1' />}
+                                        <span className='mx-2'>{info.name}</span>
+                                    </p>
+                                    <span className='fs-6'>{info.text}</span>
                                 </div>
                             </li>
                         ))}

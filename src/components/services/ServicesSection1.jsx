@@ -72,8 +72,8 @@ function ServicesSection() {
               </Col>
               <Col lg={6} md={6} className='bg-secondary p-0 d-flex flex-column align-content-center p-4'>
                 <div className='my-auto'>
-                  <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-2">{service.title}</h2>
-                  <h3 className='text-white fw-bold fs-3 reveal-element reveal-3'>{service.subtitle}</h3>
+                  <h2 className="text-primary fw-semibold mb-3 reveal-element reveal-2 services-section__carousel__h2">{service.title}</h2>
+                  <h3 className='text-white fw-bold fs-3 reveal-element reveal-3 services-section__carousel__h3'>{service.subtitle}</h3>
                   <p className='fw-light fs-6 text-white reveal-element reveal-4 services-section__carousel__p'>
                     {service.description}
                   </p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import header from '../../assets/images/V1/contact/header.jpg';
 import ContactForm from '../../components/contact/ContactForm1';
+import Map from '../../components/contact/Map'
 
 
 const ServicesSection = () => {
@@ -12,9 +13,10 @@ const ServicesSection = () => {
         </div>
         
     <ContactForm/>
-      </React.Fragment>
+    <Map />
+    </React.Fragment>
     );
-  };
+};
   
-  export default ServicesSection;
+export default ServicesSection;
   

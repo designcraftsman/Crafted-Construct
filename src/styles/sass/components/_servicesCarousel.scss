@@ -14,8 +14,11 @@
       &__p{
         width: 80%;
         @media (max-width: 766px) {
-            width: 100%;
+            width: 90%;
         }
+      }
+      &__h2,&__h3{
+        width: 90%;
       }
     }
   

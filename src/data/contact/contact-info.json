@@ -1,15 +1,18 @@
 {
   "contactInfo": [
     {
-      "icon": "FaMapMarkerAlt",
+      "icon": "CiLocationOn",
+      "name": "Location",
       "text": "9989 Hilldale Rd. Los Angeles, CA 90004"
     },
     {
-      "icon": "FaPhoneAlt",
+      "icon": "CiPhone",
+      "name":"Phone",
       "text": "(555) 123-4567"
     },
     {
-      "icon": "FaClock",
+      "icon": "CiClock1",
+      "name":"Time",
       "text": "Monday – Friday 6 am to 8 pm EST"
     }
   ]

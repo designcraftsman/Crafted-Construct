@@ -5,6 +5,8 @@ import portfolio2 from '../../assets/images/V1/home/portfolioSection/2.jpg';
 import portfolio3 from '../../assets/images/V1/home/portfolioSection/3.jpg';
 import portfolio4 from '../../assets/images/V1/home/portfolioSection/4.jpg';
 import { Link } from 'react-router-dom';
+import { FaChevronRight , FaChevronLeft } from "react-icons/fa6";
+
 
 const PortfolioSection2 = () => {
     const [index, setIndex] = useState(0);
@@ -23,8 +25,8 @@ const PortfolioSection2 = () => {
     ];
 
     const groupedItems = [];
-    for (let i = 0; i < portfolioItems.length; i += 4) {
-        groupedItems.push(portfolioItems.slice(i, i + 4));
+    for (let i = 0; i < portfolioItems.length; i += 3) {
+        groupedItems.push(portfolioItems.slice(i, i + 3));
     }
 
     const totalSlides = groupedItems.length;
@@ -65,8 +67,18 @@ const PortfolioSection2 = () => {
         };
     }, []);
 
+    // Handler for going to the previous slide
+    const handlePrevClick = () => {
+        setIndex((prevIndex) => (prevIndex === 0 ? totalSlides - 1 : prevIndex - 1));
+    };
+
+    // Handler for going to the next slide
+    const handleNextClick = () => {
+        setIndex((prevIndex) => (prevIndex === totalSlides - 1 ? 0 : prevIndex + 1));
+    };
+
     return (
-        <div className="container-fluid bg-secondary px-5 py-4 reveal-section" ref={sectionRef}
+        <div className="container-fluid bg-secondary px-5 py-4 reveal-section position-relative" ref={sectionRef}
              onMouseEnter={() => setIsPaused(true)}
              onMouseLeave={() => setIsPaused(false)}>
             <div className="d-flex justify-content-between flex-wrap align-items-end">
@@ -75,9 +87,12 @@ const PortfolioSection2 = () => {
                 <h3 className=" display-5 text-white reveal-element reveal-2 fw-medium">What We Built</h3>
             </div>
             <div>
-                <Link to="/portfolio-v2" className='link-fill-right  reveal-element reveal-4 text-white fw-bold   fs-4 '>Check All Projects</Link>
+                <Link to="/portfolio-v2" className='btn btn-dark hover-filled-slide-down  reveal-element reveal-4 text-white fw-bold    '>
+                    <span>Check All Projects</span>
+                </Link>
              </div>
             </div>
+
             
             {/* Large screen carousel */}
             <Carousel 
@@ -89,7 +104,7 @@ const PortfolioSection2 = () => {
             >
                 {groupedItems.map((group, groupIndex) => (
                     <Carousel.Item key={groupIndex}>
-                        <div className="d-flex justify-content-between align-items-center ">
+                        <div className="d-flex justify-content-evenly align-items-center ">
                             {group.map((item, itemIndex) => (
                                 <Link to="/project-v1" key={itemIndex} className="project-section-v2__figure  p-0   projects-grid__figure">
                                     <img 
@@ -134,6 +149,21 @@ const PortfolioSection2 = () => {
                     </Carousel.Item>
                 ))}
             </Carousel>
+            <button
+        className="project-section-v2__control project-section-v2__control--prev reveal-element reveal-1"
+        onClick={handlePrevClick}
+        aria-label="Previous"
+      >
+        <FaChevronLeft className="fs-2 icon" />
+      </button>
+
+      <button
+        className="project-section-v2__control project-section-v2__control--next reveal-element reveal-1"
+        onClick={handleNextClick}
+        aria-label="Next"
+      >
+        <FaChevronRight className="fs-2 icon" />
+      </button>
             
         </div>   
     );
