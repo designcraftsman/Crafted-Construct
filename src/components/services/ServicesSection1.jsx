@@ -17,7 +17,7 @@ function ServicesSection() {
   useEffect(() => {
     const loadServices = async () => {
       const loadedServices = await Promise.all(
-        servicesData.services.slice(0, 3).map(async (service) => ({
+        servicesData.services.map(async (service) => ({
           ...service,
           img: await importImage(service.image1)
         }))

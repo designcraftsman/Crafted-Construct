@@ -16,7 +16,7 @@ const PortfolioList = ({ showMoreButton }) => {
       const loadedItems = await Promise.all(
         projectsData.portfolioItems.map(async (item) => ({
           ...item,
-          img: await importImage(item.image)
+          img: await importImage(item.image1)
         }))
       );
       setPortfolioItems(loadedItems);
@@ -33,7 +33,7 @@ const PortfolioList = ({ showMoreButton }) => {
     <>
       <div className="d-flex flex-wrap ">
         {portfolioItems.slice(0, visibleItems).map((item, index) => (
-          <Link to="/project-v1" key={index} className="col-lg-4 col-md-6 col-sm-12">
+          <Link to={`/project-v1/${item.id}`} key={index} className="col-lg-4 col-md-6 col-sm-12">
             <figure className="projects-grid__figure m-3">
               <img src={item.img} className="w-100 object-fit-cover projects-grid__figure__image" alt="image-grid" />
               <figcaption className='projects-grid__figure__caption'>

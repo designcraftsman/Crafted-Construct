@@ -22,7 +22,7 @@ const BlogSection = () => {
           image: await importImage(post.image),
           author: {
             name: post.author,
-            avatar: await importImage('images/V1/home/testimonialsSection/1.jpg') // Default avatar
+            avatar: await importImage('images/testimonials/1.jpg') // Default avatar
           }
         }))
       );

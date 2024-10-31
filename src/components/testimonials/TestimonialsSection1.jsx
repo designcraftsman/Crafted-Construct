@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { FaRegMessage, FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
-import testimonialsData from '../../data/testimonials/TestimonialsSection1.json';
+import testimonialsData from '../../data/testimonials/Testimonials.json';
 
 // Import images dynamically
 const importImage = (imagePath) => {

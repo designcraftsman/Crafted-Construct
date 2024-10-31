@@ -29,8 +29,8 @@
     "buttonText": "Check Our Work",
     "buttonLink": "/portfolio-v1",
     "images": [
-      "images/V1/services/4.jpg",
-      "images/V1/services/1.jpg"
+      "images/services/4.jpg",
+      "images/services/1.jpg"
     ]
   }
 }

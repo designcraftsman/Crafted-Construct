@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { FaRegMessage } from "react-icons/fa6";
 import { FaQuoteRight, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import testimonialsData from '../../data/testimonials/TestimonialsSection2.json';
+import testimonialsData from '../../data/testimonials/Testimonials.json';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -102,7 +102,7 @@ const TestimonialsSection2 = () => {
                         <div className='col-md-4 text-center '>
                           <img src={testimonial.image} className="user-image mb-3" alt="" />
                           <h3 className='fw-bold fs-4'>{testimonial.title}</h3>
-                          <span className='text-primary'>{testimonial.company}</span>
+                          <span className='text-primary'>{testimonial.position}</span>
                         </div>
                         <div className='col-md-8 '>
                           <FaQuoteLeft className='text-primary fs-4 mb-2'/>

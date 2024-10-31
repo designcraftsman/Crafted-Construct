@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import contact from '../assets/images/V1/services/contact.jpg'
+import contact from '../assets/images/services/contact.jpg'
 
 const Accordion = () => {
   const [openPanel, setOpenPanel] = useState(null);

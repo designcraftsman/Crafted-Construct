@@ -1,70 +1,70 @@
 {
   "services": [
     {
-      "title": "Custom Residential Construction",
-      "description": "At CraftedConstruct, we specialize in building custom homes tailored to each client's vision. Whether it's a modern minimalist design or a traditional family home, our team ensures that you stay front-of-mind. We take you from initial design to the final phase with precision and care.",
-      "image1": "images/V1/services/1.jpg",
-      "image2": "images/V1/services/2.jpg",
-      "image3": "images/V1/services/3.jpg",
-      "image4": "images/V1/services/4.jpg",
-      "icon": "MdHome",
-      "subtitle": "Residential Construction",
-      "shortDescription": "Building homes that are a perfect blend of comfort, design, and durability. From custom homes to renovations, we make your dream home a reality."
-    },
-    {
-      "title": "Commercial Building Construction",
-      "description": "Our expertise extends beyond residential projects. CraftedConstruct has a proven track record in commercial construction, helping businesses build office spaces, retail outlets, and more.",
-      "image1": "images/V1/services/2.jpg",
-      "image2": "images/V1/services/1.jpg",
-      "image3": "images/V1/services/3.jpg",
-      "image4": "images/V1/services/4.jpg",
-      "icon": "MdBusiness",
-      "subtitle": "Commercial Construction",
-      "shortDescription": "Creating functional and impressive commercial spaces that meet your business needs. We handle everything from off."
-    },
-    {
-      "title": "Renovation and Remodeling",
-      "description": "From small upgrades to full home renovations, we handle all aspects of remodeling projects. Our team transforms outdated spaces into modern, functional environments while staying on budget and on schedule.",
-      "image1": "images/V1/services/3.jpg",
-      "image2": "images/V1/services/1.jpg",
-      "image3": "images/V1/services/2.jpg",
-      "image4": "images/V1/services/4.jpg",
-      "icon": "MdBuildCircle",
-      "subtitle": "Renovation and Remodeling",
-      "shortDescription": "Transforming existing structures into modern, efficient spaces. We breathe new life into old buildings while preserving their character."
-    },
-    {
-      "title": "Interior Design Consulting",
-      "description": "CraftedConstruct also offers interior design services to complement our construction projects. We work closely with clients to select finishes, fixtures, and furniture that align with their taste and lifestyle.",
-      "image1": "images/V1/services/4.jpg",
-      "image2": "images/V1/services/3.jpg",
-      "image3": "images/V1/services/2.jpg",
-      "image4": "images/V1/services/1.jpg",
-      "icon": "MdDesignServices",
-      "subtitle": "Interior Design",
-      "shortDescription": "Crafting innovative and functional designs that reflect your vision. Our designers blend aesthetics with practicality to create stunning interiors."
-    },
-    {
-      "title": "Sustainable Building Practices",
-      "description": "We are committed to eco-friendly construction methods. Our team incorporates sustainable materials and energy-efficient systems to create environmentally responsible buildings that reduce long-term costs and environmental impact.",
-      "image1": "images/V1/services/5.jpg",
-      "image2": "images/V1/services/1.jpg",
-      "image3": "images/V1/services/1.jpg",
-      "image4": "images/V1/services/1.jpg",
-      "icon": "MdEco",
-      "subtitle": "Sustainable Construction",
-      "shortDescription": "Creating environmentally responsible buildings that reduce long-term costs and environmental impact through sustainable materials and energy-efficient systems."
-    },
-    {
-      "title": "Architecture",
-      "description": "Crafting innovative and functional designs that reflect your vision. Our architects blend aesthetics with practicality to create stunning structures.",
-      "image1": "images/V1/home/servicesSection/1.jpg",
-      "image2": "images/V1/services/1.jpg",
-      "image3": "images/V1/services/1.jpg",
-      "image4": "images/V1/services/1.jpg",
+      "title": "Architectural Design & Planning",
+      "description": "Our team excels in creating architectural designs that blend aesthetic appeal with functional requirements. From initial sketches to detailed blueprints, we bring your vision to life with precision, focusing on both beauty and practicality.",
+      "image1": "images/services/1.jpg",
+      "image2": "images/services/2.jpg",
+      "image3": "images/services/3.jpg",
+      "image4": "images/services/4.jpg",
       "icon": "MdArchitecture",
       "subtitle": "Architectural Design",
-      "shortDescription": "Designing innovative and functional structures that reflect your vision and meet your needs."
+      "shortDescription": "Crafting innovative, functional architectural designs tailored to client needs and aesthetics."
+    },
+    {
+      "title": "Urban & Master Planning",
+      "description": "With a deep understanding of urban dynamics, our team develops master plans for large-scale projects. We consider sustainability, community engagement, and future growth to create vibrant, livable spaces.",
+      "image1": "images/services/2.jpg",
+      "image2": "images/services/1.jpg",
+      "image3": "images/services/3.jpg",
+      "image4": "images/services/4.jpg",
+      "icon": "MdLocationCity",
+      "subtitle": "Urban Planning",
+      "shortDescription": "Designing cohesive, sustainable communities through master planning and urban design."
+    },
+    {
+      "title": "Interior Architecture",
+      "description": "Our interior architecture service bridges the gap between form and function. We create interior spaces that are as functional as they are beautiful, aligning with the architectural vision of the entire building.",
+      "image1": "images/services/3.jpg",
+      "image2": "images/services/1.jpg",
+      "image3": "images/services/2.jpg",
+      "image4": "images/services/4.jpg",
+      "icon": "MdOutlineInteriorDesign",
+      "subtitle": "Interior Architecture",
+      "shortDescription": "Crafting interior spaces that complement the building’s architectural character and functionality."
+    },
+    {
+      "title": "Sustainable Architecture",
+      "description": "We prioritize sustainable practices by integrating eco-friendly materials and energy-efficient designs into our projects. Our goal is to reduce environmental impact while enhancing the building's efficiency and comfort.",
+      "image1": "images/services/4.jpg",
+      "image2": "images/services/1.jpg",
+      "image3": "images/services/2.jpg",
+      "image4": "images/services/4.jpg",
+      "icon": "MdEco",
+      "subtitle": "Sustainable Design",
+      "shortDescription": "Incorporating sustainable materials and designs to reduce environmental impact and improve energy efficiency."
+    },
+    {
+      "title": "Site Analysis & Feasibility Studies",
+      "description": "We conduct thorough site analysis and feasibility studies to ensure that each project starts with a strong foundation. Our assessments cover zoning, environmental impact, and cost-effectiveness to guide design decisions.",
+      "image1": "images/services/5.jpg",
+      "image2": "images/services/3.jpg",
+      "image3": "images/services/2.jpg",
+      "image4": "images/services/1.jpg",
+      "icon": "MdOutlineAssessment",
+      "subtitle": "Site Analysis",
+      "shortDescription": "Conducting in-depth site analysis and feasibility studies to inform and guide the design process."
+    },
+    {
+      "title": "3D Rendering & Visualization",
+      "description": "Using the latest 3D rendering technology, we provide realistic visualizations of your project before construction begins. This helps clients and stakeholders see the design in full detail, aiding in decision-making and planning.",
+      "image1": "images/services/6.jpg",
+      "image2": "images/services/1.jpg",
+      "image3": "images/services/2.jpg",
+      "image4": "images/services/3.jpg",
+      "icon": "MdOutline3DRotation",
+      "subtitle": "3D Visualization",
+      "shortDescription": "Bringing your project to life with realistic 3D renderings, offering a clear view of the final result."
     }
   ]
 }

@@ -2,23 +2,73 @@
   "blogPosts": [
     {
       "id": "1",
-      "image": "images/V1/blog/1.jpg",
-      "title": "The Future of Sustainable Construction",
+      "image": "images/blog/1.jpg",
+      "title": "The Future of Sustainable Architecture",
       "category": "Sustainability",
-      "description": "Explore innovative techniques and materials shaping the future of eco-friendly building practices.",
+      "description": "Explore innovative techniques and materials shaping the future of eco-friendly architectural practices.",
       "author": "Jane Doe",
       "date": "April 15, 2023",
-      "content": "<p>As climate change becomes an increasingly urgent global issue, the construction industry is turning towards sustainable practices...</p><h3>Eco-Friendly Materials</h3><p>Eco-friendly materials such as bamboo, recycled steel, and reclaimed wood are gaining popularity...</p>"
+      "content": "<p>As climate change becomes an increasingly urgent global issue, the architecture industry is turning towards sustainable practices...</p>"
     },
     {
       "id": "2",
-      "image": "images/V1/blog/2.jpg",
-      "title": "Emerging Technologies in Construction Management",
-      "category": "Technology",
-      "description": "Discover how AI, IoT, and automation are revolutionizing project management in the construction industry.",
+      "image": "images/blog/2.jpg",
+      "title": "Modern Architectural Trends",
+      "category": "Architecture",
+      "description": "Discover the latest trends in modern architecture and their impact on urban design.",
       "author": "John Smith",
       "date": "April 22, 2023",
-      "content": "<p>Discover how AI, IoT, and automation are revolutionizing project management in the construction industry...</p>"
+      "content": "<p>Modern architecture is evolving, with new styles and materials emerging...</p>"
+    },
+    {
+      "id": "3",
+      "image": "images/blog/3.jpg",
+      "title": "The Role of Technology in Architecture",
+      "category": "Technology",
+      "description": "How technology is transforming the architectural landscape.",
+      "author": "Alice Johnson",
+      "date": "May 1, 2023",
+      "content": "<p>Technology plays a crucial role in modern architecture, enhancing design and construction processes...</p>"
+    },
+    {
+      "id": "4",
+      "image": "images/blog/4.jpg",
+      "title": "Cultural Influences in Architecture",
+      "category": "Culture",
+      "description": "Exploring how culture shapes architectural styles around the world.",
+      "author": "Michael Brown",
+      "date": "May 5, 2023",
+      "content": "<p>Cultural influences are evident in architectural designs, reflecting the values and traditions of societies...</p>"
+    },
+    {
+      "id": "5",
+      "image": "images/blog/5.jpg",
+      "title": "The Importance of Landscape Architecture",
+      "category": "Landscape",
+      "description": "Understanding the role of landscape architecture in urban planning.",
+      "author": "Emily White",
+      "date": "May 10, 2023",
+      "content": "<p>Landscape architecture is vital for creating sustainable and livable urban environments...</p>"
+    },
+    {
+      "id": "6",
+      "image": "images/blog/6.jpg",
+      "title": "Historical Architecture: Lessons from the Past",
+      "category": "History",
+      "description": "What we can learn from historical architectural styles and their relevance today.",
+      "author": "David Green",
+      "date": "May 15, 2023",
+      "content": "<p>Historical architecture offers valuable insights into design principles and cultural significance...</p>"
+    },
+    {
+      "id": "7",
+      "image": "images/blog/7.jpg",
+      "title": "Innovative Materials in Architecture",
+      "category": "Materials",
+      "description": "Exploring new materials that are changing the way we build.",
+      "author": "Sarah Blue",
+      "date": "May 20, 2023",
+      "content": "<p>Innovative materials are revolutionizing architectural design, offering new possibilities for creativity...</p>"
     }
   ],
   "categories": [
@@ -30,15 +80,15 @@
   ],
   "recentPosts": [
     {
-      "image": "images/V1/blog/1.jpg",
-      "title": "The Future of Sustainable Construction",
+      "image": "images/blog/1.jpg",
+      "title": "The Future of Sustainable Architecture",
       "category": "Sustainability",
       "date": "April 15, 2023"
     },
     {
-      "image": "images/V1/blog/2.jpg",
-      "title": "Emerging Technologies in Construction Management",
-      "category": "Technology",
+      "image": "images/blog/2.jpg",
+      "title": "Modern Architectural Trends",
+      "category": "Architecture",
       "date": "April 22, 2023"
     }
   ]

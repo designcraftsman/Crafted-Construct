@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap'; // Import Bootstrap components
-import header from '../../assets/images/V1/services/header.jpg';
+import header from '../../assets/images/services/header.jpg';
 
 const ServicesHeader = () => {
     return (

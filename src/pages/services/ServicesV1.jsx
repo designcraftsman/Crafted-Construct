@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ServicesHeader from '../../components/services/ServicesHeader';
-import service1 from '../../assets/images/V1/services/1.jpg';
+import service1 from '../../assets/images/services/1.jpg';
 import ServicesAbout from '../../components/services/ServicesAbout';
 import ServicesCarousel from '../../components/services/ServicesCarousel';
 import ContactSection from '../../components/contact/ContactSection';

@@ -1,5 +1,5 @@
 import React from 'react';
-import contact from '../../assets/images/V1/services/contact.jpg';
+import contact from '../../assets/images/services/contact.jpg';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 

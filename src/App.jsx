@@ -45,7 +45,7 @@ function App() {
     ];
 
     // Check if the current path matches any of the dark paths or the /post-v1/:postId pattern
-    if (darkPaths.includes(location.pathname) || /^\/post-v1\/[^/]+$/.test(location.pathname)) {
+    if (darkPaths.includes(location.pathname) || /^\/post-v1\/[^/]+$/.test(location.pathname) || /^\/project-v1\/[^/]+$/.test(location.pathname)) {
       return <NavbarDark />;
     } else {
       return <NavbarLight />;
@@ -71,7 +71,7 @@ function App() {
             <Route path="/services-v1" element={<ServicesV1 />} />
             <Route path="/services-v2" element={<ServicesV2 />} />
             <Route path="/service-details/:serviceId" element={<ServiceDetails />} />
-            <Route path="/project-v1" element={<ProjectV1 />} />
+            <Route path="/project-v1/:projectId" element={<ProjectV1 />} />
             <Route path="/blog-v1" element={<BlogV1 />} />
             <Route path="/blog-v2" element={<BlogV2 />} />
             <Route path="/post-v1/:postId" element={<PostV1 />} />
