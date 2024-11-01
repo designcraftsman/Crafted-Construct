@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import about2 from '../../assets/images/V1/about/2.jpg';
-import about3 from '../../assets/images/V1/about/3.jpg';
-import about4 from '../../assets/images/V1/about/4.jpg';
-import about5 from '../../assets/images/V1/about/5.jpg';
+import about2 from '../../assets/images/about/2.jpg';
+import about3 from '../../assets/images/about/3.jpg';
+import about4 from '../../assets/images/about/4.jpg';
+import about5 from '../../assets/images/about/5.jpg';
 
 const TeamSection = () => {
     return (

@@ -28,6 +28,30 @@ const Post = () => {
     loadPost();
   }, [postId]);
 
+  useEffect(() => {
+    const loadPost = async () => {
+      const foundPost = blogData.blogPosts.find(p => p.id === postId);
+      if (foundPost) {
+        const image = await importImage(foundPost.image);
+        
+        // Load additional images within the content
+        let content = foundPost.content;
+        const imgRegex = /<img\s+src='([^']+)'/g;
+        let match;
+  
+        while ((match = imgRegex.exec(content)) !== null) {
+          const imgPath = match[1];
+          const importedImage = await importImage(imgPath);
+          content = content.replace(imgPath, importedImage);
+        }
+  
+        setPost({ ...foundPost, image, content });
+      }
+    };
+  
+    loadPost();
+  }, [postId]);
+  
   // Define categories and recentPosts
   const categories = blogData.categories || []; // Assuming categories are part of your blogData
   const recentPosts = blogData.recentPosts || []; // Assuming recentPosts are part of your blogData

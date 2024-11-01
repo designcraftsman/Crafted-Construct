@@ -1730,6 +1730,8 @@ div.pullUp a:hover:before,
 
 .article-section__image {
   height: 500px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .single-service-image {
