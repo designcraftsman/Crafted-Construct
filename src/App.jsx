@@ -45,14 +45,14 @@ function App() {
     ];
 
     // Check if the current path matches any of the dark paths or the /post-v1/:postId pattern
-    if (darkPaths.includes(location.pathname) || /^\/post-v1\/[^/]+$/.test(location.pathname) || /^\/project-v1\/[^/]+$/.test(location.pathname)) {
-      return <NavbarDark />;
+    if (darkPaths.includes(location.pathname) || /^\/post-v1\/[^/]+$/.test(location.pathname) || /^\/project-v1\/[^/]+$/.test(location.pathname) || /^\/blog-v1\/[^/]*$/.test(location.pathname) || /^\/blog-v2\/[^/]*$/.test(location.pathname)) {
+      return <NavbarDark />; // Render dark navbar for specific paths
     } else {
-      return <NavbarLight />;
+      return <NavbarLight />; // Render light navbar for other paths
     }
   };
 
-  RevealAnimation();
+  RevealAnimation(); // Call the reveal animation function
 
   return (
     <div className={`App ${loading ? 'loading' : 'loaded'}`}>
@@ -60,8 +60,9 @@ function App() {
         <LoadingScreen /> // Show the loading screen when loading is true
       ) : (
         <>
-          {renderNavbar()}
+          {renderNavbar()} {/* Render the appropriate navbar */}
           <Routes>
+            {/* Define application routes */}
             <Route path="" element={<HomeV1 />} />
             <Route path="/" element={<HomeV1 />} />
             <Route path="/home-v1" element={<HomeV1 />} />
@@ -72,8 +73,8 @@ function App() {
             <Route path="/services-v2" element={<ServicesV2 />} />
             <Route path="/service-details/:serviceId" element={<ServiceDetails />} />
             <Route path="/project-v1/:projectId" element={<ProjectV1 />} />
-            <Route path="/blog-v1" element={<BlogV1 />} />
-            <Route path="/blog-v2" element={<BlogV2 />} />
+            <Route path="/blog-v1/:query?" element={<BlogV1 />} />
+            <Route path="/blog-v2/:query?" element={<BlogV2 />} />
             <Route path="/post-v1/:postId" element={<PostV1 />} />
             <Route path="/about-v1" element={<AboutV1 />} />
             <Route path="/contact-v1" element={<ContactV1 />} />
@@ -81,7 +82,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faqs" element={<FAQs />} />
           </Routes>
-          <Footer />
+          <Footer /> {/* Render the footer */}
         </>
       )}
     </div>
@@ -91,7 +92,7 @@ function App() {
 export default function RouterApp() {
   return (
     <Router>
-      <App />
+      <App /> {/* Wrap the App component with Router for routing functionality */}
     </Router>
   );
 }

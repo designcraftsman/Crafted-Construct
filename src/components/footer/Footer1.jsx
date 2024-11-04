@@ -25,12 +25,9 @@ const Footer = () => {
       <Container>
         <Row className="justify-content-between ">
           <Col md={4} className="text-center text-md-start my-3">
-            <div className='d-flex align-items-center justify-content-md-start justify-content-center m-auto text-white fw-bolder fs-6'>
+            <div className='d-flex align-items-center footer-brand justify-content-md-start justify-content-center m-auto text-white fw-bolder fs-6'>
                 {logo && <img src={logo} alt="CraftedConstruct" className="logo" />}
-                <div className='d-flex flex-column ms-3 fs-6'>
-                Crafted
-                <span className='text-primary p-0 m-0'>Construct</span>
-                </div>
+                
             </div>
             <div className="social-icons mt-5 m-auto">
               <Link to="//www.facebook.com" target="_blank" rel="noopener noreferrer" className="me-2">
@@ -59,7 +56,7 @@ const Footer = () => {
           <Col md={2} className="text-start mx-auto my-3 text-center  text-md-start">
             <h6 className="fs-5 fw-bold">Get Help</h6>
             <ul className="list-unstyled mt-4">
-              <li className="mb-3"><Link to="/faqs" className="text-white mb-5 link-fill-right text-decoration-none">FAQ</Link></li>
+              <li className="mb-3"><Link to="/faqs" className="text-white mb-5 link-fill-right text-decoration-none">FAQs</Link></li>
               <li className="mb-3"><Link to="/terms-conditions" className="text-white mb-5 link-fill-right text-decoration-none">Terms</Link></li>
               <li className="mb-3"><Link to="/privacy-policy" className="text-white mb-5 link-fill-right text-decoration-none">Privacy</Link></li>
             </ul>
@@ -68,7 +65,6 @@ const Footer = () => {
             <h6 className="fs-5 fw-bold">Community</h6>
             <ul className="list-unstyled mt-4">
               <li className="mb-3"><Link to="/blog-v1" className="text-white mb-5 link-fill-right text-decoration-none">Blog</Link></li>
-              <li className="mb-3"><Link to="/about-v1" className="text-white mb-5 link-fill-right text-decoration-none">Team</Link></li>
             </ul>
           </Col>
         </Row>

@@ -1,78 +1,102 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '../../components/blog/SideBar';
-import PostCard from '../../components/blog/PostCard2';
-import blogData from '../../data/blog/posts.json';
+import { Link, useParams } from 'react-router-dom'; // Import hooks for routing
+import Sidebar from '../../components/blog/SideBar'; // Import Sidebar component
+import PostCard from '../../components/blog/PostCard2'; // Import PostCard component
+import blogData from '../../data/blog/posts.json'; // Import blog data
 
 // Import images dynamically
 const importImage = (imagePath) => {
-  return import(`../../assets/${imagePath}`).then(module => module.default);
+  return import(`../../assets/${imagePath}`).then(module => module.default); // Dynamically import image
 };
 
 const BlogSection = () => {
-  const [blogPosts, setBlogPosts] = useState([]);
-  const [recentPosts, setRecentPosts] = useState([]);
-  const { categories } = blogData;
+  const [blogPosts, setBlogPosts] = useState([]); // State for blog posts
+  const [recentPosts, setRecentPosts] = useState([]); // State for recent posts
+  const { categories } = blogData; // Extract categories from blog data
+  const { query = '' } = useParams(); // Get query from URL parameters
 
   useEffect(() => {
     const loadBlogPosts = async () => {
       const loadedPosts = await Promise.all(
         blogData.blogPosts.map(async (post) => ({
           ...post,
-          image: await importImage(post.image)
+          image: await importImage(post.image), // Load post image dynamically
+          author: {
+            name: post.author,
+            avatar: await importImage(post['author-image']) // Load author image dynamically
+          }
         }))
       );
-      setBlogPosts(loadedPosts);
+
+      // Filter based on the query
+      const filteredPosts = query
+        ? loadedPosts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase())) // Filter posts by title
+        : loadedPosts;
+
+      setBlogPosts(filteredPosts); // Update state with filtered posts
     };
 
     const loadRecentPosts = async () => {
       const loadedRecentPosts = await Promise.all(
         blogData.recentPosts.map(async (post) => ({
           ...post,
-          image: await importImage(post.image)
+          image: await importImage(post.image) // Load recent post image dynamically
         }))
       );
-      setRecentPosts(loadedRecentPosts);
+      setRecentPosts(loadedRecentPosts); // Update state with recent posts
     };
 
-    loadBlogPosts();
-    loadRecentPosts();
-  }, []);
+    loadBlogPosts(); // Load blog posts
+    loadRecentPosts(); // Load recent posts
+  }, [query]); // Run effect when query changes
 
   // Get the current page from the URL
   const urlParams = new URLSearchParams(window.location.search);
-  const pageParam = urlParams.get('page');
-  const [currentPage] = useState(pageParam ? parseInt(pageParam) : 1);
+  const pageParam = urlParams.get('page'); // Get current page from URL
+  const [currentPage] = useState(pageParam ? parseInt(pageParam) : 1); // Set current page
 
   // Pagination logic
   const postsPerPage = 6; // Number of posts per page
-
-  // Calculate indexes for pagination
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastPost = currentPage * postsPerPage; // Index of last post
+  const indexOfFirstPost = indexOfLastPost - postsPerPage; // Index of first post
+  const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost); // Get current posts
 
   // Calculate total number of pages
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage); // Total pages
 
   return (
     <React.Fragment>
       <div className="blog-section container my-5 py-5">
         <div className="row gap-3">
           <div className="col-lg-8 col-12">
+            {/* Display search result message */}
+            {query && (
+              <div className="search-result-message my-5">
+                <h5 className='display-5'>Search results for: <strong>"{query}"</strong></h5>
+              </div>
+            )}
             <div className="d-flex flex-column gap-3">
-              {currentPosts.map((post, index) => (
-                <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none">
-                  <PostCard
-                    title={post.title}
-                    description={post.description}
-                    category={post.category}
-                    authorName={post.author}
-                    date={post.date}
-                    image={post.image}
-                  />
-                </Link>
-              ))}
+              {currentPosts.length === 0 ? ( // Check if there are no current posts
+                <div className="no-posts-message text-center my-5">
+                  <h5>No posts found</h5> {/* Message to display when no posts are found */}
+                </div>
+              ) : (
+                currentPosts.map((post, index) => (
+                  <Link key={index} to={`/post-v2/${post.id}`} className="text-decoration-none text-dark">
+                    <div className="card">
+                      <PostCard
+                        title={post.title}
+                        description={post.description}
+                        category={post.category}
+                        authorName={post.author.name}
+                        authorImage={post.author.avatar}
+                        date={post.date}
+                        image={post.image} // Pass image to PostCard
+                      />
+                    </div>
+                  </Link>
+                ))
+              )}
             </div>
 
             {/* Pagination Controls */}
@@ -100,7 +124,7 @@ const BlogSection = () => {
           </div>
 
           <div className="col-lg-3 col-12 mx-auto">
-            <Sidebar categories={categories} recentPosts={recentPosts} />
+            <Sidebar categories={categories} recentPosts={recentPosts} /> {/* Render sidebar with categories and recent posts */}
           </div>
         </div>
       </div>

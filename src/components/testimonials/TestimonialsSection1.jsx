@@ -72,24 +72,23 @@ const TestimonialsSection1 = () => {
             <Carousel.Item key={i}>
               <div className='row py-3 reveal-element reveal-5'>
                 {group.map((testimonial, j) => (
-                  <div className={`col-3 bg-white mx-auto p-3 rounded testimonial-card d-flex flex-column justify-content-center`}>
-                  <div className='row align-items-center'>
-                    <div className='col-3'>
-                      <img src={testimonial.image} className="user-image" alt="" />
+                  <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card d-flex flex-column justify-content-center`}>
+                    <div className='row align-items-center'>
+                      <div className='col-3'>
+                        <img src={testimonial.image} className="user-image" alt="" />
+                      </div>
+                      <div className="col-9 d-flex flex-column justify-content-center">
+                        <h3 className='fw-bold fs-5 my-auto'>{testimonial.title}</h3>
+                        <span className='text-muted my-auto'>{testimonial.position}</span>
+                      </div>
                     </div>
-                    <div className="col-9 d-flex flex-column justify-content-center">
-                      <h3 className='fw-bold fs-5 my-auto'>{testimonial.title}</h3>
-                      <span className='text-muted my-auto'>{testimonial.position}</span>
+                    <hr className='border-primary border-3' />
+                    <div className='d-flex flex-column justify-content-center'>
+                      <FaQuoteLeft className='text-primary fs-4 mb-2' />
+                      <p className='fw-light my-3 text-center px-3'>{testimonial.text}</p>
+                      <FaQuoteRight className='text-primary fs-4 mt-2 ms-auto' />
                     </div>
                   </div>
-                  <hr className='border-primary border-3' />
-                  <div className='d-flex flex-column justify-content-center '>
-                    <FaQuoteLeft className='text-primary fs-4 mb-2' />
-                    <p className='fw-light my-3 text-center px-3'>{testimonial.text}</p>
-                    <FaQuoteRight className='text-primary fs-4 mt-2 ms-auto' />
-                  </div>
-                </div>
-                
                 ))}
               </div>
             </Carousel.Item>
@@ -112,20 +111,18 @@ const TestimonialsSection1 = () => {
                     <div className='col-3'>
                       <img src={testimonial.image} className="user-image" alt="" />
                     </div>
-                    <div className="col-9 my-auto">
+                    <div className='col-9 my-auto'>
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
                       <span className='text-primary'>{testimonial.position}</span>
                     </div>
                   </div>
                   <hr className='border-primary border-3' />
                   <div className='d-flex flex-column justify-content-between h-100'>
-                    
                     <FaQuoteLeft className='text-primary fs-3 '/>
                     <p className='fw-normal my-auto text-center px-3'>{testimonial.text}</p>
                     <div className='text-end mb-auto'>
-                      <FaQuoteRight className='text-primary text-end  fs-3'/>
+                      <FaQuoteRight className='text-primary text-end fs-3'/>
                     </div>
-                    
                   </div>
                 </div>
               </div>

@@ -1,0 +1,20 @@
+{
+  "team": [
+    {
+      "name": "John",
+      "image": "john.jpg"
+    },
+    {
+      "name": "Mike",
+      "image": "mike.jpg"
+    },
+    {
+      "name": "Jane",
+      "image": "jane.jpg"
+    },
+    {
+      "name": "Lora",
+      "image": "lora.jpg"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PiHandshakeThin } from "react-icons/pi";
+import servicesData from '../../data/services/servicesAbout1.json';
 
 const ServicesAbout = () => {
     return (
@@ -8,7 +9,7 @@ const ServicesAbout = () => {
             <Row className='my-5'>
                 <Col md={6}>
                     <h2 className='display-5'>
-                        What sets us apart from the rest is our visionary goal & truly unique designs curated to perfection.
+                        {servicesData.title}
                     </h2>
                 </Col>
                 <Col md={6} className='m-auto text-center'>

@@ -2,30 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import projectsData from '../../data/portfolio/projects.json';
 
+// Import images dynamically
 const importImage = (imagePath) => {
   return import(`../../assets/${imagePath}`).then(module => module.default);
 };
 
 function ProjectV1() {
-  const { projectId } = useParams();
+  const { projectId } = useParams(); // Get projectId from URL
   const [project, setProject] = useState(null);
 
   useEffect(() => {
     const loadProject = async () => {
-      const selectedProject = projectsData.portfolioItems[projectId];
+      const selectedProject = projectsData.portfolioItems[projectId]; // Find the project by ID
       if (selectedProject) {
-        const img1 = await importImage(selectedProject.image1);
-        const img2 = await importImage(selectedProject.image2);
-        const img3 = await importImage(selectedProject.image3);
-        const img4 = await importImage(selectedProject.image4);
-        setProject({ ...selectedProject, img1, img2, img3, img4 });
+        const img1 = await importImage(selectedProject.image1); // Load first project image
+        const img2 = await importImage(selectedProject.image2); // Load second project image
+        const img3 = await importImage(selectedProject.image3); // Load third project image
+        const img4 = await importImage(selectedProject.image4); // Load fourth project image
+        setProject({ ...selectedProject, img1, img2, img3, img4 }); // Set project state with images
       }
     };
     loadProject();
   }, [projectId]);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <div>Project not found</div>; // Handle case where project is not found
   }
 
   return (

@@ -2,7 +2,7 @@
     background-color: #0d1b35;
     color: #ffffff;
     padding: 20px 0;
-  
+    
     .footer-brand {
       display: flex;
       align-items: center;
@@ -10,7 +10,7 @@
       margin-bottom: 10px;
   
       .logo {
-        width: 80px;
+        width: 120px;
       }
   
     }
@@ -19,15 +19,20 @@
       margin-top: 15px;
   
       .social-icon {
-        font-size: 24px;
         color: #ffffff;
         margin-right: 10px;
         cursor: pointer;
-  
+        transition: transform 0.3s, color 0.3s, background-color 0.3s; // Added transition for background color
+    
+        // Added styles for the hover effect
         &:hover {
-          color: #ff5a5f;
+            color: #ffffff; // Keep the icon color white
+            background-color: $primary; // Background color on hover
+            border: 2px solid #ffffff; // White border on hover
+            border-radius: 50%; // Make the border circular
+            transform: scale(1.1); // Scale effect
         }
-      }
+    }
     }
   
     .footer-title {

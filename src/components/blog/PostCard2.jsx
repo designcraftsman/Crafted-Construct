@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap'; // Import Card from React-Bootstrap
 
-const BlogPostCard2 = ({ image, title, category, description, author, date }) => {
+const BlogPostCard2 = ({ image, title, category, description, author, date, authorImage }) => {
   return (
     <Card className="blog-post-card">
       <div className="row g-0">
@@ -15,7 +15,7 @@ const BlogPostCard2 = ({ image, title, category, description, author, date }) =>
             <span className="bg-primary fw-semibold p-1 text-white rounded fs-6">{category}</span>
             <Card.Text className='fs-6 fw-normal card-description my-3'>{description}</Card.Text>
             <div className="d-flex align-items-center gap-3">
-              <img src={image} className="user-image" alt="user" />
+              <img src={authorImage} className="user-image" alt="user" />
               <div className="user-info">
                 <h5 className="fw-bold fs-6">{author}</h5>
                 <small className="text-muted fs-6">{date}</small>

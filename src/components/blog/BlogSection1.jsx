@@ -19,10 +19,11 @@ const BlogSection1 = () => {
       const loadedPosts = await Promise.all(
         blogData.blogPosts.map(async (post) => ({
           ...post,
-          image: await importImage(post.image)
+          image: await importImage(post.image), // Dynamically import post image
+          authorImage: await importImage(post['author-image']) // Dynamically import author image
         }))
       );
-      setBlogPosts(loadedPosts);
+      setBlogPosts(loadedPosts); // Set the loaded blog posts to state
     };
 
     loadBlogPosts();
@@ -67,6 +68,7 @@ const BlogSection1 = () => {
                         author={post.author}
                         date={post.date}
                         image={post.image}
+                        authorImage={post.authorImage}
                       />
                     </div>
                   </Link>
@@ -98,6 +100,7 @@ const BlogSection1 = () => {
                   author={post.author}
                   date={post.date}
                   image={post.image}
+                  authorImage={post.authorImage}
                 />
               </div>
             </Link>

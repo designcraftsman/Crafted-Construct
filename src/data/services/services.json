@@ -3,68 +3,104 @@
     {
       "title": "Architectural Design & Planning",
       "description": "Our team excels in creating architectural designs that blend aesthetic appeal with functional requirements. From initial sketches to detailed blueprints, we bring your vision to life with precision, focusing on both beauty and practicality.",
-      "image1": "images/services/1.jpg",
-      "image2": "images/services/2.jpg",
-      "image3": "images/services/3.jpg",
-      "image4": "images/services/4.jpg",
+      "image1": "images/services/service1/1.jpg",
+      "image2": "images/services/service1/1.jpg",
+      "image3": "images/services/service1/1.jpg",
+      "image4": "images/services/service1/1.jpg",
       "icon": "MdArchitecture",
       "subtitle": "Architectural Design",
-      "shortDescription": "Crafting innovative, functional architectural designs tailored to client needs and aesthetics."
+      "overview": "Crafting innovative, functional architectural designs tailored to client needs and aesthetics.",
+      "ul": [
+        "Expert team with years of experience",
+        "Customized solutions to meet your specific needs",
+        "Commitment to quality and customer satisfaction",
+        "Use of latest technologies and best practices"
+      ]
     },
     {
       "title": "Urban & Master Planning",
       "description": "With a deep understanding of urban dynamics, our team develops master plans for large-scale projects. We consider sustainability, community engagement, and future growth to create vibrant, livable spaces.",
-      "image1": "images/services/2.jpg",
-      "image2": "images/services/1.jpg",
-      "image3": "images/services/3.jpg",
-      "image4": "images/services/4.jpg",
+      "image1": "images/services/service2/2.jpg",
+      "image2": "images/services/service2/2.jpg",
+      "image3": "images/services/service2/2.jpg",
+      "image4": "images/services/service2/2.jpg",
       "icon": "MdLocationCity",
       "subtitle": "Urban Planning",
-      "shortDescription": "Designing cohesive, sustainable communities through master planning and urban design."
+      "overview": "Designing cohesive, sustainable communities through master planning and urban design.",
+      "ul": [
+        "In-depth analysis of urban dynamics",
+        "Community engagement strategies",
+        "Sustainable growth planning",
+        "Integration of green spaces"
+      ]
     },
     {
       "title": "Interior Architecture",
       "description": "Our interior architecture service bridges the gap between form and function. We create interior spaces that are as functional as they are beautiful, aligning with the architectural vision of the entire building.",
-      "image1": "images/services/3.jpg",
-      "image2": "images/services/1.jpg",
-      "image3": "images/services/2.jpg",
-      "image4": "images/services/4.jpg",
+      "image1": "images/services/service3/3.jpg",
+      "image2": "images/services/service3/3.jpg",
+      "image3": "images/services/service3/3.jpg",
+      "image4": "images/services/service3/3.jpg",
       "icon": "MdOutlineInteriorDesign",
       "subtitle": "Interior Architecture",
-      "shortDescription": "Crafting interior spaces that complement the building’s architectural character and functionality."
+      "overview": "Crafting interior spaces that complement the building’s architectural character and functionality.",
+      "ul": [
+        "Holistic design approach",
+        "Focus on user experience",
+        "Sustainable material selection",
+        "Innovative space planning"
+      ]
     },
     {
       "title": "Sustainable Architecture",
       "description": "We prioritize sustainable practices by integrating eco-friendly materials and energy-efficient designs into our projects. Our goal is to reduce environmental impact while enhancing the building's efficiency and comfort.",
-      "image1": "images/services/4.jpg",
-      "image2": "images/services/1.jpg",
-      "image3": "images/services/2.jpg",
-      "image4": "images/services/4.jpg",
+      "image1": "images/services/service4/4.jpg",
+      "image2": "images/services/service4/4.jpg",
+      "image3": "images/services/service4/4.jpg",
+      "image4": "images/services/service4/4.jpg",
       "icon": "MdEco",
       "subtitle": "Sustainable Design",
-      "shortDescription": "Incorporating sustainable materials and designs to reduce environmental impact and improve energy efficiency."
+      "overview": "Incorporating sustainable materials and designs to reduce environmental impact and improve energy efficiency.",
+      "ul": [
+        "Use of renewable energy sources",
+        "Energy-efficient building systems",
+        "Sustainable material sourcing",
+        "Waste reduction strategies"
+      ]
     },
     {
       "title": "Site Analysis & Feasibility Studies",
       "description": "We conduct thorough site analysis and feasibility studies to ensure that each project starts with a strong foundation. Our assessments cover zoning, environmental impact, and cost-effectiveness to guide design decisions.",
-      "image1": "images/services/5.jpg",
-      "image2": "images/services/3.jpg",
-      "image3": "images/services/2.jpg",
-      "image4": "images/services/1.jpg",
+      "image1": "images/services/service5/5.jpg",
+      "image2": "images/services/service5/5.jpg",
+      "image3": "images/services/service5/5.jpg",
+      "image4": "images/services/service5/5.jpg",
       "icon": "MdOutlineAssessment",
       "subtitle": "Site Analysis",
-      "shortDescription": "Conducting in-depth site analysis and feasibility studies to inform and guide the design process."
+      "overview": "Conducting in-depth site analysis and feasibility studies to inform and guide the design process.",
+      "ul": [
+        "Comprehensive site assessments",
+        "Zoning and regulatory analysis",
+        "Cost-benefit analysis",
+        "Environmental impact studies"
+      ]
     },
     {
       "title": "3D Rendering & Visualization",
       "description": "Using the latest 3D rendering technology, we provide realistic visualizations of your project before construction begins. This helps clients and stakeholders see the design in full detail, aiding in decision-making and planning.",
-      "image1": "images/services/6.jpg",
-      "image2": "images/services/1.jpg",
-      "image3": "images/services/2.jpg",
-      "image4": "images/services/3.jpg",
+      "image1": "images/services/service6/6.jpg",
+      "image2": "images/services/service6/6.jpg",
+      "image3": "images/services/service6/6.jpg",
+      "image4": "images/services/service6/6.jpg",
       "icon": "MdOutline3DRotation",
       "subtitle": "3D Visualization",
-      "shortDescription": "Bringing your project to life with realistic 3D renderings, offering a clear view of the final result."
+      "overview": "Bringing your project to life with realistic 3D renderings, offering a clear view of the final result.",
+      "ul": [
+        "High-quality 3D renderings",
+        "Interactive visualizations",
+        "Real-time design adjustments",
+        "Enhanced client presentations"
+      ]
     }
   ]
 }

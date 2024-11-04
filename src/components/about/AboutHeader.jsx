@@ -12,8 +12,9 @@ const AboutHeader = () => {
 
     useEffect(() => {
         const loadImage = async () => {
+            // Load the header image dynamically
             const loadedImage = await importImage(imagePath);
-            setHeaderImage(loadedImage);
+            setHeaderImage(loadedImage); // Set the loaded image to state
         };
 
         loadImage();

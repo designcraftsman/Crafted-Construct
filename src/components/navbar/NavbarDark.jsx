@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CiSearch } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logoData from '../../data/logo.json'; // Import logo data
 
 // Import logo dynamically
@@ -13,9 +13,9 @@ const importLogo = async (logoPath) => {
 
 // Logo Component
 const Logo = ({ logo }) => (
-  <Link className="navbar-brand order-1" to="/">
+  <Link className="navbar-brand order-1" to="/"> {/* Link to home page */}
     <div className="d-flex align-items-center text-dark fw-bolder fs-6">
-      <img src={logo} alt="CraftedConstruct" className="logo" />
+      <img src={logo} alt="CraftedConstruct" className="logo" /> {/* Display logo */}
     </div>
   </Link>
 );
@@ -23,30 +23,30 @@ const Logo = ({ logo }) => (
 // ToggleButton Component
 const ToggleButton = () => (
   <button className="navbar-toggler custom-toggle border-0" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-    <CgMenuLeftAlt className="text-dark fs-1" />
+    <CgMenuLeftAlt className="text-dark fs-1" /> {/* Hamburger icon for toggling navbar */}
   </button>
 );
 
 // NavLink Component
 const NavLink = ({ to, children }) => (
-  <li className="nav-item">
-    <Link className="nav-link navbar-nav__link text-dark" to={to}>
-      <span>{children}</span>
+  <li className="nav-item"> {/* Navigation item */}
+    <Link className="nav-link navbar-nav__link text-dark" to={to}> {/* Link to specified route */}
+      <span>{children}</span> {/* Display link text */}
     </Link>
   </li>
 );
 
 // Dropdown Component
 const Dropdown = ({ title, items }) => (
-  <li className="nav-item dropdown">
+  <li className="nav-item dropdown"> {/* Dropdown item */}
     <Link className="nav-link navbar-nav__link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <span>{title} <IoIosArrowDown className="ms-1" /></span>
+      <span>{title} <IoIosArrowDown className="ms-1" /></span> {/* Dropdown title with arrow */}
     </Link>
-    <ul className="dropdown-menu">
+    <ul className="dropdown-menu"> {/* Dropdown menu */}
       {items.map((item, index) => (
         <li key={index}>
-          <Link className="dropdown-item text-center" to={item.to}>
-            <span>{item.label}</span>
+          <Link className="dropdown-item text-center" to={item.to}> {/* Link to dropdown item */}
+            <span>{item.label}</span> {/* Display dropdown item label */}
           </Link>
         </li>
       ))}
@@ -55,16 +55,33 @@ const Dropdown = ({ title, items }) => (
 );
 
 // SearchBox Component
-const SearchBox = () => (
-  <div className="d-flex align-items-center order-2">
-    <div className="search-box-dark">
-      <button className="btn-search-dark">
-        <CiSearch className="search-icon text-dark fs-2" />
-      </button>
-      <input type="text" className="input-search-dark" placeholder="Type to Search..." />
-    </div>
-  </div>
-);
+const SearchBox = () => {
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const searchQuery = event.target.elements.search.value.trim(); // Get search query
+    if (searchQuery) {
+      navigate(`/blog-v1/${encodeURIComponent(searchQuery)}`); // Navigate to search results
+    }
+  };
+
+  return (
+    <form onSubmit={handleSearchSubmit} className="d-flex align-items-center order-2"> {/* Search form */}
+      <div className="search-box-dark">
+        <button type="submit" className="btn-search-dark"> {/* Search button */}
+          <CiSearch className="search-icon text-dark fs-2" /> {/* Search icon */}
+        </button>
+        <input
+          type="text"
+          name="search"
+          className="input-search-dark"
+          placeholder="Type to Search..." // Placeholder text
+        />
+      </div>
+    </form>
+  );
+};
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');
@@ -73,7 +90,7 @@ const NavigationBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setNavbarClass(scrollPosition > 50 ? 'navbar-light' : 'navbar-light');
+      setNavbarClass(scrollPosition > 50 ? 'navbar-light' : 'navbar-light'); // Change navbar class based on scroll position
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -85,18 +102,18 @@ const NavigationBar = () => {
   useEffect(() => {
     const loadLogo = async () => {
       const logoPath = await importLogo(logoData.logoDark);
-      setLogo(logoPath);
+      setLogo(logoPath); // Set the loaded logo to state
     };
 
     loadLogo();
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg bg-white px-3 m-0 p-0 fixed-top ${navbarClass}`}>
+    <nav className={`navbar navbar-expand-lg bg-white px-3 m-0 p-0 fixed-top ${navbarClass}`}> {/* Navbar with dynamic class */}
       <Logo logo={logo} />
       <ToggleButton />
       <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
-        <ul className="navbar-nav m-0 mx-auto border-lg-0 border-md border-sm">
+        <ul className="navbar-nav m-0 mx-auto border-lg-0 border-md border-sm"> {/* Navigation links */}
           <Dropdown title="Home" items={[{ to: "/home-v1", label: "Home V1" }, { to: "/home-v2", label: "Home V2" }]} />
           <Dropdown title="Services" items={[{ to: "/services-v1", label: "Services V1" }, { to: "/services-v2", label: "Services V2" }]} />
           <Dropdown title="Portfolio" items={[{ to: "/portfolio-v1", label: "Portfolio V1" }, { to: "/portfolio-v2", label: "Portfolio V2" }]} />

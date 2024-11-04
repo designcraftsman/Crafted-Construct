@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CiSearch } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import logoData from '../../data/logo.json'; // Import logo data
 
@@ -51,16 +51,28 @@ const Dropdown = ({ title, items, activeDropdown, toggleDropdown, dropdownMenuCl
 );
 
 // SearchBox Component
-const SearchBox = () => (
-  <div className="d-flex align-items-center order-2">
-    <div className="search-box">
-      <button className="btn-search">
-        <CiSearch className="search-icon text-white fs-2" />
-      </button>
-      <input type="text" className="input-search" placeholder="Type to Search..." />
-    </div>
-  </div>
-);
+const SearchBox = () => {
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const searchQuery = event.target.elements.search.value.trim();
+    if (searchQuery) {
+      navigate(`/blog-v1/${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSearchSubmit} className="d-flex align-items-center order-2">
+      <div className="search-box">
+        <button type="submit" className="btn-search">
+          <CiSearch className="search-icon text-white fs-2" />
+        </button>
+        <input type="text" name="search" className="input-search" placeholder="Type to Search..." />
+      </div>
+    </form>
+  );
+};
 
 const NavigationBar = () => {
   const [navbarClass, setNavbarClass] = useState('navbar-light');

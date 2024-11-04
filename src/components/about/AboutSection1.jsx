@@ -74,10 +74,12 @@ const WhyChooseUs = () => {
 
     // Load expert section images
     const loadExpertImages = async () => {
-      const loadedImages = await Promise.all(
-        data.expertSection.images.map(imagePath => importImage(imagePath))
-      );
-      setExpertImages(loadedImages);
+      // Load images dynamically based on the data
+      const loadedImages = await Promise.all([
+        importImage(data.expertSection.image1),
+        importImage(data.expertSection.image2)
+      ]);
+      setExpertImages(loadedImages); // Set the loaded images to state
     };
 
     loadExpertImages();
@@ -117,11 +119,12 @@ const WhyChooseUs = () => {
       <Row className='my-5 gap-3 py-5 reveal-section'>
         <Col lg={6} md={6} className="about-section m-auto reveal-element reveal-1">
           <Row className="gap-3">
-            {expertImages.map((image, index) => (
-              <Col key={index} className='col-lg-5 col-11 m-auto'>
-                <img src={image} className='img-fluid' alt={`Expert section image ${index + 1}`} />
-              </Col>
-            ))}
+            <Col className='col-lg-5 col-11 m-auto'>
+              <img src={expertImages[0]} className=' about-section__image1' alt={`Expert section image 1`} />
+            </Col>
+            <Col className='col-lg-5 col-11 m-auto'>
+              <img src={expertImages[1]} className='about-section__image2' alt={`Expert section image 2`} />
+            </Col>
           </Row>
         </Col>
         <Col lg={5} md={5} className='col-11 m-auto reveal-element reveal-2'>

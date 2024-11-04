@@ -1,0 +1,39 @@
+{
+    "faqs": [
+      {
+        "id": "collapseOne",
+        "question": "What are the payment options?",
+        "answer": "We accept payments through credit cards, PayPal, and bank transfers. Payment is processed securely using SSL encryption."
+      },
+      {
+        "id": "collapseTwo",
+        "question": "What services do you provide?",
+        "answer": "We offer architectural design, project management, construction, and interior design services. Our expertise spans residential, commercial, and industrial spaces."
+      },
+      {
+        "id": "collapseThree",
+        "question": "What is the estimated project timeline?",
+        "answer": "The timeline depends on the complexity of the project. A typical residential project may take 6 to 12 months, while larger commercial projects could take up to 18 months or more."
+      },
+      {
+        "id": "collapseFour",
+        "question": "Can I make changes to the design once it's started?",
+        "answer": "Yes, we allow changes during the design phase, but modifications during construction may result in additional costs and time delays."
+      },
+      {
+        "id": "collapseFive",
+        "question": "Do you provide post-construction services?",
+        "answer": "Yes, we offer post-construction services including maintenance and troubleshooting. Our team can assist with any issues that arise after the completion of the project."
+      },
+      {
+        "id": "collapseSix",
+        "question": "What is the process to get started?",
+        "answer": "To start a project, simply contact us for an initial consultation. We’ll discuss your requirements, timeline, and budget, and create a custom proposal based on your vision."
+      },
+      {
+        "id": "collapseSeven",
+        "question": "Do you have a portfolio?",
+        "answer": "Yes, we have an extensive portfolio available on our website. It showcases various residential, commercial, and mixed-use projects we've completed."
+      }
+    ]
+  }

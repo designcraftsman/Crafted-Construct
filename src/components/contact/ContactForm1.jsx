@@ -1,6 +1,5 @@
 import React from 'react';
-import { CiLocationOn  , CiPhone , CiClock1} from "react-icons/ci";
-
+import { CiLocationOn, CiPhone, CiClock1 } from "react-icons/ci";
 import contactInfoData from '../../data/contact/contact-info.json';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'; // Import React-Bootstrap components
 
@@ -60,9 +59,9 @@ const ContactForm1 = () => {
                         {contactInfoData.contactInfo.map((info, index) => (
                             <li key={index} className="mb-5">
                                 <div className='d-flex flex-column align-items-start gap-1'>
-                                    <p className=' fw-bold my-1'>
-                                        {info.icon === 'CiLocationOn' && <CiLocationOn className=' fs-1' />}
-                                        {info.icon === 'CiPhone' && <CiPhone className=' fs-1' />}
+                                    <p className='fw-bold my-1'>
+                                        {info.icon === 'CiLocationOn' && <CiLocationOn className='fs-1' />}
+                                        {info.icon === 'CiPhone' && <CiPhone className='fs-1' />}
                                         {info.icon === 'CiClock1' && <CiClock1 className='fs-1' />}
                                         <span className='mx-2'>{info.name}</span>
                                     </p>

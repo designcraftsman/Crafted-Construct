@@ -1072,6 +1072,17 @@ button {
   opacity: 1;
 }
 
+.about-section__image1 {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.about-section__image2 {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .portfolio-carousel-v2__image {
   height: 500px;
   object-fit: cover;
@@ -1468,19 +1479,23 @@ div.pullUp a:hover:before,
   margin-bottom: 10px;
 }
 .footer-section .footer-brand .logo {
-  width: 80px;
+  width: 120px;
 }
 .footer-section .social-icons {
   margin-top: 15px;
 }
 .footer-section .social-icons .social-icon {
-  font-size: 24px;
   color: #ffffff;
   margin-right: 10px;
   cursor: pointer;
+  transition: transform 0.3s, color 0.3s, background-color 0.3s;
 }
 .footer-section .social-icons .social-icon:hover {
-  color: #ff5a5f;
+  color: #ffffff;
+  background-color: #C0392B;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: scale(1.1);
 }
 .footer-section .footer-title {
   font-weight: bold;

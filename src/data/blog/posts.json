@@ -2,73 +2,80 @@
   "blogPosts": [
     {
       "id": "1",
-      "image": "images/blog/1.jpg",
+      "image": "images/blog/post1/1.jpg",
       "title": "The Future of Sustainable Architecture",
       "category": "Sustainability",
       "description": "Explore innovative techniques and materials shaping the future of eco-friendly architectural practices.",
       "author": "Jane Doe",
+      "author-image": "images/blog/authors/jess.jpg",
       "date": "April 15, 2023",
-      "content": "<p class=\"my-5\">As climate change becomes an increasingly urgent global issue, the architecture industry is turning towards sustainable practices that prioritize the health of our environment.</p><p class=\"my-5\">These practices include utilizing eco-friendly materials, reducing waste, and focusing on energy efficiency throughout the entire lifecycle of buildings.</p><img src='images/blog/2.jpg' alt=\"Sustainable Architecture Image\" class=\"article-section__image my-5\" /><p class=\"my-5\">One of the most exciting innovations in this field is the development of green building materials, such as bamboo, recycled steel, and low-carbon concrete. These materials offer the structural integrity needed for modern buildings while significantly reducing environmental impact.</p><p class=\"my-5\">In addition, architects are incorporating renewable energy sources into their designs. Solar panels, wind turbines, and geothermal energy are now common elements in sustainable buildings, helping to reduce reliance on fossil fuels and lower operational costs.</p><p class=\"my-5\">Another key aspect of sustainable architecture is water conservation. Techniques like rainwater harvesting, greywater recycling, and low-flow plumbing fixtures are becoming standard in eco-friendly buildings, promoting responsible water usage and reducing waste.</p><p class=\"my-5\">Sustainable architecture is also influencing urban planning. Cities are beginning to adopt green infrastructure, such as rooftop gardens, green walls, and urban forests, which help combat the heat island effect and improve air quality.</p><p class=\"my-5\">As more businesses and homeowners prioritize sustainability, the future of architecture is likely to see a blend of traditional design principles with innovative, eco-friendly technologies. This shift not only supports environmental goals but also promotes healthier, more livable spaces for people around the world.</p>"
+      "content": "<p class=\"my-3\">As climate change becomes an increasingly urgent global issue, the architecture industry is turning towards sustainable practices that prioritize the health of our environment.</p><p class=\"my-3\">These practices include utilizing eco-friendly materials, reducing waste, and focusing on energy efficiency throughout the entire lifecycle of buildings.</p><img src='images/blog/post1/1.jpg' alt=\"Sustainable Architecture Image\" class=\"article-section__image my-3\" /><p class=\"my-3\">One of the most exciting innovations in this field is the development of green building materials, such as bamboo, recycled steel, and low-carbon concrete. These materials offer the structural integrity needed for modern buildings while significantly reducing environmental impact.</p>"
     },
     {
       "id": "2",
-      "image": "images/blog/2.jpg",
+      "image": "images/blog/post2/2.jpg",
       "title": "Modern Architectural Trends",
       "category": "Architecture",
       "description": "Discover the latest trends in modern architecture and their impact on urban design.",
       "author": "John Smith",
+      "author-image": "images/blog/authors/mike.jpg",
       "date": "April 22, 2023",
-      "content": "<p>Modern architecture is evolving, with new styles and materials emerging...</p>"
+      "content": "<p class=\"my-3\">Modern architecture is evolving, with new styles and materials emerging that reflect the changing needs of society.</p><p class=\"my-3\">From minimalism to biophilic design, architects are exploring innovative approaches to create functional and aesthetically pleasing spaces.</p><img src='images/blog/post2/2.jpg' alt=\"Modern Architectural Trends Image\" class=\"article-section__image my-3\" />"
     },
     {
       "id": "3",
-      "image": "images/blog/3.jpg",
+      "image": "images/blog/post3/3.jpg",
       "title": "The Role of Technology in Architecture",
       "category": "Technology",
       "description": "How technology is transforming the architectural landscape.",
       "author": "Alice Johnson",
+      "author-image": "images/blog/authors/jess.jpg",
       "date": "May 1, 2023",
-      "content": "<p>Technology plays a crucial role in modern architecture, enhancing design and construction processes...</p>"
+      "content": "<p class=\"my-3\">Technology plays a crucial role in modern architecture, enhancing design and construction processes.</p><p class=\"my-3\">From 3D modeling to virtual reality, architects are leveraging technology to visualize and create more efficient designs.</p><img src='images/blog/post3/3.jpg' alt=\"Technology in Architecture Image\" class=\"article-section__image my-3\" />"
     },
     {
       "id": "4",
-      "image": "images/blog/4.jpg",
+      "image": "images/blog/post4/4.jpg",
       "title": "Cultural Influences in Architecture",
       "category": "Culture",
       "description": "Exploring how culture shapes architectural styles around the world.",
       "author": "Michael Brown",
+      "author-image": "images/blog/authors/mike.jpg",
       "date": "May 5, 2023",
-      "content": "<p>Cultural influences are evident in architectural designs, reflecting the values and traditions of societies...</p>"
+      "content": "<p class=\"my-3\">Cultural influences are evident in architectural designs, reflecting the values and traditions of societies.</p><p class=\"my-3\">From traditional styles to contemporary interpretations, architecture tells the story of a place and its people.</p><img src='images/blog/post4/4.jpg' alt=\"Cultural Influences in Architecture Image\" class=\"article-section__image my-3\" />"
     },
     {
       "id": "5",
-      "image": "images/blog/5.jpg",
+      "image": "images/blog/post5/5.jpg",
       "title": "The Importance of Landscape Architecture",
       "category": "Landscape",
       "description": "Understanding the role of landscape architecture in urban planning.",
       "author": "Emily White",
+      "author-image": "images/blog/authors/jess.jpg",
       "date": "May 10, 2023",
-      "content": "<p>Landscape architecture is vital for creating sustainable and livable urban environments...</p>"
+      "content": "<p class=\"my-3\">Landscape architecture is vital for creating sustainable and livable urban environments.</p><p class=\"my-3\">It integrates natural and built environments, enhancing the quality of life for residents.</p><img src='images/blog/post5/5.jpg' alt=\"Importance of Landscape Architecture Image\" class=\"article-section__image my-3\" />"
     },
     {
       "id": "6",
-      "image": "images/blog/6.jpg",
+      "image": "images/blog/post6/6.jpg",
       "title": "Historical Architecture: Lessons from the Past",
       "category": "History",
       "description": "What we can learn from historical architectural styles and their relevance today.",
       "author": "David Green",
+      "author-image": "images/blog/authors/mike.jpg",
       "date": "May 15, 2023",
-      "content": "<p>Historical architecture offers valuable insights into design principles and cultural significance...</p>"
+      "content": "<p class=\"my-3\">Historical architecture offers valuable insights into design principles and cultural significance.</p><p class=\"my-3\">By studying past styles, architects can draw inspiration for modern designs that respect tradition while innovating.</p><img src='images/blog/post6/6.jpg' alt=\"Historical Architecture Image\" class=\"article-section__image my-3\" />"
     },
     {
       "id": "7",
-      "image": "images/blog/7.jpg",
+      "image": "images/blog/post7/7.jpg",
       "title": "Innovative Materials in Architecture",
       "category": "Materials",
       "description": "Exploring new materials that are changing the way we build.",
       "author": "Sarah Blue",
+      "author-image": "images/blog/authors/jess.jpg",
       "date": "May 20, 2023",
-      "content": "<p>Innovative materials are revolutionizing architectural design, offering new possibilities for creativity...</p>"
+      "content": "<p class=\"my-3\">Innovative materials are revolutionizing architectural design, offering new possibilities for creativity and sustainability.</p><p class=\"my-3\">From smart materials to recycled components, the future of building is bright.</p><img src='images/blog/post7/7.jpg' alt=\"Innovative Materials in Architecture Image\" class=\"article-section__image my-3\" />"
     }
   ],
   "categories": [
@@ -80,13 +87,13 @@
   ],
   "recentPosts": [
     {
-      "image": "images/blog/1.jpg",
+      "image": "images/blog/post1/1.jpg",
       "title": "The Future of Sustainable Architecture",
       "category": "Sustainability",
       "date": "April 15, 2023"
     },
     {
-      "image": "images/blog/2.jpg",
+      "image": "images/blog/post2/2.jpg",
       "title": "Modern Architectural Trends",
       "category": "Architecture",
       "date": "April 22, 2023"

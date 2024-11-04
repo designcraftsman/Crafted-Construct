@@ -18,10 +18,11 @@ const BlogSection2 = () => {
             const loadedPosts = await Promise.all(
                 blogData.blogPosts.slice(0, 2).map(async (post) => ({
                     ...post,
-                    image: await importImage(post.image)
+                    image: await importImage(post.image), // Dynamically import post image
+                    authorImage: await importImage(post['author-image']) // Dynamically import author image
                 }))
             );
-            setBlogPosts(loadedPosts);
+            setBlogPosts(loadedPosts); // Set the loaded blog posts to state
         };
 
         loadBlogPosts();
@@ -62,7 +63,10 @@ const BlogSection2 = () => {
                         {blogPosts.map((post, index) => (
                             <Col key={index} className='col-10 mx-auto mb-4 reveal-element reveal-5'>
                                 <Link to={`/post-v1/${post.id}`} className='text-decoration-none'>
-                                    <BlogPostCard2 {...post} />
+                                    <BlogPostCard2 
+                                        {...post} 
+                                        authorImage={post.authorImage} // Pass author image
+                                    />
                                 </Link>
                             </Col>
                         ))}

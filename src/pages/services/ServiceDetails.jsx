@@ -11,7 +11,7 @@ const importImage = (imagePath) => {
 
 const ServiceDetails = () => {
     const [serviceInfo, setServiceInfo] = useState(null);
-    const { serviceId } = useParams();
+    const { serviceId } = useParams(); // Get serviceId from URL
 
     useEffect(() => {
         const loadServiceInfo = async () => {
@@ -25,14 +25,14 @@ const ServiceDetails = () => {
                 ]);
                 setServiceInfo({
                     ...service,
-                    images: images
+                    images: images // Store loaded images in state
                 });
             }
         };
         loadServiceInfo();
     }, [serviceId]);
 
-    if (!serviceInfo) return null;
+    if (!serviceInfo) return null; // Render nothing if service info is not loaded
 
     return (
         <React.Fragment>
@@ -52,26 +52,25 @@ const ServiceDetails = () => {
                         <img src={serviceInfo.images[2]} className='mb-3 single-service-image' alt="" />
                     </div>
                 </div>
-                        <h3 className='fs-1 fw-semibold mb-3'>Service Overview</h3>
-                        <p className='mb-5'>{serviceInfo.shortDescription}</p>
-                        <div className='row my-5'>
-                            <div className='col-lg-7 col-md-7 col-12 my-auto'>
-                                <h3 className='fs-1 fw-semibold mb-3'>Why Choose Us for {serviceInfo.title}</h3>
-                                <ul className='list-unstyled'>
-                                    <li className='mb-2'><span className='text-primary fw-bold fs-4'>✓</span> Expert team with years of experience</li>
-                                    <li className='mb-2'><span className='text-primary fw-bold fs-4'>✓</span> Customized solutions to meet your specific needs</li>
-                                    <li className='mb-2'><span className='text-primary fw-bold fs-4'>✓</span> Commitment to quality and customer satisfaction</li>
-                                    <li className='mb-2'><span className='text-primary fw-bold fs-4'>✓</span> Use of latest technologies and best practices</li>
-                                </ul>
-                            </div>
-                        <div className='col-lg-4 col-md-5 col-12 m-auto'>
-                            <img src={serviceInfo.images[3]} alt="" className='single-service-image' />
-                        </div>
+                <h3 className='fs-1 fw-semibold mb-3'>Service Overview</h3>
+                <p className='mb-5'>{serviceInfo.overview}</p>
+                <div className='row my-5'>
+                    <div className='col-lg-7 col-md-7 col-12 my-auto'>
+                        <h3 className='fs-1 fw-semibold mb-3'>Why Choose Us for {serviceInfo.title}</h3>
+                        <ul className='list-unstyled'>
+                            {serviceInfo.ul.map((item, index) => (
+                                <li key={index} className='mb-2'>
+                                    <span className='text-primary fw-bold fs-4'>✓</span> {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className='col-lg-4 col-md-5 col-12 m-auto'>
+                        <img src={serviceInfo.images[3]} alt="" className='single-service-image' />
+                    </div>
                 </div>
-                
-                
             </div>
-            <ContactSection />
+            <ContactSection /> {/* Render contact section */}
         </React.Fragment>
     );
 };

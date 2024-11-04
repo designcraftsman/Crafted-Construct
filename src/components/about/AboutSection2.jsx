@@ -52,7 +52,7 @@ const AboutSection2 = () => {
 
         // Observe the section
         if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+            observer.observe(sectionRef.current); // Start observing the section for visibility
         }
 
         // Cleanup function

@@ -59,16 +59,16 @@ const TestimonialsSection2 = () => {
   }, [isPaused, totalSlides]);
 
   return (
-    <div className='position-relative '>
+    <div className='position-relative'>
       <div
         className="testimonials-carousel bg-secondary py-5"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className=' container d-flex align-items-center flex-wrap justify-content-between py-3'>
+        <div className='container d-flex align-items-center flex-wrap justify-content-between py-3'>
           <div>
-            <h2 className=" text-primary fw-semibold display-6 mb-3"><FaRegMessage /> Testimonials </h2>
-            <h3 className=" display-5  text-white mb-3 fw-medium">What Our Clients Say</h3>
+            <h2 className="text-primary fw-semibold display-6 mb-3"><FaRegMessage /> Testimonials </h2>
+            <h3 className="display-5 text-white mb-3 fw-medium">What Our Clients Say</h3>
           </div>
           <div className='buttons'>
             <button onClick={handlePrev} className="testimonials-carousel__control testimonials-carousel__control--prev me-2">
@@ -97,14 +97,14 @@ const TestimonialsSection2 = () => {
               <div className='row py-3'>
                 {group.map((testimonial, j) => (
                   <div key={j} className='col-5 m-auto px-3'>
-                    <div className='bg-white p-4 rounded testimonial-card    d-flex flex-column '>
+                    <div className='bg-white p-4 rounded testimonial-card d-flex flex-column'>
                       <div className='row flex-grow-1 align-items-center'>
-                        <div className='col-md-4 text-center '>
+                        <div className='col-md-4 text-center'>
                           <img src={testimonial.image} className="user-image mb-3" alt="" />
                           <h3 className='fw-bold fs-4'>{testimonial.title}</h3>
                           <span className='text-primary'>{testimonial.position}</span>
                         </div>
-                        <div className='col-md-8 '>
+                        <div className='col-md-8'>
                           <FaQuoteLeft className='text-primary fs-4 mb-2'/>
                           <p className='fw-light fs-5 mb-3 flex-grow-1 text-center'>{testimonial.text}</p>
                           <div className='text-end mt-auto'>
@@ -131,17 +131,17 @@ const TestimonialsSection2 = () => {
           {testimonials.map((testimonial, i) => (
             <Carousel.Item key={i}>
               <div className='row m-auto py-3'>
-                <div className='col-11 bg-white m-auto p-4 testimonial-card rounded '>
+                <div className='col-11 bg-white m-auto p-4 testimonial-card rounded'>
                   <div className='row h-100'>
-                    <div className='col-md-4 text-center my-auto '>
+                    <div className='col-md-4 text-center my-auto'>
                       <img src={testimonial.image} className="user-image mb-3" alt="" />
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
                       <span className='text-primary'>{testimonial.company}</span>
                     </div>
                     <div className='col-md-8 d-flex flex-column justify-content-between'>
                       <FaQuoteLeft className='text-primary fs-4 mb-2'/>
-                      <p className='fw-normal text-center '>{testimonial.text}</p>
-                      <div className='text-end '>
+                      <p className='fw-normal text-center'>{testimonial.text}</p>
+                      <div className='text-end'>
                         <FaQuoteRight className='text-primary fs-4'/>
                       </div>
                     </div>

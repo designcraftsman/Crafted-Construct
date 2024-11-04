@@ -2,34 +2,35 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import projectsData from '../../data/portfolio/projects.json';
 
-// Import images dynamically
+// Function to dynamically import images
 const importImage = (imagePath) => {
   return import(`../../assets/${imagePath}`).then(module => module.default);
 };
 
 const PortfolioList = ({ showMoreButton }) => {
-  const [visibleItems, setVisibleItems] = useState(8);
-  const sectionRef = useRef(null);
-  const [portfolioItems, setPortfolioItems] = useState([]);
+  const [visibleItems, setVisibleItems] = useState(8); // State to manage the number of visible items
+  const sectionRef = useRef(null); // Reference to the section element
+  const [portfolioItems, setPortfolioItems] = useState([]); // State to hold the portfolio items
 
   useEffect(() => {
     const loadPortfolioItems = async () => {
       const loadedItems = await Promise.all(
         projectsData.portfolioItems.map(async (item) => ({
           ...item,
-          img: await importImage(item.image1)
+          img: await importImage(item.image1) // Dynamically load the image for each item
         }))
       );
-      setPortfolioItems(loadedItems);
+      setPortfolioItems(loadedItems); // Update the state with loaded items
     };
-    loadPortfolioItems();
+    loadPortfolioItems(); // Call the function to load portfolio items
   }, []);
 
-  // Function to handle "Show More" button click
+  // Function to handle the "Show More" button click
   const showMoreItems = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 8);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 8); // Increase the number of visible items
   };
 
+  // Function to determine the grid class based on the item index
   const getGridClass = (index) => {
     const classes = [
       'grid-item-1',
@@ -48,7 +49,7 @@ const PortfolioList = ({ showMoreButton }) => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          entry.target.classList.add('active'); // Add active class when the element is in view
         }
       });
     }, { threshold: 0.1 });
@@ -56,12 +57,12 @@ const PortfolioList = ({ showMoreButton }) => {
     const currentRef = sectionRef.current;
 
     if (currentRef) {
-      observer.observe(currentRef);
+      observer.observe(currentRef); // Observe the section element
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef);
+        observer.unobserve(currentRef); // Stop observing the section element
       }
     };
   }, []);
