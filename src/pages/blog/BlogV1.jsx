@@ -78,7 +78,7 @@ const BlogSection = () => {
                 </div>
               ) : (
                 currentPosts.map((post, index) => (
-                  <Link key={index} to={`/post-v1/${post.id}`} className="text-decoration-none text-dark col-lg-5 col-md-12 col-12 m-auto">
+                  <Link key={index} to={`/post/${post.id}`} className="text-decoration-none text-dark col-lg-5 col-md-12 col-12 m-auto">
                     <div className="card">
                       <PostCard
                         title={post.title}

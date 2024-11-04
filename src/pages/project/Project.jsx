@@ -33,7 +33,7 @@ function ProjectV1() {
     <div className='container my-5 py-5'> 
       <div className='row m-auto single-project-container'>
         <div className='col-lg-7 col-12 '>
-          <img src={project.img1} className='single-project-container__image' alt={project.title} />
+          <img src={project.img1} className='single-project-container__image' alt={`Image of ${project.title}`} />
         </div>
         <div className='col-lg-5 col-12 my-lg-0 my-5 bg-secondary rounded text-white p-4'>
           <h1 className='fw-bold fs-3 mb-5'>{project.title}</h1>
@@ -45,13 +45,13 @@ function ProjectV1() {
           <p className='fs-6 fw-light'>{project.description}</p>
         </div>
           <div className='col-12 my-5'>
-              <img src={project.img2} className=' single-project-container__image' alt="" />
+              <img src={project.img2} className=' single-project-container__image' alt={`Image of ${project.title} - 2`} />
           </div>
           <div className='col-lg-6 col-12 my-5'>
-              <img src={project.img3} className='single-project-container__image' alt="" />
+              <img src={project.img3} className='single-project-container__image' alt={`Image of ${project.title} - 3`} />
           </div>
           <div className='col-lg-6 col-12 my-5'>
-                <img src={project.img4} className='single-project-container__image' alt="" />
+                <img src={project.img4} className='single-project-container__image' alt={`Image of ${project.title} - 4`} />
           </div>
       </div>
     </div>

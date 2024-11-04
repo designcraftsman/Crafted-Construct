@@ -28,7 +28,7 @@ const ServicesAbout2 = () => {
                     </p>
                 </div>
                 <div className="col-lg-5 col-md-5 col-12 m-auto">
-                    <img src={image} className='img-fluid' alt="" />
+                    <img src={image} className='img-fluid' alt={`Image for ${data.title}`} />
                 </div>
             </div>
         </div>

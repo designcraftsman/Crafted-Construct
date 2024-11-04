@@ -26,11 +26,11 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <Container fluid className='m-0 p-0 reveal-section'>
+    <Container fluid className='m-0 p-0 reveal-section' role="region" aria-labelledby="team-section">
       <Row className='m-0'>
         <Col lg={6} className='bg-secondary text-white d-flex align-items-center justify-content-center'>
           <div className='p-5 reveal-element reveal-1'>
-            <h2 className='text-primary fw-bold display-6'>Meet Our Team</h2>
+            <h2 id="team-section" className='text-primary fw-bold display-6'>Meet Our Team</h2>
             <p className='fw-normal fs-1'>
               Ac feugiat sed lectus vest ibu lum mattis ull amcorper veli ti sed. Sol licitud in tempor id eu nisl nunc mi ipsum fau cibus vita niu mae.
             </p>
@@ -40,7 +40,7 @@ const TeamSection = () => {
           <Row className='m-0 p-0'>
             {teamMembers.map((member, index) => (
               <Col key={index} className={`col-6 m-0 p-0 reveal-element reveal-${index + 2}`}>
-                <img src={member.image} className='object-fit-cover w-100 h-100 background-image' alt={member.name} />
+                <img src={member.image} className='object-fit-cover w-100 h-100 background-image' alt={`Team member ${member.name}`} />
               </Col>
             ))}
           </Row>

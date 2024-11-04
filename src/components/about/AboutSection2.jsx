@@ -64,10 +64,10 @@ const AboutSection2 = () => {
     }, [data.counters]);
 
     return (
-        <Container className="my-5 py-5 reveal-section" ref={sectionRef}>
+        <Container className="my-5 py-5 reveal-section" ref={sectionRef} role="region" aria-labelledby="about-section-2">
             <Row>
                 <Col lg={6} md={12} className="m-auto mb-4 reveal-element">
-                    <h3 className="fs-1 fw-medium">{data.title}</h3>
+                    <h3 id="about-section-2" className="fs-1 fw-medium">{data.title}</h3>
                     <h4 className="fs-3 fw-normal">{data.subtitle}</h4>
                 </Col>
                 <Col lg={6} md={12} className="m-auto">

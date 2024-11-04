@@ -62,10 +62,11 @@ const BlogSection2 = () => {
                     <Row>
                         {blogPosts.map((post, index) => (
                             <Col key={index} className='col-10 mx-auto mb-4 reveal-element reveal-5'>
-                                <Link to={`/post-v1/${post.id}`} className='text-decoration-none'>
+                                <Link to={`/post/${post.id}`} className='text-decoration-none'>
                                     <BlogPostCard2 
                                         {...post} 
                                         authorImage={post.authorImage} // Pass author image
+                                        altText={`Image for ${post.title}`} // Improved alt text
                                     />
                                 </Link>
                             </Col>

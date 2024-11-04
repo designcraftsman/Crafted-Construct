@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import contact from '../assets/images/services/contact.jpg';
 import faqsData from '../data/faqs.json'; // Import the JSON data
 import ContactSection  from '../components/contact/ContactSection';
 

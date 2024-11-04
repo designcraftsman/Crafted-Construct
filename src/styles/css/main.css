@@ -1668,16 +1668,9 @@ div.pullUp a:hover:before,
   align-items: center;
 }
 .sidebar .recent-post .recent-post-image {
-  width: 60px;
-  height: auto;
-  border-radius: 4px;
-}
-.sidebar .recent-post .recent-post-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.sidebar .recent-post .badge {
-  font-size: 0.75rem;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
 }
 
 @keyframes fadeIn {

@@ -28,30 +28,6 @@ const Post = () => {
     loadPost();
   }, [postId]);
 
-  useEffect(() => {
-    const loadPost = async () => {
-      const foundPost = blogData.blogPosts.find(p => p.id === postId);
-      if (foundPost) {
-        const image = await importImage(foundPost.image);
-        
-        // Load additional images within the content
-        let content = foundPost.content;
-        const imgRegex = /<img\s+src='([^']+)'/g;
-        let match;
-  
-        while ((match = imgRegex.exec(content)) !== null) {
-          const imgPath = match[1];
-          const importedImage = await importImage(imgPath);
-          content = content.replace(imgPath, importedImage);
-        }
-  
-        setPost({ ...foundPost, image, content });
-      }
-    };
-  
-    loadPost();
-  }, [postId]);
-  
   // Define categories and recentPosts
   const categories = blogData.categories || []; // Assuming categories are part of your blogData
   const recentPosts = blogData.recentPosts || []; // Assuming recentPosts are part of your blogData
@@ -95,14 +71,14 @@ const Post = () => {
               </Row>
             </Container>
             <Container className="article-section mt-4">
-              <Image src={post.image} className="object-fit-cover w-100 article-section__image mb-3" />
+              <Image src={post.image} className="object-fit-cover w-100 article-section__image mb-3" alt={`Image for ${post.title}`} />
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
               <div className='fs-5 text-secondary mt-5'>
                 Share : 
-                <span> <FaFacebookF/></span>
-                <span> <FaInstagram/></span>
-                <span> <FaTwitter/></span>
+                <span> <FaFacebookF aria-label="Share on Facebook" /></span>
+                <span> <FaInstagram aria-label="Share on Instagram" /></span>
+                <span> <FaTwitter aria-label="Share on Twitter" /></span>
               </div>
               <hr className='my-5' />
               <div className="comments-section mt-4">

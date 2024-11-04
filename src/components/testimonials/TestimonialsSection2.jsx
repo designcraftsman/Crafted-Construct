@@ -71,12 +71,12 @@ const TestimonialsSection2 = () => {
             <h3 className="display-5 text-white mb-3 fw-medium">What Our Clients Say</h3>
           </div>
           <div className='buttons'>
-            <button onClick={handlePrev} className="testimonials-carousel__control testimonials-carousel__control--prev me-2">
+            <button onClick={handlePrev} className="testimonials-carousel__control testimonials-carousel__control--prev me-2" aria-label="Previous">
               <div className="arrow-wrapper">
                 <FaChevronLeft className="icon" />
               </div>
             </button>
-            <button onClick={handleNext} className="testimonials-carousel__control testimonials-carousel__control--next">
+            <button onClick={handleNext} className="testimonials-carousel__control testimonials-carousel__control--next" aria-label="Next">
               <div className="arrow-wrapper">
                 <FaChevronRight className="icon" />
               </div>
@@ -100,7 +100,7 @@ const TestimonialsSection2 = () => {
                     <div className='bg-white p-4 rounded testimonial-card d-flex flex-column'>
                       <div className='row flex-grow-1 align-items-center'>
                         <div className='col-md-4 text-center'>
-                          <img src={testimonial.image} className="user-image mb-3" alt="" />
+                          <img src={testimonial.image} className="user-image mb-3" alt={`Image of ${testimonial.title}`} />
                           <h3 className='fw-bold fs-4'>{testimonial.title}</h3>
                           <span className='text-primary'>{testimonial.position}</span>
                         </div>
@@ -134,7 +134,7 @@ const TestimonialsSection2 = () => {
                 <div className='col-11 bg-white m-auto p-4 testimonial-card rounded'>
                   <div className='row h-100'>
                     <div className='col-md-4 text-center my-auto'>
-                      <img src={testimonial.image} className="user-image mb-3" alt="" />
+                      <img src={testimonial.image} className="user-image mb-3" alt={`Image of ${testimonial.title}`} />
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>
                       <span className='text-primary'>{testimonial.company}</span>
                     </div>

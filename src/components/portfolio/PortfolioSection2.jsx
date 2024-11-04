@@ -111,11 +111,11 @@ const PortfolioSection2 = () => {
                     <Carousel.Item key={groupIndex}>
                         <div className="d-flex justify-content-evenly align-items-center ">
                             {group.map((item, itemIndex) => (
-                                <Link to={`/project-v1/${item.id}`} key={itemIndex} className="project-section-v2__figure p-0 projects-grid__figure">
+                                <Link to={`/project/${item.id}`} key={itemIndex} className="project-section-v2__figure p-0 projects-grid__figure">
                                     <img 
                                         src={item.image} 
                                         className="w-100 portfolio-carousel-v2__image projects-grid__figure__image" 
-                                        alt={`Portfolio ${groupIndex * 3 + itemIndex + 1}`} 
+                                        alt={`Portfolio Project: ${item.title}`} // Improved alt text
                                     />
                                     <figcaption className="projects-grid__figure__caption">
                                         <h1 className="projects-grid__figure__caption__h1">{item.title}</h1> {/* Project title */}
@@ -143,7 +143,7 @@ const PortfolioSection2 = () => {
                                 <img 
                                     src={item.image} 
                                     className="w-100 portfolio-carousel-v2__image projects-grid__figure__image" 
-                                    alt={`Portfolio ${i + 1}`} 
+                                    alt={`Portfolio Project: ${item.title}`} // Improved alt text
                                 />
                                 <figcaption className="projects-grid__figure__caption">
                                     <h1 className="projects-grid__figure__caption__h1">{item.title}</h1> {/* Project title */}

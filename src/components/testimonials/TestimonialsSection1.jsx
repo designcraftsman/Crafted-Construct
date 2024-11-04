@@ -75,7 +75,7 @@ const TestimonialsSection1 = () => {
                   <div key={j} className={`col-3 bg-white mx-auto p-3 rounded testimonial-card d-flex flex-column justify-content-center`}>
                     <div className='row align-items-center'>
                       <div className='col-3'>
-                        <img src={testimonial.image} className="user-image" alt="" />
+                        <img src={testimonial.image} className="user-image" alt={`Image of ${testimonial.title}`} />
                       </div>
                       <div className="col-9 d-flex flex-column justify-content-center">
                         <h3 className='fw-bold fs-5 my-auto'>{testimonial.title}</h3>
@@ -109,7 +109,7 @@ const TestimonialsSection1 = () => {
                 <div className={`col-10 bg-white m-auto p-3 testimonial-card testimonials-carousel__card rounded reveal-element reveal-5`}>
                   <div className='row align-items-center'>
                     <div className='col-3'>
-                      <img src={testimonial.image} className="user-image" alt="" />
+                      <img src={testimonial.image} className="user-image" alt={`Image of ${testimonial.title}`} />
                     </div>
                     <div className='col-9 my-auto'>
                       <h3 className='fw-bold fs-5'>{testimonial.title}</h3>

@@ -67,7 +67,7 @@ const ServicesCarousel = () => {
                                 <Container fluid className="h-100">
                                     <Row className="h-100 swiper-container__slide">
                                         <Col lg={6} md={6} className="swiper-container__slide__image-container position-relative d-flex justify-content-center align-items-center m-0 p-0">
-                                            <img src={service.image} className="w-100 h-100 object-fit-cover swiper-container__slide__image-container__image background-image" alt="" /> {/* Service image */}
+                                            <img src={service.image} className="w-100 h-100 object-fit-cover swiper-container__slide__image-container__image background-image" alt={`Service: ${service.title}`} /> {/* Improved alt text */}
                                             <div className="services__title">
                                                 <h1 className="display-3 text-white">{service.title}</h1> {/* Service title */}
                                             </div>

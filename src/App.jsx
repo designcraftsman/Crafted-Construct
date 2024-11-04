@@ -11,18 +11,18 @@ import PortfolioV2 from './pages/portfolio/PortfolioV2';
 import ServicesV1 from './pages/services/ServicesV1';
 import ServicesV2 from './pages/services/ServicesV2';
 import ServiceDetails from './pages/services/ServiceDetails';
-import ProjectV1 from './pages/project/ProjectV1';
+import Project from './pages/project/Project';
 import BlogV1 from './pages/blog/BlogV1';
 import BlogV2 from './pages/blog/BlogV2';
-import PostV1 from './pages/post/PostV1';
-import AboutV1 from './pages/about/AboutV1';
-import ContactV1 from './pages/contact/ContactV1';
+import Post from './pages/post/Post';
+import About from './pages/about/About';
+import Contact from './pages/contact/Contact';
 import TermsConditions from './pages/Terms-Conditions';
 import PrivacyPolicy from './pages/Privacy-Policy';
 import FAQs from './pages/FAQs';
 import NavbarLight from './components/navbar/NavbarLight';
 import NavbarDark from './components/navbar/NavbarDark';
-import Footer from './components/footer/Footer1';
+import Footer from './components/footer/Footer';
 import RevealAnimation from './components/RevealAnimation';
 
 function App() {
@@ -36,7 +36,6 @@ function App() {
       '/services-v2',
       '/portfolio-v1',
       '/portfolio-v2',
-      '/project-v1',
       '/blog-v1',
       '/blog-v2',
       '/terms-conditions',
@@ -45,7 +44,7 @@ function App() {
     ];
 
     // Check if the current path matches any of the dark paths or the /post-v1/:postId pattern
-    if (darkPaths.includes(location.pathname) || /^\/post-v1\/[^/]+$/.test(location.pathname) || /^\/project-v1\/[^/]+$/.test(location.pathname) || /^\/blog-v1\/[^/]*$/.test(location.pathname) || /^\/blog-v2\/[^/]*$/.test(location.pathname)) {
+    if (darkPaths.includes(location.pathname) || /^\/post\/[^/]+$/.test(location.pathname) || /^\/project\/[^/]+$/.test(location.pathname) || /^\/blog-v1\/[^/]*$/.test(location.pathname) || /^\/blog-v2\/[^/]*$/.test(location.pathname)) {
       return <NavbarDark />; // Render dark navbar for specific paths
     } else {
       return <NavbarLight />; // Render light navbar for other paths
@@ -72,12 +71,12 @@ function App() {
             <Route path="/services-v1" element={<ServicesV1 />} />
             <Route path="/services-v2" element={<ServicesV2 />} />
             <Route path="/service-details/:serviceId" element={<ServiceDetails />} />
-            <Route path="/project-v1/:projectId" element={<ProjectV1 />} />
+            <Route path="/project/:projectId" element={<Project />} />
             <Route path="/blog-v1/:query?" element={<BlogV1 />} />
             <Route path="/blog-v2/:query?" element={<BlogV2 />} />
-            <Route path="/post-v1/:postId" element={<PostV1 />} />
-            <Route path="/about-v1" element={<AboutV1 />} />
-            <Route path="/contact-v1" element={<ContactV1 />} />
+            <Route path="/post/:postId" element={<Post />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faqs" element={<FAQs />} />

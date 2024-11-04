@@ -59,7 +59,7 @@ const BlogSection1 = () => {
             <Row className="justify-content-evenly my-5 gap-3 reveal-element reveal-3">
               {blogPosts.slice(slideIndex * 3, slideIndex * 3 + 3).map((post, idx) => (
                 <Col key={idx} className='col-3'>
-                  <Link to={`/post-v1/${post.id}`} className='text-decoration-none text-dark'>
+                  <Link to={`/post/${post.id}`} className='text-decoration-none text-dark'>
                     <div className="card">
                       <PostCard
                         title={post.title}
@@ -69,6 +69,7 @@ const BlogSection1 = () => {
                         date={post.date}
                         image={post.image}
                         authorImage={post.authorImage}
+                        altText={`Image for ${post.title}`}
                       />
                     </div>
                   </Link>
@@ -91,7 +92,7 @@ const BlogSection1 = () => {
       >
         {blogPosts.map((post, index) => (
           <Carousel.Item key={index}>
-            <Link to={`/post-v1/${post.id}`} className='text-decoration-none text-dark col-10'>
+            <Link to={`/post/${post.id}`} className='text-decoration-none text-dark col-10'>
               <div className="card reveal-element reveal-4">
                 <PostCard
                   title={post.title}
@@ -101,6 +102,7 @@ const BlogSection1 = () => {
                   date={post.date}
                   image={post.image}
                   authorImage={post.authorImage}
+                  altText={`Image for ${post.title}`}
                 />
               </div>
             </Link>

@@ -33,9 +33,9 @@ const PortfolioList = ({ showMoreButton }) => {
     <>
       <div className="d-flex flex-wrap "> {/* Flex container for portfolio items */}
         {portfolioItems.slice(0, visibleItems).map((item, index) => (
-          <Link to={`/project-v1/${item.id}`} key={index} className="col-lg-4 col-md-6 col-sm-12"> {/* Link to project details */}
+          <Link to={`/project/${item.id}`} key={index} className="col-lg-4 col-md-6 col-sm-12"> {/* Link to project details */}
             <figure className="projects-grid__figure m-3"> {/* Figure for project */}
-              <img src={item.img} className="w-100 object-fit-cover projects-grid__figure__image" alt="image-grid" /> {/* Project image */}
+              <img src={item.img} className="w-100 object-fit-cover projects-grid__figure__image" alt={`Project: ${item.title}`} /> {/* Improved alt text */}
               <figcaption className='projects-grid__figure__caption'> {/* Caption for project */}
                 <h1 className="display-6 text-center projects-grid__figure__caption__h1">{item.title}</h1> {/* Project title */}
                 <p className="text-center projects-grid__figure__caption__p">5 July, 2021</p> {/* Project date */}

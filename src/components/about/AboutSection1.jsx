@@ -90,10 +90,10 @@ const WhyChooseUs = () => {
   }, [data.counters]);
 
   return (
-    <Container className="text-start p-4 py-5 my-5 why-choose-us m-auto">
+    <Container className="text-start p-4 py-5 my-5 why-choose-us m-auto" role="region" aria-labelledby="why-choose-us">
       <Row className="reveal-section">
         <Col>
-          <h2 className="display-4 fw-semibold mb-5 reveal-element reveal-1">{data.title}</h2>
+          <h2 id="why-choose-us" className="display-4 fw-semibold mb-5 reveal-element reveal-1">{data.title}</h2>
           <h3 className="display-6 text-muted col-lg-7 col-12 mb-5 reveal-element reveal-2">
             {data.subtitle}
           </h3>

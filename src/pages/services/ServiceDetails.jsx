@@ -46,10 +46,10 @@ const ServiceDetails = () => {
                 </div>
                 <div className='row mb-5 justify-content-between'>
                     <div className='col-lg-6 col-md-6 col-12'>
-                        <img src={serviceInfo.images[1]} alt={serviceInfo.title} className='mb-3 single-service-image' />
+                        <img src={serviceInfo.images[1]} alt={`Image of ${serviceInfo.title} - 1`} className='mb-3 single-service-image' />
                     </div>
-                    <div className='col-lg-6 col-md-6 col-12 ' >
-                        <img src={serviceInfo.images[2]} className='mb-3 single-service-image' alt="" />
+                    <div className='col-lg-6 col-md-6 col-12'>
+                        <img src={serviceInfo.images[2]} alt={`Image of ${serviceInfo.title} - 2`} className='mb-3 single-service-image' />
                     </div>
                 </div>
                 <h3 className='fs-1 fw-semibold mb-3'>Service Overview</h3>
@@ -66,7 +66,7 @@ const ServiceDetails = () => {
                         </ul>
                     </div>
                     <div className='col-lg-4 col-md-5 col-12 m-auto'>
-                        <img src={serviceInfo.images[3]} alt="" className='single-service-image' />
+                        <img src={serviceInfo.images[3]} alt={`Image of ${serviceInfo.title} - 3`} className='single-service-image' />
                     </div>
                 </div>
             </div>

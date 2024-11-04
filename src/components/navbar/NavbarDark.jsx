@@ -15,7 +15,7 @@ const importLogo = async (logoPath) => {
 const Logo = ({ logo }) => (
   <Link className="navbar-brand order-1" to="/"> {/* Link to home page */}
     <div className="d-flex align-items-center text-dark fw-bolder fs-6">
-      <img src={logo} alt="CraftedConstruct" className="logo" /> {/* Display logo */}
+      <img src={logo} alt="CraftedConstruct Logo" className="logo" /> {/* Improved alt text */}
     </div>
   </Link>
 );
@@ -77,6 +77,7 @@ const SearchBox = () => {
           name="search"
           className="input-search-dark"
           placeholder="Type to Search..." // Placeholder text
+          aria-label="Search" // Added aria-label for accessibility
         />
       </div>
     </form>
@@ -114,12 +115,12 @@ const NavigationBar = () => {
       <ToggleButton />
       <div className="collapse navbar-collapse pullUp order-lg-2 w-100 m-0 order-3 border-lg-none rounded p-2" id="basic-navbar-nav">
         <ul className="navbar-nav m-0 mx-auto border-lg-0 border-md border-sm"> {/* Navigation links */}
-          <Dropdown title="Home" items={[{ to: "/home-v1", label: "Home V1" }, { to: "/home-v2", label: "Home V2" }]} />
-          <Dropdown title="Services" items={[{ to: "/services-v1", label: "Services V1" }, { to: "/services-v2", label: "Services V2" }]} />
-          <Dropdown title="Portfolio" items={[{ to: "/portfolio-v1", label: "Portfolio V1" }, { to: "/portfolio-v2", label: "Portfolio V2" }]} />
-          <Dropdown title="Blog" items={[{ to: "/blog-v1", label: "Blog V1" }, { to: "/blog-v2", label: "Blog V2" }]} />
-          <NavLink to="/contact-v1">Contact</NavLink>
-          <NavLink to="/about-v1">About</NavLink>
+          <Dropdown title="Home" items={[{ to: "/home-v1", label: "Home 1" }, { to: "/home-v2", label: "Home 2" }]} />
+          <Dropdown title="Services" items={[{ to: "/services-v1", label: "Services 1" }, { to: "/services-v2", label: "Services 2" }]} />
+          <Dropdown title="Portfolio" items={[{ to: "/portfolio-v1", label: "Portfolio 1" }, { to: "/portfolio-v2", label: "Portfolio 2" }]} />
+          <Dropdown title="Blog" items={[{ to: "/blog-v1", label: "Blog 1" }, { to: "/blog-v2", label: "Blog 2" }]} />
+          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/about">About</NavLink>
         </ul>
       </div>
       <SearchBox />

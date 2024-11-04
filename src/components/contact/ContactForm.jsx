@@ -15,13 +15,14 @@ const ContactForm1 = () => {
                         and spirits with our own, communicating enthusiasm and liberality in
                         the food we share.
                     </p>
-                    <Form className='custom-form'>
+                    <Form className='custom-form' aria-label="Contact Form">
                         <Row>
                             <Col md={6} className="mb-3">
                                 <Form.Control
                                     type="text"
                                     placeholder="Your Name *"
                                     required
+                                    aria-label="Your Name"
                                 />
                             </Col>
                             <Col md={6} className="mb-3">
@@ -29,6 +30,7 @@ const ContactForm1 = () => {
                                     type="email"
                                     placeholder="Your Email *"
                                     required
+                                    aria-label="Your Email"
                                 />
                             </Col>
                         </Row>
@@ -37,6 +39,7 @@ const ContactForm1 = () => {
                                 type="text"
                                 placeholder="Subject *"
                                 required
+                                aria-label="Subject"
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -45,6 +48,7 @@ const ContactForm1 = () => {
                                 rows={5}
                                 placeholder="Your Comment *"
                                 required
+                                aria-label="Your Comment"
                             />
                         </Form.Group>
                         <Button type="submit" className="btn btn-info fw-bolder me-auto submit-btn">
@@ -60,9 +64,9 @@ const ContactForm1 = () => {
                             <li key={index} className="mb-5">
                                 <div className='d-flex flex-column align-items-start gap-1'>
                                     <p className='fw-bold my-1'>
-                                        {info.icon === 'CiLocationOn' && <CiLocationOn className='fs-1' />}
-                                        {info.icon === 'CiPhone' && <CiPhone className='fs-1' />}
-                                        {info.icon === 'CiClock1' && <CiClock1 className='fs-1' />}
+                                        {info.icon === 'CiLocationOn' && <CiLocationOn className='fs-1' aria-hidden="true" />}
+                                        {info.icon === 'CiPhone' && <CiPhone className='fs-1' aria-hidden="true" />}
+                                        {info.icon === 'CiClock1' && <CiClock1 className='fs-1' aria-hidden="true" />}
                                         <span className='mx-2'>{info.name}</span>
                                     </p>
                                     <span className='fs-6'>{info.text}</span>

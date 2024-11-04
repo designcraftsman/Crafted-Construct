@@ -15,7 +15,7 @@ const importLogo = async (logoPath) => {
 const Logo = ({ logo }) => (
   <Link className="navbar-brand order-1" to="/">
     <div className="d-flex align-items-center text-white fw-bolder fs-6">
-      <img src={logo} alt="CraftedConstruct" className="logo" />
+      <img src={logo} alt="CraftedConstruct Logo" className="logo" />
     </div>
   </Link>
 );
@@ -68,7 +68,7 @@ const SearchBox = () => {
         <button type="submit" className="btn-search">
           <CiSearch className="search-icon text-white fs-2" />
         </button>
-        <input type="text" name="search" className="input-search" placeholder="Type to Search..." />
+        <input type="text" name="search" className="input-search" placeholder="Type to Search..." aria-label="Search" />
       </div>
     </form>
   );
@@ -115,10 +115,10 @@ const NavigationBar = () => {
   };
 
   const dropdownItems = {
-    home: [{ label: 'Home V1', link: '/home-v1' }, { label: 'Home V2', link: '/home-v2' }],
-    services: [{ label: 'Services V1', link: '/services-v1' }, { label: 'Services V2', link: '/services-v2' }],
-    portfolio: [{ label: 'Portfolio V1', link: '/portfolio-v1' }, { label: 'Portfolio V2', link: '/portfolio-v2' }],
-    blog: [{ label: 'Blog V1', link: '/blog-v1' }, { label: 'Blog V2', link: '/blog-v2' }],
+    home: [{ label: 'Home 1', link: '/home-v1' }, { label: 'Home 2', link: '/home-v2' }],
+    services: [{ label: 'Services 1', link: '/services-v1' }, { label: 'Services 2', link: '/services-v2' }],
+    portfolio: [{ label: 'Portfolio 1', link: '/portfolio-v1' }, { label: 'Portfolio 2', link: '/portfolio-v2' }],
+    blog: [{ label: 'Blog 1', link: '/blog-v1' }, { label: 'Blog 2', link: '/blog-v2' }],
   };
 
   return (
@@ -138,10 +138,10 @@ const NavigationBar = () => {
             />
           ))}
           <li className="nav-item">
-            <Link className="nav-link navbar-nav__link" to="/contact-v1"><span>Contact</span></Link>
+            <Link className="nav-link navbar-nav__link" to="/contact"><span>Contact</span></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link navbar-nav__link" to="/about-v1"><span>About</span></Link>
+            <Link className="nav-link navbar-nav__link" to="/about"><span>About</span></Link>
           </li>
         </ul>
       </div>

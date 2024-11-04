@@ -68,7 +68,7 @@ function ServicesSection() {
           <Carousel.Item key={index}>
             <Row>
               <Col lg={6} md={6} className='p-0 m-0 reveal-element reveal-1'>
-                <img src={service.img} className='services-section__carousel__image' alt="" />
+                <img src={service.img} className='services-section__carousel__image' alt={`Service: ${service.title}`} />
               </Col>
               <Col lg={6} md={6} className='bg-secondary p-0 d-flex flex-column align-content-center p-4'>
                 <div className='my-auto'>

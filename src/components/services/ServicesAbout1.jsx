@@ -13,7 +13,7 @@ const ServicesAbout = () => {
                     </h2>
                 </Col>
                 <Col md={6} className='m-auto text-center'>
-                    <PiHandshakeThin className='display-1 text-primary' />
+                    <PiHandshakeThin className='display-1 text-primary' aria-label="Handshake icon" />
                 </Col>
             </Row>
         </Container>
