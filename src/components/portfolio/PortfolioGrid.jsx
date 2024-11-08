@@ -76,7 +76,7 @@ const PortfolioList = ({ showMoreButton }) => {
               <img src={item.img} className="w-100 h-100 object-fit-cover projects-grid__figure__image" alt="image-grid" />
               <figcaption className='projects-grid__figure__caption'>
                 <h1 className="display-6 text-center projects-grid__figure__caption__h1">{item.title}</h1>
-                <p className="text-center projects-grid__figure__caption__p">5 July, 2021</p>
+                <p className="text-center projects-grid__figure__caption__p">{item.date}</p>
               </figcaption>
             </figure>
           </Link>
@@ -86,8 +86,8 @@ const PortfolioList = ({ showMoreButton }) => {
       {/* Conditionally render the Show More button if prop is true */}
       {showMoreButton && visibleItems < portfolioItems.length && (
         <div className="text-center mt-4 reveal-element reveal-1">
-          <button className="btn btn-primary" onClick={showMoreItems}>
-            Show More
+          <button className="btn btn-dark hover-filled-slide-down slide-up" onClick={showMoreItems}>
+            <span>Show More</span>
           </button>
         </div>
       )}

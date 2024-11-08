@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'; // Import hooks for routing
-import Sidebar from '../../components/blog/SideBar'; // Import Sidebar component
-import PostCard from '../../components/blog/PostCard2'; // Import PostCard component
-import blogData from '../../data/blog/posts.json'; // Import blog data
+import { Link, useParams } from 'react-router-dom';
+import Sidebar from '../../components/blog/SideBar';
+import PostCard from '../../components/blog/PostCard2';
+import blogData from '../../data/blog/posts.json';
+import { Helmet } from 'react-helmet';
 
-// Import images dynamically
+// Dynamically import images
 const importImage = (imagePath) => {
-  return import(`../../assets/${imagePath}`).then(module => module.default); // Dynamically import image
+  return import(`../../assets/${imagePath}`).then(module => module.default);
 };
 
 const BlogSection = () => {
+  const { query = '', category = '' } = useParams(); // Default query and category to empty strings if undefined
   const [blogPosts, setBlogPosts] = useState([]); // State for blog posts
-  const [recentPosts, setRecentPosts] = useState([]); // State for recent posts
   const { categories } = blogData; // Extract categories from blog data
-  const { query = '' } = useParams(); // Get query from URL parameters
 
   useEffect(() => {
     const loadBlogPosts = async () => {
@@ -28,57 +28,51 @@ const BlogSection = () => {
         }))
       );
 
-      // Filter based on the query
-      const filteredPosts = query
-        ? loadedPosts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase())) // Filter posts by title
-        : loadedPosts;
+      // Filter posts based on the provided query or category
+      const filteredPosts = loadedPosts.filter((post) => {
+        const matchesQuery = query ? post.title.toLowerCase().includes(query.toLowerCase()) : true;
+        const matchesCategory = category ? post.category.toLowerCase() === category.toLowerCase() : true;
+        return matchesQuery || matchesCategory;
+      });
 
       setBlogPosts(filteredPosts); // Update state with filtered posts
     };
 
-    const loadRecentPosts = async () => {
-      const loadedRecentPosts = await Promise.all(
-        blogData.recentPosts.map(async (post) => ({
-          ...post,
-          image: await importImage(post.image) // Load recent post image dynamically
-        }))
-      );
-      setRecentPosts(loadedRecentPosts); // Update state with recent posts
-    };
-
     loadBlogPosts(); // Load blog posts
-    loadRecentPosts(); // Load recent posts
-  }, [query]); // Run effect when query changes
+  }, [query, category]); // Run effect when query or category changes
 
-  // Get the current page from the URL
+  // Pagination logic
   const urlParams = new URLSearchParams(window.location.search);
   const pageParam = urlParams.get('page'); // Get current page from URL
   const [currentPage] = useState(pageParam ? parseInt(pageParam) : 1); // Set current page
-
-  // Pagination logic
   const postsPerPage = 6; // Number of posts per page
   const indexOfLastPost = currentPage * postsPerPage; // Index of last post
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // Index of first post
   const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost); // Get current posts
-
-  // Calculate total number of pages
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage); // Total pages
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage); // Calculate total pages
 
   return (
     <React.Fragment>
+       <Helmet>
+        <title>Blog - Crafted Construct</title> {/* Set the page title */}
+        <meta name="description" content=" Stay updated with the Crafted Construct blog, where we share insights, trends, and tips on architecture and interior design. Join us as we explore the world of design!" /> {/* Set the meta description */}
+        <meta name="keywords" content=" architecture blog, interior design blog, Crafted Construct, design trends, design tips, insights on architecture, interior inspiration" />{/* Set the meta keywords */}
+      </Helmet>
       <div className="blog-section container my-5 py-5">
         <div className="row gap-3">
           <div className="col-lg-8 col-12">
-            {/* Display search result message */}
-            {query && (
+          {(query || category) && (
               <div className="search-result-message my-5">
-                <h5 className='display-5'>Search results for: <strong>"{query}"</strong></h5>
+                <h5 className='display-5 ms-lg-5 ms-3'>
+                  {query && `Search results for: "${query}"`}
+                  {category && !query && `Posts in category: "${category}"`}
+                </h5>
               </div>
             )}
             <div className="d-flex flex-column gap-3">
-              {currentPosts.length === 0 ? ( // Check if there are no current posts
+              {currentPosts.length === 0 ? (
                 <div className="no-posts-message text-center my-5">
-                  <h5>No posts found</h5> {/* Message to display when no posts are found */}
+                  <h5>No posts found</h5>
                 </div>
               ) : (
                 currentPosts.map((post, index) => (
@@ -91,7 +85,7 @@ const BlogSection = () => {
                         authorName={post.author.name}
                         authorImage={post.author.avatar}
                         date={post.date}
-                        image={post.image} // Pass image to PostCard
+                        image={post.image}
                       />
                     </div>
                   </Link>
@@ -99,7 +93,6 @@ const BlogSection = () => {
               )}
             </div>
 
-            {/* Pagination Controls */}
             {blogPosts.length > postsPerPage && (
               <nav aria-label="Page navigation" className="mt-5">
                 <ul className="pagination justify-content-center">
@@ -124,7 +117,7 @@ const BlogSection = () => {
           </div>
 
           <div className="col-lg-3 col-12 mx-auto">
-            <Sidebar categories={categories} recentPosts={recentPosts} /> {/* Render sidebar with categories and recent posts */}
+            <Sidebar categories={categories} /> {/* Pass handler */}
           </div>
         </div>
       </div>

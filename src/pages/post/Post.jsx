@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import blogData from '../../data/blog/posts.json';
+import commentsData from '../../data/blog/comments.json';
 import Sidebar from '../../components/blog/SideBar';
 import { Container, Image } from 'react-bootstrap';
 import { Row, Col, Badge } from 'react-bootstrap';
 import { FaUser, FaCalendarAlt } from 'react-icons/fa';
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import Helmet from 'react-helmet';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -15,34 +17,53 @@ const importImage = (imagePath) => {
 const Post = () => {
   const { postId } = useParams(); // Get postId from URL
   const [post, setPost] = useState(null);
+  const [image, setImage] = useState(null);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const loadPost = async () => {
-      const foundPost = blogData.blogPosts.find(p => p.id === postId);
-      if (foundPost) {
-        const image = await importImage(foundPost.image);
-        setPost({ ...foundPost, image });
-      }
-    };
+    const foundPost = blogData.blogPosts.find((p) => p.id === postId);
+    if (foundPost) {
+      // Wait for the image to be imported before setting it
+      importImage(foundPost.image).then((importedImage) => {
+        setImage(importedImage);
+      });
+      const contentWithImages = replaceImagePaths(foundPost.content);
+      setPost({ ...foundPost, content: contentWithImages });
+    }
 
-    loadPost();
+    // Filter comments for this post
+    const postComments = commentsData.comments.filter((comment) => comment["post-id"] === postId);
+    setComments(postComments);
   }, [postId]);
 
-  // Define categories and recentPosts
-  const categories = blogData.categories || []; // Assuming categories are part of your blogData
-  const recentPosts = blogData.recentPosts || []; // Assuming recentPosts are part of your blogData
+  // Function to replace image paths in `content` field with `require` statements
+  const replaceImagePaths = (content) => {
+    return content.replace(/src='([^']+)'/g, (match, src) => {
+      try {
+        const imagePath = require(`../../assets/${src}`);
+        return `src='${imagePath}'`;
+      } catch (error) {
+        console.error(`Image not found: ${src}`);
+        return match; // return original if image is not found
+      }
+    });
+  };
 
-  const [comments] = useState([
-    { name: 'Matthew Ando', comment: 'Lorem ipsum dolor sit amet, sed do consectetur adipiscing elit incididunt. Consectetur adipiscing elit tempor incididunt ut labore consectetur adipiscing elit vero eos et accusam et justo duo dolores et ea rebum.', date: 'April 15, 2022' },
-    { name: 'Matthew Ando', comment: 'Lorem ipsum dolor sit amet, sed do consectetur adipiscing elit incididunt. Consectetur adipiscing elit tempor incididunt ut labore consectetur adipiscing elit vero eos et accusam et justo duo dolores et ea rebum.', date: 'April 15, 2022' },
-  ]);
+  // Define categories and recentPosts
+  const categories = blogData.categories || [];
+  const recentPosts = blogData.recentPosts || [];
 
   if (!post) {
-    return <div>Post not found</div>; // Handle case where post is not found
+    return <div>Post not found</div>;
   }
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{post.title} - Crafted Construct</title> {/* Set the page title */}
+        <meta name="description" content={post.category} /> {/* Set the meta description */}
+        <meta name="keywords" content="crafted contruct post" />{/* Set the meta keywords */}
+      </Helmet>
       <div className="blog-section container my-5 py-5">
         <div className="row">
           <div className="col-md-8">
@@ -71,7 +92,7 @@ const Post = () => {
               </Row>
             </Container>
             <Container className="article-section mt-4">
-              <Image src={post.image} className="object-fit-cover w-100 article-section__image mb-3" alt={`Image for ${post.title}`} />
+              <Image src={image} className="object-fit-cover w-100 article-section__image mb-3" alt={`Image for ${post.title}`} />
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
               <div className='fs-5 text-secondary mt-5'>
@@ -115,15 +136,21 @@ const Post = () => {
                   </button>
                 </form>
                 <hr className='my-5' />
-                {comments.map((comment, index) => (
-                  <div key={index} className="my-5">
-                    <div className='d-flex align-items-center justify-content-between mb-3'>
-                      <h5 className='fw-bold fs-5 m-0'>{comment.name} <span className='fs-6 opacity-75 fw-normal'>{comment.date}</span></h5>
-                      <span className='fs-6 fw-normal opacity-75'>Reply</span>
+
+                {/* Show "No comments yet" message if no comments are available */}
+                {comments.length === 0 ? (
+                  <p className="text-muted text-center">No comments yet.</p>
+                ) : (
+                  comments.map((comment, index) => (
+                    <div key={index} className="my-5">
+                      <div className='d-flex align-items-center justify-content-between mb-3'>
+                        <h5 className='fw-bold fs-5 m-0'>{comment.username} <span className='fs-6 opacity-75 fw-normal'>{comment.date}</span></h5>
+                        <span className='fs-6 fw-normal opacity-75 ' role='button'>Reply</span>
+                      </div>
+                      <p>{comment.comment}</p>
                     </div>
-                    <p>{comment.comment}</p>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </Container>
           </div>

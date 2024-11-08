@@ -49,7 +49,7 @@ const ServicesSection2 = () => {
                                     {service.title} {/* Service title */}
                                 </h4>
                                 <p className="fs-6 text-secondary">
-                                    {service.overview} {/* Service overview */}
+                                    {service.description} {/* Service overview */}
                                 </p>
                             </div>
                         </Link>

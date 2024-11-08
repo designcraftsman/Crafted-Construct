@@ -31,6 +31,8 @@ function App() {
 
   // Conditionally render NavbarDark for specific paths
   const renderNavbar = () => {
+    const path = location.pathname;
+
     const darkPaths = [
       '/home-v2',
       '/services-v2',
@@ -44,7 +46,13 @@ function App() {
     ];
 
     // Check if the current path matches any of the dark paths or the /post-v1/:postId pattern
-    if (darkPaths.includes(location.pathname) || /^\/post\/[^/]+$/.test(location.pathname) || /^\/project\/[^/]+$/.test(location.pathname) || /^\/blog-v1\/[^/]*$/.test(location.pathname) || /^\/blog-v2\/[^/]*$/.test(location.pathname)) {
+    if (
+      darkPaths.includes(path) ||
+      /^\/post\/[^/]+$/.test(path) ||                   // Matches /post/:postId
+      /^\/project\/[^/]+$/.test(path) ||                // Matches /project/:projectId
+      /^\/blog-v1\/[^/]*\/?[^/]*$/.test(path) ||        // Matches /blog-v1, /blog-v1/:category, or /blog-v1/:category/:query
+      /^\/blog-v2\/[^/]*$/.test(path)                   // Matches /blog-v2 or /blog-v2/:query
+    ) {
       return <NavbarDark />; // Render dark navbar for specific paths
     } else {
       return <NavbarLight />; // Render light navbar for other paths
@@ -72,8 +80,8 @@ function App() {
             <Route path="/services-v2" element={<ServicesV2 />} />
             <Route path="/service-details/:serviceId" element={<ServiceDetails />} />
             <Route path="/project/:projectId" element={<Project />} />
-            <Route path="/blog-v1/:query?" element={<BlogV1 />} />
-            <Route path="/blog-v2/:query?" element={<BlogV2 />} />
+            <Route path="/blog-v1/:category?/:query?" element={<BlogV1 />} />
+            <Route path="/blog-v2/:category?/:query?" element={<BlogV2 />} />
             <Route path="/post/:postId" element={<Post />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

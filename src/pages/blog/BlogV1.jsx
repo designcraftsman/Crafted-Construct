@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'; // Import hooks for routing
 import Sidebar from '../../components/blog/SideBar'; // Import Sidebar component
 import PostCard from '../../components/blog/PostCard1'; // Import PostCard component
 import blogData from '../../data/blog/posts.json'; // Import blog data
+import { Helmet } from 'react-helmet';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -10,9 +11,8 @@ const importImage = (imagePath) => {
 };
 
 const BlogSection = () => {
-  const { query = '' } = useParams(); // Default query to an empty string if undefined
+  const { query = '', category = '' } = useParams(); // Default query and category to empty strings if undefined
   const [blogPosts, setBlogPosts] = useState([]); // State for blog posts
-  const [recentPosts, setRecentPosts] = useState([]); // State for recent posts
   const { categories } = blogData; // Extract categories from blog data
 
   useEffect(() => {
@@ -28,27 +28,23 @@ const BlogSection = () => {
         }))
       );
 
-      // Filter based on the query
-      const filteredPosts = query
-        ? loadedPosts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase())) // Filter posts by title
-        : loadedPosts;
+      // Filter posts based on the provided query or category
+      const filteredPosts = loadedPosts.filter((post) => {
+        if (query) {
+          return post.title.toLowerCase().includes(query.toLowerCase());
+        }
+        if (category) {
+          return post.category.toLowerCase() === category.toLowerCase();
+        }
+        return true; // Show all posts if neither query nor category is specified
+      });
+      
 
       setBlogPosts(filteredPosts); // Update state with filtered posts
     };
 
-    const loadRecentPosts = async () => {
-      const loadedRecentPosts = await Promise.all(
-        blogData.recentPosts.map(async (post) => ({
-          ...post,
-          image: await importImage(post.image) // Load recent post image dynamically
-        }))
-      );
-      setRecentPosts(loadedRecentPosts); // Update state with recent posts
-    };
-
     loadBlogPosts(); // Load blog posts
-    loadRecentPosts(); // Load recent posts
-  }, [query]); // Run effect when query changes
+  }, [query, category]); // Run effect when query or category changes
 
   // Pagination logic
   const urlParams = new URLSearchParams(window.location.search);
@@ -62,13 +58,21 @@ const BlogSection = () => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>Blog - Crafted Construct</title> {/* Set the page title */}
+        <meta name="description" content=" Stay updated with the Crafted Construct blog, where we share insights, trends, and tips on architecture and interior design. Join us as we explore the world of design!" /> {/* Set the meta description */}
+        <meta name="keywords" content=" architecture blog, interior design blog, Crafted Construct, design trends, design tips, insights on architecture, interior inspiration" />{/* Set the meta keywords */}
+      </Helmet>
       <div className="blog-section container-fluid my-5 py-5">
         <div className="row">
           <div className="col-lg-8 col-md-8 col-12">
             {/* Display search result message */}
-            {query && (
+            {(query || category) && (
               <div className="search-result-message my-5">
-                <h5 className='display-5 ms-lg-5 ms-3'>Search results for: <strong>"{query}"</strong></h5>
+                <h5 className='display-5 ms-lg-5 ms-3'>
+                  {query && `Search results for: "${query}"`}
+                  {category && !query && `Posts in category: "${category}"`}
+                </h5>
               </div>
             )}
             <div className="row gap-3 mx-auto">
@@ -120,7 +124,7 @@ const BlogSection = () => {
           </div>
 
           <div className="col-lg-3 col-md-4 col-12 mx-auto my-3">
-            <Sidebar categories={categories} recentPosts={recentPosts} /> {/* Render sidebar with categories and recent posts */}
+            <Sidebar categories={categories} /> {/* Render sidebar with categories and recent posts */}
           </div>
         </div>
       </div>

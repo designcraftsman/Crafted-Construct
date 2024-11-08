@@ -9,7 +9,8 @@
       "title": "Modern Residential Home",
       "location": "Lakeview Estates, California",
       "scope": "Multi-unit residential construction",
-      "description": "CraftedConstruct developed a luxury apartment complex..."
+      "description": "CraftedConstruct developed a luxury apartment complex...",
+      "date":"5 july,2023"
     },
     {
       "id": 1,
@@ -20,7 +21,8 @@
       "title": "Modern Residential Home",
       "location": "Lakeview Estates, California",
       "scope": "Multi-unit residential construction",
-      "description": "CraftedConstruct developed a luxury apartment complex..."
+      "description": "CraftedConstruct developed a luxury apartment complex...",
+      "date":"5 july,2023"
     },
     {
       "id": 2,
@@ -31,10 +33,11 @@
       "title": "Modern Residential Home",
       "location": "Lakeview Estates, California",
       "scope": "Multi-unit residential construction",
-      "description": "CraftedConstruct developed a luxury apartment complex..."
+      "description": "CraftedConstruct developed a luxury apartment complex...",
+      "date":"5 july,2023"
     },
     {
-      "id": 3,
+     "id": 3,
       "image1": "images/portfolio/project4/1.jpg",
       "image2": "images/portfolio/project4/2.jpg",
       "image3": "images/portfolio/project4/3.jpg",
@@ -42,8 +45,81 @@
       "title": "Modern Residential Home",
       "location": "Lakeview Estates, California",
       "scope": "Multi-unit residential construction",
-      "description": "CraftedConstruct developed a luxury apartment complex..."
-    }
+      "description": "CraftedConstruct developed a luxury apartment complex...",
+      "date":"5 july,2023"
+    },
+    {
+      "id": 4,
+       "image1": "images/portfolio/project5/1.jpg",
+       "image2": "images/portfolio/project5/2.jpg",
+       "image3": "images/portfolio/project5/3.jpg",
+       "image4": "images/portfolio/project5/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }, 
+     {
+      "id": 5,
+       "image1": "images/portfolio/project6/1.jpg",
+       "image2": "images/portfolio/project6/2.jpg",
+       "image3": "images/portfolio/project6/3.jpg",
+       "image4": "images/portfolio/project6/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }, 
+     {
+      "id": 6,
+       "image1": "images/portfolio/project7/1.jpg",
+       "image2": "images/portfolio/project7/2.jpg",
+       "image3": "images/portfolio/project7/3.jpg",
+       "image4": "images/portfolio/project7/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }, 
+     {
+      "id": 7,
+       "image1": "images/portfolio/project8/1.jpg",
+       "image2": "images/portfolio/project8/2.jpg",
+       "image3": "images/portfolio/project8/3.jpg",
+       "image4": "images/portfolio/project8/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }, 
+     {
+      "id": 8,
+       "image1": "images/portfolio/project9/1.jpg",
+       "image2": "images/portfolio/project9/2.jpg",
+       "image3": "images/portfolio/project9/3.jpg",
+       "image4": "images/portfolio/project9/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }, 
+     {
+      "id": 9,
+       "image1": "images/portfolio/project10/1.jpg",
+       "image2": "images/portfolio/project10/2.jpg",
+       "image3": "images/portfolio/project10/3.jpg",
+       "image4": "images/portfolio/project10/4.jpg",
+       "title": "Modern Residential Home",
+       "location": "Lakeview Estates, California",
+       "scope": "Multi-unit residential construction",
+       "description": "CraftedConstruct developed a luxury apartment complex...",
+       "date":"5 july,2023"
+     }
   ]
 }
 

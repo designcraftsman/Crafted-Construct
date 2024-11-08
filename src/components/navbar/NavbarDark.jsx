@@ -62,7 +62,7 @@ const SearchBox = () => {
     event.preventDefault();
     const searchQuery = event.target.elements.search.value.trim(); // Get search query
     if (searchQuery) {
-      navigate(`/blog-v1/${encodeURIComponent(searchQuery)}`); // Navigate to search results
+      navigate(`/blog-v1/ /${encodeURIComponent(searchQuery)}`); // Navigate to search results
     }
   };
 

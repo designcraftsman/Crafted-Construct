@@ -1,9 +1,16 @@
 import React from 'react';
 import privacyData from '../data/privacy.json'; // Import the JSON data
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
     return (
         <div className='container my-5 py-5'>
+            <Helmet>
+                <title>Privacy Policy - Crafted Construct</title> {/* Set the page title */}
+                <meta name="description" content="Read the Crafted Construct Privacy Policy to understand how we collect, use, and protect your personal information in relation to our construction, architecture, and interior design services." /> {/* Set the meta description */}
+                <meta name="keywords" content="Crafted Construct privacy policy, data protection, personal information, privacy practices, user data, architecture privacy policy, interior design privacy policy, construction services data policy" /> {/* Set the meta keywords */}
+            </Helmet>
+
             <h1 className='text-center fw-bold my-5'>Privacy Policy</h1>
             <p>Welcome to Craft Construct!</p>
 

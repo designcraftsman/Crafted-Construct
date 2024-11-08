@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import heroData from '../../data/hero/heroSection1.json';
+import {Link} from 'react-router-dom';
 
 // Import images dynamically and optimize for SEO
 const importImage = (imagePath) => {
@@ -69,9 +70,9 @@ const HeroSection = () => {
             <div className="hero-carousel__item__caption staggered-animations">
               <h1 className="display-3 slide-up">{slide.title}</h1>
               <h2 className="fs-4 fw-light mb-3 slide-up">{slide.text}</h2>
-              <button className="btn btn-dark hover-filled-slide-down slide-up">
+              <Link to="/portfolio-v1" className="btn btn-dark hover-filled-slide-down slide-up">
                 <span>{slide.buttonText}</span>
-              </button>
+              </Link>
             </div>
           </Carousel.Item>
         ))}

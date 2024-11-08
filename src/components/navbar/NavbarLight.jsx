@@ -58,7 +58,7 @@ const SearchBox = () => {
     event.preventDefault();
     const searchQuery = event.target.elements.search.value.trim();
     if (searchQuery) {
-      navigate(`/blog-v1/${encodeURIComponent(searchQuery)}`);
+      navigate(`/blog-v1/ /${encodeURIComponent(searchQuery)}`);
     }
   };
 

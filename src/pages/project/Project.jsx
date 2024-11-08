@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import projectsData from '../../data/portfolio/projects.json';
+import Helmet from 'react-helmet';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -31,6 +32,10 @@ function ProjectV1() {
 
   return (
     <div className='container my-5 py-5'> 
+      <Helmet>
+        <title>{project.title} - Crafted Construct</title> {/* Set the page title */}
+        <meta name="description" content={project.description} /> {/* Set the meta description */}
+      </Helmet>
       <div className='row m-auto single-project-container'>
         <div className='col-lg-7 col-12 '>
           <img src={project.img1} className='single-project-container__image' alt={`Image of ${project.title}`} />

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/common/header';
 import ContactSection from '../../components/contact/ContactSection';
 import servicesData from '../../data/services/services.json';
+import Helmet from 'react-helmet';
 
 // Import images dynamically
 const importImage = (imagePath) => {
@@ -36,6 +37,10 @@ const ServiceDetails = () => {
 
     return (
         <React.Fragment>
+            <Helmet>
+                <title>{serviceInfo.title} - Crafted Construct</title> {/* Set the page title */}
+                <meta name="description" content={serviceInfo.description} /> {/* Set the meta description */}
+            </Helmet>
             <Header headerImage={serviceInfo.images[0]} headerTitle={serviceInfo.title} />
             <div className='container mt-5 px-lg-5 p-3'>
                 <div className='row'>
@@ -46,10 +51,10 @@ const ServiceDetails = () => {
                 </div>
                 <div className='row mb-5 justify-content-between'>
                     <div className='col-lg-6 col-md-6 col-12'>
-                        <img src={serviceInfo.images[1]} alt={`Image of ${serviceInfo.title} - 1`} className='mb-3 single-service-image' />
+                        <img src={serviceInfo.images[1]} alt={`${serviceInfo.title} - 1`} className='mb-3 single-service-image' />
                     </div>
                     <div className='col-lg-6 col-md-6 col-12'>
-                        <img src={serviceInfo.images[2]} alt={`Image of ${serviceInfo.title} - 2`} className='mb-3 single-service-image' />
+                        <img src={serviceInfo.images[2]} alt={`${serviceInfo.title} - 2`} className='mb-3 single-service-image' />
                     </div>
                 </div>
                 <h3 className='fs-1 fw-semibold mb-3'>Service Overview</h3>
@@ -66,7 +71,7 @@ const ServiceDetails = () => {
                         </ul>
                     </div>
                     <div className='col-lg-4 col-md-5 col-12 m-auto'>
-                        <img src={serviceInfo.images[3]} alt={`Image of ${serviceInfo.title} - 3`} className='single-service-image' />
+                        <img src={serviceInfo.images[3]} alt={`${serviceInfo.title} - 3`} className='single-service-image' />
                     </div>
                 </div>
             </div>

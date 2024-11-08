@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import heroData from '../../data/hero/heroSection2.json';
+import {Link} from 'react-router-dom';
 
 // Helper function to dynamically import images
 const importImage = (imagePath) => {
@@ -48,9 +49,9 @@ const HeroSection2 = () => {
                 <div className={`hero-carousel-v2__item__caption col-lg-4 col-md-4 col-10 d-block m-0 ${animateContent ? 'staggered-animations' : ''}`}>
                     <h3 className="fs-1 fw-light">{slide.title}</h3>
                     <h4 className="fs-4 fw-light my-3">{slide.description}</h4>
-                    <button className="btn btn-dark hover-filled-slide-down slide-up">
+                    <Link to="/portfolio-v1" className="btn btn-dark hover-filled-slide-down slide-up">
                         <span>{heroData.buttonText}</span>
-                    </button>
+                    </Link>
                 </div>
                 <div className="col-5 text-dark m-0 hero-carousel-v2__item__content">
                 </div>

@@ -11,16 +11,20 @@ const importImage = (imagePath) => {
 
 const Sidebar = ({ categories }) => {
   const [loadedRecentPosts, setLoadedRecentPosts] = useState([]);
-
+  
   useEffect(() => {
     const loadRecentPostsImages = async () => {
       const postsWithImages = await Promise.all(
-        postsData.recentPosts.slice(0, 5).map(async (post) => ({
+        postsData.blogPosts.slice(0, 3).map(async (post) => ({
           ...post,
-          image: await importImage(post.image)
+          image: await importImage(post.image),
+          date: new Date(post.date) // Convert date string to Date object
         }))
       );
-      setLoadedRecentPosts(postsWithImages);
+
+      // Sort posts by date in descending order
+      const sortedPosts = postsWithImages.sort((a, b) => b.date - a.date);
+      setLoadedRecentPosts(sortedPosts);
     };
 
     loadRecentPostsImages();
@@ -30,27 +34,31 @@ const Sidebar = ({ categories }) => {
     <aside className="sidebar">
       <div className="category-section mb-4 text-white">
         <h6>Category</h6>
-        <hr className='border-3'/>
+        <hr className='border-3' />
         <ul className="list-unstyled sidebar__categories">
           {categories.map((cat, index) => (
             <li key={index} className='fw-light mb-3 '>
-              <Link to="blog-v1" className='text-decoration-none sidebar__cateogires__link__hover sidebar__categories__link'>
+              {/* Link to filter posts by category */}
+              <Link to={`/blog-v1/${cat.toLowerCase()}`} className='text-decoration-none sidebar__categories__link'>
                 <FaAngleDoubleRight /> {cat}
               </Link>
             </li>
           ))}
         </ul>
         <h6>Recent Posts</h6>
-        <hr className='border-3'/>
+        <hr className='border-3' />
         {loadedRecentPosts.map((post, index) => (
-          <div className="recent-post mb-4 d-flex align-items-center" key={index}>
+          <Link to={`/post/${post.id}`} className="recent-post mb-4 text-decoration-none d-flex align-items-center" key={index}>
             <img src={post.image} alt={post.title} className="recent-post-image me-2" />
             <div>
-              <h6 className="recent-post-title m-0 fs-6">{post.title}</h6>
+              <h6 className="recent-post-title m-0 fs-6 text-white">{post.title}</h6>
               <Badge bg="info">{post.category}</Badge>
-              <p className="post-date fs-6 opacity-75 m-0">{post.date}</p>
+              {/* Convert date object back to a readable string */}
+              <p className="post-date fs-6 opacity-75 m-0 text-white">
+                {post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </aside>

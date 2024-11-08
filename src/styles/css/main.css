@@ -1666,6 +1666,11 @@ div.pullUp a:hover:before,
 .sidebar .recent-post {
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.sidebar .recent-post:hover {
+  transform: scale(1.05);
 }
 .sidebar .recent-post .recent-post-image {
   width: 80px;

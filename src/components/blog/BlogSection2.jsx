@@ -55,7 +55,7 @@ const BlogSection2 = () => {
                         <h2 className='display-6 reveal-element reveal-1'>Our Blog</h2>
                         <h3 className='text-primary fw-semibold display-5 reveal-element reveal-2'>Latest News</h3>
                         <p className='mt-3 mb-4 reveal-element reveal-3'>Stay updated with the latest trends and insights in the construction industry.</p>
-                        <Link to="blog-v1" className='link-fill-right reveal-element reveal-4'>Check Blog</Link>
+                        <Link to="/blog-v1" className='link-fill-right reveal-element reveal-4'>Check Blog</Link>
                     </div>
                 </Col>
                 <Col lg={8}>
